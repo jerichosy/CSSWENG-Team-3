@@ -8,7 +8,6 @@ import AdminNav from './components/admin/AdminNav.vue'
   <header>  
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
-      <AdminNav />
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
