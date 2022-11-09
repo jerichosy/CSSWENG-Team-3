@@ -4,4 +4,7 @@ import AdminNav from '../../components/admin/AdminNav.vue'
 
 <template>
     <AdminNav />
+    <main>
+        
+    </main>
 </template>
