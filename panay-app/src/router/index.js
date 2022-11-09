@@ -21,6 +21,26 @@ const router = createRouter({
       component: AdminView,
       children: [
         {
+          path: 'account',
+          name: 'account',
+          component: Account
+        },
+        {
+          path: 'branches',
+          name: 'branches',
+          component: Branches
+        },
+        {
+          path: 'categories',
+          name: 'categories',
+          component: Categories
+        },
+        {
+          path: 'checks',
+          name: 'checks',
+          component: Checks
+        },
+        {
           path: 'dashboard',
           name: 'dashboard',
           component: Dashboard
@@ -34,26 +54,6 @@ const router = createRouter({
           path: 'reports',
           name: 'reports',
           component: Reports
-        },
-        {
-          path: 'branches',
-          name: 'branches',
-          component: Branches
-        },
-        {
-          path: 'checks',
-          name: 'checks',
-          component: Checks
-        },
-        {
-          path: 'categories',
-          name: 'categories',
-          component: Categories
-        },
-        {
-          path: 'account',
-          name: 'account',
-          component: Account
         }
       ]
     },
