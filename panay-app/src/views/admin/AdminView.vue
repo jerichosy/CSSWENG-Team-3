@@ -8,7 +8,7 @@ import AdminNav from '../../components/admin/AdminNav.vue'
             
                 <AdminNav />
             
-                <main class="col-md-9 col-lg-10 bg-warning ms-sm-auto px-md-4">
+                <main class="col-md-9 col-lg-10 bg-secondary ms-sm-auto px-md-4">
                 
                     
                 </main>
