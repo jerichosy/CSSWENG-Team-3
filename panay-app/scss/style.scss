@@ -9,6 +9,9 @@ $theme-colors: (
   "primaryhover": #CC7066
 );
 
+$nav-link-color: #E6E6E6;
+$nav-link-hover-color: white;
+
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 // Then add additional custom code here
