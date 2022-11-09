@@ -5,10 +5,6 @@ import AdminNav from './components/admin/AdminNav.vue'
 </script>
 
 <template>
-  <header>  
-    <div class="wrapper">
-    </div>
-  </header>
 
   <RouterView />
 </template>
