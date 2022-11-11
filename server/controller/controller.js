@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 
 const controller = {
     getIndex: (req, res) => {
-        res.sendFile(path.resolve('./views/login.html'))
+        res.sendFile(path.resolve('./server/views/login.html'))
     },
 
     login: (req, res) => {
@@ -52,6 +52,17 @@ const controller = {
                 }
             })
             res.redirect('/');
+        })
+    },
+
+    displayusers: (req, res) => {
+        db.findMany(User, {}, 'branchName branchPassword', (user) => {
+            if (user) {
+                console.log(user);
+                res.send(user);
+            } else {
+                console.log('Error 3')
+            }
         })
     }
 
