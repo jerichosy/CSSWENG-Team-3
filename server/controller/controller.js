@@ -47,7 +47,7 @@ const controller = {
             db.insertOne(User, user, function (flag) {
                 if (flag) {
                     console.log('Sign up successful');
-                    res.status(201).json({ msg: 'Signed up successfully!' });
+                    res.status(201);
                 } else {
                     console.log('Sign up failed');
                     res.status(400).json({ msg: 'Something went wrong. Please try again.' })
