@@ -7,9 +7,9 @@ const app = new express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true })); //for req.body
 
-const dbUser = require('./models/dbUser.js');
-const dbBranch = require('./models/branch/dbBranch.js');
-const dbAdmin = require('./models/admin/dbAdmin.js');
+// const dbUser = require('./models/dbUser.js');
+// const dbBranch = require('./models/branch/dbBranch.js');
+// const dbAdmin = require('./models/admin/dbAdmin.js');
 
 // dbBranch.createConnect();
 // dbUser.createConnect();

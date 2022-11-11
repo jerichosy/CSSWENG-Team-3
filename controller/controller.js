@@ -1,5 +1,6 @@
 var path = require('path');
-const dbUser = require('../models/dbUser.js');
+const db = require('../models/db.js');
+const User = require('../models/UserSchema.js');
 const bcrypt = require('bcrypt');
 
 const controller = {
@@ -7,26 +8,29 @@ const controller = {
         res.sendFile(path.resolve('./views/login.html'))
     },
 
-
     login: (req, res) => {
 
-
     },
+
     signup: (req, res) => {
         const { name, password, isadmin } = req.body;
         console.log(req.body)
         const saltRounds = 10;
         bcrypt.hash(password, saltRounds, function (err, hashed) {
-            if (err) {
-                console.log(err)
-            } else {
-                dbUser.User.create({
-                    branchName: name,
-                    branchPassword: hashed,
-                    isAdmin: isadmin,
-                })
-                res.redirect('/');
+            var user = {
+                branchName: name,
+                branchPassword: hashed,
+                isAdmin: isadmin
             }
+
+            db.insertOne(User, user, function (flag) {
+                if (flag) {
+                    console.log('Sign up successful');
+                } else {
+                    console.log('Sign up failed');
+                }
+            })
+            res.redirect('/');
         })
     }
 
