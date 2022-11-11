@@ -18,16 +18,16 @@ const controller = {
                     console.log(result);
                     if (result) {
                         console.log('Congrats')
-                        res.redirect('/');
+                        res.status(200).json({ msg: 'Logged in successfully!' });
                     }
                     else {
-                        console.log('Error 2 Wrong pass')
-                        res.redirect('/');
+                        console.log('Error 2 Wrong password')
+                        res.json({ msg: 'The password is incorrect.' }).status(401);
                     }
                 });
             } else {
                 console.log('Error 3')
-                res.redirect('/');
+                res.json({ msg: 'The specified username was not found.' }).status(404)
             }
         })
 
@@ -47,8 +47,10 @@ const controller = {
             db.insertOne(User, user, function (flag) {
                 if (flag) {
                     console.log('Sign up successful');
+                    res.status(201).json({ msg: 'Signed up successfully!' });
                 } else {
                     console.log('Sign up failed');
+                    res.status(400).json({ msg: 'Something went wrong. Please try again.' })
                 }
             })
             res.redirect('/');
