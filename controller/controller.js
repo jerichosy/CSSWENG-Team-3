@@ -9,6 +9,27 @@ const controller = {
     },
 
     login: (req, res) => {
+        const { name, password } = req.body;
+        console.log(req.body)
+        db.findOne(User, { branchName: name }, 'branchName branchPassword', (user) => {
+            if (user) {
+                console.log(user);
+                bcrypt.compare(password, user.branchPassword, (err, result) => {
+                    console.log(result);
+                    if (result) {
+                        console.log('Congrats')
+                        res.redirect('/');
+                    }
+                    else {
+                        console.log('Error 2 Wrong pass')
+                        res.redirect('/');
+                    }
+                });
+            } else {
+                console.log('Error 3')
+                res.redirect('/');
+            }
+        })
 
     },
 
