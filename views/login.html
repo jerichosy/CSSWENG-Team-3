@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login Page</title>
+    </head>
+    <body>
+        <form action="/login" method="POST">
+            <div class="form-field">
+                <input placeholder="name" required name="name"/>
+            </div>
+            <div class="form-field">
+                <input type="password" placeholder="password" required name="password"/>
+            </div>
+            <div class="form-field">
+                <input placeholder="isadmin" required name="isadmin"/>
+            </div>
+            <div class="form-field">
+                <button class="btn" type="submit">Log In</button>
+            </div>
+        </form>
+        <br><br><br><br>
+        <form action="/signup" method="POST">
+            <div class="form-field">
+                <input placeholder="name" required name="name"/>
+            </div>
+            <div class="form-field">
+                <input type="password" placeholder="password" required name="password"/>
+            </div>
+            <div class="form-field">
+                <input placeholder="isadmin" required name="isadmin"/>
+            </div>
+            <div class="form-field">
+                <button class="btn" type="submit">Sign Up</button>
+            </div>
+        </form>
+</html>
