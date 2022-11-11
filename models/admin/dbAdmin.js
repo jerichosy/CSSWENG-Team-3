@@ -1,3 +1,5 @@
+// deprecated, delete when not needed anymore
+
 const mongoose = require('mongoose');
 const databaseURL = 'mongodb://localhost:27017/sweng-admin';
 const AdminExpenseSchema = require('./adminExpenseSchema');
@@ -11,8 +13,8 @@ const options = {
 
 const dbAdmin = {
     createConnect: function () {
-        const dbAdmin = mongoose.createConnection(databaseURL, options, function(error) {
-            if(error) throw error;
+        const dbAdmin = mongoose.createConnection(databaseURL, options, function (error) {
+            if (error) throw error;
             console.log('Connected to: ' + databaseURL);
         })
         const AdminExpense = dbAdmin.model('adminexpense', AdminExpenseSchema)
