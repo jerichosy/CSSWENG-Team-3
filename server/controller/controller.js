@@ -55,6 +55,7 @@ const controller = {
         })
     },
 
+    // For debugging HTTP Requests, delete in prod
     displayusers: (req, res) => {
         db.findMany(User, {}, 'branchName branchPassword', (user) => {
             if (user) {
