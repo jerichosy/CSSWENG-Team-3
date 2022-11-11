@@ -5,8 +5,12 @@ class UserService {
         return http.get("/displayusers");
     }
 
-    get(id) {
-        return http.get(`/users/${id}`);
+    signup(data) {
+        return http.post("/signup", data);
+    }
+
+    login(data) {
+        return http.post("/login", data);
     }
 }
 
