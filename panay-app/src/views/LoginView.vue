@@ -9,7 +9,7 @@ export default {
             signupUsername: '',
             signupPassword: '',
             signupIsAdmin: 0,
-            created: ''
+            alert: ''
         }
     },
     methods: {
@@ -19,7 +19,15 @@ export default {
                 'password': this.signupPassword,
                 'isadmin': this.signupIsAdmin
             };
-            UserService.signup(data);
+            UserService.signup(data)
+                .then(response => {
+                    console.log(response.data.msg);
+                    this.alert = response.data.msg;
+                })
+                .catch(e => {
+                    console.log(e);
+                    this.alert = e;
+                });
         },
 
         login() {
@@ -27,18 +35,28 @@ export default {
                 'name': this.loginUsername,
                 'password': this.loginPassword
             }
-            UserService.login(data);
+            UserService.login(data)
+                .then(response => {
+                    console.log(response.data.msg);
+                    this.alert = response.data.msg;
+                })
+                .catch(e => {
+                    console.log(e);
+                    this.alert = e;
+                });
         }
     }
 }
 </script>
 
 <template>
-    <div>
+    <form method="POST">
         <input type="text" v-model="loginUsername" placeholder="Username" id="username" name="name" required />
-        <input type="text" v-model="loginPassword" placeholder="Password" id="password" name="password" required />
-        <button @click="login">Login</button>
-    </div>
+        <input type="password" v-model="loginPassword" placeholder="Password" id="password" name="password" required />
+        <button type="submit" @click="login">Login</button>
+    </form>
+
+    <p>{{ alert }}</p>
 
     <div>
         <input type="text" placeholder="Username" v-model="signupUsername" required name="name" />
@@ -46,7 +64,5 @@ export default {
         <input type="number" placeholder="isAdmin" v-model="signupIsAdmin" required name="isadmin" />
         <button @click="signUp">Sign Up</button>
     </div>
-
-    <p>{{ created }}</p>
 
 </template>
