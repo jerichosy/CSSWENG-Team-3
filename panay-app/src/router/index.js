@@ -1,8 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 import LoginView from '../views/LoginView.vue'
 import AdminView from '../views/admin/AdminView.vue'
-
 import Account from '../views/admin/adminpages/Account.vue'
 import Branches from '../views/admin/adminpages/Branches.vue'
 import Categories from '../views/admin/adminpages/Categories.vue'
@@ -16,7 +14,7 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path:'/admin',
+      path: '/admin',
       name: 'admin',
       component: AdminView,
       children: [
@@ -58,17 +56,16 @@ const router = createRouter({
       ]
     },
     {
-      path:'/login',
+      path: '/login',
       name: 'login',
       component: LoginView
     },
+    // For testing HTTP Requests, delete in prod
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
+      path: "/users",
+      alias: "/users",
+      name: "users",
+      component: () => import('../components/UserList.vue')
     }
   ]
 })
