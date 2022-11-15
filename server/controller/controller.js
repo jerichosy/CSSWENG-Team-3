@@ -13,7 +13,7 @@ const controller = {
     login: (req, res) => {
         const { name, password } = req.body;
         console.log(req.body)
-        db.findOne(User, { branchName: name }, 'branchName branchPassword', (user) => {
+        db.findOne(User, { branchID: name }, 'branchName branchPassword', (user) => {
             if (user) {
                 console.log(user);
                 bcrypt.compare(password, user.branchPassword, (err, result) => {
@@ -41,7 +41,7 @@ const controller = {
         const saltRounds = 10;
         bcrypt.hash(password, saltRounds, function (err, hashed) {
             var user = {
-                branchName: name,
+                branchID: name,
                 branchPassword: hashed,
                 isAdmin: isadmin
             }
