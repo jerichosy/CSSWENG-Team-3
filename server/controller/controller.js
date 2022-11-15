@@ -24,12 +24,12 @@ const controller = {
                     }
                     else {
                         console.log('Error 2 Wrong password')
-                        res.status(401).json({ msg: 'The password is incorrect.' });
+                        res.json({ msg: 'The password is incorrect.' }).status(401);
                     }
                 });
             } else {
                 console.log('Error 3')
-                res.status(404).json({ msg: 'The specified username was not found.' })
+                res.json({ msg: 'The specified username was not found.' }).status(404)
             }
         })
 
@@ -101,9 +101,7 @@ const controller = {
             }
         })
         // res.redirect('/');
-    },
-
-    submit
+    }
 }
 
 module.exports = controller;
