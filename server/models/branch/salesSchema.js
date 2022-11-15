@@ -8,4 +8,7 @@ const SalesSchema = new mongoose.Schema({
     notes: { type: String, required: false },
 }, { timestamps: true });
 
-module.exports = mongoose.model('Sales', SalesSchema);
+module.exports = {
+    Branch: mongoose.model('Sales', SalesSchema),
+    Admin: mongoose.model('AdminSales', SalesSchema)
+};

@@ -7,5 +7,6 @@ router.get('/', controller.getIndex);
 router.post('/login', controller.login);
 router.post('/signup', controller.signup);
 router.post('/addexpense', controller.addExpense);
+router.post('/addsales', controller.addSales);
 
 module.exports = router;

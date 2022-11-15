@@ -2,6 +2,7 @@ var path = require('path');
 const db = require('../models/db.js');
 const User = require('../models/UserSchema.js');
 const Expense = require('../models/branch/ExpenseSchema.js');
+const Sales = require('../models/branch/SalesSchema.js');
 const bcrypt = require('bcrypt');
 
 const controller = {
@@ -73,6 +74,29 @@ const controller = {
                 res.status(201).json({ msg: '201 Created' });  //201 Created
             } else {
                 console.log('Expense not added');
+                res.status(400).json({ msg: 'Something went wrong. Please try again.' })
+            }
+        })
+        // res.redirect('/');
+    },
+
+    addSales: (req, res) => {
+        const { branchID, item, category, amount, notes } = req.body;
+        console.log(req.body)
+        var sales = {
+            branchID: branchID,
+            item: item,
+            category: category,
+            amount: amount,
+            notes: notes
+        }
+
+        db.insertOne(Sales.Branch, sales, function (flag) {
+            if (flag) {
+                console.log('Sales added');
+                res.status(201).json({ msg: '201 Created' });  //201 Created
+            } else {
+                console.log('Sales not added');
                 res.status(400).json({ msg: 'Something went wrong. Please try again.' })
             }
         })
