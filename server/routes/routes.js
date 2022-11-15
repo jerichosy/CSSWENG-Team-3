@@ -8,5 +8,6 @@ router.post('/login', controller.login);
 router.post('/signup', controller.signup);
 router.post('/addexpense', controller.addExpense);
 router.post('/addsales', controller.addSales);
+router.get('/submit', controller.submitSalesAndExpenses);
 
 module.exports = router;
