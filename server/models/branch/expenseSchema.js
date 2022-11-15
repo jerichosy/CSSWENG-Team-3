@@ -6,4 +6,7 @@ const ExpenseSchema = new mongoose.Schema({
     customercount: { type: String, required: false },
 }, { timestamps: true });
 
-module.exports = mongoose.model('Expense', ExpenseSchema);
+module.exports = {
+    Branch: mongoose.model('Expense', ExpenseSchema),
+    Admin: mongoose.model('AdminExpense', ExpenseSchema)
+};

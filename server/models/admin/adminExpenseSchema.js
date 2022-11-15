@@ -1,3 +1,7 @@
+// TODO:
+// This might not be needed since we can just do "multiple module.exports" in the ExpenseSchema.js file. 
+// After all, they are exactly same schema, just diff. collection.
+
 const mongoose = require('mongoose');
 
 const AdminExpenseSchema = new mongoose.Schema({

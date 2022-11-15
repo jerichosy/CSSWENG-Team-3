@@ -67,7 +67,7 @@ const controller = {
             customercount: customercount
         }
 
-        db.insertOne(Expense, expense, function (flag) {
+        db.insertOne(Expense.Branch, expense, function (flag) {
             if (flag) {
                 console.log('Expense added');
                 res.status(201).json({ msg: '201 Created' });  //201 Created
