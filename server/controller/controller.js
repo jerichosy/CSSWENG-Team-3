@@ -24,12 +24,12 @@ const controller = {
                     }
                     else {
                         console.log('Error 2 Wrong password')
-                        res.json({ msg: 'The password is incorrect.' }).status(401);
+                        res.status(401).json({ msg: 'The password is incorrect.' });
                     }
                 });
             } else {
                 console.log('Error 3')
-                res.json({ msg: 'The specified username was not found.' }).status(404)
+                res.status(404).json({ msg: 'The specified username was not found.' });
             }
         })
 
