@@ -59,27 +59,6 @@ const controller = {
         })
     },
 
-    addExpense: (req, res) => {
-        const { branchID, sales, customercount } = req.body;
-        console.log(req.body)
-        var expense = {
-            branchID: branchID,
-            sales: sales,
-            customercount: customercount
-        }
-
-        db.insertOne(Expense.Branch, expense, function (flag) {
-            if (flag) {
-                console.log('Expense added');
-                res.status(201).json({ msg: '201 Created' });  //201 Created
-            } else {
-                console.log('Expense not added');
-                res.status(400).json({ msg: 'Something went wrong. Please try again.' })
-            }
-        })
-        // res.redirect('/');
-    },
-
     addSales: (req, res) => {
         const { branchID, item, category, amount, notes } = req.body;
         console.log(req.body)
@@ -97,6 +76,27 @@ const controller = {
                 res.status(201).json({ msg: '201 Created' });  //201 Created
             } else {
                 console.log('Sales not added');
+                res.status(400).json({ msg: 'Something went wrong. Please try again.' })
+            }
+        })
+        // res.redirect('/');
+    },
+
+    addExpense: (req, res) => {
+        const { branchID, sales, customercount } = req.body;
+        console.log(req.body)
+        var expense = {
+            branchID: branchID,
+            sales: sales,
+            customercount: customercount
+        }
+
+        db.insertOne(Expense.Branch, expense, function (flag) {
+            if (flag) {
+                console.log('Expense added');
+                res.status(201).json({ msg: '201 Created' });  //201 Created
+            } else {
+                console.log('Expense not added');
                 res.status(400).json({ msg: 'Something went wrong. Please try again.' })
             }
         })
