@@ -8,13 +8,10 @@ import AdminNav from '../../components/admin/AdminNav.vue'
             
                 <AdminNav />
             
-                <main class="col-md-9 col-lg-10 bg-secondary ms-sm-auto px-md-4">
-
+                <div id="primary-view" class="container-fluid col-md-9 col-lg-10 p-0 m-0">
                     <RouterView />
-                    
-                </main>
+                </div>
         </div>
         
     </div>
-    
 </template>
