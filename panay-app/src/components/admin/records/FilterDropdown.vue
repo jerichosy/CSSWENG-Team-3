@@ -5,13 +5,15 @@ export default {
         return {
             placeholderText: 'Select',
             selectedItem: '',
-            linkList: false
+            linkList: false,
+            type: ''
         }
     },
     props: {
         placeholder: String,
         options: Object,
-        isLinkList: Boolean
+        isLinkList: Boolean,
+        dropdownType: String
     },
 
     mounted() {
@@ -20,6 +22,11 @@ export default {
 
         if (this.placeholder)
             this.placeholderText = this.placeholder;
+
+        if (this.dropdownType)
+            this.type = this.dropdownType;
+        else
+            this.type = 'list'
     },
 
     methods: {
@@ -40,7 +47,7 @@ export default {
 
 
         
-        <ul class="dropdown-menu">
+        <ul v-if="this.type === 'list'" class="dropdown-menu">
             <!-- makes items Router Links if linkList is true-->
             <li v-if="linkList" v-for="option in options">
                 <RouterLink class="dropdown-item" :to=option.path @click="updateSelected(option)">{{option.title}}</RouterLink>
@@ -48,6 +55,26 @@ export default {
 
             <li v-else v-for="option in options">
                 <a class="dropdown-item" :to=option.path @click="updateSelected(option)" >{{option.title}}</a>
+            </li>
+        </ul>
+
+        <ul v-if="this.type === 'date'" class="dropdown-menu">
+            <!-- makes items Router Links if linkList is true-->
+            <li>
+                <form>
+                    <input type="date">
+                    <input type="date">
+                </form>
+            </li>
+        </ul>
+
+        <ul v-if="this.type === 'time'" class="dropdown-menu">
+            <!-- makes items Router Links if linkList is true-->
+            <li>
+                <form>
+                    <input type="time">
+                    <input type="time">
+                </form>
             </li>
         </ul>
     </div>

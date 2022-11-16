@@ -17,11 +17,33 @@ export default {
 </script>
 
 <template>
-    <FilterDropdown :is-link-list="true" 
+    <div class="row m-0">
+        <div class="col">
+        <FilterDropdown :is-link-list="true" 
                     :options="this.pageOptions"
                     placeholder='Sales' />
-    <FilterDropdown :is-link-list="false"
+    </div>
+    <div class="col">
+        <FilterDropdown :is-link-list="false"
+                    dropdown-type="date"
+                    :options="this.branchOptions"
+                    placeholder="Date Range" />
+    </div>
+
+    <div class="col">
+        <FilterDropdown :is-link-list="false"
+                    dropdown-type="time"
+                    :options="this.branchOptions"
+                    placeholder="Time Range" />
+    </div>
+
+    <div class="col">
+        <FilterDropdown :is-link-list="false"
                     :options="this.branchOptions" />
+    </div>
+    </div>
+
+
 </template>
 
 <style scoped>
