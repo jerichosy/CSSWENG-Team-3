@@ -39,7 +39,9 @@ export default {
 
     <div class="col">
         <FilterDropdown :is-link-list="false"
-                    :options="this.branchOptions" />
+                        dropdown-type="checkbox"
+                    :options="this.branchOptions"
+                     />
     </div>
     </div>
 
