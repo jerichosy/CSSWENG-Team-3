@@ -3,6 +3,7 @@
 export default {
     data() {
         return {
+            placeholderText: 'Select',
             selectedItem: '',
             linkList: false
         }
@@ -33,7 +34,8 @@ export default {
 <template>
     <div class="dropdown"> 
         <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            {{ selectedItem }}
+            <span v-if="selectedItem !== ''">{{ selectedItem }}</span>
+            <span v-if="selectedItem === ''">{{ placeholderText }}</span>
         </button>
 
 
@@ -45,7 +47,7 @@ export default {
             </li>
 
             <li v-else v-for="option in options">
-                <a href="">{{option.title}}</a>
+                <a class="dropdown-item" :to=option.path @click="updateSelected(option)" >{{option.title}}</a>
             </li>
         </ul>
     </div>
