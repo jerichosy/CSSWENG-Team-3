@@ -8,6 +8,8 @@ router.post('/login', controller.login);
 router.post('/signup', controller.signup);
 router.post('/addexpense', controller.addExpense);
 router.post('/addsales', controller.addSales);
+
 router.get('/submit', controller.submitSalesAndExpenses);
 
+router.post('/deletebranch', controller.deleteBranch);
 module.exports = router;

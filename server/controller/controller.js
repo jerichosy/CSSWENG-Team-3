@@ -7,7 +7,7 @@ const bcrypt = require('bcrypt');
 
 const controller = {
     getIndex: (req, res) => {
-        res.sendFile(path.resolve('./views/login.html'))
+        res.sendFile(path.resolve('./server/views/login.html'))
     },
 
     login: (req, res) => {
@@ -133,6 +133,22 @@ const controller = {
 
         transfer(Sales, "Sales");
         transfer(Expense, "Expense");
+    },
+
+    deleteBranch: (req, res) => {
+        const { name } = req.body;
+        console.log(req.body)
+        db.deleteOne(User, { branchID: name }, function (flag) {
+            if (flag) {
+                console.log(` deleted`);
+                res.status(201) //201 Created
+            } else {
+                console.log(` not deleted`);
+                res.status(400)
+            }
+            res.redirect('/');
+        })
+
     }
 }
 
