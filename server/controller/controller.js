@@ -42,7 +42,7 @@ const controller = {
         db.findOne(User, { branchID: name }, '', (result) => {
             if (result) {
                 console.log("User already exists");
-                res.redirect('/');
+                res.status(409).json({ msg: 'The specified username already exists.' });  //409 conflict
             }
             else {
                 const saltRounds = 10;
