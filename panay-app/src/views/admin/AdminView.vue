@@ -5,16 +5,15 @@ import AdminNav from '../../components/admin/AdminNav.vue'
 <template>
     <div class="container-fluid">
         <div class="row vh-100">
-            
+            <div class="col-md-3 col-lg-2 p-0">
                 <AdminNav />
-            
-                <main class="col-md-9 col-lg-10 bg-secondary ms-sm-auto px-md-4">
+            </div>
+                
 
-                    <RouterView />
-                    
-                </main>
+            <div id="primary-view" class="container-fluid col-md-9 col-lg-10 p-0 m-0">
+                <RouterView />
+            </div>
         </div>
         
     </div>
-    
 </template>

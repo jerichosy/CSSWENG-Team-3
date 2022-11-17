@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <nav id="admin-sidebar" class=" col-md-3 col-lg-2 p-0 position-relative sidebar text-white bg-primary">
+    <nav id="admin-sidebar" class="col-md-3 col-lg-2 p-0 sidebar text-white bg-primary">
         <span class="p-3 fs-4">Panay Tinapay</span>
         <hr>
         <ul class="nav flex-column fs-5 fw-bold">
@@ -67,5 +67,12 @@
     .nav-item:hover {
         background-color: #CC7066!important;
         transition: 0.3s!important;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
     }
 </style>
