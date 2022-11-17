@@ -159,15 +159,32 @@ const controller = {
         db.deleteOne(User, { branchID: name }, function (flag) {
             if (flag) {
                 console.log(` deleted`);
-                res.status(201) //201 Created
+                res.status(201).json({ msg: 'branch deleted' }) //201 Created
             } else {
                 console.log(` not deleted`);
-                res.status(400)
+                res.status(400).json({ msg: 'Something went wrong. Please try again.' })
             }
             res.redirect('/');
         })
+    },
 
+    editBranch: (req, res) => {
+        var { branchID, branchName, branchPassword } = req.body;
+        console.log(branchPassword)
+        const saltRounds = 10;
+        bcrypt.hash(branchPassword, saltRounds, function (err, hashed) {
+            branchPassword = hashed
+            console.log(branchPassword)
+            db.updateOne(User, { branchID: branchID }, {
+                branchName: branchName,
+                branchPassword: branchPassword
+            }, function (flag) {
+                console.log('Edit success: ' + flag);
+                res.status(201).json({ msg: 'Edit success' })
+            })
+        })
     }
+
 }
 
 module.exports = controller;
