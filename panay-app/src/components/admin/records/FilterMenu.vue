@@ -1,7 +1,7 @@
 <script>
 import FilterDropdown from './FilterDropdown.vue'
 import FilterCheckboxDropdown from './FilterCheckboxDropdown.vue';
-import SalesFilterOptions from './FilterOptions.vue';
+import FilterOptions from './FilterOptions.vue';
 
 export default {
 
@@ -15,7 +15,7 @@ export default {
     components: {
     FilterDropdown,
     FilterCheckboxDropdown,
-    SalesFilterOptions
+    FilterOptions
 }
 }
 </script>
@@ -28,36 +28,7 @@ export default {
         </button>
     </div>
 
-    <SalesFilterOptions :branch-options="this.branchOptions"/>
-
-    <!-- <div class="collapse" id="filterForm">
-            <form class="card card-body">
-                    <fieldset>
-                        <legend>Date Range</legend>
-                        <label for="dateRangeFrom">From</label> <input id="dateRangeFrom" type="date">
-                        <label for="dateRangeTo">To</label> <input id="dateRangeTo" type="date">
-                    </fieldset>
-                    <fieldset>
-                        <legend>Time Range</legend>
-                        <label for="timeRangeFrom">From</label> <input id="timeRangeFrom" type="time">
-                        <label for="timeRangeTo">To</label> <input id="timeRangeTo" type="time">
-                    </fieldset>
-                    <FilterCheckboxDropdown filter-item-single="branch"
-                                            filter-item-plural="branches"
-                                            :options="this.branchOptions"
-                        />
-
-                    <button type="submit">Filter</button>
-                    <button type="reset">Reset</button>
-            </form>
-    </div> -->
-
-
-
-
-
-
-
+    <FilterOptions :branch-options="this.branchOptions"/>
 </template>
 
 <style scoped>
