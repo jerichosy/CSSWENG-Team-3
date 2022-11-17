@@ -61,17 +61,15 @@ const controller = {
                         }
                     }
 
-
                     db.insertOne(User, user, function (flag) {
                         if (flag) {
                             console.log('Sign up successful');
-                            res.status(201);
+                            res.status(201).json({ msg: 'Sign Up Successful' });
                         } else {
                             console.log('Sign up failed');
                             res.status(400).json({ msg: 'Something went wrong. Please try again.' })
                         }
                     })
-                    res.redirect('/');
                 })
             }
         })
@@ -164,7 +162,6 @@ const controller = {
                 console.log(` not deleted`);
                 res.status(400).json({ msg: 'Something went wrong. Please try again.' })
             }
-            res.redirect('/');
         })
     },
 
