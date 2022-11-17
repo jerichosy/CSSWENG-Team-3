@@ -9,7 +9,6 @@ export default {
             numberSelected: 0,
             filterItemTextSingle: '',
             filterItemTextPlural: '',
-
         }
     },
 
@@ -62,5 +61,4 @@ export default {
         </div>
 
     </div>
-
 </template>
