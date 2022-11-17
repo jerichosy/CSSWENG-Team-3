@@ -12,4 +12,5 @@ router.post('/addsales', controller.addSales);
 router.get('/submit', controller.submitSalesAndExpenses);
 
 router.post('/deletebranch', controller.deleteBranch);
+router.post('/editbranch', controller.editBranch);
 module.exports = router;
