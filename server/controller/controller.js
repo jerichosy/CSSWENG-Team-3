@@ -38,24 +38,33 @@ const controller = {
     signup: (req, res) => {
         const { name, password, isadmin } = req.body;
         console.log(req.body)
-        const saltRounds = 10;
-        bcrypt.hash(password, saltRounds, function (err, hashed) {
-            var user = {
-                branchID: name,
-                branchPassword: hashed,
-                isAdmin: isadmin
-            }
 
-            db.insertOne(User, user, function (flag) {
-                if (flag) {
-                    console.log('Sign up successful');
-                    res.status(201);
-                } else {
-                    console.log('Sign up failed');
-                    res.status(400).json({ msg: 'Something went wrong. Please try again.' })
-                }
-            })
-            res.redirect('/');
+        db.findOne(User, { branchID: name }, '', (result) => {
+            if (result) {
+                console.log("User already exists");
+                res.redirect('/');
+            }
+            else {
+                const saltRounds = 10;
+                bcrypt.hash(password, saltRounds, function (err, hashed) {
+                    var user = {
+                        branchID: name,
+                        branchPassword: hashed,
+                        isAdmin: isadmin
+                    }
+
+                    db.insertOne(User, user, function (flag) {
+                        if (flag) {
+                            console.log('Sign up successful');
+                            res.status(201);
+                        } else {
+                            console.log('Sign up failed');
+                            res.status(400).json({ msg: 'Something went wrong. Please try again.' })
+                        }
+                    })
+                    res.redirect('/');
+                })
+            }
         })
     },
 
