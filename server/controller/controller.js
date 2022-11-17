@@ -47,11 +47,20 @@ const controller = {
             else {
                 const saltRounds = 10;
                 bcrypt.hash(password, saltRounds, function (err, hashed) {
-                    var user = {
-                        branchID: name,
-                        branchPassword: hashed,
-                        isAdmin: isadmin
+                    if (isadmin) {
+                        var user = {
+                            branchID: name,
+                            branchPassword: hashed,
+                            isAdmin: isadmin
+                        }
                     }
+                    else {
+                        var user = {
+                            branchID: name,
+                            branchPassword: hashed,
+                        }
+                    }
+
 
                     db.insertOne(User, user, function (flag) {
                         if (flag) {
