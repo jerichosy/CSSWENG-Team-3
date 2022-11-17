@@ -2,8 +2,10 @@ const mongoose = require('mongoose');
 
 const ExpenseSchema = new mongoose.Schema({
     branchID: { type: String, required: true },
-    sales: { type: Number, required: true },
-    customercount: { type: String, required: false },
+    item: { type: String, required: true },
+    category: { type: String, required: true },
+    amount: { type: Number, required: true },
+    notes: { type: String, required: false },
 }, { timestamps: true });
 
 module.exports = {

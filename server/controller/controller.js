@@ -1,8 +1,8 @@
 var path = require('path');
 const db = require('../models/db.js');
 const User = require('../models/UserSchema.js');
-const Expense = require('../models/branch/ExpenseSchema.js');
-const Sales = require('../models/branch/SalesSchema.js');
+const Expense = require('../models/branch/salesSchema.js');
+const Sales = require('../models/branch/expenseSchema.js');
 const bcrypt = require('bcrypt');
 
 const controller = {
