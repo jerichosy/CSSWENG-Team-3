@@ -275,7 +275,19 @@ const controller = {
                 res.status(201).json({ msg: 'Edit success' })
             })
         })
-    }
+    },
+
+    viewBranch: (req, res) => {
+        db.findMany(User, {}, '', function (branch) {
+            if (branch) {
+                console.log('Branch shown');
+                res.status(201).json({ branch });  //201 Created
+            } else {
+                console.log('Branch not shown');
+                res.status(400).json({ msg: 'Something went wrong. Please try again.' })
+            }
+        })
+    },
 
 }
 
