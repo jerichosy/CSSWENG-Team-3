@@ -157,7 +157,7 @@ const controller = {
                 console.log('Edit success: ' + flag);
                 res.status(201).json({ msg: 'Edit success' })
             } else {
-                console.log('Expense not added');
+                console.log('Expense not edited');
                 res.status(400).json({ msg: 'Something went wrong. Please try again.' })
             }
         })
@@ -177,7 +177,7 @@ const controller = {
                 console.log('Edit success: ' + flag);
                 res.status(201).json({ msg: 'Edit success' })
             } else {
-                console.log('Expense not added');
+                console.log('Sales not edited');
                 res.status(400).json({ msg: 'Something went wrong. Please try again.' })
             }
         })
