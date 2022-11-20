@@ -1,8 +1,8 @@
 var path = require('path');
 const db = require('../models/db.js');
 const User = require('../models/UserSchema.js');
-const Expense = require('../models/branch/salesSchema.js');
-const Sales = require('../models/branch/expenseSchema.js');
+const Sales = require('../models/branch/salesSchema.js');
+const Expense = require('../models/branch/expenseSchema.js');
 const bcrypt = require('bcrypt');
 
 const controller = {
@@ -75,10 +75,10 @@ const controller = {
         })
     },
 
-    addSales: (req, res) => {
+    addExpense: (req, res) => {
         const { branchID, item, category, amount, notes } = req.body;
         console.log(req.body)
-        var sales = {
+        var expense = {
             branchID: branchID,
             item: item,
             category: category,
@@ -86,33 +86,33 @@ const controller = {
             notes: notes
         }
 
-        db.insertOne(Sales.Branch, sales, function (flag) {
+        db.insertOne(Expense.Branch, expense, function (flag) {
             if (flag) {
-                console.log('Sales added');
-                res.status(201).json({ msg: '201 Created' });  //201 Created
+                console.log('Expense added');
+                res.status(201).json({ msg: 'Expense added. 201 Created' });  //201 Created
             } else {
-                console.log('Sales not added');
+                console.log('Expense not added');
                 res.status(400).json({ msg: 'Something went wrong. Please try again.' })
             }
         })
         // res.redirect('/');
     },
 
-    addExpense: (req, res) => {
+    addSales: (req, res) => {
         const { branchID, sales, customercount } = req.body;
         console.log(req.body)
-        var expense = {
+        var salesobj = {
             branchID: branchID,
             sales: sales,
             customercount: customercount
         }
 
-        db.insertOne(Expense.Branch, expense, function (flag) {
+        db.insertOne(Sales.Branch, salesobj, function (flag) {
             if (flag) {
-                console.log('Expense added');
-                res.status(201).json({ msg: '201 Created' });  //201 Created
+                console.log('Sales added');
+                res.status(201).json({ msg: 'Sales Added. 201 Created' });  //201 Created
             } else {
-                console.log('Expense not added');
+                console.log('Sales not added');
                 res.status(400).json({ msg: 'Something went wrong. Please try again.' })
             }
         })
