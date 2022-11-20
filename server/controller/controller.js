@@ -215,30 +215,35 @@ const controller = {
         function transfer(x, y) {
             db.findMany(x.Branch, {}, '', (result) => {
                 console.log(y);
+                if (result.length >= 1) {
+                    db.insertMany(x.Admin, result, (flag) => {
+                        if (flag) {
+                            console.log(`${y} added: ${result.length}`);
+                            // If the transfer is successful, delete all documents from the branch collection
+                            db.deleteMany(x.Branch, {}, function (flag) {
+                                if (flag) {
+                                    console.log(`${y} deleted`);
+                                    //res.status(201).json({ msg: '201 Created' });  //201 Created
+                                } else {
+                                    console.log(`${y} not deleted`);
+                                    //res.status(400).json({ msg: 'Something went wrong. Please try again.' })
+                                }
+                            })
+                        } else {
+                            console.log(`${y} not added: ${result.length}`);
+                            //res.status(400).json({ msg: 'Something went wrong. Please try again.' })
+                        }
+                    })
+                } else {
+                    console.log(`No result found`);
+                }
 
-                db.insertMany(x.Admin, result, function (flag) {
-                    if (flag) {
-                        console.log(`${y} added: ${result.length}`);
-                        // res.status(201).json({ msg: '201 Created' });  //201 Created
-
-                        // If the transfer is successful, delete all documents from the branch collection
-                        db.deleteMany(x.Branch, {}, function (flag) {
-                            if (flag) {
-                                console.log(`${y} deleted`);
-                            } else {
-                                console.log(`${y} not deleted`);
-                            }
-                        })
-                    } else {
-                        console.log(`${y} not added: ${result.length}`);
-                        // res.status(400).json({ msg: 'Something went wrong. Please try again.' })
-                    }
-                })
             })
         }
 
         transfer(Sales, "Sales");
         transfer(Expense, "Expense");
+        res.status(201).json({ msg: 'Done' });
     },
 
     deleteBranch: (req, res) => {
