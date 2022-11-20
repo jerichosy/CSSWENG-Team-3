@@ -10,6 +10,8 @@ router.post('/addexpense', controller.addExpense);
 router.post('/addsales', controller.addSales);
 
 router.get('/submit', controller.submitSalesAndExpenses);
+router.get('/viewexpense', controller.viewExpense);
+router.get('/viewsales', controller.viewSales);
 
 router.post('/deletebranch', controller.deleteBranch);
 router.post('/editbranch', controller.editBranch);

@@ -119,6 +119,30 @@ const controller = {
         // res.redirect('/');
     },
 
+    viewExpense: (req, res) => {
+        db.findMany(Expense.Branch, {}, '', function (expenses) {
+            if (expenses) {
+                console.log('Expenses shown');
+                res.status(201).json({ expenses });  //201 Created
+            } else {
+                console.log('Expenses not shown');
+                res.status(400).json({ msg: 'Something went wrong. Please try again.' })
+            }
+        })
+    },
+
+    viewSales: (req, res) => {
+        db.findMany(Sales.Branch, {}, '', function (sales) {
+            if (sales) {
+                console.log('Sales shown');
+                res.status(201).json({ sales });  //201 Created
+            } else {
+                console.log('Sales not shown');
+                res.status(400).json({ msg: 'Something went wrong. Please try again.' })
+            }
+        })
+    },
+
     // FIXME: Does not send a response. 
     // FIXME: Does not filter by branch.
     submitSalesAndExpenses: (req, res) => {
