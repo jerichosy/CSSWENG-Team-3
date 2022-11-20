@@ -143,6 +143,46 @@ const controller = {
         })
     },
 
+    editExpense: (req, res) => {
+        const { id, branchID, item, category, amount, notes } = req.body;
+        var expense = {
+            branchID: branchID,
+            item: item,
+            category: category,
+            amount: amount,
+            notes: notes
+        }
+        db.updateOne(Expense.Branch, { branchID: branchID, _id: new Object(id) }, expense, function (flag) {
+            if (flag) {
+                console.log('Edit success: ' + flag);
+                res.status(201).json({ msg: 'Edit success' })
+            } else {
+                console.log('Expense not added');
+                res.status(400).json({ msg: 'Something went wrong. Please try again.' })
+            }
+        })
+    },
+
+    editSales: (req, res) => {
+        const { id, branchID, sales, customercount } = req.body;
+        console.log(req.body)
+        var salesobj = {
+            branchID: branchID,
+            sales: sales,
+            customercount: customercount
+        }
+
+        db.updateOne(Sales.Branch, { branchID: branchID, _id: new Object(id) }, salesobj, function (flag) {
+            if (flag) {
+                console.log('Edit success: ' + flag);
+                res.status(201).json({ msg: 'Edit success' })
+            } else {
+                console.log('Expense not added');
+                res.status(400).json({ msg: 'Something went wrong. Please try again.' })
+            }
+        })
+    },
+
     // FIXME: Does not send a response. 
     // FIXME: Does not filter by branch.
     submitSalesAndExpenses: (req, res) => {
