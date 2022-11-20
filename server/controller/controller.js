@@ -183,6 +183,32 @@ const controller = {
         })
     },
 
+    deleteExpense: (req, res) => {
+        const { id } = req.body;
+        db.deleteOne(Expense.Branch, { _id: new Object(id) }, function (flag) {
+            if (flag) {
+                console.log('Delete success: ' + flag);
+                res.status(201).json({ msg: 'Delete success' })
+            } else {
+                console.log('Expense not deleted');
+                res.status(400).json({ msg: 'Something went wrong. Please try again.' })
+            }
+        })
+    },
+
+    deleteSales: (req, res) => {
+        const { id } = req.body;
+        db.deleteOne(Sales.Branch, { _id: new Object(id) }, function (flag) {
+            if (flag) {
+                console.log('Delete success: ' + flag);
+                res.status(201).json({ msg: 'Delete success' })
+            } else {
+                console.log('Sales not deleted');
+                res.status(400).json({ msg: 'Something went wrong. Please try again.' })
+            }
+        })
+    },
+
     // FIXME: Does not send a response. 
     // FIXME: Does not filter by branch.
     submitSalesAndExpenses: (req, res) => {

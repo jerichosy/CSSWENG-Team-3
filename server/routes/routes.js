@@ -10,6 +10,8 @@ router.post('/addexpense', controller.addExpense);
 router.post('/addsales', controller.addSales);
 router.post('/editexpense', controller.editExpense)
 router.post('/editsales', controller.editSales)
+router.post('/deleteexpense', controller.deleteExpense);
+router.post('/deletesales', controller.deleteSales);
 
 router.get('/submit', controller.submitSalesAndExpenses);
 router.get('/viewexpense', controller.viewExpense);
