@@ -304,7 +304,7 @@ const controller = {
             createdAt: { $gte: dateRangeFrom, $lte: dateRangeTo },
             timeRangeFrom: { $gte: timeRangeFrom },
             timeRangeTo: { $lte: timeRangeTo },
-            branches: branches
+            branchID: branches
         }
         console.log(filter)
         //change to admin
