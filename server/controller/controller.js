@@ -293,6 +293,35 @@ const controller = {
         })
     },
 
+    viewSalesFilter: (req, res) => {
+        var { dateRangeFrom, dateRangeTo, timeRangeFrom, timeRangeTo, branches } = req.body;
+        console.log(req.body);
+        var dateRangeFrom = new Date(dateRangeFrom)
+        var dateRangeTo = new Date(dateRangeTo)
+        dateRangeTo.setDate(dateRangeTo.getDate() + 1)
+
+        var filter = {
+            createdAt: { $gte: dateRangeFrom, $lte: dateRangeTo },
+            timeRangeFrom: { $gte: timeRangeFrom },
+            timeRangeTo: { $lte: timeRangeTo },
+            branches: branches
+        }
+        console.log(filter)
+        //change to admin
+        db.findMany(Sales.Branch, filter, '', function (result) {
+            if (result) {
+                console.log('Result shown');
+                res.status(201).json({ result });  //201 Created
+            } else {
+                console.log('Result not shown');
+                res.status(400).json({ msg: 'Something went wrong. Please try again.' })
+            }
+        })
+    },
+
+    viewExpenseFilter: (req, res) => {
+
+    }
 }
 
 module.exports = controller;
