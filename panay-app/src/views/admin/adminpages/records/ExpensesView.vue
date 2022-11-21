@@ -2,6 +2,28 @@
 import FilterMenu from '../../../../components/admin/records/FilterMenu.vue'
 
 export default {
+    data(){
+        return {
+            expenseRecords: [
+            {
+                    date: '2022/01/01',
+                    itemName: 'Butter',
+                    amount: 800.00,
+                    category: 'Bakery Items',
+                    branch: 'Paligsahan',
+                    notes: 'bought in puregold'
+            },
+            {
+                    date: '2022/01/01',
+                    itemName: 'Flour',
+                    amount: 500.00,
+                    category: 'Bakery Items',
+                    branch: 'Paligsahan',
+                    notes: 'palengke'
+            },
+            ]
+        }
+    },
     components: {
         FilterMenu
     }
@@ -28,7 +50,15 @@ export default {
             </tr>
         </thead>
         <tbody>
-            <tr>
+            <tr v-for="record in expenseRecords">
+                <td>{{record.date}}</td>
+                <td>{{record.itemName}}</td>
+                <td>P{{record.amount}}</td>
+                <td>{{record.category}}</td>
+                <td>{{record.branch}}</td>
+                <td>{{record.notes}}</td>
+            </tr>
+            <!--<tr>
                 <td>2022/01/01</td>
                 <td>Lorem ipsum dolor sit egestas.</td>
                 <td>₱9,999,999,999.99</td>
@@ -36,7 +66,7 @@ export default {
                 <td>Lorem ipsum dolor sit vivamus.</td>
                 <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
             </tr>
-            <!-- <tr>
+             <tr>
                 <td>2022/01/01</td>
                 <td>Lorem ipsum dolor sit egestas.</td>
                 <td>₱9,999,999,999.99</td>

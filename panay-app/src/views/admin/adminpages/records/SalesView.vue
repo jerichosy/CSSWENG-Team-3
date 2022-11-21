@@ -2,6 +2,26 @@
 import FilterMenu from '../../../../components/admin/records/FilterMenu.vue'
 
 export default {
+    data(){
+        return {
+            salesRecords: [
+                {
+                    date: '2022/01/01',
+                    time: '08:00 AM',
+                    amount: 1200.00,
+                    customerCount: 10,
+                    branch: 'Paligsahan'
+                },
+                {
+                    date: '2022/01/01',
+                    time: '09:00 AM',
+                    amount: 1300.00,
+                    customerCount: 12,
+                    branch: 'Paligsahan'
+                }
+            ]
+        }
+    },
     components: {
         FilterMenu
     }
@@ -27,14 +47,14 @@ export default {
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>2022/01/01</td>
-                <td>08:00 PM</td>
-                <td>P9,999,999,999.99</td>
-                <td>9,999,999</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
+            <tr v-for="record in salesRecords">
+                <td>{{record.date}}</td>
+                <td>{{record.time}}</td>
+                <td>P{{record.amount}}</td>
+                <td>{{record.customerCount}}</td>
+                <td>{{record.branch}}</td>
             </tr>
-            <!-- <tr>
+            <!--<tr>
                 <td>2022/01/01</td>
                 <td>08:00 PM</td>
                 <td>P9,999,999,999.99</td>
