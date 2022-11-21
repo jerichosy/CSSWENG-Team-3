@@ -300,8 +300,7 @@ const controller = {
 
         var filter = {
             createdAt: { $gte: dateRangeFrom, $lte: dateRangeTo },
-            timeRangeFrom: { $gte: timeRangeFrom },
-            timeRangeTo: { $lte: timeRangeTo },
+            time: { $gte: timeRangeFrom, $lte: timeRangeTo },
             branchID: branches
         }
         console.log(filter)
