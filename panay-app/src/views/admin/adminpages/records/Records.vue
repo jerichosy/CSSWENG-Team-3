@@ -26,17 +26,33 @@ export default {
 </script>
 
 <template>
+    <div class="row p-0 m-0">
+        <ul class="nav nav-tabs bg-primary">
+            <li class="nav-item">
+                <RouterLink class="nav-link" :class="{ active: $route.name === 'sales'}" to="sales">Sales</RouterLink>
+            </li>
+            <li class="nav-item">
+                <RouterLink class="nav-link" :class="{ active: $route.name === 'expenses'}" to="expenses">Expenses</RouterLink>
+            </li>
+        </ul>
+    </div>
+
     <div class="row">
+        <RouterView />
+    </div>
+
+    <!-- <div class="row">
         <FilterDropdown class="col-2" :is-link-list="true" 
                 :options="this.pageOptions"
                 :placeholder='currentPage' />
         
-        <FilterMenu />
+
     </div>
 
+    <FilterMenu />
 
 
 
-    <RouterView />
+    <RouterView /> -->
 
 </template>
