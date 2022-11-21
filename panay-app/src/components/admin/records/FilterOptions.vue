@@ -4,7 +4,7 @@ import FilterCheckboxDropdown from './FilterCheckboxDropdown.vue';
 export default {
     data() {
         return {
-            branchOptions: [{title: "Paligsahan"}, {title: "Manila"}, {title: "QC"}],
+            branchOptions: [{branchName: "Paligsahan"}, {branchName: "Manila"}, {branchName: "QC"}],
             categoryOptions: [{title: "Salary"}, {title: "Grocery"}, {title: "Utilities"}, 
                             {title: "Food"}, {title: "Gasul"}, {title: "Bakery Items"}, 
                             {title: "Rent"}, {title: "Misc."}, {title: "Taxes"}]
@@ -36,18 +36,26 @@ export default {
         <form class="card card-body">
             <fieldset>
                 <legend>Date Range</legend>
-                <label for="dateRangeFrom">From</label> <input id="dateRangeFrom" type="date">
-                <label for="dateRangeTo">To</label> <input id="dateRangeTo" type="date">
+                <label for="dateRangeFrom">From</label> <input type="date" name="dateRangeFrom" id="dateRangeFrom">
+                <label for="dateRangeTo">To</label> <input type="date" name="dateRangeTo" id="dateRangeTo">
             </fieldset>
             <fieldset>
                 <legend>Time Range</legend>
-                <label for="timeRangeFrom">From</label> <input id="timeRangeFrom" type="time">
-                <label for="timeRangeTo">To</label> <input id="timeRangeTo" type="time">
+                <label for="timeRangeFrom">From</label> <input type="time" name="timeRangeFrom" id="timeRangeFrom" >
+                <label for="timeRangeTo">To</label> <input type="time" name="timeRangeTo" id="timeRangeTo" >
             </fieldset>
-            <FilterCheckboxDropdown filter-item-single="branch"
+            <fieldset>
+                <legend>Branches</legend>
+                <div v-for="branch in branchOptions">
+                    <input type="checkbox" name="branches" :id="branch.branchName" :value="branch.branchName" />
+                    <label :for="branch.branchName">{{branch.branchName}}</label>
+                </div>
+            </fieldset>
+
+            <!-- <FilterCheckboxDropdown filter-item-single="branch"
                                     filter-item-plural="branches"
                                     :options="this.branchOptions"
-                />
+                /> -->
 
             <button type="submit">Filter</button>
             <button type="reset">Reset</button>
