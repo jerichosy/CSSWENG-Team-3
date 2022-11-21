@@ -99,14 +99,13 @@ const controller = {
     },
 
     addSales: (req, res) => {
-        const { branchID, sales, customercount, timeRangeFrom, timeRangeTo } = req.body;
+        const { branchID, sales, customercount, time } = req.body;
         console.log(req.body)
         var salesobj = {
             branchID: branchID,
             sales: sales,
             customercount: customercount,
-            timeRangeFrom: timeRangeFrom,
-            timeRangeTo: timeRangeTo
+            time: time
         }
 
         db.insertOne(Sales.Branch, salesobj, function (flag) {
@@ -166,14 +165,13 @@ const controller = {
     },
 
     editSales: (req, res) => {
-        const { id, branchID, sales, customercount, timeRangeFrom, timeRangeTo } = req.body;
+        const { id, branchID, sales, customercount, time } = req.body;
         console.log(req.body)
         var salesobj = {
             branchID: branchID,
             sales: sales,
             customercount: customercount,
-            timeRangeFrom: timeRangeFrom,
-            timeRangeTo: timeRangeTo
+            time: time
         }
 
         db.updateOne(Sales.Branch, { branchID: branchID, _id: new Object(id) }, salesobj, function (flag) {
