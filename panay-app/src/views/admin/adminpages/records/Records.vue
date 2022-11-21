@@ -37,7 +37,7 @@ export default {
         </ul>
     </div>
 
-    <div class="row">
+    <div class="row container p-0 m-0">
         <RouterView />
     </div>
 

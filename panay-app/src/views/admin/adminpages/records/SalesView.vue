@@ -1,6 +1,19 @@
 <script>
+import FilterMenu from '../../../../components/admin/records/FilterMenu.vue'
+
+export default {
+    components: {
+        FilterMenu
+    }
+}
 </script>
 <template>
+
+<div class="row m-0 p-2">
+    <div class="col p-0 m-0"> 
+        <FilterMenu />
+    </div>
+</div>
 
 <div class="table-responsive row m-0">
     <table class="table table-striped table-sm">
@@ -21,7 +34,7 @@
                 <td>9,999,999</td>
                 <td>Lorem ipsum dolor sit vivamus.</td>
             </tr>
-            <tr>
+            <!-- <tr>
                 <td>2022/01/01</td>
                 <td>08:00 PM</td>
                 <td>P9,999,999,999.99</td>
@@ -272,7 +285,7 @@
                 <td>P9,999,999,999.99</td>
                 <td>9,999,999</td>
                 <td>Lorem ipsum dolor sit vivamus.</td>
-            </tr>
+            </tr> -->
         </tbody>
     </table>
 </div>
