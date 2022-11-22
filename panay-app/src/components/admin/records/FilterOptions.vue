@@ -33,16 +33,14 @@ export default {
         },
 
         filterRows() {
-            let startDate = this.localizeDate(this.startDate)
-            let endDate = this.localizeDate(this.endDate)
+            let startDate = this.formatDate(this.startDate)
+            let endDate = this.formatDate(this.endDate)
         }
     },
     
     methods: {
-        localizeDate(date) {
-            if (!date || !date.includes('-')) return date
-            const [yyyy, mm, dd] = date.split('-')
-            return new Date(`${yyyy}/${mm}/${dd}`)
+        formatDate(date) {
+            return date.replace(/-/g, '/' )
         }
     }
 }
@@ -55,12 +53,13 @@ export default {
                 <legend>Date Range</legend>
                 <label for="date-from">From</label> <input type="date" name="date-from" id="date-from" v-model="dateFrom">
                 <label for="date-to">To</label> <input type="date" name="date-to" id="date-to" v-model="dateTo">
-                <p>{{startDate}} {{endDate}}</p>
+                <p>{{this.formatDate(dateFrom)}} {{this.formatDate(dateTo)}}</p>
             </fieldset>
             <fieldset>
                 <legend>Time Range</legend>
                 <label for="time-from">From</label> <input type="time" name="time-from" id="time-from" v-model="timeFrom" >
                 <label for="time-to">To</label> <input type="time" name="time-to" id="time-to" v-model="timeTo" >
+                <p>{{timeFrom}} {{timeTo}}</p>
             </fieldset>
             <fieldset>
                 <legend>Branches</legend>
