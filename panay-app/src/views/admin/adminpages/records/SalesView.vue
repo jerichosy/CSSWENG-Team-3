@@ -26,7 +26,8 @@ export default {
                     customerCount: 12,
                     branch: 'Makati'
                 }
-            ]
+            ],
+            filters: {}
         }
     },
     components: {
@@ -38,10 +39,10 @@ export default {
 
 <div class="row m-0 p-2">
     <div class="col p-0 m-0"> 
-        <FilterMenu />
+        <FilterMenu @update-filter="(newFilters) => this.filters = newFilters"
+                    />
     </div>
-
-    <input type="date"/>
+    <p>{{filters}}</p>
 </div>
 
 <div class="table-responsive row m-0">

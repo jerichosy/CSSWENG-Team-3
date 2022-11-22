@@ -11,15 +11,24 @@ export default {
             branchOptions: [{branchName: "Paligsahan"}, {branchName: "Manila"}, {branchName: "QC"}],
             categoryOptions: [{title: "Salary"}, {title: "Grocery"}, {title: "Utilities"}, 
                             {title: "Food"}, {title: "Gasul"}, {title: "Bakery Items"}, 
-                            {title: "Rent"}, {title: "Misc."}, {title: "Taxes"}]
-
+                            {title: "Rent"}, {title: "Misc."}, {title: "Taxes"}],
+            filters: {}
         }
     },
+    watch: {
+        filters: {
+            handler(newFilter) {
+                this.$emit('updateFilter', newFilter)
+            },
+            deep: true
+        }
+        
+    },
     components: {
-    FilterDropdown,
-    FilterCheckboxDropdown,
-    FilterOptions
-}
+        FilterDropdown,
+        FilterCheckboxDropdown,
+        FilterOptions
+    }
 }
 </script>
 
@@ -32,7 +41,9 @@ export default {
     </div>
 
     <FilterOptions  :branch-options="this.branchOptions" 
-                    :category-options="this.categoryOptions"/>
+                    :category-options="this.categoryOptions"
+                    @update-filter="(newFilters) => this.filters = newFilters"
+                    />
 </template>
 
 <style scoped>
