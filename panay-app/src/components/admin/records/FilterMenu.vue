@@ -8,7 +8,7 @@ export default {
     data() {
         return {
             pageOptions: [{ title: "Sales", path: "sales"}, { title: "Expenses", path: "expenses" }],
-            branchOptions: [{branchName: "Paligsahan"}, {branchName: "Manila"}, {branchName: "QC"}],
+            branchOptions: [{branchName: "Paligsahan"}, {branchName: "Manila"}, {branchName: "QC"}, {branchName: "Makati"}],
             categoryOptions: [{title: "Salary"}, {title: "Grocery"}, {title: "Utilities"}, 
                             {title: "Food"}, {title: "Gasul"}, {title: "Bakery Items"}, 
                             {title: "Rent"}, {title: "Misc."}, {title: "Taxes"}],

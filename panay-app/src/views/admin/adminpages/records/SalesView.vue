@@ -30,6 +30,17 @@ export default {
             filters: {}
         }
     },
+
+    computed: {
+        filteredSales() {
+            if (this.filters.checkedBranches && this.filters.checkedBranches.length)
+                return this.salesRecords.filter(record => 
+                    record.branch === this.filters.checkedBranches[this.filters.checkedBranches.indexOf(record.branch)]
+                )
+            else
+                return this.salesRecords
+        }
+    },
     components: {
         FilterMenu
     }
@@ -42,7 +53,7 @@ export default {
         <FilterMenu @update-filter="(newFilters) => this.filters = newFilters"
                     />
     </div>
-    <p>{{filters}}</p>
+    <p>{{filteredSales}}</p>
 </div>
 
 <div class="table-responsive row m-0">
@@ -57,7 +68,7 @@ export default {
             </tr>
         </thead>
         <tbody>
-            <tr v-for="record in salesRecords">
+            <tr v-for="record in filteredSales">
                 <td>{{record.date}}</td>
                 <td>{{record.time}}</td>
                 <td>P{{record.amount}}</td>
