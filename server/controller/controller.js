@@ -35,6 +35,7 @@ const controller = {
 
     },
 
+    // FIXME: Rename to createBranch?
     signup: (req, res) => {
         const { name, password, isadmin } = req.body;
         console.log(req.body)
@@ -75,27 +76,47 @@ const controller = {
         })
     },
 
-    addExpense: (req, res) => {
-        const { branchID, item, category, amount, notes } = req.body;
-        console.log(req.body)
-        var expense = {
-            branchID: branchID,
-            item: item,
-            category: category,
-            amount: amount,
-            notes: notes
-        }
-
-        db.insertOne(Expense.Branch, expense, function (flag) {
-            if (flag) {
-                console.log('Expense added');
-                res.status(201).json({ msg: 'Expense added. 201 Created' });  //201 Created
+    viewBranch: (req, res) => {
+        db.findMany(User, {}, '', function (branch) {
+            if (branch) {
+                console.log('Branch shown');
+                res.status(201).json({ branch });  //201 Created
             } else {
-                console.log('Expense not added');
+                console.log('Branch not shown');
                 res.status(400).json({ msg: 'Something went wrong. Please try again.' })
             }
         })
-        // res.redirect('/');
+    },
+
+    editBranch: (req, res) => {
+        var { branchID, branchName, branchPassword } = req.body;
+        console.log(branchPassword)
+        const saltRounds = 10;
+        bcrypt.hash(branchPassword, saltRounds, function (err, hashed) {
+            branchPassword = hashed
+            console.log(branchPassword)
+            db.updateOne(User, { branchID: branchID }, {
+                branchName: branchName,
+                branchPassword: branchPassword
+            }, function (flag) {
+                console.log('Edit success: ' + flag);
+                res.status(201).json({ msg: 'Edit success' })
+            })
+        })
+    },
+
+    deleteBranch: (req, res) => {
+        const { name } = req.body;
+        console.log(req.body)
+        db.deleteOne(User, { branchID: name }, function (flag) {
+            if (flag) {
+                console.log(` deleted`);
+                res.status(201).json({ msg: 'branch deleted' }) //201 Created
+            } else {
+                console.log(` not deleted`);
+                res.status(400).json({ msg: 'Something went wrong. Please try again.' })
+            }
+        })
     },
 
     addSales: (req, res) => {
@@ -120,6 +141,41 @@ const controller = {
         // res.redirect('/');
     },
 
+    addExpense: (req, res) => {
+        const { branchID, item, category, amount, notes } = req.body;
+        console.log(req.body)
+        var expense = {
+            branchID: branchID,
+            item: item,
+            category: category,
+            amount: amount,
+            notes: notes
+        }
+
+        db.insertOne(Expense.Branch, expense, function (flag) {
+            if (flag) {
+                console.log('Expense added');
+                res.status(201).json({ msg: 'Expense added. 201 Created' });  //201 Created
+            } else {
+                console.log('Expense not added');
+                res.status(400).json({ msg: 'Something went wrong. Please try again.' })
+            }
+        })
+        // res.redirect('/');
+    },
+
+    viewSales: (req, res) => {
+        db.findMany(Sales.Branch, {}, '', function (sales) {
+            if (sales) {
+                console.log('Sales shown');
+                res.status(201).json({ sales });  //201 Created
+            } else {
+                console.log('Sales not shown');
+                res.status(400).json({ msg: 'Something went wrong. Please try again.' })
+            }
+        })
+    },
+
     viewExpense: (req, res) => {
         db.findMany(Expense.Branch, {}, '', function (expenses) {
             if (expenses) {
@@ -132,13 +188,51 @@ const controller = {
         })
     },
 
-    viewSales: (req, res) => {
-        db.findMany(Sales.Branch, {}, '', function (sales) {
-            if (sales) {
-                console.log('Sales shown');
-                res.status(201).json({ sales });  //201 Created
+    viewSalesFilter: (req, res) => {
+        var { dateRangeFrom, dateRangeTo, timeRangeFrom, timeRangeTo, branches } = req.body;
+        console.log(req.body);
+        var dateRangeFrom = new Date(dateRangeFrom)
+        var dateRangeTo = new Date(dateRangeTo)
+        dateRangeTo.setDate(dateRangeTo.getDate() + 1)
+
+        var filter = {
+            createdAt: { $gte: dateRangeFrom, $lte: dateRangeTo },
+            time: { $gte: timeRangeFrom, $lte: timeRangeTo },
+            branchID: branches
+        }
+        console.log(filter)
+        //change to admin
+        db.findMany(Sales.Branch, filter, '', function (result) {
+            if (result) {
+                console.log('Result shown');
+                res.status(201).json({ result });  //201 Created
             } else {
-                console.log('Sales not shown');
+                console.log('Result not shown');
+                res.status(400).json({ msg: 'Something went wrong. Please try again.' })
+            }
+        })
+    },
+
+    viewExpenseFilter: (req, res) => {
+
+    },
+
+    editSales: (req, res) => {
+        const { id, branchID, sales, customercount, time } = req.body;
+        console.log(req.body)
+        var salesobj = {
+            branchID: branchID,
+            sales: sales,
+            customercount: customercount,
+            time: time
+        }
+
+        db.updateOne(Sales.Branch, { branchID: branchID, _id: new Object(id) }, salesobj, function (flag) {
+            if (flag) {
+                console.log('Edit success: ' + flag);
+                res.status(201).json({ msg: 'Edit success' })
+            } else {
+                console.log('Sales not edited');
                 res.status(400).json({ msg: 'Something went wrong. Please try again.' })
             }
         })
@@ -164,22 +258,14 @@ const controller = {
         })
     },
 
-    editSales: (req, res) => {
-        const { id, branchID, sales, customercount, time } = req.body;
-        console.log(req.body)
-        var salesobj = {
-            branchID: branchID,
-            sales: sales,
-            customercount: customercount,
-            time: time
-        }
-
-        db.updateOne(Sales.Branch, { branchID: branchID, _id: new Object(id) }, salesobj, function (flag) {
+    deleteSales: (req, res) => {
+        const { id } = req.body;
+        db.deleteOne(Sales.Branch, { _id: new Object(id) }, function (flag) {
             if (flag) {
-                console.log('Edit success: ' + flag);
-                res.status(201).json({ msg: 'Edit success' })
+                console.log('Delete success: ' + flag);
+                res.status(201).json({ msg: 'Delete success' })
             } else {
-                console.log('Sales not edited');
+                console.log('Sales not deleted');
                 res.status(400).json({ msg: 'Something went wrong. Please try again.' })
             }
         })
@@ -193,19 +279,6 @@ const controller = {
                 res.status(201).json({ msg: 'Delete success' })
             } else {
                 console.log('Expense not deleted');
-                res.status(400).json({ msg: 'Something went wrong. Please try again.' })
-            }
-        })
-    },
-
-    deleteSales: (req, res) => {
-        const { id } = req.body;
-        db.deleteOne(Sales.Branch, { _id: new Object(id) }, function (flag) {
-            if (flag) {
-                console.log('Delete success: ' + flag);
-                res.status(201).json({ msg: 'Delete success' })
-            } else {
-                console.log('Sales not deleted');
                 res.status(400).json({ msg: 'Something went wrong. Please try again.' })
             }
         })
@@ -246,78 +319,6 @@ const controller = {
         transfer(Sales, "Sales");
         transfer(Expense, "Expense");
         res.status(201).json({ msg: 'Done' });
-    },
-
-    deleteBranch: (req, res) => {
-        const { name } = req.body;
-        console.log(req.body)
-        db.deleteOne(User, { branchID: name }, function (flag) {
-            if (flag) {
-                console.log(` deleted`);
-                res.status(201).json({ msg: 'branch deleted' }) //201 Created
-            } else {
-                console.log(` not deleted`);
-                res.status(400).json({ msg: 'Something went wrong. Please try again.' })
-            }
-        })
-    },
-
-    editBranch: (req, res) => {
-        var { branchID, branchName, branchPassword } = req.body;
-        console.log(branchPassword)
-        const saltRounds = 10;
-        bcrypt.hash(branchPassword, saltRounds, function (err, hashed) {
-            branchPassword = hashed
-            console.log(branchPassword)
-            db.updateOne(User, { branchID: branchID }, {
-                branchName: branchName,
-                branchPassword: branchPassword
-            }, function (flag) {
-                console.log('Edit success: ' + flag);
-                res.status(201).json({ msg: 'Edit success' })
-            })
-        })
-    },
-
-    viewBranch: (req, res) => {
-        db.findMany(User, {}, '', function (branch) {
-            if (branch) {
-                console.log('Branch shown');
-                res.status(201).json({ branch });  //201 Created
-            } else {
-                console.log('Branch not shown');
-                res.status(400).json({ msg: 'Something went wrong. Please try again.' })
-            }
-        })
-    },
-
-    viewSalesFilter: (req, res) => {
-        var { dateRangeFrom, dateRangeTo, timeRangeFrom, timeRangeTo, branches } = req.body;
-        console.log(req.body);
-        var dateRangeFrom = new Date(dateRangeFrom)
-        var dateRangeTo = new Date(dateRangeTo)
-        dateRangeTo.setDate(dateRangeTo.getDate() + 1)
-
-        var filter = {
-            createdAt: { $gte: dateRangeFrom, $lte: dateRangeTo },
-            time: { $gte: timeRangeFrom, $lte: timeRangeTo },
-            branchID: branches
-        }
-        console.log(filter)
-        //change to admin
-        db.findMany(Sales.Branch, filter, '', function (result) {
-            if (result) {
-                console.log('Result shown');
-                res.status(201).json({ result });  //201 Created
-            } else {
-                console.log('Result not shown');
-                res.status(400).json({ msg: 'Something went wrong. Please try again.' })
-            }
-        })
-    },
-
-    viewExpenseFilter: (req, res) => {
-
     }
 }
 
