@@ -36,13 +36,13 @@ export default {
         <form class="card card-body">
             <fieldset>
                 <legend>Date Range</legend>
-                <label for="dateRangeFrom">From</label> <input type="date" name="dateRangeFrom" id="dateRangeFrom">
-                <label for="dateRangeTo">To</label> <input type="date" name="dateRangeTo" id="dateRangeTo">
+                <label for="date-from">From</label> <input type="date" name="date-from" id="date-from">
+                <label for="date-to">To</label> <input type="date" name="date-to" id="date-to">
             </fieldset>
             <fieldset>
                 <legend>Time Range</legend>
-                <label for="timeRangeFrom">From</label> <input type="time" name="timeRangeFrom" id="timeRangeFrom" >
-                <label for="timeRangeTo">To</label> <input type="time" name="timeRangeTo" id="timeRangeTo" >
+                <label for="time-from">From</label> <input type="time" name="time-from" id="time-from" >
+                <label for="time-to">To</label> <input type="time" name="time-to" id="time-to" >
             </fieldset>
             <fieldset>
                 <legend>Branches</legend>
