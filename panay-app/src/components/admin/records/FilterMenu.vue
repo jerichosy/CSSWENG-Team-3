@@ -8,7 +8,10 @@ export default {
     data() {
         return {
             pageOptions: [{ title: "Sales", path: "sales"}, { title: "Expenses", path: "expenses" }],
-            branchOptions: [{title: "Paligsahan"}, {title: "Manila"}, {title: "QC"}]
+            branchOptions: [{branchName: "Paligsahan"}, {branchName: "Manila"}, {branchName: "QC"}],
+            categoryOptions: [{title: "Salary"}, {title: "Grocery"}, {title: "Utilities"}, 
+                            {title: "Food"}, {title: "Gasul"}, {title: "Bakery Items"}, 
+                            {title: "Rent"}, {title: "Misc."}, {title: "Taxes"}]
 
         }
     },
@@ -28,7 +31,8 @@ export default {
         </button>
     </div>
 
-    <FilterOptions :branch-options="this.branchOptions"/>
+    <FilterOptions  :branch-options="this.branchOptions" 
+                    :category-options="this.categoryOptions"/>
 </template>
 
 <style scoped>

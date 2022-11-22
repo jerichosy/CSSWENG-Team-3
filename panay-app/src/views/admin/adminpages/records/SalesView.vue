@@ -18,6 +18,13 @@ export default {
                     amount: 1300.00,
                     customerCount: 12,
                     branch: 'Paligsahan'
+                },
+                {
+                    date: '2022/01/02',
+                    time: '09:00 AM',
+                    amount: 1300.00,
+                    customerCount: 12,
+                    branch: 'Makati'
                 }
             ]
         }
@@ -33,6 +40,8 @@ export default {
     <div class="col p-0 m-0"> 
         <FilterMenu />
     </div>
+
+    <input type="date"/>
 </div>
 
 <div class="table-responsive row m-0">

@@ -4,15 +4,19 @@ import FilterCheckboxDropdown from './FilterCheckboxDropdown.vue';
 export default {
     data() {
         return {
-            branchOptions: [{branchName: "Paligsahan"}, {branchName: "Manila"}, {branchName: "QC"}],
-            categoryOptions: [{title: "Salary"}, {title: "Grocery"}, {title: "Utilities"}, 
-                            {title: "Food"}, {title: "Gasul"}, {title: "Bakery Items"}, 
-                            {title: "Rent"}, {title: "Misc."}, {title: "Taxes"}]
+            dateFrom: '',
+            dateTo: '',
+            timeFrom: '',
+            timeTo: '',
+            checkedBranches: [],
+            checkedCategories: [],
+            itemSearch: ''
         }
     },
 
     props: {
-        //branchOptions: [Object]
+        branchOptions: {type: Array},
+        categoryOptions: {type: Array}
     },
 
     components: {
@@ -26,6 +30,19 @@ export default {
 
         isExpenses() {
             return this.$route.name === 'expenses';
+        },
+
+        filterRows() {
+            let startDate = this.localizeDate(this.startDate)
+            let endDate = this.localizeDate(this.endDate)
+        }
+    },
+    
+    methods: {
+        localizeDate(date) {
+            if (!date || !date.includes('-')) return date
+            const [yyyy, mm, dd] = date.split('-')
+            return new Date(`${yyyy}/${mm}/${dd}`)
         }
     }
 }
@@ -33,43 +50,36 @@ export default {
 
 <template>
     <div class="collapse" id="filterForm" v-if="isSales">
-        <form class="card card-body">
+        <div class="card card-body">
             <fieldset>
                 <legend>Date Range</legend>
-                <label for="date-from">From</label> <input type="date" name="date-from" id="date-from">
-                <label for="date-to">To</label> <input type="date" name="date-to" id="date-to">
+                <label for="date-from">From</label> <input type="date" name="date-from" id="date-from" v-model="dateFrom">
+                <label for="date-to">To</label> <input type="date" name="date-to" id="date-to" v-model="dateTo">
+                <p>{{startDate}} {{endDate}}</p>
             </fieldset>
             <fieldset>
                 <legend>Time Range</legend>
-                <label for="time-from">From</label> <input type="time" name="time-from" id="time-from" >
-                <label for="time-to">To</label> <input type="time" name="time-to" id="time-to" >
+                <label for="time-from">From</label> <input type="time" name="time-from" id="time-from" v-model="timeFrom" >
+                <label for="time-to">To</label> <input type="time" name="time-to" id="time-to" v-model="timeTo" >
             </fieldset>
             <fieldset>
                 <legend>Branches</legend>
                 <div v-for="branch in branchOptions">
-                    <input type="checkbox" name="branches" :id="branch.branchName" :value="branch.branchName" />
-                    <label :for="branch.branchName">{{branch.branchName}}</label>
+                    <input type="checkbox" name="branches" :id="branch.branchName.toLowerCase()" :value="branch.branchName" v-model="checkedBranches" />
+                    <label :for="branch.branchName.toLowerCase()">{{branch.branchName}}</label>
                 </div>
             </fieldset>
-
-            <!-- <FilterCheckboxDropdown filter-item-single="branch"
-                                    filter-item-plural="branches"
-                                    :options="this.branchOptions"
-                /> -->
-
-            <button type="submit">Filter</button>
-            <button type="reset">Reset</button>
-        </form>
+        </div>
     </div>
 
     <div class="collapse" id="filterForm" v-if="isExpenses">
-        <form class="card card-body">
+        <div class="card card-body">
             
-            <label for="expensesItemSearch">Item Search</label> <input id="expensesItemSearch" type="text">
+            <label for="item-search">Item Search</label> <input id="item-search" type="text" v-model="itemSearch">
             <fieldset>
                 <legend>Date Range</legend>
-                <label for="expensesDateRangeFrom">From</label> <input id="expensesDateRangeFrom" type="date">
-                <label for="expensesDateRangeTo">To</label> <input id="expensesDateangeTo" type="date">
+                <label for="date-from">From</label> <input id="date-from" type="date" v-model="dateFrom">
+                <label for="date-to">To</label> <input id="date-to" type="date" v-model="dateTo">
             </fieldset>
             
             <FilterCheckboxDropdown filter-item-single="branch"
@@ -81,10 +91,7 @@ export default {
                                 filter-item-plural="categories"
                                 :options="this.categoryOptions"
             />
-
-            <button type="submit">Filter</button>
-            <button type="reset">Reset</button>
-        </form>
+        </div>
     </div>
 
 
