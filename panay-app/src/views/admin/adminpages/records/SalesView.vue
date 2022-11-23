@@ -8,7 +8,7 @@ export default {
                 {
                     date: '2022-03-04',
                     time: '08:00',
-                    amount: 1200.00,
+                    amount: 1200.05,
                     customerCount: 10,
                     branch: 'Paligsahan'
                 },
@@ -107,7 +107,6 @@ export default {
 <div class="row m-0 p-2">
     <div class="col p-0 m-0"> 
         <FilterMenu @update-filters="(newFilter) => this.filters = newFilter"/>
-        <p>{{this.filters}}</p>
     </div>
 </div>
 
@@ -124,9 +123,9 @@ export default {
         </thead>
         <tbody>
             <tr v-for="record in filteredSales">
-                <td>{{record.date}}</td>
-                <td>{{record.time}}</td>
-                <td>P{{record.amount}}</td>
+                <td>{{this.formatDate(record.date)}}</td>
+                <td>{{this.formatTime(record.time)}}</td>
+                <td>₱{{record.amount.toFixed(2).toLocaleString('en-US')}}</td>
                 <td>{{record.customerCount}}</td>
                 <td>{{record.branch}}</td>
             </tr>

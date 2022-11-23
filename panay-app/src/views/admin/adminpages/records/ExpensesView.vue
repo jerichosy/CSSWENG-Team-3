@@ -72,6 +72,9 @@ export default {
     },
 
     methods: {
+        formatDate(date) {
+            return date.replace(/-/g, '/' )
+        },
         searchItem(record, searchFilter) {
             const searchString = searchFilter.toLowerCase();
             const itemName = record.itemName.toLowerCase();
@@ -105,9 +108,9 @@ export default {
         </thead>
         <tbody>
             <tr v-for="record in filteredExpenses">
-                <td>{{record.date}}</td>
+                <td>{{this.formatDate(record.date)}}</td>
                 <td>{{record.itemName}}</td>
-                <td>P{{record.amount}}</td>
+                <td>₱{{record.amount.toFixed(2).toLocaleString('en-US')}}</td>
                 <td>{{record.category}}</td>
                 <td>{{record.branch}}</td>
                 <td>{{record.notes}}</td>
