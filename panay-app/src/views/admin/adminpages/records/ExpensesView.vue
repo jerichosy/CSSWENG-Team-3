@@ -1,5 +1,5 @@
 <script>
-import FilterMenu from '../../../../components/admin/records/FilterMenu.vue'
+import FilterMenu from '../../../../components/admin/records/FilterButton.vue'
 import FilterOptions from '../../../../components/admin/records/FilterOptions.vue';
 
 export default {
@@ -49,7 +49,7 @@ export default {
     },
 
     components: {
-        FilterMenu,
+        FilterButton,
         FilterOptions
     },
 
@@ -72,7 +72,7 @@ export default {
 
 <div class="row m-0 p-2">
     <div class="col p-0 m-0"> 
-        <FilterMenu />
+        <FilterButton />
         <FilterOptions  :branch-options="this.branchOptions" 
                     :category-options="this.categoryOptions"
                     @update-filters="(newFilter) => this.filters = newFilter"

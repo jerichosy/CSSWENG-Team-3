@@ -1,6 +1,4 @@
 <script>
-import FilterMenu from '../../../../components/admin/records/FilterMenu.vue'
-import FilterDropdown from '../../../../components/admin/records/FilterDropdown.vue'
 
 export default {
 
@@ -61,10 +59,6 @@ export default {
                             {name: "Food"}, {name: "Gasul"}, {name: "Bakery Items"}, 
                             {name: "Rent"}, {name: "Misc."}, {name: "Taxes"}]
         }
-    },
-    components: {
-        FilterMenu,
-        FilterDropdown
     },
 
     computed: {
