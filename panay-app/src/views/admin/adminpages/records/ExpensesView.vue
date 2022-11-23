@@ -6,7 +6,7 @@ export default {
         return {
             expenseRecords: [
             {
-                    date: '2022/01/01',
+                    date: '2022-02-01',
                     itemName: 'Butter',
                     amount: 800.00,
                     category: 'Bakery Items',
@@ -14,18 +14,72 @@ export default {
                     notes: 'bought in puregold'
             },
             {
-                    date: '2022/01/01',
-                    itemName: 'Flour',
+                    date: '2022-01-01',
+                    itemName: 'Flax',
                     amount: 500.00,
-                    category: 'Bakery Items',
+                    category: 'Salary',
                     branch: 'Paligsahan',
                     notes: 'palengke'
             },
-            ]
+            {
+                    date: '2022-01-01',
+                    itemName: 'Flour',
+                    amount: 500.00,
+                    category: 'Bakery Items',
+                    branch: 'Makati',
+                    notes: 'palengke'
+            }
+            ],
+            filters: {
+                dateFrom: '',
+                dateTo: '',
+                timeFrom: '',
+                timeTo: '',
+                itemSearch: '',
+                checkedBranches: [],
+                checkedCategories: []
+            }
         }
     },
+
+    computed: {
+        filteredExpenses() {
+            let filteredExpenseRecords = this.expenseRecords
+
+            if (this.filters.itemSearch.length) {
+                filteredExpenseRecords =  filteredExpenseRecords.filter((record) => this.searchItem(record, this.filters.itemSearch))
+            }
+
+            if (this.filters.checkedBranches.length) {
+                filteredExpenseRecords =  filteredExpenseRecords.filter(record => record.branch === this.filters.checkedBranches[this.filters.checkedBranches.indexOf(record.branch)])
+            }
+
+            if (this.filters.dateFrom.length && this.filters.dateTo.length) {
+                filteredExpenseRecords = filteredExpenseRecords.filter( (record) => Date.parse(record.date) >= Date.parse(this.filters.dateFrom))
+                filteredExpenseRecords = filteredExpenseRecords.filter( (record) => Date.parse(record.date) <= Date.parse(this.filters.dateTo))
+            }
+
+            if (this.filters.checkedCategories.length) {
+                filteredExpenseRecords =  filteredExpenseRecords.filter(record => record.category === this.filters.checkedCategories[this.filters.checkedCategories.indexOf(record.category)])
+            }
+
+            return filteredExpenseRecords
+        }
+    },
+
     components: {
         FilterMenu
+    },
+
+    methods: {
+        searchItem(record, searchFilter) {
+            const searchString = searchFilter.toLowerCase();
+            const itemName = record.itemName.toLowerCase();
+
+            if (itemName.includes(searchString))
+                return true
+            return false
+        }
     }
 }
 </script>
@@ -33,7 +87,7 @@ export default {
 
 <div class="row m-0 p-2">
     <div class="col p-0 m-0"> 
-        <FilterMenu />
+        <FilterMenu @update-filters="(newFilter) => this.filters = newFilter"/>
     </div>
 </div>
 
@@ -50,7 +104,7 @@ export default {
             </tr>
         </thead>
         <tbody>
-            <tr v-for="record in expenseRecords">
+            <tr v-for="record in filteredExpenses">
                 <td>{{record.date}}</td>
                 <td>{{record.itemName}}</td>
                 <td>P{{record.amount}}</td>
@@ -58,407 +112,6 @@ export default {
                 <td>{{record.branch}}</td>
                 <td>{{record.notes}}</td>
             </tr>
-            <!--<tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-             <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>Lorem ipsum dolor sit egestas.</td>
-                <td>₱9,999,999,999.99</td>
-                <td>Bakery Items</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus, varius sed efficitur.</td>
-            </tr> -->
-
         </tbody>
     </table>
 </div>

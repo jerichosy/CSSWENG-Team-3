@@ -50,7 +50,6 @@ export default {
             if (this.filters.dateFrom.length && this.filters.dateTo.length) {
                 filteredSalesRecords = filteredSalesRecords.filter( (record) => Date.parse(record.date) >= Date.parse(this.filters.dateFrom))
                 filteredSalesRecords = filteredSalesRecords.filter( (record) => Date.parse(record.date) <= Date.parse(this.filters.dateTo))
-                
             }
 
             if (this.filters.timeFrom.length && this.filters.timeTo.length) {
