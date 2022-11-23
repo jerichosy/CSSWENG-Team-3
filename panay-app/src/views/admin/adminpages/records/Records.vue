@@ -37,22 +37,7 @@ export default {
         </ul>
     </div>
 
-    <div class="row container p-0 m-0">
+    <div class="row container-fluid p-0 m-0">
         <RouterView />
     </div>
-
-    <!-- <div class="row">
-        <FilterDropdown class="col-2" :is-link-list="true" 
-                :options="this.pageOptions"
-                :placeholder='currentPage' />
-        
-
-    </div>
-
-    <FilterMenu />
-
-
-
-    <RouterView /> -->
-
 </template>
