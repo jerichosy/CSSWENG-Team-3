@@ -274,7 +274,14 @@ const controller = {
         db.findMany(Sales.Admin, {}, 'branchName amount customerCount datetime', function (sales) {
             if (sales) {
                 console.log('Sales shown');
-                res.status(201).json({ sales });  //201 Created
+                // console.log(typeof (sales));
+                salescopy = JSON.parse(JSON.stringify(sales))
+                for (var i = 0; i < sales.length; i++) {
+                    salescopy[i].date = sales[i].datetime.toISOString().split('T')[0]
+                    salescopy[i].time = sales[i].datetime.toISOString().split('T')[1].split('.')[0].slice(0, -3)
+                    delete salescopy[i].datetime
+                }
+                res.status(201).json(salescopy);  //201 Created
             } else {
                 console.log('Sales not shown');
                 res.status(400).json({ msg: 'Something went wrong. Please try again.' })
