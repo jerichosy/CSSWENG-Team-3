@@ -70,32 +70,47 @@ export default {
 </script>
 
 <template>
-    <!-- sales filters -->
-    <form class="collapse show" id="filterForm" v-if="isSales">
+    <form class="collapse" id="filterForm">
         <div class="card card-body">
-            <fieldset>
+
+            <fieldset v-if="isExpenses">
+                <label for="item-search">Item Search</label> <input id="item-search" type="text" v-model="filters.itemSearch"/>
+            </fieldset>
+
+            <fieldset v-if="isSales || isExpenses">
                 <legend>Date Range</legend>
                 <label for="date-from">From</label> <input type="date" name="date-from" id="date-from" v-model="filters.dateFrom">
                 <label for="date-to">To</label> <input type="date" name="date-to" id="date-to" v-model="filters.dateTo">
             </fieldset>
-            <fieldset>
+
+            <fieldset v-if="isSales">
                 <legend>Time Range</legend>
                 <label for="time-from">From</label> <input type="time" name="time-from" id="time-from" v-model="filters.timeFrom" >
                 <label for="time-to">To</label> <input type="time" name="time-to" id="time-to" v-model="filters.timeTo" >
             </fieldset>
-            <fieldset>
+
+            <fieldset v-if="isSales || isExpenses">
                 <legend>Branches</legend>
                 <div v-for="branch in branchOptions">
                     <input type="checkbox" name="branches" :id="branch.branchName.toLowerCase()" :value="branch.branchName" v-model="filters.checkedBranches" />
                     <label :for="branch.branchName.toLowerCase()">{{branch.branchName}}</label>
                 </div>
             </fieldset>
+
+            <fieldset v-if="isExpenses">
+                <legend>Categories</legend>
+                <div v-for="category in categoryOptions">
+                    <input type="checkbox" name="branches" :id="category.name.toLowerCase()" :value="category.name" v-model="filters.checkedCategories" />
+                    <label :for="category.name.toLowerCase()">{{category.name}}</label>
+                </div>
+            </fieldset>
+
             <button type="reset" @click="resetFilters">Reset Filters</button>
         </div>
     </form>
 
     <!-- expense filters -->
-    <div class="collapse" id="filterForm" v-if="isExpenses">
+    <!-- <div class="collapse" id="filterForm" v-if="isExpenses">
         <div class="card card-body">
             
             <label for="item-search">Item Search</label> <input id="item-search" type="text" v-model="filters.itemSearch">
@@ -103,7 +118,7 @@ export default {
                 <legend>Date Range</legend>
                 <label for="date-from">From</label> <input type="date" name="date-from" id="date-from" v-model="filters.dateFrom">
                 <label for="date-to">To</label> <input type="date" name="date-to" id="date-to" v-model="filters.dateTo">
-                <p>{{this.formatDate(this.filters.dateFrom)}} {{this.formatDate(this.filters.dateTo)}}</p>
+               
             </fieldset>
             
             <FilterCheckboxDropdown filter-item-single="branch"
@@ -116,7 +131,7 @@ export default {
                                 :options="this.categoryOptions"
             />
         </div>
-    </div>
+    </div> -->
 
 
 </template>

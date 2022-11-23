@@ -41,7 +41,6 @@ export default {
 
     computed: {
         filteredSales() {
-            console.log('filtering')
             let filteredSalesRecords = this.salesRecords
 
             if (this.filters.checkedBranches.length) {
@@ -55,14 +54,11 @@ export default {
             }
 
             if (this.filters.timeFrom.length && this.filters.timeTo.length) {
-                // not working yet
-                // console.log(Date.parse(this.formatTime(this.filters.timeFrom)))
-                // filteredSalesRecords = filteredSalesRecords.filter( (record) => Date.parse(record.time) >= Date.parse(this.filters.timeFrom))
-                // filteredSalesRecords = filteredSalesRecords.filter( (record) => Date.parse(record.time) >= Date.parse(this.filters.timeTo))
-            }           
+                filteredSalesRecords = filteredSalesRecords.filter( (record) => this.parseStartTime(this.filters.timeFrom, record))
+                filteredSalesRecords = filteredSalesRecords.filter( (record) => this.parseEndTime(this.filters.timeTo, record))
+            }
 
             return filteredSalesRecords
-            
         }
     },
     components: {
@@ -81,6 +77,25 @@ export default {
                 );
             }
         },
+
+        parseStartTime(startTime, record) {
+            const startDate = new Date('1970-01-01T' + startTime + ':00')
+            const recordDate = new Date('1970-01-01T' + record.time + ':00')
+
+            if (Date.parse(recordDate) >= Date.parse(startDate))
+                return true
+            return false
+        },
+
+        parseEndTime(endTime, record) {
+            const endDate = new Date('1970-01-01T' + endTime + ':00')
+            const recordDate = new Date('1970-01-01T' + record.time + ':00')
+
+            if (Date.parse(recordDate) <= Date.parse(endDate))
+                return true
+            return false
+        },
+
         checkIfFiltersEmpty: (x) => {
             x.length
         }
