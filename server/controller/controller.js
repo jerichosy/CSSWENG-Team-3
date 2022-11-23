@@ -281,10 +281,10 @@ const controller = {
                     salescopy[i].time = sales[i].datetime.toISOString().split('T')[1].split('.')[0].slice(0, -3)
                     delete salescopy[i].datetime
                 }
-                res.status(201).json(salescopy);  //201 Created
+                res.status(200).json(salescopy);  //200 OK
             } else {
                 console.log('Sales not shown');
-                res.status(400).json({ msg: 'Something went wrong. Please try again.' })
+                res.status(400).json({ msg: 'Something went wrong. Please try again.' })  //400 Bad Request
             }
         })
     },
