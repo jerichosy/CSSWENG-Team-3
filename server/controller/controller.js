@@ -120,20 +120,21 @@ const controller = {
     },
 
     addSales: (req, res) => {
-        const { branchID, sales, customercount, time } = req.body;
+        // const { branchID, sales, customercount, time } = req.body;
         console.log(req.body)
-        var salesobj = {
-            branchID: branchID,
-            sales: sales,
-            customercount: customercount,
-            time: time
-        }
+        // var salesobj = {
+        //     branchID: branchID,
+        //     sales: sales,
+        //     customercount: customercount,
+        //     time: time
+        // }
 
-        db.insertOne(Sales.Branch, salesobj, function (flag) {
+        db.insertOne(Sales.Branch, req.body, function (flag) {
             if (flag) {
                 console.log('Sales added');
                 res.status(201).json({ msg: 'Sales Added. 201 Created' });  //201 Created
             } else {
+                // Will trigger if req.body format does not match schema
                 console.log('Sales not added');
                 res.status(400).json({ msg: 'Something went wrong. Please try again.' })
             }
@@ -142,21 +143,22 @@ const controller = {
     },
 
     addExpense: (req, res) => {
-        const { branchID, item, category, amount, notes } = req.body;
+        // const { branchID, item, category, amount, notes } = req.body;
         console.log(req.body)
-        var expense = {
-            branchID: branchID,
-            item: item,
-            category: category,
-            amount: amount,
-            notes: notes
-        }
+        // var expense = {
+        //     branchID: branchID,
+        //     item: item,
+        //     category: category,
+        //     amount: amount,
+        //     notes: notes
+        // }
 
-        db.insertOne(Expense.Branch, expense, function (flag) {
+        db.insertOne(Expense.Branch, req.body, function (flag) {
             if (flag) {
                 console.log('Expense added');
                 res.status(201).json({ msg: 'Expense added. 201 Created' });  //201 Created
             } else {
+                // Will trigger if req.body format does not match schema
                 console.log('Expense not added');
                 res.status(400).json({ msg: 'Something went wrong. Please try again.' })
             }
@@ -231,7 +233,7 @@ const controller = {
         })
     },
 
-    // FIXME: Does not send a response. 
+    // TODO:: Verify response status codes 
     // FIXME: Does not filter by branch.
     submitSalesAndExpenses: (req, res) => {
         function transfer(x, y) {
@@ -269,7 +271,7 @@ const controller = {
     },
 
     adminViewSales: (req, res) => {
-        db.findMany(Sales.Admin, {}, '', function (sales) {
+        db.findMany(Sales.Admin, {}, 'branchName amount customerCount datetime', function (sales) {
             if (sales) {
                 console.log('Sales shown');
                 res.status(201).json({ sales });  //201 Created
@@ -292,6 +294,10 @@ const controller = {
         })
     },
 
+    // TODO: Finalize decision on this. 
+    // One problem is that by doing client side filtering in conjunction with limit,
+    // the filter only acts on the first 100 records for example. Thereby possibly neccessating a backend request still.
+    // Unless ofc, that's down to whether the user selects "Show All" or not.
     adminViewSalesFilter: (req, res) => {
         var { dateRangeFrom, dateRangeTo, timeRangeFrom, timeRangeTo, branches } = req.body;
         console.log(req.body);
@@ -317,6 +323,7 @@ const controller = {
         })
     },
 
+    // TODO: Same as above
     adminViewExpenseFilter: (req, res) => {
 
     },
