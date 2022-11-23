@@ -164,59 +164,6 @@ const controller = {
         // res.redirect('/');
     },
 
-    viewSales: (req, res) => {
-        db.findMany(Sales.Branch, {}, '', function (sales) {
-            if (sales) {
-                console.log('Sales shown');
-                res.status(201).json({ sales });  //201 Created
-            } else {
-                console.log('Sales not shown');
-                res.status(400).json({ msg: 'Something went wrong. Please try again.' })
-            }
-        })
-    },
-
-    viewExpense: (req, res) => {
-        db.findMany(Expense.Branch, {}, '', function (expenses) {
-            if (expenses) {
-                console.log('Expenses shown');
-                res.status(201).json({ expenses });  //201 Created
-            } else {
-                console.log('Expenses not shown');
-                res.status(400).json({ msg: 'Something went wrong. Please try again.' })
-            }
-        })
-    },
-
-    viewSalesFilter: (req, res) => {
-        var { dateRangeFrom, dateRangeTo, timeRangeFrom, timeRangeTo, branches } = req.body;
-        console.log(req.body);
-        var dateRangeFrom = new Date(dateRangeFrom)
-        var dateRangeTo = new Date(dateRangeTo)
-        dateRangeTo.setDate(dateRangeTo.getDate() + 1)
-
-        var filter = {
-            createdAt: { $gte: dateRangeFrom, $lte: dateRangeTo },
-            time: { $gte: timeRangeFrom, $lte: timeRangeTo },
-            branchID: branches
-        }
-        console.log(filter)
-        //change to admin
-        db.findMany(Sales.Branch, filter, '', function (result) {
-            if (result) {
-                console.log('Result shown');
-                res.status(201).json({ result });  //201 Created
-            } else {
-                console.log('Result not shown');
-                res.status(400).json({ msg: 'Something went wrong. Please try again.' })
-            }
-        })
-    },
-
-    viewExpenseFilter: (req, res) => {
-
-    },
-
     editSales: (req, res) => {
         const { id, branchID, sales, customercount, time } = req.body;
         console.log(req.body)
@@ -319,7 +266,60 @@ const controller = {
         transfer(Sales, "Sales");
         transfer(Expense, "Expense");
         res.status(201).json({ msg: 'Done' });
-    }
+    },
+
+    adminViewSales: (req, res) => {
+        db.findMany(Sales.Admin, {}, '', function (sales) {
+            if (sales) {
+                console.log('Sales shown');
+                res.status(201).json({ sales });  //201 Created
+            } else {
+                console.log('Sales not shown');
+                res.status(400).json({ msg: 'Something went wrong. Please try again.' })
+            }
+        })
+    },
+
+    adminViewExpense: (req, res) => {
+        db.findMany(Expense.Admin, {}, '', function (expenses) {
+            if (expenses) {
+                console.log('Expenses shown');
+                res.status(201).json({ expenses });  //201 Created
+            } else {
+                console.log('Expenses not shown');
+                res.status(400).json({ msg: 'Something went wrong. Please try again.' })
+            }
+        })
+    },
+
+    adminViewSalesFilter: (req, res) => {
+        var { dateRangeFrom, dateRangeTo, timeRangeFrom, timeRangeTo, branches } = req.body;
+        console.log(req.body);
+        var dateRangeFrom = new Date(dateRangeFrom)
+        var dateRangeTo = new Date(dateRangeTo)
+        dateRangeTo.setDate(dateRangeTo.getDate() + 1)
+
+        var filter = {
+            createdAt: { $gte: dateRangeFrom, $lte: dateRangeTo },
+            time: { $gte: timeRangeFrom, $lte: timeRangeTo },
+            branchID: branches
+        }
+        console.log(filter)
+        //change to admin
+        db.findMany(Sales.Admin, filter, '', function (result) {
+            if (result) {
+                console.log('Result shown');
+                res.status(201).json({ result });  //201 Created
+            } else {
+                console.log('Result not shown');
+                res.status(400).json({ msg: 'Something went wrong. Please try again.' })
+            }
+        })
+    },
+
+    adminViewExpenseFilter: (req, res) => {
+
+    },
 }
 
 module.exports = controller;
