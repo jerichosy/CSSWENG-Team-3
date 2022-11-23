@@ -4,6 +4,13 @@ import FilterCheckboxDropdown from './FilterCheckboxDropdown.vue';
 import FilterOptions from './FilterOptions.vue';
 
 export default {
+    components: {
+        FilterDropdown,
+        FilterCheckboxDropdown,
+        FilterOptions
+    },
+
+    emits: ['updateFilters'],
 
     data() {
         return {
@@ -12,22 +19,31 @@ export default {
             categoryOptions: [{title: "Salary"}, {title: "Grocery"}, {title: "Utilities"}, 
                             {title: "Food"}, {title: "Gasul"}, {title: "Bakery Items"}, 
                             {title: "Rent"}, {title: "Misc."}, {title: "Taxes"}],
-            filters: {}
+            filters: {
+                dateFrom: '',
+                dateTo: '',
+                timeFrom: '',
+                timeTo: '',
+                itemSearch: '',
+                checkedBranches: [],
+                checkedCategories: []
+            }
         }
     },
+
     watch: {
         filters: {
             handler(newFilter) {
-                this.$emit('updateFilter', newFilter)
+                    this.updateFilter(newFilter)
             },
             deep: true
         }
-        
     },
-    components: {
-        FilterDropdown,
-        FilterCheckboxDropdown,
-        FilterOptions
+
+    methods: {
+        updateFilter(newFilter) {
+            return this.$emit('updateFilters', newFilter)
+        }
     }
 }
 </script>
@@ -42,7 +58,7 @@ export default {
 
     <FilterOptions  :branch-options="this.branchOptions" 
                     :category-options="this.categoryOptions"
-                    @update-filter="(newFilters) => this.filters = newFilters"
+                    @update-filters="(newFilter) => this.filters = newFilter"
                     />
 </template>
 

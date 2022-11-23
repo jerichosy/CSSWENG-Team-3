@@ -12,6 +12,8 @@ export default {
         categoryOptions: {type: Array}
     },
 
+    emits: ['updateFilters'],
+
     data() {
         return {
             filters: {
@@ -29,11 +31,10 @@ export default {
     watch: {
         filters: {
             handler(newFilter) {
-                this.$emit('updateFilter', newFilter)
+                    this.updateFilter(newFilter)
             },
             deep: true
         }
-        
     },
 
     computed: {
@@ -52,38 +53,35 @@ export default {
     },
     
     methods: {
-        formatDate(date) {
-            return date.replace(/-/g, '/' )
+        updateFilter(newFilter) {
+            return this.$emit('updateFilters', newFilter)
         },
-        formatTime(time) {
-            if (time) {
-                return new Date('1970-01-01T' + time + 'Z')
-                .toLocaleTimeString('en-US',
-                    {timeZone:'UTC',hour12:true,hour:'numeric',minute:'numeric'}
-                );
-            }
-        },
-        updateFilters() {
-            this.$emit('updateFilters', filters)
+        resetFilters(){
+            this.filters.dateFrom='',
+            this.filters.dateTo='',
+            this.filters.timeFrom='',
+            this.filters.timeTo='',
+            this.filters.itemSearch='',
+            this.filters.checkedBranches=[],
+            this.filters.checkedCategories=[]
         }
     }
 }
 </script>
 
 <template>
-    <div class="collapse show" id="filterForm" v-if="isSales">
+    <!-- sales filters -->
+    <form class="collapse show" id="filterForm" v-if="isSales">
         <div class="card card-body">
             <fieldset>
                 <legend>Date Range</legend>
                 <label for="date-from">From</label> <input type="date" name="date-from" id="date-from" v-model="filters.dateFrom">
                 <label for="date-to">To</label> <input type="date" name="date-to" id="date-to" v-model="filters.dateTo">
-                <p>{{this.formatDate(this.filters.dateFrom)}} {{this.formatDate(this.filters.dateTo)}}</p>
             </fieldset>
             <fieldset>
                 <legend>Time Range</legend>
                 <label for="time-from">From</label> <input type="time" name="time-from" id="time-from" v-model="filters.timeFrom" >
                 <label for="time-to">To</label> <input type="time" name="time-to" id="time-to" v-model="filters.timeTo" >
-                <p>{{formatTime(filters.timeFrom)}} {{formatTime(filters.timeTo)}}</p>
             </fieldset>
             <fieldset>
                 <legend>Branches</legend>
@@ -91,11 +89,12 @@ export default {
                     <input type="checkbox" name="branches" :id="branch.branchName.toLowerCase()" :value="branch.branchName" v-model="filters.checkedBranches" />
                     <label :for="branch.branchName.toLowerCase()">{{branch.branchName}}</label>
                 </div>
-                <p>{{filters.checkedBranches}}</p>
             </fieldset>
+            <button type="reset" @click="resetFilters">Reset Filters</button>
         </div>
-    </div>
+    </form>
 
+    <!-- expense filters -->
     <div class="collapse" id="filterForm" v-if="isExpenses">
         <div class="card card-body">
             
