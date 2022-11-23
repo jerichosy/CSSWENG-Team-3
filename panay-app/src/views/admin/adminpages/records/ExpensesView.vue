@@ -1,35 +1,10 @@
 <script>
 import FilterMenu from '../../../../components/admin/records/FilterMenu.vue'
+import FilterOptions from '../../../../components/admin/records/FilterOptions.vue';
 
 export default {
     data(){
         return {
-            expenseRecords: [
-            {
-                    date: '2022-02-01',
-                    itemName: 'Butter',
-                    amount: 800.00,
-                    category: 'Bakery Items',
-                    branch: 'Paligsahan',
-                    notes: 'bought in puregold'
-            },
-            {
-                    date: '2022-01-01',
-                    itemName: 'Flax',
-                    amount: 500.00,
-                    category: 'Salary',
-                    branch: 'Paligsahan',
-                    notes: 'palengke'
-            },
-            {
-                    date: '2022-01-01',
-                    itemName: 'Flour',
-                    amount: 500.00,
-                    category: 'Bakery Items',
-                    branch: 'Makati',
-                    notes: 'palengke'
-            }
-            ],
             filters: {
                 dateFrom: '',
                 dateTo: '',
@@ -40,6 +15,12 @@ export default {
                 checkedCategories: []
             }
         }
+    },
+
+    props: {
+        branchOptions: [Object],
+        categoryOptions: [Object],
+        expenseRecords: [Object]
     },
 
     computed: {
@@ -68,7 +49,8 @@ export default {
     },
 
     components: {
-        FilterMenu
+        FilterMenu,
+        FilterOptions
     },
 
     methods: {
@@ -90,7 +72,11 @@ export default {
 
 <div class="row m-0 p-2">
     <div class="col p-0 m-0"> 
-        <FilterMenu @update-filters="(newFilter) => this.filters = newFilter"/>
+        <FilterMenu />
+        <FilterOptions  :branch-options="this.branchOptions" 
+                    :category-options="this.categoryOptions"
+                    @update-filters="(newFilter) => this.filters = newFilter"
+                    />
     </div>
 </div>
 

@@ -1,32 +1,10 @@
 <script>
 import FilterMenu from '../../../../components/admin/records/FilterMenu.vue'
+import FilterOptions from '../../../../components/admin/records/FilterOptions.vue';
 
 export default {
     data(){
         return {
-            salesRecords: [
-                {
-                    date: '2022-03-04',
-                    time: '08:00',
-                    amount: 1200.05,
-                    customerCount: 10,
-                    branch: 'Paligsahan'
-                },
-                {
-                    date: '2022-02-03',
-                    time: '09:00',
-                    amount: 1300.00,
-                    customerCount: 12,
-                    branch: 'Paligsahan'
-                },
-                {
-                    date: '2022-01-02',
-                    time: '21:00',
-                    amount: 1300.00,
-                    customerCount: 12,
-                    branch: 'Makati'
-                }
-            ],
             filters: {
                 dateFrom: '',
                 dateTo: '',
@@ -38,6 +16,13 @@ export default {
             }
         }
     },
+
+    props: {
+        branchOptions: [Object],
+        categoryOptions: [Object],
+        salesRecords: [Object]
+    },
+    
 
     computed: {
         filteredSales() {
@@ -61,7 +46,8 @@ export default {
         }
     },
     components: {
-        FilterMenu
+        FilterMenu,
+        FilterOptions
     },
 
     methods: {
@@ -106,7 +92,11 @@ export default {
 
 <div class="row m-0 p-2">
     <div class="col p-0 m-0"> 
-        <FilterMenu @update-filters="(newFilter) => this.filters = newFilter"/>
+        <FilterMenu />
+        <FilterOptions  :branch-options="this.branchOptions" 
+                        :category-options="this.categoryOptions"
+                        @update-filters="(newFilter) => this.filters = newFilter"
+                        />
     </div>
 </div>
 
