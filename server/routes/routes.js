@@ -6,8 +6,6 @@ router.get('/', controller.getIndex);
 
 router.post('/login', controller.login);
 router.post('/signup', controller.signup);
-<<<<<<< HEAD
-=======
 router.get('/viewbranch', controller.viewBranch);
 router.post('/editbranch', controller.editBranch);
 router.post('/deletebranch', controller.deleteBranch);
@@ -22,6 +20,5 @@ router.get('/adminviewsales', controller.adminViewSales);
 router.get('/adminviewexpense', controller.adminViewExpense);
 router.post('/adminviewsalesfilter', controller.adminViewSalesFilter);
 // router.post('/adminviewexpensefilter', controller.adminViewExpenseFilter);
->>>>>>> backend-dev
 
 module.exports = router;
