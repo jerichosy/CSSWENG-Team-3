@@ -7,6 +7,7 @@ const ExpenseSchema = new mongoose.Schema({
     category: { type: String, required: true },
     amount: { type: Number, required: true },  // FIXME: This might be needed to be changed to Decimal128 for more precision
     notes: { type: String, required: false },
+    datetime: { type: Date, required: true }
 }, { timestamps: true });
 
 module.exports = {
