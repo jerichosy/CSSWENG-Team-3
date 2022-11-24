@@ -5,51 +5,6 @@ export default {
 
     data() {
         return {
-            // {
-            //         date: '2022-03-04',
-            //         time: '08:00',
-            //         amount: 1200.05,
-            //         customerCount: 10,
-            //         branch: 'Paligsahan'
-            //     },
-            //     {
-            //         date: '2022-02-03',
-            //         time: '09:00',
-            //         amount: 1300.00,
-            //         customerCount: 12,
-            //         branch: 'Paligsahan'
-            //     },
-            //     {
-            //         date: '2022-01-02',
-            //         time: '21:00',
-            //         amount: 1300.00,
-            //         customerCount: 12,
-            //         branch: 'Makati'
-            //     }
-            // {
-            //         date: '2022-02-01',
-            //         itemName: 'Butter',
-            //         amount: 800.00,
-            //         category: 'Bakery Items',
-            //         branch: 'Paligsahan',
-            //         notes: 'bought in puregold'
-            //     },
-            //     {
-            //         date: '2022-01-01',
-            //         itemName: 'Flax',
-            //         amount: 500.00,
-            //         category: 'Salary',
-            //         branch: 'Paligsahan',
-            //         notes: 'palengke'
-            //     },
-            //     {
-            //         date: '2022-01-01',
-            //         itemName: 'Flour',
-            //         amount: 500.00,
-            //         category: 'Bakery Items',
-            //         branch: 'Makati',
-            //         notes: 'palengke'
-            //     }
             salesRecords: [],
             expenseRecords: [],
             pageOptions: [{ title: "Sales", path: "sales" }, { title: "Expenses", path: "expenses" }],
