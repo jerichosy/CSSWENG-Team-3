@@ -13,17 +13,52 @@ http://localhost:3000/adminviewsales
 
 ###
 
-POST http://localhost:3000/addsales HTTP/1.1
+POST http://localhost:3000/adminaddsales HTTP/1.1
 content-type: application/json
 
     {
-    "branchID": "2343",
-    "branchName": "QC111111",
-    "amount": "1000.31",
-    "customerCount": "10",
-    "datetime": "2014-02-10T10:50:42.389Z"
+    "branchID": "101",
+    "branchName": "QC",
+    "amount": 1180.00,
+    "customerCount": 8,
+    "datetime": "2022-11-20T11:00:00.000Z"
+    }
+
+###
+
+POST http://localhost:3000/adminaddexpense HTTP/1.1
+content-type: application/json
+
+    {
+        "branchID": "102",
+        "branchName": "Makati",
+        "item": "Flax",
+        "category": "Salary",
+        "amount": 200.00,
+        "notes": "Bought at Puregold",
+        "datetime": "2022-11-20T11:00:00.000Z"
     }
 
 ###
 
 http://localhost:3000/submit HTTP/1.1 
+
+
+###
+
+POST http://localhost:3000/admindeletesales HTTP/1.1
+content-type: application/json
+
+    {
+        "id":"637efe54cc220cfa2d1e27b8"
+    }
+
+###
+
+POST http://localhost:3000/admindeleteexpense HTTP/1.1
+content-type: application/json
+
+    {
+        "id":"637f80a08a447ca7bbf9fac2"
+    }
+
