@@ -10,3 +10,20 @@
 
 
 http://localhost:3000/adminviewsales
+
+###
+
+POST http://localhost:3000/addsales HTTP/1.1
+content-type: application/json
+
+    {
+    "branchID": "2343",
+    "branchName": "QC111111",
+    "amount": "1000.31",
+    "customerCount": "10",
+    "datetime": "2014-02-10T10:50:42.389Z"
+    }
+
+###
+
+http://localhost:3000/submit HTTP/1.1 
