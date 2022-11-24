@@ -33,7 +33,7 @@ export default {
             }
 
             if (this.filters.checkedBranches.length) {
-                filteredExpenseRecords = filteredExpenseRecords.filter(record => record.branch === this.filters.checkedBranches[this.filters.checkedBranches.indexOf(record.branch)])
+                filteredExpenseRecords = filteredExpenseRecords.filter(record => record.branchName === this.filters.checkedBranches[this.filters.checkedBranches.indexOf(record.branchName)])
             }
 
             if (this.filters.dateFrom.length && this.filters.dateTo.length) {
@@ -60,7 +60,7 @@ export default {
         },
         searchItem(record, searchFilter) {
             const searchString = searchFilter.toLowerCase();
-            const itemName = record.itemName.toLowerCase();
+            const itemName = record.item.toLowerCase();
 
             if (itemName.includes(searchString))
                 return true
@@ -94,10 +94,10 @@ export default {
             <tbody>
                 <tr v-for="record in filteredExpenses">
                     <td>{{ this.formatDate(record.date) }}</td>
-                    <td>{{ record.itemName }}</td>
+                    <td>{{ record.item }}</td>
                     <td>₱{{ record.amount.toFixed(2).toLocaleString('en-US') }}</td>
                     <td>{{ record.category }}</td>
-                    <td>{{ record.branch }}</td>
+                    <td>{{ record.branchName }}</td>
                     <td>{{ record.notes }}</td>
                 </tr>
             </tbody>
