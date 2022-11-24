@@ -293,7 +293,14 @@ const controller = {
         db.findMany(Expense.Admin, {}, '', function (expenses) {
             if (expenses) {
                 console.log('Expenses shown');
-                res.status(201).json({ expenses });  //201 Created
+                expensescopy = JSON.parse(JSON.stringify(expenses))
+                for (var i = 0; i < expenses.length; i++) {
+                    console.log(expenses[i].datetime)
+                    expensescopy[i].date = expenses[i].datetime.toISOString().split('T')[0]
+                    delete expensescopy[i].datetime
+                }
+
+                res.status(201).json(expensescopy);  //201 Created
             } else {
                 console.log('Expenses not shown');
                 res.status(400).json({ msg: 'Something went wrong. Please try again.' })
