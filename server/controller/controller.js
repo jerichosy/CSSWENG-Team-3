@@ -295,7 +295,6 @@ const controller = {
                 console.log('Expenses shown');
                 expensescopy = JSON.parse(JSON.stringify(expenses))
                 for (var i = 0; i < expenses.length; i++) {
-                    console.log(expenses[i].datetime)
                     expensescopy[i].date = expenses[i].datetime.toISOString().split('T')[0]
                     delete expensescopy[i].datetime
                 }
