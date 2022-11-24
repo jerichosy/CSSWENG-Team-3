@@ -1,6 +1,7 @@
 <script>
 import FilterButton from '../../../../components/admin/records/FilterButton.vue'
 import FilterOptions from '../../../../components/admin/records/FilterOptions.vue';
+import DeleteRecordModal from '../../../../components/DeleteRecordModal.vue'
 
 export default {
     data() {
@@ -13,9 +14,12 @@ export default {
                 itemSearch: '',
                 checkedBranches: [],
                 checkedCategories: []
-            }
+            },
+            selectedRecord: {}
         }
     },
+
+    emits: ['deleteExpense', 'deleteSales'],
 
     props: {
         branchOptions: [Object],
@@ -51,7 +55,8 @@ export default {
 
     components: {
         FilterButton,
-        FilterOptions
+        FilterOptions,
+        DeleteRecordModal
     },
 
     methods: {
@@ -65,11 +70,25 @@ export default {
             if (itemName.includes(searchString))
                 return true
             return false
+        },
+
+        setSelectedRecord(record) {
+            this.selectedRecord = record
+        },
+        clearSelectedRecord() {
+            this.selectedRecord = {}
+        },
+
+        deleteRecord(record) {
+            this.$emit('deleteExpense', record._id)
         }
     }
 }
 </script>
 <template>
+
+    <DeleteRecordModal :selected-record="this.selectedRecord" record-type="expense"
+        @delete-record="record => deleteRecord(record)" />
 
     <div class="row m-0 p-2">
         <div class="col p-0 m-0">
@@ -89,16 +108,25 @@ export default {
                     <th scope="col">Category</th>
                     <th scope="col">Branch</th>
                     <th scope="col">Notes</th>
+                    <th scope="col">Actions</th>
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="record in filteredExpenses">
+                <tr v-for="record in filteredExpenses" :key="record._id">
                     <td>{{ this.formatDate(record.date) }}</td>
                     <td>{{ record.item }}</td>
                     <td>₱{{ record.amount.toFixed(2).toLocaleString('en-US') }}</td>
                     <td>{{ record.category }}</td>
                     <td>{{ record.branchName }}</td>
                     <td>{{ record.notes }}</td>
+                    <td>
+                        <div class="col">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" @click="setSelectedRecord(record)">
+                                Delete
+                            </button>
+                        </div>
+                    </td>
                 </tr>
             </tbody>
         </table>
