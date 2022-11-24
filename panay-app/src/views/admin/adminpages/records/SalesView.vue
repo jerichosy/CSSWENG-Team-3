@@ -1,6 +1,104 @@
 <script>
+import FilterButton from '../../../../components/admin/records/FilterButton.vue'
+import FilterOptions from '../../../../components/admin/records/FilterOptions.vue';
+
+export default {
+    data(){
+        return {
+            filters: {
+                dateFrom: '',
+                dateTo: '',
+                timeFrom: '',
+                timeTo: '',
+                itemSearch: '',
+                checkedBranches: [],
+                checkedCategories: []
+            }
+        }
+    },
+
+    props: {
+        branchOptions: [Object],
+        categoryOptions: [Object],
+        salesRecords: [Object]
+    },
+    
+
+    computed: {
+        filteredSales() {
+            let filteredSalesRecords = this.salesRecords
+
+            if (this.filters.checkedBranches.length) {
+                filteredSalesRecords =  filteredSalesRecords.filter(record => record.branch === this.filters.checkedBranches[this.filters.checkedBranches.indexOf(record.branch)])
+            }
+
+            if (this.filters.dateFrom.length && this.filters.dateTo.length) {
+                filteredSalesRecords = filteredSalesRecords.filter( (record) => Date.parse(record.date) >= Date.parse(this.filters.dateFrom))
+                filteredSalesRecords = filteredSalesRecords.filter( (record) => Date.parse(record.date) <= Date.parse(this.filters.dateTo))
+            }
+
+            if (this.filters.timeFrom.length && this.filters.timeTo.length) {
+                filteredSalesRecords = filteredSalesRecords.filter( (record) => this.parseStartTime(this.filters.timeFrom, record))
+                filteredSalesRecords = filteredSalesRecords.filter( (record) => this.parseEndTime(this.filters.timeTo, record))
+            }
+
+            return filteredSalesRecords
+        }
+    },
+    components: {
+        FilterButton,
+        FilterOptions
+    },
+
+    methods: {
+        formatDate(date) {
+            return date.replace(/-/g, '/' )
+        },
+        formatTime(time) {
+            if (time) {
+                return new Date('1970-01-01T' + time + 'Z')
+                .toLocaleTimeString('en-US',
+                    {timeZone:'UTC',hour12:true,hour:'numeric',minute:'numeric'}
+                );
+            }
+        },
+
+        parseStartTime(startTime, record) {
+            const startDate = new Date('1970-01-01T' + startTime + ':00')
+            const recordDate = new Date('1970-01-01T' + record.time + ':00')
+
+            if (Date.parse(recordDate) >= Date.parse(startDate))
+                return true
+            return false
+        },
+
+        parseEndTime(endTime, record) {
+            const endDate = new Date('1970-01-01T' + endTime + ':00')
+            const recordDate = new Date('1970-01-01T' + record.time + ':00')
+
+            if (Date.parse(recordDate) <= Date.parse(endDate))
+                return true
+            return false
+        },
+
+        checkIfFiltersEmpty: (x) => {
+            x.length
+        }
+    }
+}
 </script>
+
 <template>
+
+<div class="row m-0 p-2">
+    <div class="col p-0 m-0"> 
+        <FilterButton />
+        <FilterOptions  :branch-options="this.branchOptions" 
+                        :category-options="this.categoryOptions"
+                        @update-filters="(newFilter) => this.filters = newFilter"
+                        />
+    </div>
+</div>
 
 <div class="table-responsive row m-0">
     <table class="table table-striped table-sm">
@@ -14,264 +112,12 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>2022/01/01</td>
-                <td>08:00 PM</td>
-                <td>P9,999,999,999.99</td>
-                <td>9,999,999</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>08:00 PM</td>
-                <td>P9,999,999,999.99</td>
-                <td>9,999,999</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>08:00 PM</td>
-                <td>P9,999,999,999.99</td>
-                <td>9,999,999</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>08:00 PM</td>
-                <td>P9,999,999,999.99</td>
-                <td>9,999,999</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>08:00 PM</td>
-                <td>P9,999,999,999.99</td>
-                <td>9,999,999</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>08:00 PM</td>
-                <td>P9,999,999,999.99</td>
-                <td>9,999,999</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>08:00 PM</td>
-                <td>P9,999,999,999.99</td>
-                <td>9,999,999</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>08:00 PM</td>
-                <td>P9,999,999,999.99</td>
-                <td>9,999,999</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>08:00 PM</td>
-                <td>P9,999,999,999.99</td>
-                <td>9,999,999</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>08:00 PM</td>
-                <td>P9,999,999,999.99</td>
-                <td>9,999,999</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>08:00 PM</td>
-                <td>P9,999,999,999.99</td>
-                <td>9,999,999</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>08:00 PM</td>
-                <td>P9,999,999,999.99</td>
-                <td>9,999,999</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>08:00 PM</td>
-                <td>P9,999,999,999.99</td>
-                <td>9,999,999</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>08:00 PM</td>
-                <td>P9,999,999,999.99</td>
-                <td>9,999,999</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>08:00 PM</td>
-                <td>P9,999,999,999.99</td>
-                <td>9,999,999</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>08:00 PM</td>
-                <td>P9,999,999,999.99</td>
-                <td>9,999,999</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>08:00 PM</td>
-                <td>P9,999,999,999.99</td>
-                <td>9,999,999</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>08:00 PM</td>
-                <td>P9,999,999,999.99</td>
-                <td>9,999,999</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>08:00 PM</td>
-                <td>P9,999,999,999.99</td>
-                <td>9,999,999</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>08:00 PM</td>
-                <td>P9,999,999,999.99</td>
-                <td>9,999,999</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>08:00 PM</td>
-                <td>P9,999,999,999.99</td>
-                <td>9,999,999</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>08:00 PM</td>
-                <td>P9,999,999,999.99</td>
-                <td>9,999,999</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>08:00 PM</td>
-                <td>P9,999,999,999.99</td>
-                <td>9,999,999</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>08:00 PM</td>
-                <td>P9,999,999,999.99</td>
-                <td>9,999,999</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>08:00 PM</td>
-                <td>P9,999,999,999.99</td>
-                <td>9,999,999</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>08:00 PM</td>
-                <td>P9,999,999,999.99</td>
-                <td>9,999,999</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>08:00 PM</td>
-                <td>P9,999,999,999.99</td>
-                <td>9,999,999</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>08:00 PM</td>
-                <td>P9,999,999,999.99</td>
-                <td>9,999,999</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>08:00 PM</td>
-                <td>P9,999,999,999.99</td>
-                <td>9,999,999</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>08:00 PM</td>
-                <td>P9,999,999,999.99</td>
-                <td>9,999,999</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>08:00 PM</td>
-                <td>P9,999,999,999.99</td>
-                <td>9,999,999</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>08:00 PM</td>
-                <td>P9,999,999,999.99</td>
-                <td>9,999,999</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>08:00 PM</td>
-                <td>P9,999,999,999.99</td>
-                <td>9,999,999</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>08:00 PM</td>
-                <td>P9,999,999,999.99</td>
-                <td>9,999,999</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>08:00 PM</td>
-                <td>P9,999,999,999.99</td>
-                <td>9,999,999</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>08:00 PM</td>
-                <td>P9,999,999,999.99</td>
-                <td>9,999,999</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
-            </tr>
-            <tr>
-                <td>2022/01/01</td>
-                <td>08:00 PM</td>
-                <td>P9,999,999,999.99</td>
-                <td>9,999,999</td>
-                <td>Lorem ipsum dolor sit vivamus.</td>
+            <tr v-for="record in filteredSales">
+                <td>{{this.formatDate(record.date)}}</td>
+                <td>{{this.formatTime(record.time)}}</td>
+                <td>₱{{record.amount.toFixed(2).toLocaleString('en-US')}}</td>
+                <td>{{record.customerCount}}</td>
+                <td>{{record.branch}}</td>
             </tr>
         </tbody>
     </table>
