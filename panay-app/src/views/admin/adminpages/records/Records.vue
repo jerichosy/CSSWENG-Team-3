@@ -90,6 +90,35 @@ export default {
                 .catch(e => {
                     console.log(e);
                 });
+        },
+
+        deleteSales(id) {
+            const data = {
+                "id": id
+            }
+            RecordService.deleteAdminSales(data)
+                .then(response => {
+                    console.log(response.data);
+                    this.retrieveSales();
+                })
+                .catch(e => {
+                    console.log(e);
+                });
+        },
+
+        deleteExpense(id) {
+            const data = {
+                "id": id
+            }
+            RecordService.deleteAdminExpense(data)
+                .then(response => {
+                    console.log(response.data);
+                })
+                .catch(e => {
+                    console.log(e);
+                });
+
+            this.retrieveExpenses();
         }
 
 
@@ -98,7 +127,8 @@ export default {
     mounted() {
         this.retrieveSales();
         this.retrieveExpenses();
-    }
+    },
+
 }
 </script>
 
@@ -117,6 +147,7 @@ export default {
 
     <div class="row container-fluid p-0 m-0">
         <RouterView :branch-options="this.branchOptions" :category-options="this.categoryOptions"
-            :sales-records="this.salesRecords" :expense-records="this.expenseRecords" />
+            :sales-records="this.salesRecords" :expense-records="this.expenseRecords" @delete-sales="deleteSales"
+            @delete-expense="deleteExpense" />
     </div>
 </template>
