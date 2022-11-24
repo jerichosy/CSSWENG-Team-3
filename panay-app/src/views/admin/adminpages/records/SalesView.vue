@@ -31,7 +31,7 @@ export default {
             let filteredSalesRecords = this.salesRecords
 
             if (this.filters.checkedBranches.length) {
-                filteredSalesRecords = filteredSalesRecords.filter(record => record.branch !== this.filters.checkedBranches[this.filters.checkedBranches.indexOf(record.branchName)])
+                filteredSalesRecords = filteredSalesRecords.filter(record => record.branchName === this.filters.checkedBranches[this.filters.checkedBranches.indexOf(record.branchName)])
             }
 
             if (this.filters.dateFrom.length && this.filters.dateTo.length) {
