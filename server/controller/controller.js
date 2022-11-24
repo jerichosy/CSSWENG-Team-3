@@ -301,6 +301,120 @@ const controller = {
         })
     },
 
+    adminAddSales: (req, res) => {
+        // const { branchID, sales, customercount, time } = req.body;
+        console.log(req.body)
+        // var salesobj = {
+        //     branchID: branchID,
+        //     sales: sales,
+        //     customercount: customercount,
+        //     time: time
+        // }
+
+        db.insertOne(Sales.Admin, req.body, function (flag) {
+            if (flag) {
+                console.log('Sales added');
+                res.status(201).json({ msg: 'Sales Added. 201 Created' });  //201 Created
+            } else {
+                // Will trigger if req.body format does not match schema
+                console.log('Sales not added');
+                res.status(400).json({ msg: 'Something went wrong. Please try again.' })
+            }
+        })
+        // res.redirect('/');
+    },
+
+    adminAddExpense: (req, res) => {
+        // const { branchID, item, category, amount, notes } = req.body;
+        console.log(req.body)
+        // var expense = {
+        //     branchID: branchID,
+        //     item: item,
+        //     category: category,
+        //     amount: amount,
+        //     notes: notes
+        // }
+
+        db.insertOne(Expense.Admin, req.body, function (flag) {
+            if (flag) {
+                console.log('Expense added');
+                res.status(201).json({ msg: 'Expense added. 201 Created' });  //201 Created
+            } else {
+                // Will trigger if req.body format does not match schema
+                console.log('Expense not added');
+                res.status(400).json({ msg: 'Something went wrong. Please try again.' })
+            }
+        })
+        // res.redirect('/');
+    },
+
+    adminEditSales: (req, res) => {
+        const { id, branchID, sales, customercount, time } = req.body;
+        console.log(req.body)
+        var salesobj = {
+            branchID: branchID,
+            sales: sales,
+            customercount: customercount,
+            time: time
+        }
+
+        db.updateOne(Sales.Admin, { branchID: branchID, _id: new Object(id) }, salesobj, function (flag) {
+            if (flag) {
+                console.log('Edit success: ' + flag);
+                res.status(201).json({ msg: 'Edit success' })
+            } else {
+                console.log('Sales not edited');
+                res.status(400).json({ msg: 'Something went wrong. Please try again.' })
+            }
+        })
+    },
+
+    adminEditExpense: (req, res) => {
+        const { id, branchID, item, category, amount, notes } = req.body;
+        var expense = {
+            branchID: branchID,
+            item: item,
+            category: category,
+            amount: amount,
+            notes: notes
+        }
+        db.updateOne(Expense.Sales, { branchID: branchID, _id: new Object(id) }, expense, function (flag) {
+            if (flag) {
+                console.log('Edit success: ' + flag);
+                res.status(201).json({ msg: 'Edit success' })
+            } else {
+                console.log('Expense not edited');
+                res.status(400).json({ msg: 'Something went wrong. Please try again.' })
+            }
+        })
+    },
+
+    adminDeleteSales: (req, res) => {
+        const { id } = req.body;
+        db.deleteOne(Sales.Admin, { _id: new Object(id) }, function (flag) {
+            if (flag) {
+                console.log('Delete success: ' + flag);
+                res.status(201).json({ msg: 'Delete success' })
+            } else {
+                console.log('Sales not deleted');
+                res.status(400).json({ msg: 'Something went wrong. Please try again.' })
+            }
+        })
+    },
+
+    adminDeleteExpense: (req, res) => {
+        const { id } = req.body;
+        db.deleteOne(Expense.Admin, { _id: new Object(id) }, function (flag) {
+            if (flag) {
+                console.log('Delete success: ' + flag);
+                res.status(201).json({ msg: 'Delete success' })
+            } else {
+                console.log('Expense not deleted');
+                res.status(400).json({ msg: 'Something went wrong. Please try again.' })
+            }
+        })
+    },
+
     // TODO: Finalize decision on this. 
     // One problem is that by doing client side filtering in conjunction with limit,
     // the filter only acts on the first 100 records for example. Thereby possibly neccessating a backend request still.
