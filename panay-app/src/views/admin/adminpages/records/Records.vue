@@ -26,33 +26,32 @@ export default {
             //         customerCount: 12,
             //         branch: 'Makati'
             //     }
+            // {
+            //         date: '2022-02-01',
+            //         itemName: 'Butter',
+            //         amount: 800.00,
+            //         category: 'Bakery Items',
+            //         branch: 'Paligsahan',
+            //         notes: 'bought in puregold'
+            //     },
+            //     {
+            //         date: '2022-01-01',
+            //         itemName: 'Flax',
+            //         amount: 500.00,
+            //         category: 'Salary',
+            //         branch: 'Paligsahan',
+            //         notes: 'palengke'
+            //     },
+            //     {
+            //         date: '2022-01-01',
+            //         itemName: 'Flour',
+            //         amount: 500.00,
+            //         category: 'Bakery Items',
+            //         branch: 'Makati',
+            //         notes: 'palengke'
+            //     }
             salesRecords: [],
-            expenseRecords: [
-                {
-                    date: '2022-02-01',
-                    itemName: 'Butter',
-                    amount: 800.00,
-                    category: 'Bakery Items',
-                    branch: 'Paligsahan',
-                    notes: 'bought in puregold'
-                },
-                {
-                    date: '2022-01-01',
-                    itemName: 'Flax',
-                    amount: 500.00,
-                    category: 'Salary',
-                    branch: 'Paligsahan',
-                    notes: 'palengke'
-                },
-                {
-                    date: '2022-01-01',
-                    itemName: 'Flour',
-                    amount: 500.00,
-                    category: 'Bakery Items',
-                    branch: 'Makati',
-                    notes: 'palengke'
-                }
-            ],
+            expenseRecords: [],
             pageOptions: [{ title: "Sales", path: "sales" }, { title: "Expenses", path: "expenses" }],
             branchOptions: [{ branchName: "Paligsahan" }, { branchName: "Manila" }, { branchName: "QC" }, { branchName: "Makati" }, { branchName: "Mandaluyong" }],
             categoryOptions: [{ name: "Salary" }, { name: "Grocery" }, { name: "Utilities" },
@@ -80,12 +79,25 @@ export default {
                 .catch(e => {
                     console.log(e);
                 });
+        },
 
+        retrieveExpenses() {
+            RecordService.getAdminExpenses()
+                .then(response => {
+                    this.expenseRecords = response.data;
+                    console.log(response.data);
+                })
+                .catch(e => {
+                    console.log(e);
+                });
         }
+
+
     },
 
     mounted() {
         this.retrieveSales();
+        this.retrieveExpenses();
     }
 }
 </script>
@@ -102,8 +114,6 @@ export default {
             </li>
         </ul>
     </div>
-
-    <p>{{ this.salesRecords }}</p>
 
     <div class="row container-fluid p-0 m-0">
         <RouterView :branch-options="this.branchOptions" :category-options="this.categoryOptions"
