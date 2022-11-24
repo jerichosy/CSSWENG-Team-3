@@ -21,7 +21,8 @@ export default {
     props: {
         branchOptions: [Object],
         categoryOptions: [Object],
-        salesRecords: [Object]
+        salesRecords: [Object],
+        expenseRecords: [Object] //pass this to get rid of Vue console warning
     },
 
 
