@@ -1,5 +1,5 @@
 <script>
-import FilterMenu from '../../../../components/admin/records/FilterButton.vue'
+import FilterButton from '../../../../components/admin/records/FilterButton.vue'
 import FilterOptions from '../../../../components/admin/records/FilterOptions.vue';
 
 export default {
