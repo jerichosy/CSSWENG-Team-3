@@ -1,8 +1,8 @@
 import http from '../http-common';
 
 class RecordService {
-    getFiltered(data) {
-        return http.get("/", data);
+    getAdminSales() {
+        return http.get("/adminviewsales");
     }
 }
 
