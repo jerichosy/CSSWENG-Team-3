@@ -1,10 +1,4 @@
 const mongoose = require('mongoose');
-// const AdminExpenseSchema = require('./admin/adminExpenseSchema');
-// const AdminSalesSchema = require('./admin/adminSalesSchema');
-// const AdminCategorySchema = require('./admin/AdminCategorySchema');
-// const ExpenseSchema = require('./branch/expenseSchema');
-// const SalesSchema = require('./branch/salesSchema');
-// const UserSchema = require('./UserSchema');
 const url = process.env.MONGODB_URI || 'mongodb://localhost:27017/CSSWENG-Team-3';
 
 const options = {
