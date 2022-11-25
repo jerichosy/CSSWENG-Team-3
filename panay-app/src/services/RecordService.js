@@ -14,6 +14,11 @@ class RecordService {
         return http.post("/admineditsales", data);
     }
 
+    editAdminExpense(data) {
+        console.log(data);
+        return http.post("/admineditexpense", data);
+    }
+
     deleteAdminSales(data) {
         console.log(data)
         return http.post("/admindeletesales", data);
