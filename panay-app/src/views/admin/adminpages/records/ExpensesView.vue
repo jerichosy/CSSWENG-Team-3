@@ -122,7 +122,7 @@ export default {
                     <td>
                         <div class="col">
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal" @click="setSelectedRecord(record)">
+                                data-bs-target="#deleteModal" @click="setSelectedRecord(record)">
                                 Delete
                             </button>
                         </div>
