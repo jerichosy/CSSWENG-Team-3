@@ -39,7 +39,8 @@ export default {
     },
     props: {
         selectedRecord: Object,
-        recordType: String
+        recordType: String,
+        branchOptions: [Object]
     },
 
     computed: {
@@ -123,7 +124,14 @@ export default {
                     </div>
                     <div>
                         <label for="record-branch">Branch</label>
-                        <input id="record-branch" type="text" v-model="this.inputs.branchName" />
+                        <select v-model="this.inputs.branchName">
+                            <template v-for="branch in this.branchOptions" :key="branch.branchID">
+                                <option :value="branch.branchName">{{ branch.branchName }}</option>
+                            </template>
+                        </select>
+
+                        <!-- <label for="record-branch">Branch</label>
+                        <input id="record-branch" type="text" v-model="this.inputs.branchName" /> -->
                     </div>
                     <div v-if="isExpenseRecord">
                         <label for="record-notes">Notes</label>
