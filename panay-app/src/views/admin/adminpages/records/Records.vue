@@ -2,6 +2,8 @@
 import RecordService from '../../../../services/RecordService.js'
 import UserService from '../../../../services/UserService.js'
 
+// TODO: Fix Action buttons layout
+// TODO: Use icons for edit and delete (and possibly filter)
 export default {
 
     data() {
