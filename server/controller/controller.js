@@ -271,7 +271,7 @@ const controller = {
     },
 
     adminViewSales: (req, res) => {
-        db.findMany(Sales.Admin, {}, 'branchName amount customerCount datetime', function (sales) {
+        db.findMany(Sales.Admin, {}, 'branchID branchName amount customerCount datetime', function (sales) {
             if (sales) {
                 console.log('Sales shown');
                 // console.log(typeof (sales));
