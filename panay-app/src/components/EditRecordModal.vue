@@ -66,8 +66,20 @@ export default {
                     date: this.inputs.date,
                     time: this.inputs.time
                 }
-
                 this.$emit('editRecord', editedSales)
+            }
+
+            else if (this.isExpenseRecord) {
+                let editedExpense = {
+                    id: this.selectedRecord._id,
+                    branchName: this.inputs.branchName,
+                    amount: this.inputs.amount,
+                    item: this.inputs.item,
+                    category: this.inputs.category,
+                    notes: this.inputs.notes,
+                    date: this.inputs.date
+                }
+                this.$emit('editRecord', editedExpense)
             }
 
         }
@@ -77,8 +89,6 @@ export default {
 </script>
 
 <template>
-    <p>{{ this.selectedRecord }}</p>
-    <p>{{ this.inputs }}</p>
     <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -97,7 +107,7 @@ export default {
                     </div>
                     <div v-if="isExpenseRecord">
                         <label for="record-item">Item Name</label>
-                        <input id="record-item" type="text" v-model="this.inputs.itemName" />
+                        <input id="record-item" type="text" v-model="this.inputs.item" />
                     </div>
                     <div v-if="this.selectedRecord.amount !== undefined">
                         <label for="record-amount">Amount</label>
