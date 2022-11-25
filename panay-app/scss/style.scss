@@ -4,9 +4,12 @@
 // Include any default variable overrides here (though functions won't be available)
 
 $theme-colors: (
-  "primary":    #783028,
-  "secondary": #FFFCF5,
-  "primaryhover": #CC7066
+  "primary": #783028,
+  "secondary": #976d1e,
+  "bgdefault": #FFFCF5,
+  "primaryhover": #CC7066,
+  "danger": #dc3545,
+  "cancel": #6c757d
 );
 
 $nav-link-color: #E6E6E6;

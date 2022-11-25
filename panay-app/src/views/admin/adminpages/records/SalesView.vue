@@ -149,13 +149,13 @@ export default {
                     <td>
                         <div class="row">
                             <div class="col-3">
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
                                     data-bs-target="#editModal" @click="setSelectedRecord(record)">
                                     Edit
                                 </button>
                             </div>
                             <div class="col-3">
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                <button type="button" class="btn btn-danger" data-bs-toggle="modal"
                                     data-bs-target="#deleteModal" @click="setSelectedRecord(record)">
                                     Delete
                                 </button>

@@ -61,8 +61,8 @@ export default {
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                    <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal"
                         @click="this.$emit('deleteRecord', this.selectedRecord)">Delete</button>
                 </div>
             </div>

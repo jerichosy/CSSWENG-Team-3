@@ -2,8 +2,9 @@
 </script>
 
 <template>
-    <div class="col">
-        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#filterForm" aria-expanded="false" aria-controls="filterForm">
+    <div class="col float-end ms-2">
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#filterForm"
+            aria-expanded="false" aria-controls="filterForm">
             Filters
         </button>
     </div>

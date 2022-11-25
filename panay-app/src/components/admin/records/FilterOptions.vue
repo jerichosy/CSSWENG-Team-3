@@ -72,45 +72,68 @@ export default {
 <template>
     <form class="collapse" id="filterForm">
         <div class="card card-body">
+            <fieldset class="row" v-if="isExpenses">
+                <div class="form-floating">
+                    <input id="item-search" class="form-control" type="text" v-model="filters.itemSearch" />
+                    <label class="ms-2" for="item-search">Item Search</label>
+                </div>
 
-            <fieldset v-if="isExpenses">
-                <label for="item-search">Item Search</label> <input id="item-search" type="text"
-                    v-model="filters.itemSearch" />
             </fieldset>
 
-            <fieldset v-if="isSales || isExpenses">
+            <fieldset class="row" v-if="isSales || isExpenses">
                 <legend>Date Range</legend>
-                <label for="date-from">From</label> <input type="date" name="date-from" id="date-from"
-                    v-model="filters.dateFrom">
-                <label for="date-to">To</label> <input type="date" name="date-to" id="date-to" v-model="filters.dateTo">
+                <div class="col-6 form-floating">
+                    <input type="date" class="form-control" name="date-from" id="date-from" v-model="filters.dateFrom">
+                    <label class="ms-2" for="date-from">From</label>
+                </div>
+
+                <div class="col-6 form-floating">
+                    <input type="date" class="form-control" name="date-to" id="date-to" v-model="filters.dateTo">
+                    <label class="ms-2" for="date-to">To</label>
+                </div>
             </fieldset>
 
-            <fieldset v-if="isSales">
+            <fieldset class="row" v-if="isSales">
                 <legend>Time Range</legend>
-                <label for="time-from">From</label> <input type="time" name="time-from" id="time-from"
-                    v-model="filters.timeFrom">
-                <label for="time-to">To</label> <input type="time" name="time-to" id="time-to" v-model="filters.timeTo">
+                <div class="col-6 form-floating">
+                    <input type="time" class="form-control" name="time-from" id="time-from" v-model="filters.timeFrom">
+                    <label class="ms-2" for="time-from">From</label>
+                </div>
+
+                <div class="col-6 form-floating">
+                    <input type="time" class="form-control" name="time-to" id="time-to" v-model="filters.timeTo">
+                    <label class="ms-2" for="time-to">To</label>
+                </div>
+
             </fieldset>
 
             <fieldset v-if="isSales || isExpenses">
                 <legend>Branches</legend>
-                <div v-for="branch in this.branchOptions" :key="branch.branchID">
-                    <input type="checkbox" name="branches" :id="'branch' + branch.branchID" :value="branch.branchName"
-                        v-model="filters.checkedBranches" />
-                    <label :for="'branch' + branch.branchID">{{ branch.branchName }}</label>
+                <div class="form-check form-check-inline" v-for="branch in this.branchOptions" :key="branch.branchID">
+                    <input class="form-check-input" type="checkbox" name="branches" :id="'branch' + branch.branchID"
+                        :value="branch.branchName" v-model="filters.checkedBranches" />
+                    <label class="form-check-label" :for="'branch' + branch.branchID">{{
+                            branch.branchName
+                    }}</label>
                 </div>
             </fieldset>
 
             <fieldset v-if="isExpenses">
                 <legend>Categories</legend>
-                <div v-for="category in categoryOptions">
-                    <input type="checkbox" name="branches" :id="category.name.toLowerCase()" :value="category.name"
-                        v-model="filters.checkedCategories" />
-                    <label :for="category.name.toLowerCase()">{{ category.name }}</label>
+                <div class="form-check form-check-inline" v-for="category in categoryOptions">
+                    <input class="form-check-input" type="checkbox" name="branches" :id="category.name.toLowerCase()"
+                        :value="category.name" v-model="filters.checkedCategories" />
+                    <label class="form-check-label" :for="category.name.toLowerCase()">{{ category.name
+                    }}</label>
                 </div>
             </fieldset>
 
-            <button type="reset" @click="resetFilters">Reset Filters</button>
+            <div class="container-fluid">
+                <div class="col float-end">
+                    <button class="btn btn-primary" type="reset" @click="resetFilters">Reset Filters</button>
+                </div>
+            </div>
+
         </div>
     </form>
 </template>

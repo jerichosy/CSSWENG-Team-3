@@ -139,7 +139,7 @@ export default {
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancel</button>
                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
                         @click="this.sendChanges()">Save
                         Changes</button>
