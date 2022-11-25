@@ -116,7 +116,7 @@ export default {
     <DeleteRecordModal :selected-record="this.selectedRecord" record-type="sales"
         @delete-record="record => deleteRecord(record)" />
 
-    <EditRecordModal :selected-record="this.selectedRecord" record-type="sales"
+    <EditRecordModal :selected-record="this.selectedRecord" record-type="sales" :branch-options="this.branchOptions"
         @edit-record="(editedRecord) => this.editSales(editedRecord)" />
 
     <div class="row m-0 p-2">
