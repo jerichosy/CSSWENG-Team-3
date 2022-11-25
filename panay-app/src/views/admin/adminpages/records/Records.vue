@@ -108,15 +108,12 @@ export default {
             RecordService.deleteAdminExpense(data)
                 .then(response => {
                     console.log(response.data);
+                    this.retrieveExpenses(); // important for refreshing!
                 })
                 .catch(e => {
                     console.log(e);
                 });
-
-            this.retrieveExpenses();
         }
-
-
     },
 
     mounted() {
