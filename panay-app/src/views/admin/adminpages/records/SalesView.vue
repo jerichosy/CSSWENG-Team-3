@@ -21,7 +21,7 @@ export default {
         }
     },
 
-    emits: ['deleteSales', 'deleteExpense'],
+    emits: ['deleteSales', 'deleteExpense', 'editSales'],
 
     props: {
         branchOptions: [Object],
@@ -102,6 +102,10 @@ export default {
 
         deleteRecord(record) {
             this.$emit('deleteSales', record._id)
+        },
+
+        editSales(editedRecord) {
+            this.$emit('editSales', editedRecord)
         }
 
     }
@@ -109,11 +113,11 @@ export default {
 </script>
 
 <template>
-
     <DeleteRecordModal :selected-record="this.selectedRecord" record-type="sales"
         @delete-record="record => deleteRecord(record)" />
 
-    <EditRecordModal :selected-record="this.selectedRecord" record-type="sales" />
+    <EditRecordModal :selected-record="this.selectedRecord" record-type="sales"
+        @edit-record="(editedRecord) => this.editSales(editedRecord)" />
 
     <div class="row m-0 p-2">
         <div class="col p-0 m-0">
