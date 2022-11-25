@@ -21,7 +21,7 @@ export default {
         }
     },
 
-    emits: ['deleteSales', 'deleteExpense', 'editSales'],
+    emits: ['deleteSales', 'deleteExpense', 'editSales', 'editExpense'],
 
     props: {
         branchOptions: [Object],
