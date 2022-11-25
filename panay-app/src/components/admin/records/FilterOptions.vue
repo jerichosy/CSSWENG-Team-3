@@ -8,8 +8,8 @@ export default {
     },
 
     props: {
-        branchOptions: { type: Array },
-        categoryOptions: { type: Array }
+        branchOptions: [Object],
+        categoryOptions: [Object]
     },
 
     emits: ['updateFilters'],
@@ -94,10 +94,10 @@ export default {
 
             <fieldset v-if="isSales || isExpenses">
                 <legend>Branches</legend>
-                <div v-for="branch in branchOptions">
-                    <input type="checkbox" name="branches" :id="branch.branchName.toLowerCase()"
-                        :value="branch.branchName" v-model="filters.checkedBranches" />
-                    <label :for="branch.branchName.toLowerCase()">{{branch.branchName}}</label>
+                <div v-for="branch in this.branchOptions" :key="branch.branchID">
+                    <input type="checkbox" name="branches" :id="'branch' + branch.branchID" :value="branch.branchName"
+                        v-model="filters.checkedBranches" />
+                    <label :for="'branch' + branch.branchID">{{ branch.branchName }}</label>
                 </div>
             </fieldset>
 
@@ -106,7 +106,7 @@ export default {
                 <div v-for="category in categoryOptions">
                     <input type="checkbox" name="branches" :id="category.name.toLowerCase()" :value="category.name"
                         v-model="filters.checkedCategories" />
-                    <label :for="category.name.toLowerCase()">{{category.name}}</label>
+                    <label :for="category.name.toLowerCase()">{{ category.name }}</label>
                 </div>
             </fieldset>
 

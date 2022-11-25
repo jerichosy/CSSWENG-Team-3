@@ -1,5 +1,6 @@
 <script>
 import RecordService from '../../../../services/RecordService.js'
+import UserService from '../../../../services/UserService.js'
 
 export default {
 
@@ -8,7 +9,7 @@ export default {
             salesRecords: [],
             expenseRecords: [],
             pageOptions: [{ title: "Sales", path: "sales" }, { title: "Expenses", path: "expenses" }],
-            branchOptions: [{ branchName: "Paligsahan" }, { branchName: "Manila" }, { branchName: "QC" }, { branchName: "Makati" }, { branchName: "Mandaluyong" }],
+            branchOptions: [],
             categoryOptions: [{ name: "Salary" }, { name: "Grocery" }, { name: "Utilities" },
             { name: "Food" }, { name: "Gasul" }, { name: "Bakery Items" },
             { name: "Rent" }, { name: "Misc." }, { name: "Taxes" }]
@@ -25,6 +26,17 @@ export default {
     },
 
     methods: {
+
+        retrieveBranches() {
+            UserService.getBranches()
+                .then(response => {
+                    this.branchOptions = response.data;
+                    console.log(response.data)
+                })
+                .catch(e => {
+                    console.log(e);
+                });
+        },
         retrieveSales() {
             RecordService.getAdminSales()
                 .then(response => {
@@ -82,6 +94,7 @@ export default {
     mounted() {
         this.retrieveSales();
         this.retrieveExpenses();
+        this.retrieveBranches();
     },
 
 }

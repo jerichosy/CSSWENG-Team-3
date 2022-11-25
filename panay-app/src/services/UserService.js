@@ -1,8 +1,8 @@
 import http from '../http-common';
 
 class UserService {
-    getAll() {
-        return http.get("/displayusers");
+    getBranches() {
+        return http.get("/viewbranch");
     }
 
     signup(data) {
