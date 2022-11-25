@@ -11,18 +11,20 @@ export default {
                 amount: 0,
                 customerCount: 0,
                 category: '',
-                branch: '',
+                branchName: '',
                 notes: ''
-            }
+            },
         }
 
     },
+
+    emits: ['editRecord'],
 
     watch: {
         selectedRecord() {
             this.inputs.date = this.selectedRecord.date
             this.inputs.amount = this.selectedRecord.amount
-            this.inputs.branch = this.selectedRecord.branchName
+            this.inputs.branchName = this.selectedRecord.branchName
 
             if (this.isSalesRecord) {
                 this.inputs.time = this.selectedRecord.time
@@ -51,6 +53,24 @@ export default {
                 return true
             return false
         },
+    },
+
+    methods: {
+        sendChanges() {
+            if (this.isSalesRecord) {
+                let editedSales = {
+                    id: this.selectedRecord._id,
+                    branchName: this.inputs.branchName,
+                    amount: this.inputs.amount,
+                    customerCount: this.inputs.customerCount,
+                    date: this.inputs.date,
+                    time: this.inputs.time
+                }
+
+                this.$emit('editRecord', editedSales)
+            }
+
+        }
     }
 }
 
@@ -93,7 +113,7 @@ export default {
                     </div>
                     <div>
                         <label for="record-branch">Branch</label>
-                        <input id="record-branch" type="text" v-model="this.inputs.branch" />
+                        <input id="record-branch" type="text" v-model="this.inputs.branchName" />
                     </div>
                     <div v-if="isExpenseRecord">
                         <label for="record-notes">Notes</label>
@@ -102,7 +122,9 @@ export default {
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Save Changes</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                        @click="this.sendChanges()">Save
+                        Changes</button>
                 </div>
             </div>
         </div>
