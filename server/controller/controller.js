@@ -357,7 +357,7 @@ const controller = {
     adminEditSales: (req, res) => {
         const { id, branchID, branchName, amount, customerCount, datetime } = req.body;
         console.log(req.body)
-        var salesobj = {
+        var sales = {
             branchID: branchID,
             branchName: branchName,
             amount: amount,
@@ -365,7 +365,7 @@ const controller = {
             datetime: datetime
         }
 
-        db.updateOne(Sales.Admin, { _id: new Object(id) }, salesobj, function (flag) {
+        db.updateOne(Sales.Admin, { _id: new Object(id) }, sales, function (flag) {
             if (flag) {
                 console.log('Edit success: ' + flag);
                 res.status(201).json({ msg: 'Edit success' })
@@ -377,15 +377,18 @@ const controller = {
     },
 
     adminEditExpense: (req, res) => {
-        const { id, branchID, item, category, amount, notes } = req.body;
+        const { id, branchID, branchName, amount, item, category, notes, datetime } = req.body;
         var expense = {
             branchID: branchID,
+            branchName: branchName,
+            amount: amount,
             item: item,
             category: category,
-            amount: amount,
-            notes: notes
+            notes: notes,
+            datetime: datetime
         }
-        db.updateOne(Expense.Sales, { _id: new Object(id) }, expense, function (flag) {
+
+        db.updateOne(Expense.Admin, { _id: new Object(id) }, expense, function (flag) {
             if (flag) {
                 console.log('Edit success: ' + flag);
                 res.status(201).json({ msg: 'Edit success' })
