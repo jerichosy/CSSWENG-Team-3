@@ -2,6 +2,7 @@
 import FilterButton from '../../../../components/admin/records/FilterButton.vue'
 import FilterOptions from '../../../../components/admin/records/FilterOptions.vue';
 import DeleteRecordModal from '../../../../components/DeleteRecordModal.vue'
+import EditRecordModal from '../../../../components/EditRecordModal.vue'
 
 export default {
     data() {
@@ -19,7 +20,7 @@ export default {
         }
     },
 
-    emits: ['deleteExpense', 'deleteSales'],
+    emits: ['deleteExpense', 'deleteSales', 'editExpense', 'editSales'],
 
     props: {
         branchOptions: [Object],
@@ -56,7 +57,8 @@ export default {
     components: {
         FilterButton,
         FilterOptions,
-        DeleteRecordModal
+        DeleteRecordModal,
+        EditRecordModal
     },
 
     methods: {
@@ -81,6 +83,10 @@ export default {
 
         deleteRecord(record) {
             this.$emit('deleteExpense', record._id)
+        },
+
+        editExpense(editedRecord) {
+            this.$emit('editExpense', editedRecord)
         }
     }
 }
@@ -89,6 +95,9 @@ export default {
 
     <DeleteRecordModal :selected-record="this.selectedRecord" record-type="expense"
         @delete-record="record => deleteRecord(record)" />
+
+    <EditRecordModal :selected-record="this.selectedRecord" record-type="expense"
+        @edit-record="(editedRecord) => this.editExpense(editedRecord)" />
 
     <div class="row m-0 p-2">
         <div class="col p-0 m-0">
@@ -120,7 +129,13 @@ export default {
                     <td>{{ record.branchName }}</td>
                     <td>{{ record.notes }}</td>
                     <td>
-                        <div class="col">
+                        <div class="col-3">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#editModal" @click="setSelectedRecord(record)">
+                                Edit
+                            </button>
+                        </div>
+                        <div class="col-3">
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                 data-bs-target="#deleteModal" @click="setSelectedRecord(record)">
                                 Delete
