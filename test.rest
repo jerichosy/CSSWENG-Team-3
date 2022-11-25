@@ -17,11 +17,11 @@ POST http://localhost:3000/adminaddsales HTTP/1.1
 content-type: application/json
 
     {
-    "branchID": "101",
-    "branchName": "QC",
-    "amount": 1180.00,
-    "customerCount": 8,
-    "datetime": "2022-11-20T11:00:00.000Z"
+    "branchID": "102",
+    "branchName": "Makati",
+    "amount": 1200.70,
+    "customerCount": 10,
+    "datetime": "2022-11-24T13:00:00.000Z"
     }
 
 ###
@@ -31,12 +31,12 @@ content-type: application/json
 
     {
         "branchID": "102",
-        "branchName": "Makati",
-        "item": "Flax",
-        "category": "Salary",
-        "amount": 200.00,
-        "notes": "Bought at Puregold",
-        "datetime": "2022-11-20T11:00:00.000Z"
+        "branchName": "Pag-asa QC",
+        "item": "Flour",
+        "category": "Bakery Items",
+        "amount": 300.00,
+        "notes": "palengke",
+        "datetime": "2022-11-23T11:00:00.000Z"
     }
 
 ###
@@ -61,4 +61,8 @@ content-type: application/json
     {
         "id":"637f80a08a447ca7bbf9fac2"
     }
+
+###
+
+http://localhost:3000/viewbranch HTTP/1.1
 
