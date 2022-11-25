@@ -62,7 +62,7 @@ export default {
                 let editedSales = {
                     id: this.selectedRecord._id,
                     branchName: this.inputs.branchName,
-                    amount: this.inputs.amount,
+                    amount: this.inputs.amount.toFixed(2),
                     customerCount: this.inputs.customerCount,
                     date: this.inputs.date,
                     time: this.inputs.time
@@ -74,7 +74,7 @@ export default {
                 let editedExpense = {
                     id: this.selectedRecord._id,
                     branchName: this.inputs.branchName,
-                    amount: this.inputs.amount,
+                    amount: this.inputs.amount.toFixed(2),
                     item: this.inputs.item,
                     category: this.inputs.category,
                     notes: this.inputs.notes,
@@ -83,7 +83,8 @@ export default {
                 this.$emit('editRecord', editedExpense)
             }
 
-        }
+        },
+
     }
 }
 
@@ -97,45 +98,44 @@ export default {
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Record </h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <div>
+                <div class="modal-body container pe-5 ps-5">
+                    <div class="row form-floating">
+                        <input id="record-date" class="form-control" type="date" v-model="this.inputs.date" />
                         <label for="record-date">Date</label>
-                        <input id="record-date" type="date" v-model="this.inputs.date" />
                     </div>
-                    <div v-if="isSalesRecord">
+                    <div class="row form-floating" v-if="isSalesRecord">
+                        <input id="record-time" class="form-control" type="time" v-model="this.inputs.time" />
                         <label for="record-time">Time</label>
-                        <input id="record-time" type="time" v-model="this.inputs.time" />
                     </div>
-                    <div v-if="isExpenseRecord">
+                    <div class="row form-floating" v-if="isExpenseRecord">
+                        <input id="record-item" class="form-control" type="text" v-model="this.inputs.item" />
                         <label for="record-item">Item Name</label>
-                        <input id="record-item" type="text" v-model="this.inputs.item" />
                     </div>
-                    <div v-if="this.selectedRecord.amount !== undefined">
+                    <div class="row form-floating" v-if="this.selectedRecord.amount !== undefined">
+                        <input id="record-amount" class="form-control" type="number" min="0.00"
+                            v-model="this.inputs.amount" />
                         <label for="record-amount">Amount</label>
-                        <input id="record-amount" type="number" v-model="this.inputs.amount" />
                     </div>
-                    <div v-if="isSalesRecord">
+                    <div class="row form-floating" v-if="isSalesRecord">
+                        <input id="record-customer" class="form-control" type="number"
+                            v-model="this.inputs.customerCount" />
                         <label for="record-customer">Customer Count</label>
-                        <input id="record-customer" type="number" v-model="this.inputs.customerCount" />
                     </div>
-                    <div v-if="isExpenseRecord">
+                    <div class="row form-floating" v-if="isExpenseRecord">
+                        <input id="record-category" class="form-control" type="text" v-model="this.inputs.category" />
                         <label for="record-category">Category</label>
-                        <input id="record-category" type="text" v-model="this.inputs.category" />
                     </div>
-                    <div>
-                        <label for="record-branch">Branch</label>
-                        <select v-model="this.inputs.branchName">
+                    <div class="row form-floating">
+                        <select id="record-branch" class="form-control" v-model="this.inputs.branchName">
                             <template v-for="branch in this.branchOptions" :key="branch.branchID">
                                 <option :value="branch.branchName">{{ branch.branchName }}</option>
                             </template>
                         </select>
-
-                        <!-- <label for="record-branch">Branch</label>
-                        <input id="record-branch" type="text" v-model="this.inputs.branchName" /> -->
+                        <label for="record-branch">Branch</label>
                     </div>
-                    <div v-if="isExpenseRecord">
+                    <div class="row form-floating" v-if="isExpenseRecord">
+                        <input id="record-notes" class="form-control" type="text" v-model="this.inputs.notes" />
                         <label for="record-notes">Notes</label>
-                        <input id="record-notes" type="text" v-model="this.inputs.notes" />
                     </div>
                 </div>
                 <div class="modal-footer">
