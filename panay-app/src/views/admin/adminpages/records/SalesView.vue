@@ -3,6 +3,7 @@ import FilterButton from '../../../../components/admin/records/FilterButton.vue'
 import FilterOptions from '../../../../components/admin/records/FilterOptions.vue';
 import RecordService from '../../../../services/RecordService.js'
 import DeleteRecordModal from '../../../../components/DeleteRecordModal.vue'
+import EditRecordModal from '../../../../components/EditRecordModal.vue'
 
 export default {
     data() {
@@ -54,7 +55,8 @@ export default {
     components: {
         FilterButton,
         FilterOptions,
-        DeleteRecordModal
+        DeleteRecordModal,
+        EditRecordModal
     },
 
     methods: {
@@ -111,6 +113,8 @@ export default {
     <DeleteRecordModal :selected-record="this.selectedRecord" record-type="sales"
         @delete-record="record => deleteRecord(record)" />
 
+    <EditRecordModal :selected-record="this.selectedRecord" record-type="sales" />
+
     <div class="row m-0 p-2">
         <div class="col p-0 m-0">
             <FilterButton />
@@ -139,12 +143,21 @@ export default {
                     <td>{{ record.customerCount }}</td>
                     <td>{{ record.branchName }}</td>
                     <td>
-                        <div class="col">
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal" @click="setSelectedRecord(record)">
-                                Delete
-                            </button>
+                        <div class="row">
+                            <div class="col-3">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#editModal" @click="setSelectedRecord(record)">
+                                    Edit
+                                </button>
+                            </div>
+                            <div class="col-3">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#deleteModal" @click="setSelectedRecord(record)">
+                                    Delete
+                                </button>
+                            </div>
                         </div>
+
                     </td>
                 </tr>
             </tbody>
