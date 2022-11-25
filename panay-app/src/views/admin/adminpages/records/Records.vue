@@ -59,6 +59,34 @@ export default {
                 });
         },
 
+        editSales(editedRecord) {
+
+            let matchedBranch = this.branchOptions.find(branch => {
+                console.log(branch.branchName, editedRecord.branchName)
+                return branch.branchName === editedRecord.branchName
+            })
+
+            let datetime = new Date(editedRecord.date + 'T' + editedRecord.time + ':00Z').toISOString()
+
+            let newEdit = {
+                id: editedRecord.id,
+                branchID: matchedBranch.branchID, //based on branchName,
+                branchName: editedRecord.branchName,
+                amount: editedRecord.amount,
+                customerCount: editedRecord.customerCount,
+                datetime: datetime // merge editedRecord.date and editedRecord.time
+            }
+
+            RecordService.editAdminSales(newEdit)
+                .then(response => {
+                    console.log(response.data);
+                    this.retrieveSales(); // important for refreshing!
+                })
+                .catch(e => {
+                    console.log(e);
+                });
+        },
+
         deleteSales(id) {
             const data = {
                 "id": id
@@ -115,7 +143,7 @@ export default {
 
     <div class="row container-fluid p-0 m-0">
         <RouterView :branch-options="this.branchOptions" :category-options="this.categoryOptions"
-            :sales-records="this.salesRecords" :expense-records="this.expenseRecords" @delete-sales="deleteSales"
-            @delete-expense="deleteExpense" />
+            :sales-records="this.salesRecords" :expense-records="this.expenseRecords" @edit-sales="editSales"
+            @delete-sales="deleteSales" @delete-expense="deleteExpense" />
     </div>
 </template>
