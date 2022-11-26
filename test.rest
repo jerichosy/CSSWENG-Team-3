@@ -66,3 +66,40 @@ content-type: application/json
 
 http://localhost:3000/viewbranch HTTP/1.1
 
+###
+POST http://localhost:3000/addcheque  HTTP/1.1
+content-type: application/json
+
+    {
+        "datetime":"2022-11-23T11:00:00.000Z",
+        "account": "ccc",
+        "category": "bbb",
+        "amount": "50"
+    }
+
+###
+
+http://localhost:3000/viewcheque HTTP/1.1
+
+###
+POST http://localhost:3000/editcheque  HTTP/1.1
+content-type: application/json
+
+    {
+        "id":"6381cfb91bd23e907bad5964",
+        "datetime":"2022-11-23T11:00:00.000Z",
+        "account": "111",
+        "category": "bbb",
+        "amount": "50.505"
+    }
+
+###
+
+POST http://localhost:3000/deletecheque  HTTP/1.1
+content-type: application/json
+
+    {
+        "id":"6381cfb91bd23e907bad5964"
+    }
+
+###
