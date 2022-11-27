@@ -3,5 +3,5 @@
 </script>
 
 <template>
-    <span>Checks</span>
+    <span>Cheques</span>
 </template>

@@ -4,7 +4,7 @@ import AdminView from '../views/admin/AdminView.vue'
 import Account from '../views/admin/adminpages/Account.vue'
 import Branches from '../views/admin/adminpages/Branches.vue'
 import Categories from '../views/admin/adminpages/Categories.vue'
-import Checks from '../views/admin/adminpages/Checks.vue'
+import Cheques from '../views/admin/adminpages/Cheques.vue'
 import Dashboard from '../views/admin/adminpages/Dashboard.vue'
 import Records from '../views/admin/adminpages/records/Records.vue'
 import Reports from '../views/admin/adminpages/Reports.vue'
@@ -40,9 +40,9 @@ const router = createRouter({
           component: Categories
         },
         {
-          path: 'checks',
-          name: 'checks',
-          component: Checks
+          path: 'cheques',
+          name: 'cheques',
+          component: Cheques
         },
         {
           path: 'dashboard',
