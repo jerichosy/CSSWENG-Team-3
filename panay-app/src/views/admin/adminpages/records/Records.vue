@@ -166,6 +166,10 @@ export default {
                 <RouterLink class="nav-link" :class="{ active: $route.name === 'expenses' }" to="expenses">Expenses
                 </RouterLink>
             </li>
+            <li class="nav-item">
+                <RouterLink class="nav-link" :class="{ active: $route.name === 'cheques' }" to="cheques">Cheques
+                </RouterLink>
+            </li>
         </ul>
     </div>
 
