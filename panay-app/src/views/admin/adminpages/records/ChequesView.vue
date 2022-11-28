@@ -1,5 +1,7 @@
 <script>
 
+import ChequesFilters from '../../../../components/admin/records/ChequesFilters.vue'
+
 export default {
     inheritAttrs: false,
     props: {
@@ -7,17 +9,72 @@ export default {
         categoryOptions: [Object],
         chequeRecords: [Object]
     },
+    components: {
+        ChequesFilters
+    },
+
+    data() {
+        return {
+            filters: {
+                dateFrom: '',
+                dateTo: '',
+                accountSearch: '',
+                checkedBranches: [],
+                checkedCategories: []
+            }
+        }
+    },
+
+    computed: {
+        filteredChequeRecords() {
+            let filteredChequeRecords = this.chequeRecords;
+
+            if (this.filters.dateFrom.length) {
+                filteredChequeRecords = filteredChequeRecords.filter((record) => Date.parse(record.date) >= Date.parse(this.filters.dateFrom))
+            }
+
+            if (this.filters.dateTo.length) {
+                filteredChequeRecords = filteredChequeRecords.filter((record) => Date.parse(record.date) <= Date.parse(this.filters.dateTo))
+            }
+
+            if (this.filters.accountSearch.length) {
+                filteredChequeRecords = filteredChequeRecords.filter((record) => this.searchItem(record, this.filters.accountSearch))
+            }
+
+            if (this.filters.checkedBranches.length) {
+                filteredChequeRecords = filteredChequeRecords.filter(record => record.branchName === this.filters.checkedBranches[this.filters.checkedBranches.indexOf(record.branchName)])
+            }
+
+            if (this.filters.checkedCategories.length) {
+                filteredChequeRecords = filteredChequeRecords.filter(record => record.category === this.filters.checkedCategories[this.filters.checkedCategories.indexOf(record.category)])
+            }
+
+            return filteredChequeRecords
+        }
+    },
 
     methods: {
         formatDate(date) {
-            return date.replace(/-/g, '/')
+            return date.replace(/-/g, '/');
+        },
+
+        updateFilters(newFilter) {
+            this.filters = newFilter
+        },
+
+        searchItem(record, searchFilter) {
+            const searchString = searchFilter.toLowerCase();
+            const accountName = record.account.toLowerCase();
+
+            if (accountName.includes(searchString))
+                return true
+            return false
         },
     }
 }
 </script>
 
 <template>
-
     <!-- Modal for Adding Cheque Expense -->
     <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -107,83 +164,15 @@ export default {
 
     <!-- Filter Menu -->
     <div class="row m-0 p-2">
-        <div class="col-5 me-auto p-0">
-            <div class="dropdown">
-                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
-                    aria-expanded="false" data-bs-auto-close="outside">
-                    Filters
-                </button>
-                <form id="filter-dropdown" class="dropdown-menu p-4">
-                    <fieldset class="mb-2">
-                        <legend class="col-form-label-sm m-0">Date Range</legend>
-                        <div class="row">
-                            <div class="col">
-                                <input type="date" title="from" class="form-control" id="filterDateFrom" />
-                            </div>
-                            <div class="col">
-                                <input type="date" title="to" class="form-control" id="filterDateTo" />
-                            </div>
-                        </div>
 
-
-                    </fieldset>
-
-                    <div class="mb-2">
-                        <div class="form-floating">
-                            <input type="text" class="form-control" id="filterAccount" placeholder="Account" />
-                            <label for="filterAccount">Search for an account</label>
-                        </div>
-                    </div>
-
-                    <div class="mb-2">
-                        <div class="row">
-                            <div class="col-auto dropdown">
-                                <button type="button" class="btn btn-outline-primary dropdown-toggle"
-                                    data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
-                                    Branches
-                                </button>
-                                <div id="branch-dropdown" class="dropdown-menu p-4">
-                                    <div class="form-check" v-for="branch in branchOptions">
-                                        <input class="form-check-input btn-check" type="checkbox" name="branches"
-                                            :id="'branch' + branch.branchID" :value="branch.branchName" />
-                                        <label class="form-check-label btn btn-outline-primary text-nowrap"
-                                            :for="'branch' + branch.branchID">{{ branch.branchName }}</label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-auto dropdown">
-                                <button type="button" class="btn btn-outline-primary dropdown-toggle"
-                                    data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
-                                    Categories
-                                </button>
-                                <div id="category-dropdown" class="dropdown-menu p-4">
-                                    <div class="form-check" v-for="category in categoryOptions">
-                                        <input class="form-check-input btn-check" type="checkbox" name="branches"
-                                            :id="category.name.toLowerCase()" :value="category.name" />
-                                        <label class="form-check-label btn btn-outline-primary text-nowrap"
-                                            :for="category.name.toLowerCase()">{{ category.name }}</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-
-                    <button type="reset" class="btn btn-primary">Reset Filters</button>
-                </form>
-            </div>
-        </div>
-
-
+        <ChequesFilters @update-filters="updateFilters" />
 
         <div class="col-auto p-0">
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">Add</button>
         </div>
     </div>
 
-    <div class="row m-0 p-2">
+    <div class="row m-0 p-0">
         <div class="table-responsive m-0">
             <table class="table table-striped table-hover table-sm">
                 <thead>
@@ -197,10 +186,10 @@ export default {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="record in chequeRecords">
+                    <tr v-for="record in filteredChequeRecords">
                         <td>{{ this.formatDate(record.date) }}</td>
                         <td>{{ record.amount }}</td>
-                        <td>{{ record.branch }}</td>
+                        <td>{{ record.branchName }}</td>
                         <td>{{ record.category }}</td>
                         <td>{{ record.account }}</td>
                         <td>
@@ -218,7 +207,6 @@ export default {
                                     </button>
                                 </div>
                             </div>
-
                         </td>
                     </tr>
                 </tbody>
@@ -226,12 +214,3 @@ export default {
         </div>
     </div>
 </template>
-
-<style scoped>
-#branch-dropdown,
-#category-dropdown {
-    max-height: 280px !important;
-    min-width: auto !important;
-    overflow-y: auto !important;
-}
-</style>
