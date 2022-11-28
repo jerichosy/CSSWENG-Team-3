@@ -10,6 +10,15 @@ export default {
         return {
             salesRecords: [],
             expenseRecords: [],
+            chequeRecords: [
+                {
+                    date: '2022-11-28',
+                    amount: 1000.00,
+                    branch: 'Pag-asa QC',
+                    category: 'Bakery Items',
+                    account: 'MERALCO'
+                }
+            ],
             pageOptions: [{ title: "Sales", path: "sales" }, { title: "Expenses", path: "expenses" }],
             branchOptions: [],
             categoryOptions: [{ name: "Salary" }, { name: "Grocery" }, { name: "Utilities" },
@@ -33,7 +42,6 @@ export default {
             UserService.getBranches()
                 .then(response => {
                     this.branchOptions = response.data;
-                    console.log(response.data)
                 })
                 .catch(e => {
                     console.log(e);
@@ -43,7 +51,6 @@ export default {
             RecordService.getAdminSales()
                 .then(response => {
                     this.salesRecords = response.data;
-                    console.log(response.data);
                 })
                 .catch(e => {
                     console.log(e);
@@ -54,7 +61,6 @@ export default {
             RecordService.getAdminExpenses()
                 .then(response => {
                     this.expenseRecords = response.data;
-                    console.log(response.data);
                 })
                 .catch(e => {
                     console.log(e);
@@ -175,7 +181,8 @@ export default {
 
     <div class="row container-fluid p-0 m-0">
         <RouterView :branch-options="this.branchOptions" :category-options="this.categoryOptions"
-            :sales-records="this.salesRecords" :expense-records="this.expenseRecords" @edit-sales="editSales"
-            @edit-expense="editExpense" @delete-sales="deleteSales" @delete-expense="deleteExpense" />
+            :sales-records="this.salesRecords" :expense-records="this.expenseRecords"
+            :cheque-records="this.chequeRecords" @edit-sales="editSales" @edit-expense="editExpense"
+            @delete-sales="deleteSales" @delete-expense="deleteExpense" />
     </div>
 </template>
