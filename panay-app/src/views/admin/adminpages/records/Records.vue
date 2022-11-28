@@ -1,6 +1,7 @@
 <script>
 import RecordService from '../../../../services/RecordService.js'
 import UserService from '../../../../services/UserService.js'
+import { computed } from 'vue'
 
 // TODO: Fix Action buttons layout
 // TODO: Use icons for edit and delete (and possibly filter)
@@ -14,7 +15,7 @@ export default {
                 {
                     date: '2022-11-28',
                     amount: 1000.00,
-                    branch: 'Pag-asa QC',
+                    branchName: 'Pag-asa QC',
                     category: 'Bakery Items',
                     account: 'MERALCO'
                 }
@@ -24,6 +25,13 @@ export default {
             categoryOptions: [{ name: "Salary" }, { name: "Grocery" }, { name: "Utilities" },
             { name: "Food" }, { name: "Gasul" }, { name: "Bakery Items" },
             { name: "Rent" }, { name: "Misc." }, { name: "Taxes" }]
+        }
+    },
+
+    provide() {
+        return {
+            branchOptions: computed(() => this.branchOptions),
+            categoryOptions: computed(() => this.categoryOptions)
         }
     },
 
