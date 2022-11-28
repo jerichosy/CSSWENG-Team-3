@@ -1,5 +1,6 @@
 <script>
-
+// TODO: redesign modal based on add cheque expense modal
+// TODO: accomodate for cheque expenses
 export default {
 
     data() {
