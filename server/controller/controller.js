@@ -517,6 +517,58 @@ const controller = {
         })
     },
 
+    test: async (req, res) => {
+        var { branchID } = req.body
+
+        //Get expenses, sales, cheques
+        var salary = await Expense.Admin.find({ branchID: branchID, category: 'Salary' })
+        var grocery = await Expense.Admin.find({ branchID: branchID, category: 'Grocery' })
+        var utilities = await Expense.Admin.find({ branchID: branchID, category: 'Utilities' })
+        var food = await Expense.Admin.find({ branchID: branchID, category: 'Food' })
+        var gasul = await Expense.Admin.find({ branchID: branchID, category: 'Gasul' })
+        var bakeryitems = await Expense.Admin.find({ branchID: branchID, category: 'Bakery Items' })
+        var rent = await Expense.Admin.find({ branchID: branchID, category: 'Rent' })
+        var misc = await Expense.Admin.find({ branchID: branchID, category: 'Misc' })
+        var taxes = await Expense.Admin.find({ branchID: branchID, category: 'Taxes' })
+
+        const expense = [salary, grocery, utilities, food, gasul, bakeryitems, rent, misc, taxes]
+        var sales = await Sales.Admin.find({})
+        var cheque = await Cheque.find({})
+
+        var totalsales = 0, totalexpense = 0
+
+        //Populate Total Sales
+        for (var i = 0; i < sales.length; i++) {
+            totalsales += sales[i].amount
+        }
+        var expensearr = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+        //Populate Total Expense
+        for (var i = 0; i < expense.length; i++) {
+            for (var j = 0; j < expense[i].length; j++) {
+                totalexpense += expense[i][j].amount
+                expensearr[i] = expense[i][j].amount
+            }
+        }
+        console.log(totalexpense)
+        console.log(expensearr)
+
+
+        var reports = []
+        res.status(201).json({ msg: 'Done' });
+
+
+
+        // //WORKING
+        // db.findMany(Expense.Admin, { category: 'Grocery' }, '', (err1) => {
+        //     db.findMany(Expense.Admin, { category: 'Bakery Items' }, '', (err2) => {
+        //         console.log(err1)
+        //         console.log(err2)
+        //     })
+        // })
+    },
+
+
+
 
 }
 

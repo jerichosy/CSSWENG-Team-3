@@ -30,13 +30,22 @@ POST http://localhost:3000/adminaddexpense HTTP/1.1
 content-type: application/json
 
     {
-        "branchID": "102",
+        "branchID": "10",
         "branchName": "Pag-asa QC",
         "item": "Flour",
-        "category": "Bakery Items",
+        "category": "Utilities",
         "amount": 300.00,
         "notes": "palengke",
         "datetime": "2022-11-23T11:00:00.000Z"
+    }
+
+###
+
+POST http://localhost:3000/test HTTP/1.1
+content-type: application/json
+
+    {
+        "branchID":"102"
     }
 
 ###
