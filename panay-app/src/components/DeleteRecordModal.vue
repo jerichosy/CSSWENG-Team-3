@@ -18,6 +18,21 @@ export default {
             return false
         }
     },
+
+    methods: {
+        formatDate(date) {
+            return date.replace(/-/g, '/')
+        },
+
+        formatTime(time) {
+            if (time) {
+                return new Date('1970-01-01T' + time + 'Z')
+                    .toLocaleTimeString('en-US',
+                        { timeZone: 'UTC', hour12: true, hour: 'numeric', minute: 'numeric' }
+                    );
+            }
+        }
+    }
 }
 
 </script>
