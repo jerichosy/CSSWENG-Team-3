@@ -1,6 +1,7 @@
 <script>
 
 import ChequesFilters from '../../../../components/admin/records/cheques/ChequesFilters.vue'
+import DeleteRecordModal from '../../../../components/DeleteRecordModal.vue';
 
 export default {
     inheritAttrs: false,
@@ -10,7 +11,8 @@ export default {
         chequeRecords: [Object]
     },
     components: {
-        ChequesFilters
+        ChequesFilters,
+        DeleteRecordModal
     },
 
     data() {
@@ -21,7 +23,8 @@ export default {
                 accountSearch: '',
                 checkedBranches: [],
                 checkedCategories: []
-            }
+            },
+            selectedRecord: {}
         }
     },
 
@@ -70,11 +73,20 @@ export default {
                 return true
             return false
         },
+
+        setSelectedRecord(record) {
+            this.selectedRecord = record
+        },
+        clearSelectedRecord() {
+            this.selectedRecord = {}
+        }
     }
 }
 </script>
 
 <template>
+    <DeleteRecordModal :selected-record="selectedRecord" record-type="cheques" />
+
     <!-- Modal for Adding Cheque Expense -->
     <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -173,6 +185,8 @@ export default {
     </div>
 
     <div class="row m-0 p-0">
+        <!--  -->
+        <!-- <p>{{ selectedRecord }}</p> -->
         <div class="table-responsive m-0">
             <table class="table table-striped table-hover table-sm">
                 <thead>
@@ -187,7 +201,7 @@ export default {
                 </thead>
                 <tbody>
                     <tr v-for="record in filteredChequeRecords">
-                        <td>{{ this.formatDate(record.date) }}</td>
+                        <td>{{ formatDate(record.date) }}</td>
                         <td>{{ record.amount }}</td>
                         <td>{{ record.branchName }}</td>
                         <td>{{ record.category }}</td>
