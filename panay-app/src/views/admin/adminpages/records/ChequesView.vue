@@ -1,12 +1,19 @@
 <script>
 
 export default {
+    inheritAttrs: false,
     props: {
         branchOptions: [Object],
-        categoryOptions: [Object]
+        categoryOptions: [Object],
+        chequeRecords: [Object]
+    },
+
+    methods: {
+        formatDate(date) {
+            return date.replace(/-/g, '/')
+        },
     }
 }
-
 </script>
 
 <template>
@@ -190,13 +197,29 @@ export default {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
+                    <tr v-for="record in chequeRecords">
+                        <td>{{ this.formatDate(record.date) }}</td>
+                        <td>{{ record.amount }}</td>
+                        <td>{{ record.branch }}</td>
+                        <td>{{ record.category }}</td>
+                        <td>{{ record.account }}</td>
+                        <td>
+                            <div class="row">
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal"
+                                        data-bs-target="#editModal" @click="setSelectedRecord(record)">
+                                        Edit
+                                    </button>
+                                </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
+                                        data-bs-target="#deleteModal" @click="setSelectedRecord(record)">
+                                        Delete
+                                    </button>
+                                </div>
+                            </div>
+
+                        </td>
                     </tr>
                 </tbody>
             </table>
