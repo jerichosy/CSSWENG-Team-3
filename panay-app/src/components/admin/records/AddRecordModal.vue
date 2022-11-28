@@ -1,4 +1,5 @@
 <script>
+// TODO: connect backend for adding cheques
 export default {
     inject: {
         branchOptions: {
