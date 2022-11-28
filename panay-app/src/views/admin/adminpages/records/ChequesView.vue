@@ -4,6 +4,7 @@
 import ChequesFilters from '../../../../components/admin/records/cheques/ChequesFilters.vue'
 import DeleteRecordModal from '../../../../components/DeleteRecordModal.vue';
 import AddRecordModal from '../../../../components/admin/records/AddRecordModal.vue'
+import EditRecordModal from '../../../../components/EditRecordModal.vue';
 
 export default {
     inheritAttrs: false,
@@ -15,7 +16,8 @@ export default {
     components: {
         ChequesFilters,
         DeleteRecordModal,
-        AddRecordModal
+        AddRecordModal,
+        EditRecordModal
     },
 
     data() {
@@ -89,7 +91,10 @@ export default {
 
 <template>
     <DeleteRecordModal :selected-record="selectedRecord" record-type="cheques" />
+    <EditRecordModal :selected-record="selectedRecord" record-type="cheques" />
     <AddRecordModal record-type="cheques" />
+
+
     <!-- Filter Menu -->
     <div class="row m-0 p-2">
 
