@@ -20,7 +20,7 @@ export default {
                 accountSearch: '',
                 checkedBranches: [],
                 checkedCategories: []
-            }
+            },
         }
     },
 
