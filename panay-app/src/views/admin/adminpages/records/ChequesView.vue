@@ -1,6 +1,4 @@
 <script>
-// TODO: Add EditRecordModal
-
 import ChequesFilters from '../../../../components/admin/records/cheques/ChequesFilters.vue'
 import DeleteRecordModal from '../../../../components/DeleteRecordModal.vue';
 import AddRecordModal from '../../../../components/admin/records/AddRecordModal.vue'
