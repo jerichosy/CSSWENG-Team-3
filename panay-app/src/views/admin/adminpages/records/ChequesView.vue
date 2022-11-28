@@ -1,6 +1,6 @@
 <script>
 
-import ChequesFilters from '../../../../components/admin/records/ChequesFilters.vue'
+import ChequesFilters from '../../../../components/admin/records/cheques/ChequesFilters.vue'
 
 export default {
     inheritAttrs: false,
