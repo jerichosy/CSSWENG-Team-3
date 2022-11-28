@@ -16,6 +16,11 @@ export default {
             if (this.recordType === 'expense')
                 return true
             return false
+        },
+        isChequesRecord() {
+            if (this.recordType === 'cheques')
+                return true
+            return false
         }
     },
 
@@ -50,26 +55,56 @@ export default {
                     <table class="table table-striped table-sm" v-if="Object.keys(selectedRecord).length !== 0">
                         <thead>
                             <tr>
-                                <th scope="col">Date</th>
-                                <th scope="col" v-if="this.isSalesRecord">Time</th>
-                                <th scope="col" v-if="this.isExpenseRecord">Item Name</th>
-                                <th scope="col">Amount</th>
-                                <th scope="col" v-if="this.isSalesRecord">Customer Count</th>
-                                <th scope="col" v-if="this.isExpenseRecord">Category</th>
-                                <th scope="col">Branch</th>
-                                <th scope="col" v-if="this.isExpenseRecord">Notes</th>
+                                <template v-if="isSalesRecord">
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Time</th>
+                                    <th scope="col">Amount</th>
+                                    <th scope="col">Customer Count</th>
+                                    <th scope="col">Branch</th>
+                                </template>
+
+                                <template v-if="isExpenseRecord">
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Item Name</th>
+                                    <th scope="col">Amount</th>
+                                    <th scope="col">Category</th>
+                                    <th scope="col">Branch</th>
+                                </template>
+
+                                <template v-if="isChequesRecord">
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Amount</th>
+                                    <th scope="col">Branch</th>
+                                    <th scope="col">Category</th>
+                                    <th scope="col">Account</th>
+                                </template>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>{{ this.$parent.formatDate(selectedRecord.date) }}</td>
-                                <td v-if="this.isSalesRecord">{{ this.$parent.formatTime(selectedRecord.time) }}</td>
-                                <td v-if="this.isExpenseRecord">{{ selectedRecord.item }}</td>
-                                <td>₱{{ selectedRecord.amount.toFixed(2).toLocaleString('en-US') }}</td>
-                                <td v-if="this.isSalesRecord">{{ selectedRecord.customerCount }}</td>
-                                <td v-if="this.isExpenseRecord">{{ selectedRecord.category }}</td>
-                                <td>{{ selectedRecord.branchName }}</td>
-                                <td v-if="this.isExpenseRecord">{{ selectedRecord.notes }}</td>
+                                <template v-if="isSalesRecord">
+                                    <td>{{ formatDate(selectedRecord.date) }}</td>
+                                    <td>{{ formatTime(selectedRecord.time) }}</td>
+                                    <td>₱{{ selectedRecord.amount.toFixed(2).toLocaleString('en-US') }}</td>
+                                    <td>{{ selectedRecord.customerCount }}</td>
+                                    <td>{{ selectedRecord.branchName }}</td>
+                                </template>
+
+                                <template v-if="isExpenseRecord">
+                                    <td>{{ formatDate(selectedRecord.date) }}</td>
+                                    <td>{{ selectedRecord.item }}</td>
+                                    <td>₱{{ selectedRecord.amount.toFixed(2).toLocaleString('en-US') }}</td>
+                                    <td>{{ selectedRecord.category }}</td>
+                                    <td>{{ selectedRecord.branchName }}</td>
+                                </template>
+
+                                <template v-if="isChequesRecord">
+                                    <td>{{ formatDate(selectedRecord.date) }}</td>
+                                    <td>₱{{ selectedRecord.amount.toFixed(2).toLocaleString('en-US') }}</td>
+                                    <td>{{ selectedRecord.branchName }}</td>
+                                    <td>{{ selectedRecord.category }}</td>
+                                    <td>{{ selectedRecord.account }}</td>
+                                </template>
                             </tr>
                         </tbody>
                     </table>
