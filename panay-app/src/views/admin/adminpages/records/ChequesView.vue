@@ -58,6 +58,8 @@ export default {
     <!-- Filter Menu -->
     <div class="row m-0 p-2">
         <ChequesFilters @update-filters="updateFilters" />
+
+        <!-- Button for Add Modal -->
         <div class="col-auto p-0">
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">Add</button>
         </div>
