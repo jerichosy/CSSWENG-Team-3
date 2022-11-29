@@ -24,7 +24,6 @@ export default {
                 account: '',
             },
         }
-
     },
 
     emits: ['editRecord'],
@@ -99,10 +98,6 @@ export default {
                 }
                 this.$emit('editRecord', editedExpense)
             }
-
-        },
-
-        testFunction() {
 
         }
 
