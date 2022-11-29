@@ -3,6 +3,7 @@ const db = require('../models/db.js');
 const User = require('../models/UserSchema.js');
 const Sales = require('../models/branch/salesSchema.js');
 const Expense = require('../models/branch/expenseSchema.js');
+const Cheque = require('../models/admin/adminChequeSchema.js')
 const bcrypt = require('bcrypt');
 
 const controller = {
@@ -458,6 +459,65 @@ const controller = {
     adminViewExpenseFilter: (req, res) => {
 
     },
+
+    addCheque: (req, res) => {
+        db.insertOne(Cheque, req.body, function (flag) {
+            if (flag) {
+                console.log('Cheque added');
+                res.status(201).json({ msg: 'Cheque Added. 201 Created' });  //201 Created
+            } else {
+                console.log('Cheque not added');
+                res.status(400).json({ msg: 'Something went wrong. Please try again.' })
+            }
+        })
+    },
+
+    viewCheque: (req, res) => {
+        db.findMany(Cheque, {}, '', function (cheque) {
+            if (cheque) {
+                console.log('Cheque shown');
+                res.status(200).json(cheque);  //200 OK
+            } else {
+                console.log('Sales not shown');
+                res.status(400).json({ msg: 'Something went wrong. Please try again.' })  //400 Bad Request
+            }
+        })
+    },
+
+    editCheque: (req, res) => {
+        const { id, datetime, account, category, amount } = req.body;
+        console.log(req.body)
+        var cheque = {
+            datetime: datetime,
+            account: account,
+            category: category,
+            amount: amount
+        }
+        db.updateOne(Cheque, { _id: new Object(id) }, cheque, function (flag) {
+            if (flag) {
+                console.log('Edit success: ' + flag);
+                res.status(201).json({ msg: 'Edit success' })
+            } else {
+                console.log('Cheque not edited');
+                res.status(400).json({ msg: 'Something went wrong. Please try again.' })
+            }
+        })
+    },
+
+    deleteCheque: (req, res) => {
+        const { id } = req.body;
+        db.deleteOne(Cheque, { _id: new Object(id) }, function (flag) {
+            if (flag) {
+                console.log('Delete success: ' + flag);
+                res.status(201).json({ msg: 'Delete success' })
+            } else {
+                console.log('Sales not deleted');
+                res.status(400).json({ msg: 'Something went wrong. Please try again.' })
+            }
+        })
+    },
+
+
 }
 
 module.exports = controller;
