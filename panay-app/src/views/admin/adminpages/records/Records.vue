@@ -17,7 +17,28 @@ export default {
                     amount: 1000.00,
                     branchName: 'Pag-asa QC',
                     category: 'Bakery Items',
-                    account: 'MERALCO'
+                    account: 'Meralco'
+                },
+                {
+                    date: '2022-11-29',
+                    amount: 1200.50,
+                    branchName: 'Panay Avenue Paligsahan QC',
+                    category: 'Salary',
+                    account: 'BPI'
+                },
+                {
+                    date: '2022-11-29',
+                    amount: 10000.00,
+                    branchName: 'Paco Manila',
+                    category: 'Rent',
+                    account: 'BPI'
+                },
+                {
+                    date: '2022-11-30',
+                    amount: 8500.00,
+                    branchName: 'Panay Avenue Paligsahan QC',
+                    category: 'Utilities',
+                    account: 'Meralco'
                 }
             ],
             pageOptions: [{ title: "Sales", path: "sales" }, { title: "Expenses", path: "expenses" }],
