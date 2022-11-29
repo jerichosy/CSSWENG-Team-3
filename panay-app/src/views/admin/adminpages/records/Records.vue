@@ -31,7 +31,10 @@ export default {
     provide() {
         return {
             branchOptions: computed(() => this.branchOptions),
-            categoryOptions: computed(() => this.categoryOptions)
+            categoryOptions: computed(() => this.categoryOptions),
+            salesRecords: computed(() => this.salesRecords),
+            expenseRecords: computed(() => this.expenseRecords),
+            chequeRecords: computed(() => this.chequeRecords)
         }
     },
 
