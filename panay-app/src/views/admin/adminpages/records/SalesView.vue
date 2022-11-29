@@ -1,11 +1,24 @@
 <script>
 import FilterButton from '../../../../components/admin/records/FilterButton.vue'
 import FilterOptions from '../../../../components/admin/records/FilterOptions.vue';
-import RecordService from '../../../../services/RecordService.js'
 import DeleteRecordModal from '../../../../components/DeleteRecordModal.vue'
 import EditRecordModal from '../../../../components/EditRecordModal.vue'
 
 export default {
+    inheritAttrs: false,
+    props: {
+        branchOptions: [Object],
+        categoryOptions: [Object],
+        salesRecords: [Object],
+    },
+    emits: ['deleteSales', 'editSales'],
+    components: {
+        FilterButton,
+        FilterOptions,
+        DeleteRecordModal,
+        EditRecordModal
+    },
+
     data() {
         return {
             filters: {
@@ -19,15 +32,6 @@ export default {
             },
             selectedRecord: {}
         }
-    },
-
-    emits: ['deleteSales', 'deleteExpense', 'editSales', 'editExpense'],
-
-    props: {
-        branchOptions: [Object],
-        categoryOptions: [Object],
-        salesRecords: [Object],
-        expenseRecords: [Object] //pass this to get rid of Vue console warning
     },
 
 
@@ -52,12 +56,7 @@ export default {
             return filteredSalesRecords
         }
     },
-    components: {
-        FilterButton,
-        FilterOptions,
-        DeleteRecordModal,
-        EditRecordModal
-    },
+
 
     methods: {
         formatDate(date) {
