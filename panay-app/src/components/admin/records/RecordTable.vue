@@ -36,6 +36,8 @@ export default {
             return records.sort((a, b) => {
                 let modifier = 1;
                 if (this.currentSortDir === 'desc') modifier = -1;
+                if (a[this.currentSort] === undefined) return 1;
+                if (b[this.currentSort] === undefined) return -1
                 if (a[this.currentSort] < b[this.currentSort]) return -1 * modifier;
                 if (a[this.currentSort] > b[this.currentSort]) return 1 * modifier;
                 return 0
