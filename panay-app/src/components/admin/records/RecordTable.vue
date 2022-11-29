@@ -24,9 +24,16 @@ export default {
     },
 
     computed: {
-
         sortedRecords() {
-            return this.chequeRecords.sort((a, b) => {
+            let records = [];
+            if (this.isSalesRecord)
+                records = this.salesRecords;
+            else if (this.isExpenseRecord)
+                records = this.expenseRecords;
+            else if (this.isChequesRecord)
+                records = this.chequeRecords;
+
+            return records.sort((a, b) => {
                 let modifier = 1;
                 if (this.currentSortDir === 'desc') modifier = -1;
                 if (a[this.currentSort] < b[this.currentSort]) return -1 * modifier;
@@ -125,6 +132,31 @@ export default {
             return date.replace(/-/g, '/');
         },
 
+        formatTime(time) {
+            if (time) {
+                return new Date('1970-01-01T' + time + 'Z')
+                    .toLocaleTimeString('en-US',
+                        { timeZone: 'UTC', hour12: true, hour: 'numeric', minute: 'numeric' }
+                    );
+            }
+        },
+        parseStartTime(startTime, record) {
+            const startDate = new Date('1970-01-01T' + startTime + ':00')
+            const recordDate = new Date('1970-01-01T' + record.time + ':00')
+
+            if (Date.parse(recordDate) >= Date.parse(startDate))
+                return true
+            return false
+        },
+        parseEndTime(endTime, record) {
+            const endDate = new Date('1970-01-01T' + endTime + ':00')
+            const recordDate = new Date('1970-01-01T' + record.time + ':00')
+
+            if (Date.parse(recordDate) <= Date.parse(endDate))
+                return true
+            return false
+        },
+
         searchItem(record, searchFilter) {
             const searchString = searchFilter.toLowerCase();
             const accountName = record.account.toLowerCase();
@@ -162,7 +194,7 @@ export default {
                         <th class="data-header bg-bgdefault" scope="col" @click="sort('customerCount')">Customer Count
                         </th>
                         <th class="data-header bg-bgdefault" scope="col" @click="sort('branchName')">Branch</th>
-                        <th class="data-header bg-bgdefault" scope="col">Actions</th>
+                        <th scope="col">Actions</th>
                     </tr>
                 </template>
 
@@ -205,14 +237,14 @@ export default {
                             <div class="row">
                                 <div class="col-3">
                                     <!-- Button for Edit Modal -->
-                                    <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
+                                    <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal"
                                         data-bs-target="#editModal" @click="setSelectedRecord(record)">
                                         Edit
                                     </button>
                                 </div>
                                 <div class="col-3">
                                     <!-- Button for Delete Modal -->
-                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                    <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
                                         data-bs-target="#deleteModal" @click="setSelectedRecord(record)">
                                         Delete
                                     </button>
