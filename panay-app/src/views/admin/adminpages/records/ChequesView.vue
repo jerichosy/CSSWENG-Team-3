@@ -1,5 +1,4 @@
 <script>
-// TODO: connect addCheque to backend
 import RecordFilters from '../../../../components/admin/records/RecordFilters.vue';
 import DeleteRecordModal from '../../../../components/DeleteRecordModal.vue';
 import AddRecordModal from '../../../../components/admin/records/AddRecordModal.vue';
