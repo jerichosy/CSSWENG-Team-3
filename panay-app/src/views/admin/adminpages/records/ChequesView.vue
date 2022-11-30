@@ -1,4 +1,5 @@
 <script>
+// TODO: connect addCheque to backend
 import RecordFilters from '../../../../components/admin/records/RecordFilters.vue';
 import DeleteRecordModal from '../../../../components/DeleteRecordModal.vue';
 import AddRecordModal from '../../../../components/admin/records/AddRecordModal.vue';
@@ -12,7 +13,7 @@ export default {
         categoryOptions: [Object],
         chequeRecords: [Object]
     },
-    emits: ['deleteCheque'],
+    emits: ['editCheque', 'deleteCheque'],
     components: {
         RecordFilters,
         DeleteRecordModal,
@@ -47,6 +48,9 @@ export default {
             this.selectedRecord = {}
         },
 
+        editCheque(editedRecord) {
+            this.$emit('editCheque', editedRecord)
+        },
         deleteRecord(record) {
             this.$emit('deleteCheque', record._id)
         }
@@ -57,7 +61,7 @@ export default {
 <template>
     <DeleteRecordModal :selected-record="selectedRecord" record-type="cheques"
         @delete-record="record => deleteRecord(record)" />
-    <EditRecordModal :selected-record="selectedRecord" record-type="cheques" />
+    <EditRecordModal :selected-record="selectedRecord" record-type="cheques" @edit-record="editCheque" />
     <AddRecordModal record-type="cheques" />
 
     <!-- Filter Menu -->
