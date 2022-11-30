@@ -13,7 +13,7 @@ export default {
         categoryOptions: [Object],
         chequeRecords: [Object]
     },
-    emits: ['editCheque', 'deleteCheque'],
+    emits: ['addCheque', 'editCheque', 'deleteCheque'],
     components: {
         RecordFilters,
         DeleteRecordModal,
@@ -48,6 +48,11 @@ export default {
             this.selectedRecord = {}
         },
 
+
+        addCheque(newCheque) {
+            console.log('cheques view')
+            this.$emit('addCheque', newCheque)
+        },
         editCheque(editedRecord) {
             this.$emit('editCheque', editedRecord)
         },
@@ -62,7 +67,7 @@ export default {
     <DeleteRecordModal :selected-record="selectedRecord" record-type="cheques"
         @delete-record="record => deleteRecord(record)" />
     <EditRecordModal :selected-record="selectedRecord" record-type="cheques" @edit-record="editCheque" />
-    <AddRecordModal record-type="cheques" />
+    <AddRecordModal record-type="cheques" @add-record="addCheque" />
 
     <!-- Filter Menu -->
     <div class="row m-0 p-2">
