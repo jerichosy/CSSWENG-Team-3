@@ -274,19 +274,21 @@ export default {
                         <td>{{ record.branchName }}</td>
                         <td>{{ record.notes }}</td>
                         <td>
-                            <div class="col-3">
-                                <!-- Button for Edit Modal -->
-                                <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal"
-                                    data-bs-target="#editModal" @click="setSelectedRecord(record)">
-                                    Edit
-                                </button>
-                            </div>
-                            <div class="col-3">
-                                <!-- Button for Delete Modal -->
-                                <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
-                                    data-bs-target="#deleteModal" @click="setSelectedRecord(record)">
-                                    Delete
-                                </button>
+                            <div class="row">
+                                <div class="col-3">
+                                    <!-- Button for Edit Modal -->
+                                    <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal"
+                                        data-bs-target="#editModal" @click="setSelectedRecord(record)">
+                                        Edit
+                                    </button>
+                                </div>
+                                <div class="col-3">
+                                    <!-- Button for Delete Modal -->
+                                    <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
+                                        data-bs-target="#deleteModal" @click="setSelectedRecord(record)">
+                                        Delete
+                                    </button>
+                                </div>
                             </div>
                         </td>
                     </tr>
