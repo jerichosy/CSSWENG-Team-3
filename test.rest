@@ -41,7 +41,7 @@ content-type: application/json
 
 ###
 
-http://localhost:3000/submit HTTP/1.1 
+http://localhost:3000/adminviewexpense HTTP/1.1 
 
 
 ###
@@ -71,15 +71,17 @@ POST http://localhost:3000/addcheque  HTTP/1.1
 content-type: application/json
 
     {
-        "datetime":"2022-11-23T11:00:00.000Z",
-        "account": "ccc",
-        "category": "bbb",
-        "amount": "50"
+        "datetime":"2022-11-31T00:00:00.000Z",
+        "account": "Meralco",
+        "category": "Salary",
+        "amount": 9000.00,
+        "branchID": 103,
+        "branchName": "Tandang Sora QC"
     }
 
 ###
 
-http://localhost:3000/viewcheque HTTP/1.1
+http://localhost:3000/adminviewcheque HTTP/1.1
 
 ###
 POST http://localhost:3000/editcheque  HTTP/1.1
@@ -103,3 +105,4 @@ content-type: application/json
     }
 
 ###
+

@@ -11,36 +11,7 @@ export default {
         return {
             salesRecords: [],
             expenseRecords: [],
-            chequeRecords: [
-                {
-                    date: '2022-11-28',
-                    amount: 1000.00,
-                    branchName: 'Pag-asa QC',
-                    category: 'Bakery Items',
-                    account: 'Meralco'
-                },
-                {
-                    date: '2022-11-29',
-                    amount: 1200.50,
-                    branchName: 'Panay Avenue Paligsahan QC',
-                    category: 'Salary',
-                    account: 'BPI'
-                },
-                {
-                    date: '2022-11-29',
-                    amount: 10000.00,
-                    branchName: 'Paco Manila',
-                    category: 'Rent',
-                    account: 'BPI'
-                },
-                {
-                    date: '2022-11-30',
-                    amount: 8500.00,
-                    branchName: 'Panay Avenue Paligsahan QC',
-                    category: 'Utilities',
-                    account: 'Meralco'
-                }
-            ],
+            chequeRecords: [],
             pageOptions: [{ title: "Sales", path: "sales" }, { title: "Expenses", path: "expenses" }],
             branchOptions: [],
             categoryOptions: [{ name: "Salary" }, { name: "Grocery" }, { name: "Utilities" },
@@ -93,6 +64,17 @@ export default {
             RecordService.getAdminExpenses()
                 .then(response => {
                     this.expenseRecords = response.data;
+                })
+                .catch(e => {
+                    console.log(e);
+                });
+        },
+
+        retrieveCheques() {
+            RecordService.getAdminCheques()
+                .then(response => {
+                    console.log(response.data);
+                    this.chequeRecords = response.data;
                 })
                 .catch(e => {
                     console.log(e);
@@ -188,6 +170,7 @@ export default {
     mounted() {
         this.retrieveSales();
         this.retrieveExpenses();
+        this.retrieveCheques();
         this.retrieveBranches();
     },
 
