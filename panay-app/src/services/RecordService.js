@@ -7,6 +7,8 @@ class RecordService {
 
     getAdminCheques() { return http.get("/adminviewcheque"); }
 
+    addAdminCheque(data) { return http.post("/adminaddcheque", data); }
+
     editAdminSales(data) { return http.post("/admineditsales", data); }
 
     editAdminExpense(data) { return http.post("/admineditexpense", data); }
