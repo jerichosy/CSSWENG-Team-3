@@ -26,7 +26,6 @@ export default {
                 dateTo: '',
                 timeFrom: '',
                 timeTo: '',
-                itemSearch: '',
                 checkedBranches: [],
                 checkedCategories: []
             },
