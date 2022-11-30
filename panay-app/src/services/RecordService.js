@@ -1,37 +1,21 @@
 import http from '../http-common';
 
 class RecordService {
-    getAdminSales() {
-        return http.get("/adminviewsales");
-    }
+    getAdminSales() { return http.get("/adminviewsales"); }
 
-    getAdminExpenses() {
-        return http.get("/adminviewexpense");
-    }
+    getAdminExpenses() { return http.get("/adminviewexpense"); }
 
-    getAdminCheques() {
-        return http.get("/adminviewcheque")
-    }
+    getAdminCheques() { return http.get("/adminviewcheque"); }
 
-    editAdminSales(data) {
-        console.log(data);
-        return http.post("/admineditsales", data);
-    }
+    editAdminSales(data) { return http.post("/admineditsales", data); }
 
-    editAdminExpense(data) {
-        console.log(data);
-        return http.post("/admineditexpense", data);
-    }
+    editAdminExpense(data) { return http.post("/admineditexpense", data); }
 
-    deleteAdminSales(data) {
-        console.log(data)
-        return http.post("/admindeletesales", data);
-    }
+    deleteAdminSales(data) { return http.post("/admindeletesales", data); }
 
-    deleteAdminExpense(data) {
-        console.log(data)
-        return http.post("/admindeleteexpense", data);
-    }
+    deleteAdminExpense(data) { return http.post("/admindeleteexpense", data); }
+
+    deleteAdminCheque(data) { return http.post("/admindeletecheque", data); }
 }
 
 export default new RecordService();
