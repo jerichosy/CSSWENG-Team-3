@@ -9,6 +9,10 @@ class RecordService {
         return http.get("/adminviewexpense");
     }
 
+    getAdminCheques() {
+        return http.get("/adminviewcheque")
+    }
+
     editAdminSales(data) {
         console.log(data);
         return http.post("/admineditsales", data);
