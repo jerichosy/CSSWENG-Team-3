@@ -288,7 +288,7 @@ export default {
                 <template v-if="isChequesRecord">
                     <tr v-for="record in filteredCheques">
                         <td>{{ formatDate(record.date) }}</td>
-                        <td>{{ record.amount }}</td>
+                        <td>₱{{ record.amount.toFixed(2).toLocaleString('en-US') }}</td>
                         <td>{{ record.branchName }}</td>
                         <td>{{ record.category }}</td>
                         <td>{{ record.account }}</td>
