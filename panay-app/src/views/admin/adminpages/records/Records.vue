@@ -81,6 +81,32 @@ export default {
                 });
         },
 
+        addCheque(addedCheque) {
+            let matchedBranch = this.branchOptions.find(branch => {
+                return branch.branchName === addedCheque.branchName
+            })
+
+            let datetime = new Date(addedCheque.date + 'T00:00:00Z').toISOString()
+
+            let newCheque = {
+                datetime: datetime,
+                amount: addedCheque.amount,
+                branchID: matchedBranch.branchID,
+                branchName: addedCheque.branchName,
+                category: addedCheque.category,
+                account: addedCheque.account
+            }
+
+            RecordService.addAdminCheque(newCheque)
+                .then(response => {
+                    console.log(response.data);
+                    this.retrieveCheques(); // important for refreshing!
+                })
+                .catch(e => {
+                    console.log(e);
+                });
+        },
+
         editSales(editedRecord) {
             let matchedBranch = this.branchOptions.find(branch => {
                 console.log(branch.branchName, editedRecord.branchName)
@@ -239,8 +265,8 @@ export default {
     <div class="row container-fluid p-0 m-0">
         <RouterView :branch-options="this.branchOptions" :category-options="this.categoryOptions"
             :sales-records="this.salesRecords" :expense-records="this.expenseRecords"
-            :cheque-records="this.chequeRecords" @edit-sales="editSales" @edit-expense="editExpense"
-            @edit-cheque="editCheque" @delete-sales="deleteSales" @delete-expense="deleteExpense"
-            @delete-cheque="deleteCheque" />
+            :cheque-records="this.chequeRecords" @add-cheque="addCheque" @edit-sales="editSales"
+            @edit-expense="editExpense" @edit-cheque="editCheque" @delete-sales="deleteSales"
+            @delete-expense="deleteExpense" @delete-cheque="deleteCheque" />
     </div>
 </template>
