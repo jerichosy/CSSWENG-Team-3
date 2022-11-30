@@ -11,6 +11,8 @@ class RecordService {
 
     editAdminExpense(data) { return http.post("/admineditexpense", data); }
 
+    editAdminCheque(data) { return http.post("/admineditcheque", data); }
+
     deleteAdminSales(data) { return http.post("/admindeletesales", data); }
 
     deleteAdminExpense(data) { return http.post("/admindeleteexpense", data); }
