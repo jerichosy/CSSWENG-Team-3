@@ -476,7 +476,12 @@ const controller = {
         db.findMany(Cheque, {}, '', function (cheque) {
             if (cheque) {
                 console.log('Cheque shown');
-                res.status(200).json(cheque);  //200 OK
+                chequescopy = JSON.parse(JSON.stringify(cheque))
+                for (var i = 0; i < cheque.length; i++) {
+                    chequescopy[i].date = cheque[i].datetime.toISOString().split('T')[0]
+                    delete chequescopy[i].datetime
+                }
+                res.status(200).json(chequescopy);  //200 OK
             } else {
                 console.log('Sales not shown');
                 res.status(400).json({ msg: 'Something went wrong. Please try again.' })  //400 Bad Request
