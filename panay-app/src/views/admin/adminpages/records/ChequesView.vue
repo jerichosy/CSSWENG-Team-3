@@ -12,6 +12,7 @@ export default {
         categoryOptions: [Object],
         chequeRecords: [Object]
     },
+    emits: ['deleteCheque'],
     components: {
         RecordFilters,
         DeleteRecordModal,
@@ -44,16 +45,20 @@ export default {
         },
         clearSelectedRecord() {
             this.selectedRecord = {}
+        },
+
+        deleteRecord(record) {
+            this.$emit('deleteCheque', record._id)
         }
     }
 }
 </script>
 
 <template>
-    <DeleteRecordModal :selected-record="selectedRecord" record-type="cheques" />
+    <DeleteRecordModal :selected-record="selectedRecord" record-type="cheques"
+        @delete-record="record => deleteRecord(record)" />
     <EditRecordModal :selected-record="selectedRecord" record-type="cheques" />
     <AddRecordModal record-type="cheques" />
-
 
     <!-- Filter Menu -->
     <div class="row m-0 p-2">
