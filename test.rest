@@ -67,7 +67,7 @@ content-type: application/json
 http://localhost:3000/viewbranch HTTP/1.1
 
 ###
-POST http://localhost:3000/addcheque  HTTP/1.1
+POST http://localhost:3000/adminaddcheque  HTTP/1.1
 content-type: application/json
 
     {
