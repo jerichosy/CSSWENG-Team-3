@@ -1,14 +1,32 @@
 <script>
 import BranchCard from '../../../components/admin/branches/BranchCard.vue'
+import UserService from '../../../services/UserService.js'
 
 export default {
     data() {
         return {
-            branches: [{branchID: 101, branchName: 'Paligsahan QC'}, {branchID: 102, branchName: 'Pag-asa QC'}, {branchID: 103, branchName: 'Tandang Sora QC'}]
+            branches: []
         }
     },
     components: {
         BranchCard
+    },
+
+    mounted() {
+        this.retrieveBranches();
+    },
+
+
+    methods: {
+        retrieveBranches() {
+            UserService.getBranches()
+                .then(response => {
+                    this.branches = response.data
+                })
+                .catch(e => {
+                    console.log(e);
+                })
+        }
     }
 }
 </script>
@@ -22,7 +40,7 @@ export default {
             <button class="col-2">Add</button>
         </div>
         <div class="row container m-1 p-1">
-            <BranchCard v-for="singleBranch in branches" :branch="singleBranch"/>
+            <BranchCard v-for="branch in branches" :branch="branch" />
         </div>
     </div>
 
