@@ -13,12 +13,40 @@ export default {
     props: {
         recordType: String
     },
+    emits: ['addRecord'],
+
+    data() {
+        return {
+            inputs: {
+                date: '',
+                amount: '',
+                branchName: '',
+                category: '',
+                account: ''
+            }
+        }
+    },
 
     computed: {
         isChequesRecord() {
             if (this.recordType === 'cheques')
                 return true
             return false
+        }
+    },
+
+    methods: {
+        sendChanges() {
+            if (this.isChequesRecord) {
+                let newCheque = {
+                    date: this.inputs.date,
+                    amount: this.inputs.amount.toFixed(2),
+                    branchName: this.inputs.branchName,
+                    category: this.inputs.category,
+                    account: this.inputs.account,
+                }
+                this.$emit('addRecord', newCheque)
+            }
         }
     }
 }
@@ -41,7 +69,8 @@ export default {
                                 <div class="row mb-2">
                                     <div class="col">
                                         <div class="form-floating">
-                                            <input type="date" class="form-control" id="addDate" />
+                                            <input type="date" class="form-control" id="addDate"
+                                                v-model="inputs.date" />
                                             <label for="addDate">Date</label>
                                         </div>
                                     </div>
@@ -53,7 +82,7 @@ export default {
                                             <span class="input-group-text">₱</span>
                                             <div class="form-floating">
                                                 <input type="number" class="form-control" id="addAmount"
-                                                    placeholder="Amount" />
+                                                    placeholder="Amount" v-model="inputs.amount" />
                                                 <label for="addAmount">Amount</label>
                                             </div>
                                         </div>
@@ -63,7 +92,7 @@ export default {
                                 <div class="row mb-2">
                                     <div class="col">
                                         <div class="form-floating">
-                                            <select class="form-select" id="branchSelect">
+                                            <select class="form-select" id="branchSelect" v-model="inputs.branchName">
                                                 <option selected>Select branch</option>
                                                 <template v-for="branch in branchOptions">
                                                     <option :value="branch.branchName">{{ branch.branchName }}</option>
@@ -77,7 +106,7 @@ export default {
                                 <div class="row mb-2">
                                     <div class="col">
                                         <div class="form-floating">
-                                            <select class="form-select" id="categorySelect">
+                                            <select class="form-select" id="categorySelect" v-model="inputs.category">
                                                 <option selected>Select category</option>
                                                 <template v-for="category in categoryOptions">
                                                     <option :value="category.name">{{ category.name }}</option>
@@ -92,7 +121,7 @@ export default {
                                     <div class="col">
                                         <div class="form-floating">
                                             <input type="text" class="form-control" id="addAccount"
-                                                placeholder="Account" />
+                                                placeholder="Account" v-model="inputs.account" />
                                             <label for="addAccount">Account</label>
                                         </div>
                                     </div>
@@ -104,7 +133,8 @@ export default {
                     </div>
                     <div class="modal-footer">
                         <button type="reset" class="btn btn-cancel" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" @click="sendChanges">Add
+                            cheque</button>
                     </div>
                 </form>
             </div>
