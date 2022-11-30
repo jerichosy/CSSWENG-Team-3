@@ -99,6 +99,18 @@ export default {
                 this.$emit('editRecord', editedExpense)
             }
 
+            else if (this.isChequesRecord) {
+                let editedCheque = {
+                    id: this.selectedRecord._id,
+                    account: this.selectedRecord.account,
+                    branchName: this.inputs.branchName,
+                    amount: this.inputs.amount.toFixed(2),
+                    category: this.inputs.category,
+                    date: this.inputs.date
+                }
+                this.$emit('editRecord', editedCheque)
+            }
+
         }
 
     }
