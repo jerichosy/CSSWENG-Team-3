@@ -164,6 +164,20 @@ export default {
                 .catch(e => {
                     console.log(e);
                 });
+        },
+
+        deleteCheque(id) {
+            const data = {
+                "id": id
+            }
+            RecordService.deleteAdminCheque(data)
+                .then(response => {
+                    console.log(response.data);
+                    this.retrieveCheques(); // important for refreshing!
+                })
+                .catch(e => {
+                    console.log(e);
+                });
         }
     },
 
@@ -198,6 +212,6 @@ export default {
         <RouterView :branch-options="this.branchOptions" :category-options="this.categoryOptions"
             :sales-records="this.salesRecords" :expense-records="this.expenseRecords"
             :cheque-records="this.chequeRecords" @edit-sales="editSales" @edit-expense="editExpense"
-            @delete-sales="deleteSales" @delete-expense="deleteExpense" />
+            @delete-sales="deleteSales" @delete-expense="deleteExpense" @delete-cheque="deleteCheque" />
     </div>
 </template>
