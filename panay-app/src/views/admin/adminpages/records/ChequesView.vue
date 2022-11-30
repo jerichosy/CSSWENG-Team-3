@@ -1,5 +1,5 @@
 <script>
-import ChequesFilters from '../../../../components/admin/records/cheques/ChequesFilters.vue';
+import RecordFilters from '../../../../components/admin/records/RecordFilters.vue';
 import DeleteRecordModal from '../../../../components/DeleteRecordModal.vue';
 import AddRecordModal from '../../../../components/admin/records/AddRecordModal.vue';
 import EditRecordModal from '../../../../components/EditRecordModal.vue';
@@ -13,7 +13,7 @@ export default {
         chequeRecords: [Object]
     },
     components: {
-        ChequesFilters,
+        RecordFilters,
         DeleteRecordModal,
         AddRecordModal,
         EditRecordModal,
@@ -57,7 +57,7 @@ export default {
 
     <!-- Filter Menu -->
     <div class="row m-0 p-2">
-        <ChequesFilters @update-filters="updateFilters" />
+        <RecordFilters record-type="cheques" @update-filters="updateFilters" />
 
         <!-- Button for Add Modal -->
         <div class="col-auto p-0">
