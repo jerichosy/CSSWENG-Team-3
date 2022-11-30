@@ -19,17 +19,21 @@ router.get('/submit', controller.submitSalesAndExpenses);
 
 router.get('/adminviewsales', controller.adminViewSales);
 router.get('/adminviewexpense', controller.adminViewExpense);
-router.get('/viewcheque', controller.viewCheque);
+router.get('/adminviewcheque', controller.viewCheque);
+
 router.post('/adminaddsales', controller.adminAddSales);
 router.post('/adminaddexpense', controller.adminAddExpense);
+router.post('/adminaddcheque', controller.addCheque);
+
 router.post('/admineditsales', controller.adminEditSales);
 router.post('/admineditexpense', controller.adminEditExpense);
+router.post('/admineditcheque', controller.editCheque);
+
 router.post('/admindeletesales', controller.adminDeleteSales);
 router.post('/admindeleteexpense', controller.adminDeleteExpense);
+router.post('/admindeletecheque', controller.deleteCheque);
+
 router.post('/adminviewsalesfilter', controller.adminViewSalesFilter);
-router.post('/addcheque', controller.addCheque);
-router.post('/editcheque', controller.editCheque);
-router.post('/deletecheque', controller.deleteCheque);
 // router.post('/adminviewexpensefilter', controller.adminViewExpenseFilter);
 
 module.exports = router;
