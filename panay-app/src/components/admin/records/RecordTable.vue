@@ -15,6 +15,7 @@ export default {
         filters: Object,
         recordType: String
     },
+    emits: ['setSelectedRecord'],
 
     data() {
         return {
@@ -73,10 +74,8 @@ export default {
             if (this.filters.itemSearch.length)
                 filteredExpenseRecords = filteredExpenseRecords.filter((record) => this.searchItem(record, this.filters.itemSearch))
 
-
             if (this.filters.checkedBranches.length)
                 filteredExpenseRecords = filteredExpenseRecords.filter(record => record.branchName === this.filters.checkedBranches[this.filters.checkedBranches.indexOf(record.branchName)])
-
 
             if (this.filters.dateFrom.length)
                 filteredExpenseRecords = filteredExpenseRecords.filter((record) => Date.parse(record.date) >= Date.parse(this.filters.dateFrom))
@@ -118,7 +117,7 @@ export default {
             return false
         },
         isExpenseRecord() {
-            if (this.recordType === 'expense')
+            if (this.recordType === 'expenses')
                 return true
             return false
         },
@@ -161,10 +160,19 @@ export default {
 
         searchItem(record, searchFilter) {
             const searchString = searchFilter.toLowerCase();
-            const accountName = record.account.toLowerCase();
+            if (this.isExpenseRecord) {
+                const itemName = record.item.toLowerCase();
+                if (itemName.includes(searchString))
+                    return true
+                return false
+            }
+            else if (this.isChequesRecord) {
+                const accountName = record.account.toLowerCase();
+                if (accountName.includes(searchString))
+                    return true
+                return false
+            }
 
-            if (accountName.includes(searchString))
-                return true
             return false
         },
 
@@ -268,14 +276,14 @@ export default {
                         <td>
                             <div class="col-3">
                                 <!-- Button for Edit Modal -->
-                                <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
+                                <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal"
                                     data-bs-target="#editModal" @click="setSelectedRecord(record)">
                                     Edit
                                 </button>
                             </div>
                             <div class="col-3">
                                 <!-- Button for Delete Modal -->
-                                <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
                                     data-bs-target="#deleteModal" @click="setSelectedRecord(record)">
                                     Delete
                                 </button>
