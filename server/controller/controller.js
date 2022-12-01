@@ -517,33 +517,36 @@ const controller = {
         })
     },
 
-    test: async (req, res) => {
+    generateReport: async (req, res) => {
         var { branchID, date } = req.body
 
         //Get expenses, sales, cheques
-        var salary = await Expense.Admin.find({ branchID: branchID, category: 'Salary' })
-        var grocery = await Expense.Admin.find({ branchID: branchID, category: 'Grocery' })
-        var utilities = await Expense.Admin.find({ branchID: branchID, category: 'Utilities' })
-        var food = await Expense.Admin.find({ branchID: branchID, category: 'Food' })
-        var gasul = await Expense.Admin.find({ branchID: branchID, category: 'Gasul' })
-        var bakeryitems = await Expense.Admin.find({ branchID: branchID, category: 'Bakery Items' })
-        var rent = await Expense.Admin.find({ branchID: branchID, category: 'Rent' })
-        var misc = await Expense.Admin.find({ branchID: branchID, category: 'Misc' })
-        var taxes = await Expense.Admin.find({ branchID: branchID, category: 'Taxes' })
+        {
+            var salary = await Expense.Admin.find({ branchID: branchID, category: 'Salary' })
+            var grocery = await Expense.Admin.find({ branchID: branchID, category: 'Grocery' })
+            var utilities = await Expense.Admin.find({ branchID: branchID, category: 'Utilities' })
+            var food = await Expense.Admin.find({ branchID: branchID, category: 'Food' })
+            var gasul = await Expense.Admin.find({ branchID: branchID, category: 'Gasul' })
+            var bakeryitems = await Expense.Admin.find({ branchID: branchID, category: 'Bakery Items' })
+            var rent = await Expense.Admin.find({ branchID: branchID, category: 'Rent' })
+            var misc = await Expense.Admin.find({ branchID: branchID, category: 'Misc' })
+            var taxes = await Expense.Admin.find({ branchID: branchID, category: 'Taxes' })
 
-        var csalary = await Cheque.find({ branchID: branchID, category: 'Salary' })
-        var cgrocery = await Cheque.find({ branchID: branchID, category: 'Grocery' })
-        var cutilities = await Cheque.find({ branchID: branchID, category: 'Utilities' })
-        var cfood = await Cheque.find({ branchID: branchID, category: 'Food' })
-        var cgasul = await Cheque.find({ branchID: branchID, category: 'Gasul' })
-        var cbakeryitems = await Cheque.find({ branchID: branchID, category: 'Bakery Items' })
-        var crent = await Cheque.find({ branchID: branchID, category: 'Rent' })
-        var cmisc = await Cheque.find({ branchID: branchID, category: 'Misc' })
-        var ctaxes = await Cheque.find({ branchID: branchID, category: 'Taxes' })
+            var csalary = await Cheque.find({ branchID: branchID, category: 'Salary' })
+            var cgrocery = await Cheque.find({ branchID: branchID, category: 'Grocery' })
+            var cutilities = await Cheque.find({ branchID: branchID, category: 'Utilities' })
+            var cfood = await Cheque.find({ branchID: branchID, category: 'Food' })
+            var cgasul = await Cheque.find({ branchID: branchID, category: 'Gasul' })
+            var cbakeryitems = await Cheque.find({ branchID: branchID, category: 'Bakery Items' })
+            var crent = await Cheque.find({ branchID: branchID, category: 'Rent' })
+            var cmisc = await Cheque.find({ branchID: branchID, category: 'Misc' })
+            var ctaxes = await Cheque.find({ branchID: branchID, category: 'Taxes' })
+
+            var sales = await Sales.Admin.find({ branchID: branchID })
+            var cheque = await Cheque.find({ branchID: branchID })
+        }
 
         const expense = [salary, grocery, utilities, food, gasul, bakeryitems, rent, misc, taxes]
-        var sales = await Sales.Admin.find({ branchID: branchID })
-        var cheque = await Cheque.find({ branchID: branchID })
 
         var totals = {
             sales: 0, expense: 0, cheque: 0, totalexpense: 0, net: 0,
@@ -556,11 +559,6 @@ const controller = {
             salary: 0, grocery: 0, utilities: 0,
             food: 0, gasul: 0, bakeryitems: 0,
             rent: 0, misc: 0, taxes: 0
-        }
-        console.log(expense.length)
-        for (var i = 0; i < expense.length; i++) {
-            console.log("START  " + expense[i].length)
-            //console.log("test  " + expense[i])
         }
 
         //Populate Sales, Expense, Cheque, Net
@@ -691,53 +689,30 @@ const controller = {
 
         console.log(totals)
 
-        var expensearr = []
-
-        var e_specifics = {
-            salary: 0,
-            grocery: 0,
-            utilities: 0,
-            food: 0,
-            gasul: 0,
-            bakeryitems: 0,
-            rent: 0,
-            misc: 0,
-            taxes: 0
-        }
-
-        console.log(expensearr)
-
         var reports = []
         var dateinput = new Date(date)
         var monthvar = dateinput.getMonth() + 1
-        // var newstartdate = dateinput.getFullYear() + "-" + monthvar + "-" + 23 + "T00:00:00.000Z"
-        // var newenddate = dateinput.getFullYear() + "-" + monthvar + "-" + 23 + "T23:59:59.000Z"
-        // var startDate = new Date(newstartdate)
-        // var endDate = new Date(newenddate)
-        // console.log(endDate)
-
-        //var grocery2 = await Expense.Admin.find({ branchID: branchID, category: 'Grocery', datetime: { $gte: startDate, $lt: endDate } })
-        //var grocery3 = await Expense.Admin.find({ branchID: branchID, category: 'Grocery', datetime: { $gte: startDate } })
-        //console.log(grocery2)
-        //console.log(grocery3)
-
 
         //change bruteforce
         //account for leap years
-        if (monthvar == 1 || monthvar == 3 || monthvar == 5 || monthvar == 7 || monthvar == 8 || monthvar == 10 || monthvar == 12) {
-            callimit = 31
-        }
-        else if (monthvar == 4 || monthvar == 6 || monthvar == 9 || monthvar == 11) {
-            callimit = 30
-        }
-        else if (monthvar == 2) {
-            callimit = 28
+        {
+            if (monthvar == 1 || monthvar == 3 || monthvar == 5 || monthvar == 7 || monthvar == 8 || monthvar == 10 || monthvar == 12) {
+                callimit = 31
+            }
+            else if (monthvar == 4 || monthvar == 6 || monthvar == 9 || monthvar == 11) {
+                callimit = 30
+            }
+            else if (monthvar == 2) {
+                callimit = 28
+            }
+
+            if (monthvar < 10) {
+                monthvar = "0" + monthvar
+            }
         }
 
-        if (monthvar < 10) {
-            monthvar = "0" + monthvar
-        }
 
+        //getting daily record
         for (var i = 1; i <= callimit; i++) {
             var dailyrecord = []
             if (i < 10) {
@@ -746,29 +721,35 @@ const controller = {
             else {
                 day = i
             }
-            //console.log("day: " + day)
-            var newstartdate = dateinput.getFullYear() + "-" + monthvar + "-" + day + "T00:00:00.000Z"
-            var newenddate = dateinput.getFullYear() + "-" + monthvar + "-" + day + "T23:59:59.000Z"
-            //console.log("newstartdate: " + newstartdate)
-            var startDate = new Date(newstartdate)
-            var endDate = new Date(newenddate)
-            //console.log("startDate: " + startDate)
 
-            var dailysalary = await Expense.Admin.find({ branchID: branchID, category: 'Salary', datetime: { $gte: startDate, $lt: endDate } })
-            var dailygrocery = await Expense.Admin.find({ branchID: branchID, category: 'Grocery', datetime: { $gte: startDate, $lt: endDate } })
-            var dailyutilities = await Expense.Admin.find({ branchID: branchID, category: 'Utilities', datetime: { $gte: startDate, $lt: endDate } })
-            var dailyfood = await Expense.Admin.find({ branchID: branchID, category: 'Food', datetime: { $gte: startDate, $lt: endDate } })
-            var dailygasul = await Expense.Admin.find({ branchID: branchID, category: 'Gasul', datetime: { $gte: startDate, $lt: endDate } })
-            var dailybakeryitems = await Expense.Admin.find({ branchID: branchID, category: 'Bakery Items', datetime: { $gte: startDate, $lt: endDate } })
-            var dailyrent = await Expense.Admin.find({ branchID: branchID, category: 'Rent', datetime: { $gte: startDate, $lt: endDate } })
-            var dailymisc = await Expense.Admin.find({ branchID: branchID, category: 'Misc', datetime: { $gte: startDate, $lt: endDate } })
-            var dailytaxes = await Expense.Admin.find({ branchID: branchID, category: 'Taxes', datetime: { $gte: startDate, $lt: endDate } })
+            //date formatting
+            {
+                var newstartdate = dateinput.getFullYear() + "-" + monthvar + "-" + day + "T00:00:00.000Z"
+                var newenddate = dateinput.getFullYear() + "-" + monthvar + "-" + day + "T23:59:59.000Z"
+                var startDate = new Date(newstartdate)
+                var endDate = new Date(newenddate)
+            }
 
-            var dailysales = await Sales.Admin.find({ branchID: branchID, datetime: { $gte: startDate, $lt: endDate } })
-            var dailycheque = await Cheque.find({ branchID: branchID, datetime: { $gte: startDate, $lt: endDate } })
-            var dailyexpense = [dailysalary, dailygrocery, dailyutilities, dailyfood, dailygasul, dailybakeryitems, dailyrent, dailymisc, dailytaxes]
+            //get daily expenses
+            {
+                var dailysalary = await Expense.Admin.find({ branchID: branchID, category: 'Salary', datetime: { $gte: startDate, $lt: endDate } })
+                var dailygrocery = await Expense.Admin.find({ branchID: branchID, category: 'Grocery', datetime: { $gte: startDate, $lt: endDate } })
+                var dailyutilities = await Expense.Admin.find({ branchID: branchID, category: 'Utilities', datetime: { $gte: startDate, $lt: endDate } })
+                var dailyfood = await Expense.Admin.find({ branchID: branchID, category: 'Food', datetime: { $gte: startDate, $lt: endDate } })
+                var dailygasul = await Expense.Admin.find({ branchID: branchID, category: 'Gasul', datetime: { $gte: startDate, $lt: endDate } })
+                var dailybakeryitems = await Expense.Admin.find({ branchID: branchID, category: 'Bakery Items', datetime: { $gte: startDate, $lt: endDate } })
+                var dailyrent = await Expense.Admin.find({ branchID: branchID, category: 'Rent', datetime: { $gte: startDate, $lt: endDate } })
+                var dailymisc = await Expense.Admin.find({ branchID: branchID, category: 'Misc', datetime: { $gte: startDate, $lt: endDate } })
+                var dailytaxes = await Expense.Admin.find({ branchID: branchID, category: 'Taxes', datetime: { $gte: startDate, $lt: endDate } })
+            }
 
-            //var dsales = 0, dexpense = 0, dnet = 0, dsalary, dgrocery, dutilities, dfood, dgasul, dbakeryitems, drent, dmisc, dtaxes
+            //get daily sales, expenses, cheques
+            {
+                var dailysales = await Sales.Admin.find({ branchID: branchID, datetime: { $gte: startDate, $lt: endDate } })
+                var dailycheque = await Cheque.find({ branchID: branchID, datetime: { $gte: startDate, $lt: endDate } })
+                var dailyexpense = [dailysalary, dailygrocery, dailyutilities, dailyfood, dailygasul, dailybakeryitems, dailyrent, dailymisc, dailytaxes]
+            }
+
             var daily = {
                 dsales: 0, dexpense: 0, dcheque: 0,
                 dsalary: 0, dgrocery: 0, dutilities: 0,
@@ -776,94 +757,94 @@ const controller = {
                 drent: 0, dmisc: 0, dtaxes: 0
             }
 
-            for (var j = 0; j < dailysales.length; j++) {
-                daily.dsales += dailysales[j].amount
-            }
-
-            for (var j = 0; j < dailyexpense.length; j++) {
-                for (var k = 0; k < dailyexpense[j].length; k++) {
-                    daily.dexpense += dailyexpense[j][k].amount
+            //Populate daily sales, expenses, cheques, net
+            {
+                for (var j = 0; j < dailysales.length; j++) {
+                    daily.dsales += dailysales[j].amount
                 }
-            }
 
-            daily.dnet = daily.dsales - daily.dexpense
+                for (var j = 0; j < dailyexpense.length; j++) {
+                    for (var k = 0; k < dailyexpense[j].length; k++) {
+                        daily.dexpense += dailyexpense[j][k].amount
+                    }
+                }
+
+                for (var j = 0; j < dailycheque.length; j++) {
+                    daily.dcheque += dailycheque[i].amount
+                }
+                daily.dexpense = daily.dexpense + daily.dcheque
+                daily.dnet = daily.dsales - daily.dexpense
+            }
 
             dailyrecord.push(parseInt(day))
             dailyrecord.push(daily.dsales)
             dailyrecord.push(daily.dexpense)
             dailyrecord.push(daily.dnet)
 
-            //Salary
-            for (var j = 0; j < dailysalary.length; j++) {
-                daily.dsalary += dailysalary[j].amount
-            }
-            dailyrecord.push(daily.dsalary)
+            //Populate expense categories
+            {
+                //Salary
+                for (var j = 0; j < dailysalary.length; j++) {
+                    daily.dsalary += dailysalary[j].amount
+                }
+                dailyrecord.push(daily.dsalary)
 
-            //Grocery
-            for (var j = 0; j < dailygrocery.length; j++) {
-                daily.dgrocery += dailygrocery[j].amount
-            }
-            dailyrecord.push(daily.dgrocery)
+                //Grocery
+                for (var j = 0; j < dailygrocery.length; j++) {
+                    daily.dgrocery += dailygrocery[j].amount
+                }
+                dailyrecord.push(daily.dgrocery)
 
-            //Utilities
-            for (var j = 0; j < dailyutilities.length; j++) {
-                daily.dutilities += dailyutilities[j].amount
-            }
-            dailyrecord.push(daily.dutilities)
+                //Utilities
+                for (var j = 0; j < dailyutilities.length; j++) {
+                    daily.dutilities += dailyutilities[j].amount
+                }
+                dailyrecord.push(daily.dutilities)
 
-            //Food
-            for (var j = 0; j < dailyfood.length; j++) {
-                daily.dfood += dailyfood[j].amount
-            }
-            dailyrecord.push(daily.dfood)
+                //Food
+                for (var j = 0; j < dailyfood.length; j++) {
+                    daily.dfood += dailyfood[j].amount
+                }
+                dailyrecord.push(daily.dfood)
 
-            //Gasul
-            for (var j = 0; j < dailygasul.length; j++) {
-                daily.dgasul += dailygasul[j].amount
-            }
-            dailyrecord.push(daily.dgasul)
+                //Gasul
+                for (var j = 0; j < dailygasul.length; j++) {
+                    daily.dgasul += dailygasul[j].amount
+                }
+                dailyrecord.push(daily.dgasul)
 
-            //Bakery Items
-            for (var j = 0; j < dailybakeryitems.length; j++) {
-                daily.dbakeryitems += dailybakeryitems[j].amount
-            }
-            dailyrecord.push(daily.dbakeryitems)
+                //Bakery Items
+                for (var j = 0; j < dailybakeryitems.length; j++) {
+                    daily.dbakeryitems += dailybakeryitems[j].amount
+                }
+                dailyrecord.push(daily.dbakeryitems)
 
-            //Rent
-            for (var j = 0; j < dailyrent.length; j++) {
-                daily.drent += dailyrent[j].amount
-            }
-            dailyrecord.push(daily.drent)
+                //Rent
+                for (var j = 0; j < dailyrent.length; j++) {
+                    daily.drent += dailyrent[j].amount
+                }
+                dailyrecord.push(daily.drent)
 
-            //Misc
-            for (var j = 0; j < dailymisc.length; j++) {
-                daily.dmisc += dailymisc[j].amount
-            }
-            dailyrecord.push(daily.dmisc)
+                //Misc
+                for (var j = 0; j < dailymisc.length; j++) {
+                    daily.dmisc += dailymisc[j].amount
+                }
+                dailyrecord.push(daily.dmisc)
 
-            //Taxes
-            for (var j = 0; j < dailytaxes.length; j++) {
-                daily.dtaxes += dailytaxes[j].amount
+                //Taxes
+                for (var j = 0; j < dailytaxes.length; j++) {
+                    daily.dtaxes += dailytaxes[j].amount
+                }
+                dailyrecord.push(daily.dtaxes)
             }
-            dailyrecord.push(daily.dtaxes)
 
             reports.push(dailyrecord)
-
 
         }
 
         console.log(reports)
         res.status(201).json({ msg: 'Done' });
 
-
-
-        // //WORKING
-        // db.findMany(Expense.Admin, { category: 'Grocery' }, '', (err1) => {
-        //     db.findMany(Expense.Admin, { category: 'Bakery Items' }, '', (err2) => {
-        //         console.log(err1)
-        //         console.log(err2)
-        //     })
-        // })
     },
 
 
