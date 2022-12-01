@@ -535,22 +535,112 @@ const controller = {
         var sales = await Sales.Admin.find({})
         var cheque = await Cheque.find({})
 
-        var totalsales = 0, totalexpense = 0
+        var totals = {
+            sales: 0, expense: 0, cheque: 0, totalexpense: 0, net: 0,
+            salary: 0, grocery: 0, utilities: 0,
+            food: 0, gasul: 0, bakeryitems: 0,
+            rent: 0, misc: 0, taxes: 0
+        }
+        console.log(expense.length)
+        for (var i = 0; i < expense.length; i++) {
+            console.log("START  " + expense[i].length)
+            //console.log("test  " + expense[i])
+        }
+
 
         //Populate Total Sales
         for (var i = 0; i < sales.length; i++) {
-            totalsales += sales[i].amount
+            totals.sales += sales[i].amount
         }
-        var expensearr = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+        console.log("total sales: " + totals.sales)
+
         //Populate Total Expense
         for (var i = 0; i < expense.length; i++) {
+            console.log(i + "  count   " + + expense[i].length)
             for (var j = 0; j < expense[i].length; j++) {
-                totalexpense += expense[i][j].amount
-                expensearr[i] = expense[i][j].amount
+                totals.expense += expense[i][j].amount
+                console.log(expense[i][j].amount)
             }
         }
-        console.log(totalexpense)
+        console.log("total expense: " + totals.expense)
+
+        //Populate Total Cheque
+        for (var i = 0; i < cheque.length; i++) {
+            totals.cheque += cheque[i].amount
+        }
+        console.log("total cheque: " + totals.cheque)
+
+        totals.totalexpense = totals.expense + totals.cheque
+        console.log("final expense: " + totals.totalexpense)
+
+        totals.net = totals.sales - totals.totalexpense
+        console.log("final expense: " + totals.net)
+
+        //Populate Expense Categories
+        //Salary
+        for (var i = 0; i < salary.length; i++) {
+            totals.salary += salary[i].amount
+        }
+
+        //Grocery
+        for (var i = 0; i < grocery.length; i++) {
+            totals.grocery += grocery[i].amount
+        }
+
+        //Utilities
+        for (var i = 0; i < utilities.length; i++) {
+            totals.utilities += utilities[i].amount
+        }
+
+        //Food
+        for (var i = 0; i < food.length; i++) {
+            totals.food += food[i].amount
+        }
+
+        //Gasul
+        for (var i = 0; i < gasul.length; i++) {
+            totals.gasul += gasul[i].amount
+        }
+
+        //Bakery Items
+        for (var i = 0; i < bakeryitems.length; i++) {
+            totals.bakeryitems += bakeryitems[i].amount
+        }
+
+        //Rent
+        for (var i = 0; i < rent.length; i++) {
+            totals.rent += rent[i].amount
+        }
+
+        //Misc
+        for (var i = 0; i < misc.length; i++) {
+            totals.misc += misc[i].amount
+        }
+
+        //Taxes
+        for (var i = 0; i < taxes.length; i++) {
+            totals.taxes += taxes[i].amount
+        }
+
+        console.log(totals)
+
+        var expensearr = []
+
+        var e_specifics = {
+            salary: 0,
+            grocery: 0,
+            utilities: 0,
+            food: 0,
+            gasul: 0,
+            bakeryitems: 0,
+            rent: 0,
+            misc: 0,
+            taxes: 0
+        }
+
         console.log(expensearr)
+
+
 
 
         var reports = []
