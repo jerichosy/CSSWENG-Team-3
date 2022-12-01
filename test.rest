@@ -74,7 +74,7 @@ content-type: application/json
         "datetime":"2022-11-31T00:00:00.000Z",
         "account": "Meralco",
         "category": "Salary",
-        "amount": 9000.00,
+        "amount": 50.00,
         "branchID": 103,
         "branchName": "Tandang Sora QC"
     }
@@ -106,7 +106,7 @@ content-type: application/json
 
 ###
 
-POST http://localhost:3000/test  HTTP/1.1
+POST http://localhost:3000/genreport  HTTP/1.1
 content-type: application/json
 
     {
