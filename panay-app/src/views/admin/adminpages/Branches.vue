@@ -32,16 +32,13 @@ export default {
 </script>
 
 <template>
-    <div class="container-fluid">
-        <div class="row border border-2">
-            <h1>Manage Branches</h1>
-        </div>
-        <div class="row border border-2">
-            <button class="col-2">Add</button>
-        </div>
-        <div class="row container m-1 p-1">
-            <BranchCard v-for="branch in branches" :branch="branch" />
-        </div>
+    <div class="row border border-2">
+        <h1>Manage Branches</h1>
     </div>
-
+    <div class="row border border-2">
+        <button class="col-2">Add</button>
+    </div>
+    <div class="row justify-content-evenly m-1 p-1">
+        <BranchCard v-for="branch in branches" :branch="branch" />
+    </div>
 </template>
