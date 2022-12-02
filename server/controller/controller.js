@@ -78,7 +78,7 @@ const controller = {
     },
 
     viewBranch: (req, res) => {
-        db.findMany(User, {}, '', function (branch) {
+        db.findMany(User, { isAdmin: false }, '', function (branch) {
             if (branch) {
                 console.log('Branch shown');
                 res.status(201).json(branch);  //201 Created
