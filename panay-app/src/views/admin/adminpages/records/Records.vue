@@ -246,7 +246,7 @@ export default {
 </script>
 
 <template>
-    <div class="row p-0 m-0">
+    <div class="row">
         <ul class="nav nav-tabs bg-primary">
             <li class="nav-item">
                 <RouterLink class="nav-link" :class="{ active: $route.name === 'sales' }" to="sales">Sales</RouterLink>
@@ -262,11 +262,13 @@ export default {
         </ul>
     </div>
 
-    <div class="row container-fluid p-0 m-0">
-        <RouterView :branch-options="this.branchOptions" :category-options="this.categoryOptions"
-            :sales-records="this.salesRecords" :expense-records="this.expenseRecords"
-            :cheque-records="this.chequeRecords" @add-cheque="addCheque" @edit-sales="editSales"
-            @edit-expense="editExpense" @edit-cheque="editCheque" @delete-sales="deleteSales"
-            @delete-expense="deleteExpense" @delete-cheque="deleteCheque" />
+    <div class="row">
+        <div class="container-fluid">
+            <RouterView :branch-options="this.branchOptions" :category-options="this.categoryOptions"
+                :sales-records="this.salesRecords" :expense-records="this.expenseRecords"
+                :cheque-records="this.chequeRecords" @add-cheque="addCheque" @edit-sales="editSales"
+                @edit-expense="editExpense" @edit-cheque="editCheque" @delete-sales="deleteSales"
+                @delete-expense="deleteExpense" @delete-cheque="deleteCheque" />
+        </div>
     </div>
 </template>

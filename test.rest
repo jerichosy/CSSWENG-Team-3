@@ -19,9 +19,9 @@ content-type: application/json
     {
     "branchID": "102",
     "branchName": "Makati",
-    "amount": 1200.70,
+    "amount": 5000.50,
     "customerCount": 10,
-    "datetime": "2022-11-24T13:00:00.000Z"
+    "datetime": "2022-11-23T13:00:00.000Z"
     }
 
 ###
@@ -30,7 +30,7 @@ POST http://localhost:3000/adminaddexpense HTTP/1.1
 content-type: application/json
 
     {
-        "branchID": "102",
+        "branchID": "103",
         "branchName": "Pag-asa QC",
         "item": "Flour",
         "category": "Bakery Items",
@@ -74,7 +74,7 @@ content-type: application/json
         "datetime":"2022-11-31T00:00:00.000Z",
         "account": "Meralco",
         "category": "Salary",
-        "amount": 9000.00,
+        "amount": 50.00,
         "branchID": 103,
         "branchName": "Tandang Sora QC"
     }
@@ -106,3 +106,25 @@ content-type: application/json
 
 ###
 
+POST http://localhost:3000/genreport  HTTP/1.1
+content-type: application/json
+
+    {
+        "branchID":"102",
+        "date": "2022-11-23"
+    }
+
+###
+
+POST http://localhost:3000/adminaddexpense HTTP/1.1
+content-type: application/json
+
+    {
+        "branchID": "102",
+        "branchName": "Pag-asa QC",
+        "item": "Flour",
+        "category": "Grocery",
+        "amount": 300.00,
+        "notes": "palengke",
+        "datetime": "2022-11-23T11:00:00.000Z"
+    }
