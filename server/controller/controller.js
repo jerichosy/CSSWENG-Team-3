@@ -69,6 +69,7 @@ const controller = {
     },
 
     // FIXME: Rename to createBranch?
+    // TODO: Remove isAdmin cause we won't create any admin
     signup: (req, res) => {
         const { name, password, isadmin } = req.body;
         console.log(req.body)
