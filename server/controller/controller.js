@@ -36,7 +36,40 @@ const controller = {
 
     },
 
+    editPasswordAdmin: (req, res) => {
+        const { oldPassword, newPassword } = req.body;
+        console.log(req.body)
+        db.findOne(User, { isAdmin: true }, 'branchPassword', (user) => {
+            if (user) {
+                bcrypt.compare(oldPassword, user.branchPassword, (err, result) => {
+                    if (result) {
+                        // check that the new password is not the same as the old password
+                        if (oldPassword === newPassword) {
+                            res.status(400).json({ msg: 'The new password must be different from the old password.' });
+                        } else {
+                            bcrypt.hash(newPassword, 10, (err, hash) => {
+                                db.updateOne(User, { isAdmin: true }, { branchPassword: hash }, (result) => {
+                                    if (result) {
+                                        res.status(200).json({ msg: 'Password successfully changed!' });
+                                    } else {
+                                        res.status(400).json({ msg: 'An error occured.' });
+                                    }
+                                })
+                            })
+                        }
+                    } else {
+                        res.status(401).json({ msg: 'The password is incorrect.' });
+                    }
+                });
+            }
+            else {
+                res.status(404).json({ msg: 'The specified username was not found.' });
+            }
+        })
+    },
+
     // FIXME: Rename to createBranch?
+    // TODO: Remove isAdmin cause we won't create any admin
     signup: (req, res) => {
         const { name, password, isadmin } = req.body;
         console.log(req.body)

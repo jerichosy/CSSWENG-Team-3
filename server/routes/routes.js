@@ -5,6 +5,7 @@ const controller = require('../controller/controller.js');
 router.get('/', controller.getIndex);
 
 router.post('/login', controller.login);
+router.post('/editpasswordadmin', controller.editPasswordAdmin);
 router.post('/signup', controller.signup);
 router.get('/viewbranch', controller.viewBranch);
 router.post('/editbranch', controller.editBranch);
