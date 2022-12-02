@@ -756,7 +756,7 @@ const controller = {
             }
 
             var daily = {
-                dsales: 0, dexpense: 0, dcheque: 0,
+                dsales: 0, dexpense: 0, dcheque: 0, dtotalexpense: 0,
                 dsalary: 0, dgrocery: 0, dutilities: 0,
                 dfood: 0, dgasul: 0, dbakeryitems: 0,
                 drent: 0, dmisc: 0, dtaxes: 0
@@ -777,14 +777,15 @@ const controller = {
                 for (var j = 0; j < dailycheque.length; j++) {
                     daily.dcheque += dailycheque[i].amount
                 }
-                daily.dexpense = daily.dexpense + daily.dcheque
-                daily.dnet = daily.dsales - daily.dexpense
+                daily.dtotalexpense = daily.dexpense + daily.dcheque
+                daily.dnet = daily.dsales - daily.dtotalexpense
             }
 
             dailyrecord.push(parseInt(day))
             dailyrecord.push(daily.dsales)
             dailyrecord.push(daily.dcheque)
             dailyrecord.push(daily.dexpense)
+            dailyrecord.push(daily.totalexpense)
             dailyrecord.push(daily.dnet)
 
             //Populate expense categories
@@ -856,6 +857,7 @@ const controller = {
     generateQuarterlyReport: async (req, res) => {
         var { branchID, date } = req.body
         var reports = []
+        var totals = []
         var dateinput = new Date(date)
         var monthvar = dateinput.getMonth() + 1
 
@@ -865,6 +867,12 @@ const controller = {
         else {
             for (var qrtrmonth = monthvar, ctr = 0; ctr <= 2; qrtrmonth++, ctr++) {
                 var monthlyrecord = []
+                var monthlytotals = {
+                    sales: 0, expense: 0, cheque: 0, totalexpense: 0, net: 0,
+                    salary: 0, grocery: 0, utilities: 0,
+                    food: 0, gasul: 0, bakeryitems: 0,
+                    rent: 0, misc: 0, taxes: 0
+                }
                 //change bruteforce
                 //account for leap years
                 {
@@ -887,6 +895,7 @@ const controller = {
                 //getting daily record
                 for (var i = 1; i <= callimit; i++) {
                     var dailyrecord = []
+
                     if (i < 10) {
                         var day = "0" + i
                     }
@@ -923,7 +932,7 @@ const controller = {
                     }
 
                     var daily = {
-                        dsales: 0, dexpense: 0, dcheque: 0,
+                        dsales: 0, dexpense: 0, dcheque: 0, dtotalexpense: 0,
                         dsalary: 0, dgrocery: 0, dutilities: 0,
                         dfood: 0, dgasul: 0, dbakeryitems: 0,
                         drent: 0, dmisc: 0, dtaxes: 0
@@ -933,25 +942,32 @@ const controller = {
                     {
                         for (var j = 0; j < dailysales.length; j++) {
                             daily.dsales += dailysales[j].amount
+                            monthlytotals.sales += dailysales[j].amount
                         }
 
                         for (var j = 0; j < dailyexpense.length; j++) {
                             for (var k = 0; k < dailyexpense[j].length; k++) {
                                 daily.dexpense += dailyexpense[j][k].amount
+                                monthlytotals.expense += dailyexpense[j][k].amount
                             }
                         }
 
                         for (var j = 0; j < dailycheque.length; j++) {
-                            daily.dcheque += dailycheque[i].amount
+                            daily.dcheque += dailycheque[j].amount
+                            monthlytotals.cheque += dailycheque[j].amount
                         }
-                        daily.dexpense = daily.dexpense + daily.dcheque
-                        daily.dnet = daily.dsales - daily.dexpense
+                        daily.dtotalexpense = daily.dexpense + daily.dcheque
+                        daily.dnet = daily.dsales - daily.dtotalexpense
+
+                        monthlytotals.totalexpense = monthlytotals.expense + monthlytotals.cheque
+                        monthlytotals.net = monthlytotals.sales - monthlytotals.totalexpense
                     }
 
                     dailyrecord.push(parseInt(day))
                     dailyrecord.push(daily.dsales)
                     dailyrecord.push(daily.dcheque)
                     dailyrecord.push(daily.dexpense)
+                    dailyrecord.push(daily.dtotalexpense)
                     dailyrecord.push(daily.dnet)
 
                     //Populate expense categories
@@ -959,6 +975,7 @@ const controller = {
                         //Salary
                         for (var j = 0; j < dailysalary.length; j++) {
                             daily.dsalary += dailysalary[j].amount
+                            monthlytotals.salary += dailysalary[j].amount
                         }
                         dailyrecord.push(daily.dsalary)
 
@@ -971,52 +988,61 @@ const controller = {
                         //Utilities
                         for (var j = 0; j < dailyutilities.length; j++) {
                             daily.dutilities += dailyutilities[j].amount
+                            monthlytotals.utilities += dailyutilities[j].amount
                         }
                         dailyrecord.push(daily.dutilities)
 
                         //Food
                         for (var j = 0; j < dailyfood.length; j++) {
                             daily.dfood += dailyfood[j].amount
+                            monthlytotals.food += dailyfood[j].amount
                         }
                         dailyrecord.push(daily.dfood)
 
                         //Gasul
                         for (var j = 0; j < dailygasul.length; j++) {
                             daily.dgasul += dailygasul[j].amount
+                            monthlytotals.gasul += dailygasul[j].amount
                         }
                         dailyrecord.push(daily.dgasul)
 
                         //Bakery Items
                         for (var j = 0; j < dailybakeryitems.length; j++) {
                             daily.dbakeryitems += dailybakeryitems[j].amount
+                            monthlytotals.bakeryitems += dailybakeryitems[j].amount
                         }
                         dailyrecord.push(daily.dbakeryitems)
 
                         //Rent
                         for (var j = 0; j < dailyrent.length; j++) {
                             daily.drent += dailyrent[j].amount
+                            monthlytotals.rent += dailyrent[j].amount
                         }
                         dailyrecord.push(daily.drent)
 
                         //Misc
                         for (var j = 0; j < dailymisc.length; j++) {
                             daily.dmisc += dailymisc[j].amount
+                            monthlytotals.misc += dailymisc[j].amount
                         }
                         dailyrecord.push(daily.dmisc)
 
                         //Taxes
                         for (var j = 0; j < dailytaxes.length; j++) {
                             daily.dtaxes += dailytaxes[j].amount
+                            monthlytotals.taxes += dailytaxes[j].amount
                         }
                         dailyrecord.push(daily.dtaxes)
                     }
                     monthlyrecord.push(dailyrecord)
                 }
                 reports.push(monthlyrecord)
+                totals.push(monthlytotals)
             }
         }
 
         //console.log(reports)
+        //console.log(totals)
         res.status(201).json({ msg: 'Done' });
     }
 
