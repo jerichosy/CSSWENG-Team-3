@@ -778,6 +778,7 @@ const controller = {
 
             dailyrecord.push(parseInt(day))
             dailyrecord.push(daily.dsales)
+            dailyrecord.push(daily.dcheque)
             dailyrecord.push(daily.dexpense)
             dailyrecord.push(daily.dnet)
 
@@ -846,6 +847,173 @@ const controller = {
         res.status(201).json({ msg: 'Done' });
 
     },
+
+    generateQuarterlyReport: async (req, res) => {
+        var { branchID, date } = req.body
+        var reports = []
+        var dateinput = new Date(date)
+        var monthvar = dateinput.getMonth() + 1
+
+        if (monthvar != 1 && monthvar != 4 && monthvar != 7 && monthvar != 10) {
+            console.log('Invalid Quarter');
+        }
+        else {
+            for (var qrtrmonth = monthvar, ctr = 0; ctr <= 2; qrtrmonth++, ctr++) {
+                var monthlyrecord = []
+                //change bruteforce
+                //account for leap years
+                {
+                    if (qrtrmonth == 1 || qrtrmonth == 3 || qrtrmonth == 5 || qrtrmonth == 7 || qrtrmonth == 8 || qrtrmonth == 10 || qrtrmonth == 12) {
+                        callimit = 31
+                    }
+                    else if (qrtrmonth == 4 || qrtrmonth == 6 || qrtrmonth == 9 || qrtrmonth == 11) {
+                        callimit = 30
+                    }
+                    else if (qrtrmonth == 2) {
+                        callimit = 28
+                    }
+
+                    if (qrtrmonth < 10) {
+                        qrtrmonth = "0" + qrtrmonth
+                    }
+                }
+
+
+                //getting daily record
+                for (var i = 1; i <= callimit; i++) {
+                    var dailyrecord = []
+                    if (i < 10) {
+                        var day = "0" + i
+                    }
+                    else {
+                        day = i
+                    }
+
+                    //date formatting
+                    {
+                        var newstartdate = dateinput.getFullYear() + "-" + qrtrmonth + "-" + day + "T00:00:00.000Z"
+                        var newenddate = dateinput.getFullYear() + "-" + qrtrmonth + "-" + day + "T23:59:59.000Z"
+                        var startDate = new Date(newstartdate)
+                        var endDate = new Date(newenddate)
+                    }
+
+                    //get daily expenses
+                    {
+                        var dailysalary = await Expense.Admin.find({ branchID: branchID, category: 'Salary', datetime: { $gte: startDate, $lt: endDate } })
+                        var dailygrocery = await Expense.Admin.find({ branchID: branchID, category: 'Grocery', datetime: { $gte: startDate, $lt: endDate } })
+                        var dailyutilities = await Expense.Admin.find({ branchID: branchID, category: 'Utilities', datetime: { $gte: startDate, $lt: endDate } })
+                        var dailyfood = await Expense.Admin.find({ branchID: branchID, category: 'Food', datetime: { $gte: startDate, $lt: endDate } })
+                        var dailygasul = await Expense.Admin.find({ branchID: branchID, category: 'Gasul', datetime: { $gte: startDate, $lt: endDate } })
+                        var dailybakeryitems = await Expense.Admin.find({ branchID: branchID, category: 'Bakery Items', datetime: { $gte: startDate, $lt: endDate } })
+                        var dailyrent = await Expense.Admin.find({ branchID: branchID, category: 'Rent', datetime: { $gte: startDate, $lt: endDate } })
+                        var dailymisc = await Expense.Admin.find({ branchID: branchID, category: 'Misc', datetime: { $gte: startDate, $lt: endDate } })
+                        var dailytaxes = await Expense.Admin.find({ branchID: branchID, category: 'Taxes', datetime: { $gte: startDate, $lt: endDate } })
+                    }
+
+                    //get daily sales, expenses, cheques
+                    {
+                        var dailysales = await Sales.Admin.find({ branchID: branchID, datetime: { $gte: startDate, $lt: endDate } })
+                        var dailycheque = await Cheque.find({ branchID: branchID, datetime: { $gte: startDate, $lt: endDate } })
+                        var dailyexpense = [dailysalary, dailygrocery, dailyutilities, dailyfood, dailygasul, dailybakeryitems, dailyrent, dailymisc, dailytaxes]
+                    }
+
+                    var daily = {
+                        dsales: 0, dexpense: 0, dcheque: 0,
+                        dsalary: 0, dgrocery: 0, dutilities: 0,
+                        dfood: 0, dgasul: 0, dbakeryitems: 0,
+                        drent: 0, dmisc: 0, dtaxes: 0
+                    }
+
+                    //Populate daily sales, expenses, cheques, net
+                    {
+                        for (var j = 0; j < dailysales.length; j++) {
+                            daily.dsales += dailysales[j].amount
+                        }
+
+                        for (var j = 0; j < dailyexpense.length; j++) {
+                            for (var k = 0; k < dailyexpense[j].length; k++) {
+                                daily.dexpense += dailyexpense[j][k].amount
+                            }
+                        }
+
+                        for (var j = 0; j < dailycheque.length; j++) {
+                            daily.dcheque += dailycheque[i].amount
+                        }
+                        daily.dexpense = daily.dexpense + daily.dcheque
+                        daily.dnet = daily.dsales - daily.dexpense
+                    }
+
+                    dailyrecord.push(parseInt(day))
+                    dailyrecord.push(daily.dsales)
+                    dailyrecord.push(daily.dcheque)
+                    dailyrecord.push(daily.dexpense)
+                    dailyrecord.push(daily.dnet)
+
+                    //Populate expense categories
+                    {
+                        //Salary
+                        for (var j = 0; j < dailysalary.length; j++) {
+                            daily.dsalary += dailysalary[j].amount
+                        }
+                        dailyrecord.push(daily.dsalary)
+
+                        //Grocery
+                        for (var j = 0; j < dailygrocery.length; j++) {
+                            daily.dgrocery += dailygrocery[j].amount
+                        }
+                        dailyrecord.push(daily.dgrocery)
+
+                        //Utilities
+                        for (var j = 0; j < dailyutilities.length; j++) {
+                            daily.dutilities += dailyutilities[j].amount
+                        }
+                        dailyrecord.push(daily.dutilities)
+
+                        //Food
+                        for (var j = 0; j < dailyfood.length; j++) {
+                            daily.dfood += dailyfood[j].amount
+                        }
+                        dailyrecord.push(daily.dfood)
+
+                        //Gasul
+                        for (var j = 0; j < dailygasul.length; j++) {
+                            daily.dgasul += dailygasul[j].amount
+                        }
+                        dailyrecord.push(daily.dgasul)
+
+                        //Bakery Items
+                        for (var j = 0; j < dailybakeryitems.length; j++) {
+                            daily.dbakeryitems += dailybakeryitems[j].amount
+                        }
+                        dailyrecord.push(daily.dbakeryitems)
+
+                        //Rent
+                        for (var j = 0; j < dailyrent.length; j++) {
+                            daily.drent += dailyrent[j].amount
+                        }
+                        dailyrecord.push(daily.drent)
+
+                        //Misc
+                        for (var j = 0; j < dailymisc.length; j++) {
+                            daily.dmisc += dailymisc[j].amount
+                        }
+                        dailyrecord.push(daily.dmisc)
+
+                        //Taxes
+                        for (var j = 0; j < dailytaxes.length; j++) {
+                            daily.dtaxes += dailytaxes[j].amount
+                        }
+                        dailyrecord.push(daily.dtaxes)
+                    }
+                    monthlyrecord.push(dailyrecord)
+                }
+                reports.push(monthlyrecord)
+            }
+        }
+
+        console.log(reports)
+        res.status(201).json({ msg: 'Done' });
+    }
 
 
 

@@ -32,4 +32,5 @@ router.post('/editcheque', controller.editCheque);
 router.post('/deletecheque', controller.deleteCheque);
 // router.post('/adminviewexpensefilter', controller.adminViewExpenseFilter);
 router.post('/genreport', controller.generateReport)
+router.post('/genqrtr', controller.generateQuarterlyReport);
 module.exports = router;
