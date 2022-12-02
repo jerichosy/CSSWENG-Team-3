@@ -30,13 +30,13 @@
   --bs-gray-800: #343a40;
   --bs-gray-900: #212529;
   --bs-primary: #783028;
-  --bs-secondary: #976d1e;
+  --bs-secondary: #e09d21;
   --bs-bgdefault: #FFFCF5;
   --bs-primaryhover: #CC7066;
   --bs-danger: #dc3545;
   --bs-cancel: #6c757d;
   --bs-primary-rgb: 120, 48, 40;
-  --bs-secondary-rgb: 151, 109, 30;
+  --bs-secondary-rgb: 224, 157, 33;
   --bs-bgdefault-rgb: 255, 252, 245;
   --bs-primaryhover-rgb: 204, 112, 102;
   --bs-danger-rgb: 220, 53, 69;
@@ -2909,20 +2909,20 @@ textarea.form-control-lg {
 }
 
 .btn-secondary {
-  --bs-btn-color: #fff;
-  --bs-btn-bg: #976d1e;
-  --bs-btn-border-color: #976d1e;
-  --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #805d1a;
-  --bs-btn-hover-border-color: #795718;
-  --bs-btn-focus-shadow-rgb: 167, 131, 64;
-  --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #795718;
-  --bs-btn-active-border-color: #715217;
+  --bs-btn-color: #000;
+  --bs-btn-bg: #e09d21;
+  --bs-btn-border-color: #e09d21;
+  --bs-btn-hover-color: #000;
+  --bs-btn-hover-bg: #e5ac42;
+  --bs-btn-hover-border-color: #e3a737;
+  --bs-btn-focus-shadow-rgb: 190, 133, 28;
+  --bs-btn-active-color: #000;
+  --bs-btn-active-bg: #e6b14d;
+  --bs-btn-active-border-color: #e3a737;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: #976d1e;
-  --bs-btn-disabled-border-color: #976d1e;
+  --bs-btn-disabled-color: #000;
+  --bs-btn-disabled-bg: #e09d21;
+  --bs-btn-disabled-border-color: #e09d21;
 }
 
 .btn-bgdefault {
@@ -3011,19 +3011,19 @@ textarea.form-control-lg {
 }
 
 .btn-outline-secondary {
-  --bs-btn-color: #976d1e;
-  --bs-btn-border-color: #976d1e;
-  --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #976d1e;
-  --bs-btn-hover-border-color: #976d1e;
-  --bs-btn-focus-shadow-rgb: 151, 109, 30;
-  --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #976d1e;
-  --bs-btn-active-border-color: #976d1e;
+  --bs-btn-color: #e09d21;
+  --bs-btn-border-color: #e09d21;
+  --bs-btn-hover-color: #000;
+  --bs-btn-hover-bg: #e09d21;
+  --bs-btn-hover-border-color: #e09d21;
+  --bs-btn-focus-shadow-rgb: 224, 157, 33;
+  --bs-btn-active-color: #000;
+  --bs-btn-active-bg: #e09d21;
+  --bs-btn-active-border-color: #e09d21;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #976d1e;
+  --bs-btn-disabled-color: #e09d21;
   --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: #976d1e;
+  --bs-btn-disabled-border-color: #e09d21;
   --bs-gradient: none;
 }
 
@@ -4645,12 +4645,12 @@ textarea.form-control-lg {
 }
 
 .alert-secondary {
-  --bs-alert-color: #5b4112;
-  --bs-alert-bg: #eae2d2;
-  --bs-alert-border-color: #e0d3bc;
+  --bs-alert-color: #865e14;
+  --bs-alert-bg: #f9ebd3;
+  --bs-alert-border-color: #f6e2bc;
 }
 .alert-secondary .alert-link {
-  color: #49340e;
+  color: #6b4b10;
 }
 
 .alert-bgdefault {
@@ -5004,17 +5004,17 @@ textarea.form-control-lg {
 }
 
 .list-group-item-secondary {
-  color: #5b4112;
-  background-color: #eae2d2;
+  color: #865e14;
+  background-color: #f9ebd3;
 }
 .list-group-item-secondary.list-group-item-action:hover, .list-group-item-secondary.list-group-item-action:focus {
-  color: #5b4112;
-  background-color: #d3cbbd;
+  color: #865e14;
+  background-color: #e0d4be;
 }
 .list-group-item-secondary.list-group-item-action.active {
   color: #fff;
-  background-color: #5b4112;
-  border-color: #5b4112;
+  background-color: #865e14;
+  border-color: #865e14;
 }
 
 .list-group-item-bgdefault {
@@ -6638,8 +6638,8 @@ textarea.form-control-lg {
 }
 
 .text-bg-secondary {
-  color: #fff !important;
-  background-color: RGBA(151, 109, 30, var(--bs-bg-opacity, 1)) !important;
+  color: #000 !important;
+  background-color: RGBA(224, 157, 33, var(--bs-bg-opacity, 1)) !important;
 }
 
 .text-bg-bgdefault {
@@ -6670,10 +6670,10 @@ textarea.form-control-lg {
 }
 
 .link-secondary {
-  color: #976d1e !important;
+  color: #e09d21 !important;
 }
 .link-secondary:hover, .link-secondary:focus {
-  color: #795718 !important;
+  color: #e6b14d !important;
 }
 
 .link-bgdefault {
