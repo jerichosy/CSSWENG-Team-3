@@ -1,0 +1,55 @@
+[{
+  "_id": {
+    "$oid": "63739d1ea801a4d5b2ed093f"
+  },
+  "branchID": " ",
+  "sales": 15,
+  "customercount": "10",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1668521246808"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1668521246808"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63739d25a801a4d5b2ed0941"
+  },
+  "branchID": " ",
+  "sales": 7,
+  "customercount": "5",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1668521253396"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1668521253396"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63739d2da801a4d5b2ed0943"
+  },
+  "branchID": " ",
+  "sales": 20,
+  "customercount": "20",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1668521261201"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1668521261201"
+    }
+  },
+  "__v": 0
+}]
