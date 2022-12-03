@@ -61,9 +61,8 @@ const authController = {
         })
     },
 
-    // TODO: Remove isAdmin cause we won't create any admin
     createBranch: (req, res) => {
-        const { name, password, isadmin } = req.body;
+        const { name, password } = req.body;
         console.log(req.body)
 
         db.findOne(User, { branchID: name }, '', (result) => {
@@ -74,18 +73,9 @@ const authController = {
             else {
                 const saltRounds = 10;
                 bcrypt.hash(password, saltRounds, function (err, hashed) {
-                    if (isadmin) {
-                        var user = {
-                            branchID: name,
-                            branchPassword: hashed,
-                            isAdmin: isadmin
-                        }
-                    }
-                    else {
-                        var user = {
-                            branchID: name,
-                            branchPassword: hashed,
-                        }
+                    var user = {
+                        branchID: name,
+                        branchPassword: hashed,
                     }
 
                     db.insertOne(User, user, function (flag) {
