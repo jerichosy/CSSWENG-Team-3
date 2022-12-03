@@ -3,7 +3,7 @@
 const db = require('../models/db.js');
 // const db = require('../config/keys').mongoURI;
 
-const User = require('../models/UserSchema');
+const User = require('../models/userSchema.js');
 const Sales = require('../models/branch/salesSchema.js');
 const Expense = require('../models/branch/expenseSchema.js');
 const Cheque = require('../models/admin/adminChequeSchema.js')
