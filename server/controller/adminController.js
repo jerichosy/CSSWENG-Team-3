@@ -5,43 +5,6 @@ const Cheque = require('../models/admin/adminChequeSchema.js')
 
 
 const adminController = {
-    adminViewSales: (req, res) => {
-        db.findMany(Sales.Admin, {}, 'branchID branchName amount customerCount datetime', function (sales) {
-            if (sales) {
-                console.log('Sales shown');
-                // console.log(typeof (sales));
-                salescopy = JSON.parse(JSON.stringify(sales))
-                for (var i = 0; i < sales.length; i++) {
-                    salescopy[i].date = sales[i].datetime.toISOString().split('T')[0]
-                    salescopy[i].time = sales[i].datetime.toISOString().split('T')[1].split('.')[0].slice(0, -3)
-                    delete salescopy[i].datetime
-                }
-                res.status(200).json(salescopy);  //200 OK
-            } else {
-                console.log('Sales not shown');
-                res.status(400).json({ msg: 'Something went wrong. Please try again.' })  //400 Bad Request
-            }
-        })
-    },
-
-    adminViewExpense: (req, res) => {
-        db.findMany(Expense.Admin, {}, '', function (expenses) {
-            if (expenses) {
-                console.log('Expenses shown');
-                expensescopy = JSON.parse(JSON.stringify(expenses))
-                for (var i = 0; i < expenses.length; i++) {
-                    expensescopy[i].date = expenses[i].datetime.toISOString().split('T')[0]
-                    delete expensescopy[i].datetime
-                }
-
-                res.status(201).json(expensescopy);  //201 Created
-            } else {
-                console.log('Expenses not shown');
-                res.status(400).json({ msg: 'Something went wrong. Please try again.' })
-            }
-        })
-    },
-
     adminAddSales: (req, res) => {
         // const { branchID, sales, customercount, time } = req.body;
         console.log(req.body)
@@ -87,6 +50,77 @@ const adminController = {
             }
         })
         // res.redirect('/');
+    },
+
+    adminViewSales: (req, res) => {
+        db.findMany(Sales.Admin, {}, 'branchID branchName amount customerCount datetime', function (sales) {
+            if (sales) {
+                console.log('Sales shown');
+                // console.log(typeof (sales));
+                salescopy = JSON.parse(JSON.stringify(sales))
+                for (var i = 0; i < sales.length; i++) {
+                    salescopy[i].date = sales[i].datetime.toISOString().split('T')[0]
+                    salescopy[i].time = sales[i].datetime.toISOString().split('T')[1].split('.')[0].slice(0, -3)
+                    delete salescopy[i].datetime
+                }
+                res.status(200).json(salescopy);  //200 OK
+            } else {
+                console.log('Sales not shown');
+                res.status(400).json({ msg: 'Something went wrong. Please try again.' })  //400 Bad Request
+            }
+        })
+    },
+
+    adminViewExpense: (req, res) => {
+        db.findMany(Expense.Admin, {}, '', function (expenses) {
+            if (expenses) {
+                console.log('Expenses shown');
+                expensescopy = JSON.parse(JSON.stringify(expenses))
+                for (var i = 0; i < expenses.length; i++) {
+                    expensescopy[i].date = expenses[i].datetime.toISOString().split('T')[0]
+                    delete expensescopy[i].datetime
+                }
+
+                res.status(201).json(expensescopy);  //201 Created
+            } else {
+                console.log('Expenses not shown');
+                res.status(400).json({ msg: 'Something went wrong. Please try again.' })
+            }
+        })
+    },
+
+    // TODO: Finalize decision on this. 
+    // One problem is that by doing client side filtering in conjunction with limit,
+    // the filter only acts on the first 100 records for example. Thereby possibly neccessating a backend request still.
+    // Unless ofc, that's down to whether the user selects "Show All" or not.
+    adminViewSalesFilter: (req, res) => {
+        var { dateRangeFrom, dateRangeTo, timeRangeFrom, timeRangeTo, branches } = req.body;
+        console.log(req.body);
+        var dateRangeFrom = new Date(dateRangeFrom)
+        var dateRangeTo = new Date(dateRangeTo)
+        dateRangeTo.setDate(dateRangeTo.getDate() + 1)
+
+        var filter = {
+            createdAt: { $gte: dateRangeFrom, $lte: dateRangeTo },
+            time: { $gte: timeRangeFrom, $lte: timeRangeTo },
+            branchID: branches
+        }
+        console.log(filter)
+        //change to admin
+        db.findMany(Sales.Admin, filter, '', function (result) {
+            if (result) {
+                console.log('Result shown');
+                res.status(201).json({ result });  //201 Created
+            } else {
+                console.log('Result not shown');
+                res.status(400).json({ msg: 'Something went wrong. Please try again.' })
+            }
+        })
+    },
+
+    // TODO: Same as above
+    adminViewExpenseFilter: (req, res) => {
+
     },
 
     adminEditSales: (req, res) => {
@@ -158,40 +192,6 @@ const adminController = {
                 res.status(400).json({ msg: 'Something went wrong. Please try again.' })
             }
         })
-    },
-
-    // TODO: Finalize decision on this. 
-    // One problem is that by doing client side filtering in conjunction with limit,
-    // the filter only acts on the first 100 records for example. Thereby possibly neccessating a backend request still.
-    // Unless ofc, that's down to whether the user selects "Show All" or not.
-    adminViewSalesFilter: (req, res) => {
-        var { dateRangeFrom, dateRangeTo, timeRangeFrom, timeRangeTo, branches } = req.body;
-        console.log(req.body);
-        var dateRangeFrom = new Date(dateRangeFrom)
-        var dateRangeTo = new Date(dateRangeTo)
-        dateRangeTo.setDate(dateRangeTo.getDate() + 1)
-
-        var filter = {
-            createdAt: { $gte: dateRangeFrom, $lte: dateRangeTo },
-            time: { $gte: timeRangeFrom, $lte: timeRangeTo },
-            branchID: branches
-        }
-        console.log(filter)
-        //change to admin
-        db.findMany(Sales.Admin, filter, '', function (result) {
-            if (result) {
-                console.log('Result shown');
-                res.status(201).json({ result });  //201 Created
-            } else {
-                console.log('Result not shown');
-                res.status(400).json({ msg: 'Something went wrong. Please try again.' })
-            }
-        })
-    },
-
-    // TODO: Same as above
-    adminViewExpenseFilter: (req, res) => {
-
     },
 
     addCheque: (req, res) => {

@@ -19,20 +19,20 @@ router.post('/deletesales', branchController.deleteSales);
 router.post('/deleteexpense', branchController.deleteExpense);
 router.get('/submit', branchController.submitSalesAndExpenses);
 
-router.get('/adminviewsales', adminController.adminViewSales);
-router.get('/adminviewexpense', adminController.adminViewExpense);
-router.get('/viewcheque', adminController.viewCheque);
 router.post('/adminaddsales', adminController.adminAddSales);
 router.post('/adminaddexpense', adminController.adminAddExpense);
+router.get('/adminviewsales', adminController.adminViewSales);
+router.get('/adminviewexpense', adminController.adminViewExpense);
+router.post('/adminviewsalesfilter', adminController.adminViewSalesFilter);
+// router.post('/adminviewexpensefilter', controller.adminViewExpenseFilter);
 router.post('/admineditsales', adminController.adminEditSales);
 router.post('/admineditexpense', adminController.adminEditExpense);
 router.post('/admindeletesales', adminController.adminDeleteSales);
 router.post('/admindeleteexpense', adminController.adminDeleteExpense);
-router.post('/adminviewsalesfilter', adminController.adminViewSalesFilter);
 router.post('/addcheque', adminController.addCheque);
+router.get('/viewcheque', adminController.viewCheque);
 router.post('/editcheque', adminController.editCheque);
 router.post('/deletecheque', adminController.deleteCheque);
-// router.post('/adminviewexpensefilter', controller.adminViewExpenseFilter);
 router.post('/genreport', adminController.generateReport)
 router.post('/genqrtr', adminController.generateQuarterlyReport);
 
