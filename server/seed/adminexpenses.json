@@ -1,0 +1,29 @@
+[
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-25T07:00:42.389Z",
+    "item": "LPG",
+    "category": "Gasul",
+    "amount": 6500,
+    "notes": ""
+  },
+  {
+    "branchID": 102,
+    "branchName": "Pag-asa QC",
+    "datetime": "2022-11-25T07:00:42.389Z",
+    "item": "LPG",
+    "category": "Gasul",
+    "amount": 6000,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-25T08:00:42.389Z",
+    "item": "Flour",
+    "category": "Grocery",
+    "amount": 2500,
+    "notes": ""
+  }
+]
