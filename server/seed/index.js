@@ -1,7 +1,8 @@
 // seed mongoDB with sample data
 
-const db = require('../models/db.js');
+const mongoose = require('mongoose');
 // const db = require('../config/keys').mongoURI;
+const url = process.env.MONGODB_URI || 'mongodb://localhost:27017/CSSWENG-Team-3';
 
 const User = require('../models/userSchema.js');
 const Sales = require('../models/branch/salesSchema.js');
@@ -13,19 +14,35 @@ const adminsales = require('./adminsales.json');
 const users = require('./users.json');
 const cheques = require('./cheques.json');
 
-db.connect();
 
+const options = {
+    useUnifiedTopology: true,
+    useNewUrlParser: true
+};
 
-function seed(model, doc) {
-    model.deleteMany({})
-        .then(() => {
-            return model.insertMany(doc);
-        })
-}
+mongoose.connect(url, options, function (error) {
+    if (error) throw error;
+    console.log('Connected to: ' + url + '\n');
 
-seed(User, users);
-seed(Sales.Admin, adminsales);
-seed(Expense.Admin, adminexpenses);
-seed(Cheque, cheques);
+    async function seed(model, doc) {
+        await model.deleteMany({});
+        await model.insertMany(doc);
+        console.log("Insert done")
+    }
 
-process.exit();
+    async function seedAll() {
+        await seed(User, users);
+        console.log("Users seeded\n")
+        await seed(Sales.Admin, adminsales);
+        console.log("Admin Sales seeded\n")
+        await seed(Expense.Admin, adminexpenses);
+        console.log("Admin Expenses seeded\n")
+        await seed(Cheque, cheques);
+        console.log("Cheques seeded\n")
+    }
+
+    seedAll().then(() => {
+        console.log("DONE SEEDING")
+        process.exit();
+    })
+});
