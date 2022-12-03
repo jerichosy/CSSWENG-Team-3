@@ -1,0 +1,23 @@
+[
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-25T07:00:42.389Z",
+    "amount": 4450,
+    "customerCount": 41
+  },
+  {
+    "branchID": 102,
+    "branchName": "Pag-asa QC",
+    "datetime": "2022-11-25T07:00:42.389Z",
+    "amount": 4750,
+    "customerCount": 45
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-25T08:00:42.389Z",
+    "amount": 3150,
+    "customerCount": 34
+  }
+]

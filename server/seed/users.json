@@ -1,0 +1,26 @@
+[
+    {
+        "branchID": 200,
+        "branchName": "Admin",
+        "branchPassword": "ptm_120",
+        "isAdmin": 1
+    },
+    {
+        "branchID": 101,
+        "branchName": "Panay Avenue Paligsahan QC",
+        "branchPassword": "pqc_11",
+        "isAdmin": 0
+    },
+    {
+        "branchID": 102,
+        "branchName": "Pag-asa QC",
+        "branchPassword": "pqc_23",
+        "isAdmin": 0
+    },
+    {
+        "branchID": 103,
+        "branchName": "Tandang Sora QC",
+        "branchPassword": "tsqc_65",
+        "isAdmin": 0
+    }
+]
