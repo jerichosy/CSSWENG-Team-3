@@ -1,4 +1,3 @@
-var path = require('path');
 const db = require('../models/db.js');
 const User = require('../models/UserSchema.js');
 const Sales = require('../models/branch/salesSchema.js');
@@ -7,10 +6,6 @@ const Cheque = require('../models/admin/adminChequeSchema.js')
 const bcrypt = require('bcrypt');
 
 const controller = {
-    getIndex: (req, res) => {
-        res.sendFile(path.resolve('./server/views/login.html'))
-    },
-
     login: (req, res) => {
         const { name, password } = req.body;
         console.log(req.body)
