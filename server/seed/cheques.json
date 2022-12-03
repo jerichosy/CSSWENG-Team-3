@@ -1,0 +1,42 @@
+[
+    {
+        "datetime": "2022-11-25T07:00:42.389Z",
+        "account": "Meralco",
+        "category": "Utilities",
+        "amount": 11250,
+        "branchID": 101,
+        "branchName": "Panay Avenue Paligsahan QC"
+    },
+    {
+        "datetime": "2022-11-26T07:00:42.389Z",
+        "account": "Rent",
+        "category": "Rent",
+        "amount": 35000,
+        "branchID": 102,
+        "branchName": "Pag-asa QC"
+    },
+    {
+        "datetime": "2022-11-26T07:00:42.389Z",
+        "account": "DTI",
+        "category": "Taxes",
+        "amount": 22400,
+        "branchID": 101,
+        "branchName": "Panay Avenue Paligsahan QC"
+    },
+    {
+        "datetime": "2022-11-27T07:00:42.389Z",
+        "account": "DTI",
+        "category": "Taxes",
+        "amount": 19800,
+        "branchID": 102,
+        "branchName": "Pag-asa QC"
+    },
+    {
+        "datetime": "2022-11-28T07:00:42.389Z",
+        "account": "Maynilad",
+        "category": "Utilities",
+        "amount": 4300,
+        "branchID": 101,
+        "branchName": "Panay Avenue Paligsahan QC"
+    }
+]
