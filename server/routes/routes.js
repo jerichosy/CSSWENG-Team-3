@@ -5,7 +5,7 @@ const branchController = require('../controller/branchController.js');
 const accountController = require('../controller/accountController.js');
 
 router.post('/login', accountController.login);
-router.post('/editpasswordadmin', accountController.editPasswordAdmin);
+router.post('/editadminpassword', accountController.editAdminPassword);
 router.post('/createbranch', accountController.createBranch);
 router.get('/viewbranch', accountController.viewBranch);
 router.post('/editbranch', accountController.editBranch);

@@ -29,7 +29,7 @@ const authController = {
         })
     },
 
-    editPasswordAdmin: (req, res) => {
+    editAdminPassword: (req, res) => {
         const { oldPassword, newPassword } = req.body;
         console.log(req.body)
         db.findOne(User, { isAdmin: true }, 'branchPassword', (user) => {
