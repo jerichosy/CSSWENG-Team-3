@@ -21,12 +21,11 @@ function seed(model, doc) {
         .then(() => {
             return model.insertMany(doc);
         })
-        .then(() => {
-            process.exit();
-        });
 }
 
 seed(User, users);
 seed(Sales.Admin, adminsales);
 seed(Expense.Admin, adminexpenses);
 seed(Cheque, cheques);
+
+process.exit();
