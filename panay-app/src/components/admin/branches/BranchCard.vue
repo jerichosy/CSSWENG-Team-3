@@ -3,9 +3,12 @@ export default {
     props: {
         branch: Object
     },
+    emits: ['selectBranch'],
 
     methods: {
-
+        selectBranch() {
+            this.$emit('selectBranch', this.branch)
+        }
     }
 
 
@@ -23,7 +26,10 @@ export default {
 
             <div class="p-2 m-1">
                 <button class="btn btn-secondary text-white me-2">Edit</button>
-                <button class="btn btn-danger">Delete</button>
+                <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal"
+                    @click="selectBranch()">
+                    Delete
+                </button>
             </div>
         </div>
     </div>
