@@ -1,16 +1,25 @@
 <script>
 import BranchCard from '../../../components/admin/branches/BranchCard.vue'
+import AddBranchModal from '../../../components/admin/branches/AddBranchModal.vue'
 import UserService from '../../../services/UserService.js'
+import { computed } from 'vue'
 
 export default {
+    components: {
+        BranchCard,
+        AddBranchModal
+    },
     data() {
         return {
             branches: []
         }
     },
-    components: {
-        BranchCard
+    provide() {
+        return {
+            branches: computed(() => this.branches)
+        }
     },
+
 
     mounted() {
         this.retrieveBranches();
@@ -26,19 +35,36 @@ export default {
                 .catch(e => {
                     console.log(e);
                 })
+        },
+        addBranch(branch) {
+            const newBranch = {
+                name: branch.branchName,
+                password: branch.branchPassword,
+                isadmin: 0
+            }
+
+            UserService.signup(newBranch)
+                .then(response => {
+                    console.log(response);
+                    this.retrieveBranches();
+                })
+                .catch(e => {
+                    console.log(e);
+                })
         }
     }
 }
 </script>
 
 <template>
+    <AddBranchModal @add-branch="addBranch" />
     <div class="row">
         <h1 class="p-3 m-0">Branches</h1>
         <hr />
     </div>
     <div class="row justify-content-end ps-3 pe-3 mb-2">
         <div class="col-auto">
-            <button class="btn btn-primary">Add</button>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">Add</button>
         </div>
     </div>
     <div class="row ps-2 pe-2">
