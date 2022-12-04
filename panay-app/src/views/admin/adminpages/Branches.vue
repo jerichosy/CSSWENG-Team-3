@@ -1,17 +1,20 @@
 <script>
 import BranchCard from '../../../components/admin/branches/BranchCard.vue'
 import AddBranchModal from '../../../components/admin/branches/AddBranchModal.vue'
+import DeleteBranchModal from '../../../components/admin/branches/DeleteBranchModal.vue'
 import UserService from '../../../services/UserService.js'
 import { computed } from 'vue'
 
 export default {
     components: {
         BranchCard,
-        AddBranchModal
+        AddBranchModal,
+        DeleteBranchModal
     },
     data() {
         return {
-            branches: []
+            branches: [],
+            selectedBranch: {}
         }
     },
     provide() {
@@ -27,6 +30,12 @@ export default {
 
 
     methods: {
+        selectBranch(branch) {
+            this.selectedBranch = branch;
+        },
+        deselectBranch() {
+            this.selectedBranch = {};
+        },
         retrieveBranches() {
             UserService.getBranches()
                 .then(response => {
@@ -51,6 +60,24 @@ export default {
                 .catch(e => {
                     console.log(e);
                 })
+        },
+
+        deleteBranch(id) {
+            // TODO: Bring up id property naming to devs
+            const data = {
+                "id": id
+            }
+            console.log(data);
+
+            UserService.deleteBranch(data)
+                .then(response => {
+                    console.log(response);
+                    this.deselectBranch();
+                    this.retrieveBranches();
+                })
+                .catch(e => {
+                    console.log(e);
+                });
         }
     }
 }
@@ -58,6 +85,7 @@ export default {
 
 <template>
     <AddBranchModal @add-branch="addBranch" />
+    <DeleteBranchModal :selected-branch="selectedBranch" @delete-branch="deleteBranch" />
     <div class="row">
         <h1 class="p-3 m-0">Branches</h1>
         <hr />
@@ -68,6 +96,6 @@ export default {
         </div>
     </div>
     <div class="row ps-2 pe-2">
-        <BranchCard v-for="branch in branches" :branch="branch" />
+        <BranchCard v-for="branch in branches" :branch="branch" @select-branch="selectBranch" />
     </div>
 </template>
