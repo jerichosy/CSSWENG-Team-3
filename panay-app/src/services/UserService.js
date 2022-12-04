@@ -5,6 +5,10 @@ class UserService {
         return http.get("/viewbranch");
     }
 
+    deleteBranch(data) {
+        return http.post("/deletebranch", data);
+    }
+
     signup(data) {
         return http.post("/signup", data);
     }
