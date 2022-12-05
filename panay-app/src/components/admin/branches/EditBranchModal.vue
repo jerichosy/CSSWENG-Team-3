@@ -30,16 +30,11 @@ export default {
         // TODO: Add this for other modals
         editModalEl.addEventListener('hidden.bs.modal', event => {
             this.resetInputs();
-        })
-    },
+        });
 
-    watch: {
-        selectedBranch: {
-            handler() {
-                this.branchName = this.selectedBranch.branchName;
-            },
-            deep: true
-        }
+        editModalEl.addEventListener('show.bs.modal', event => {
+            this.branchName = this.selectedBranch.branchName;
+        });
     },
 
     methods: {
