@@ -2,12 +2,17 @@
 // FIXME: Reset forms when outside of modal is clicked
 
 import { Modal } from 'bootstrap';
+import UserService from '../../../services/UserService';
 export default {
-
+    inject: {
+        branches: {
+            from: 'branches'
+        }
+    },
     props: {
         selectedBranch: Object
     },
-    emits: ['editBranch'],
+    emits: ['changeBranchPassword'],
 
     data() {
         return {
@@ -16,7 +21,8 @@ export default {
             branchRetypePassword: '',
             adminPassword: '',
             submitAttemptBranchName: false,
-            submitAttemptPassword: false
+            submitAttemptPassword: false,
+            adminPasswordIsCorrect: false
         }
     },
 
@@ -30,20 +36,11 @@ export default {
     },
 
     methods: {
-        onSubmit() {
-            // Server-side password validation
-            this.$emit('editBranch');
-            const editModalElement = document.getElementById('editModal');
-            const modal = Modal.getInstance(editModalElement);
-            modal.hide();
-        },
         validBranchName() {
-            if (this.branch.branchName.length < 3) {
-                this.alertMessages.branchName = 'Please enter a branch name with a minimum of 3 characters.';
+            if (this.branchName.length < 3) {
                 return false;
             }
-            else if (this.branches.some(b => b.branchName.toLowerCase() === this.branch.branchName.toLowerCase())) {
-                this.alertMessages.branchName = 'This branch name already exists. Please enter another branch name.';
+            else if (this.branches.some(b => b.branchName.toLowerCase() === this.branchName.toLowerCase())) {
                 return false;
             }
             return true;
@@ -60,9 +57,52 @@ export default {
             }
             return true;
         },
+        validatePassword(data) {
+            this.adminPasswordIsCorrect = UserService.validatePassword(data);
+            console.log(this.adminPasswordIsCorrect);
+            // .then(response => {
+            //     // expecting boolean
+            //     console.log(response);
+            //     this.adminPasswordIsCorrect = response;
+            // })
+            // .catch(e => {
+            //     console.log(e);
+            // })
+        },
 
         onSubmitPassword() {
             this.submitAttemptPassword = true;
+
+            const adminData = {
+                // TODO: get _id or similar from session
+                "_id": 1234,
+                "password": this.adminPassword
+            };
+            this.validatePassword(adminData);
+
+            if (this.validPassword() && this.samePassword() && this.adminPasswordIsCorrect) {
+                const data = {
+                    "id": this.selectedBranch._id,
+                    "branchPassword": this.branchPassword
+                }
+                console.log('changing branch password');
+                // TODO: emit change branch password
+                // this.$emit('changeBranchPassword', data);
+                this.resetInputs();
+            }
+        },
+        onSubmitBranchName() {
+            this.submitAttemptBranchName = true;
+        },
+
+        resetInputs() {
+            this.branchName = '';
+            this.branchPassword = '';
+            this.branchRetypePassword = '';
+            this.adminPassword = '';
+            this.adminPasswordIsCorrect = false;
+            this.submitAttemptBranchName = false;
+            this.submitAttemptPassword = false;
         }
     }
 
@@ -96,21 +136,23 @@ export default {
                                         - Check if matched
                              -->
 
-                        <form @submit.prevent>
+                        <form @submit.prevent="onSubmitBranchName" novalidate>
                             <fieldset>
                                 <legend>Change Branch Name</legend>
                                 <div class="form-floating mb-2">
-                                    <input type="text" :class="{ 'form-control': true, 'is-invalid': !validBranchName }"
+                                    <input type="text"
+                                        :class="{ 'form-control': true, 'is-invalid': !validBranchName() && submitAttemptBranchName }"
                                         id="edit-branch-name" placeholder="Branch Name" v-model="branchName" required />
                                     <label for="edit-branch-name">Branch Name</label>
                                     <div class="invalid-feedback">
+                                        Please enter a branch name with a minimum of 3 characters.
                                     </div>
                                 </div>
                             </fieldset>
                             <button class="btn btn-primary" type="submit">Save Changes</button>
                         </form>
 
-                        <form @submit.prevent="onSubmitPassword">
+                        <form @submit.prevent="onSubmitPassword" novalidate>
                             <fieldset>
                                 <legend>Change Branch Password</legend>
                                 <!-- Branch Password Input -->
@@ -119,7 +161,7 @@ export default {
                                         :class="{ 'form-control': true, 'is-invalid': !validPassword() && submitAttemptPassword }"
                                         id="change-branch-password" placeholder="Branch Password"
                                         v-model="branchPassword" required />
-                                    <label for="change-branch-password">Branch Password</label>
+                                    <label for="change-branch-password">New Branch Password</label>
                                     <div class="invalid-feedback">
                                         Please enter a password with a minimum of 6 characters.
                                     </div>
@@ -130,7 +172,7 @@ export default {
                                         :class="{ 'form-control': true, 'is-invalid': !samePassword() && submitAttemptPassword }"
                                         @blur="branchRetypePasswordBlurred = true" id="retype-change-branch-password"
                                         placeholder="Re-type Branch Password" v-model="branchRetypePassword" required />
-                                    <label for="retype-change-branch-password">Re-type Branch Password</label>
+                                    <label for="retype-change-branch-password">Re-type New Branch Password</label>
                                     <div class="invalid-feedback">
                                         The passwords do not match.
                                     </div>
