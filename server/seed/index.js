@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 // const db = require('../config/keys').mongoURI;
 const url = process.env.MONGODB_URI || 'mongodb://localhost:27017/CSSWENG-Team-3';
 
-const User = require('../models/UserSchema');
+const User = require('../models/userSchema.js');
 const Sales = require('../models/branch/salesSchema.js');
 const Expense = require('../models/branch/expenseSchema.js');
 const Cheque = require('../models/admin/adminChequeSchema.js')
