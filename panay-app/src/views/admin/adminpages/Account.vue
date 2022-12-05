@@ -40,19 +40,19 @@ export default {
                 <legend>Change Admin Password</legend>
                 <div class="form-floating mb-2">
                     <input type="password" class="form-control" id="current-password" placeholder="Current Password"
-                        v-model="changePassword.oldPassword" />
+                        v-model="changePassword.oldPassword" required autocomplete />
                     <label for="current-password">Current Password</label>
                 </div>
 
                 <div class="form-floating mb-2">
                     <input type="password" class="form-control" id="new-password" placeholder="New Password"
-                        v-model="changePassword.newPassword" />
+                        v-model="changePassword.newPassword" required autocomplete="false" />
                     <label for="new-password">New Password</label>
                 </div>
 
                 <div class="form-floating mb-2">
                     <input type="password" class="form-control" id="retype-password" placeholder="Retype New Password"
-                        v-model="changePassword.newPasswordRetyped" />
+                        v-model="changePassword.newPasswordRetyped" required autocomplete="false" />
                     <label for="retype-password">Retype New Password</label>
                 </div>
 
