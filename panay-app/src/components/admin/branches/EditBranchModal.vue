@@ -26,6 +26,15 @@ export default {
         }
     },
 
+    mounted() {
+        const editModalEl = document.getElementById('editModal');
+        // Reset all fields and component data when modal is hidden
+        // TODO: Add this for other modals
+        editModalEl.addEventListener('hidden.bs.modal', event => {
+            this.resetInputs();
+        })
+    },
+
     watch: {
         selectedBranch: {
             handler() {
@@ -124,18 +133,6 @@ export default {
                 <!-- Modal Body -->
                 <div class="modal-body">
                     <div class="container-fluid">
-                        <!-- 
-                                - Change Branch Name
-                                    - Check if new branch name exists already
-                                - Change Branch Password
-                                    - Ask for admin password
-                                        - Server-side check if correct password
-                                    - Ask for new Password
-                                        - Server-side check if new password is the same as old password
-                                    - Ask for retyped new password
-                                        - Check if matched
-                             -->
-
                         <form @submit.prevent="onSubmitBranchName" novalidate>
                             <fieldset>
                                 <legend>Change Branch Name</legend>
@@ -197,8 +194,7 @@ export default {
 
                 <!-- Modal Footer -->
                 <div class="modal-footer">
-                    <button type="reset" class="btn btn-cancel" data-bs-dismiss="modal"
-                        @click="resetInputs">Close</button>
+                    <button type="reset" class="btn btn-cancel" data-bs-dismiss="modal">Close</button>
                     <!-- <button type="submit" class="btn btn-primary">Save Changes</button> -->
                 </div>
             </div>
