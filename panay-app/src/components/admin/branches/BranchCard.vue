@@ -16,9 +16,9 @@ export default {
 </script>
 
 <template>
-    <div class="col-lg-4 col-sm-6 p-3 d-flex justify-content-center">
+    <div class="col-xl-2 col-lg-4 col-sm-6 p-3 d-flex justify-content-center">
         <div class="card border-primary" style="height: 10rem; width: 18rem;">
-            <div class="card-header bg-primary text-white" style="height: 6rem;">
+            <div class="card-header bg-primary text-white" style="height: 7rem;">
                 <h6>{{ branch.branchID }}</h6>
                 <h5>{{ branch.branchName }}</h5>
             </div>
