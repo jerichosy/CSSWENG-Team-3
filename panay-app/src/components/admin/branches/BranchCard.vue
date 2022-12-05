@@ -25,7 +25,10 @@ export default {
 
 
             <div class="p-2 m-1">
-                <button class="btn btn-secondary text-white me-2">Edit</button>
+                <button type="button" class="btn btn-secondary btn-sm text-white me-2" data-bs-toggle="modal"
+                    data-bs-target="#editModal" @click="selectBranch()">
+                    Edit
+                </button>
                 <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal"
                     @click="selectBranch()">
                     Delete
