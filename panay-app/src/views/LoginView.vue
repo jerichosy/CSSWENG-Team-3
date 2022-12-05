@@ -4,28 +4,41 @@ import UserService from '../services/UserService';
 export default {
     data() {
         return {
-            loginUsername: '',
+            loginID: '',
             loginPassword: '',
             signupUsername: '',
             signupPassword: '',
             signupIsAdmin: 0,
-            alert: ''
+            idError: false,
+            passwordError: false,
+            alertMsg: ''
         }
     },
     methods: {
         login() {
             const data = {
-                'name': this.loginUsername,
+                // TODO: change 'name' to 'id'
+                'name': this.loginID,
                 'password': this.loginPassword
             }
+
+            this.idError = false;
+            this.passwordError = false;
+
+            console.log(data);
             UserService.login(data)
                 .then(response => {
-                    console.log(response.data.msg);
-                    this.alert = response.data.msg;
+                    this.alertMsg = response.data.msg;
                 })
                 .catch(e => {
-                    console.log(e);
-                    this.alert = e;
+                    console.log(e.response.data);
+
+                    if (e.response.data.error === 'id')
+                        this.idError = true;
+                    else if (e.response.data.error === 'password')
+                        this.passwordError = true;
+
+                    this.alertMsg = e.response.data.msg;
                 });
         }
     }
@@ -36,21 +49,21 @@ export default {
     <div class="container d-flex justify-content-center center-div align-items-center">
         <div class="col-lg-5 col-md-8 col-sm-11 col-11">
             <h1 class="text-primary">Panay Tinapay</h1>
-            <form>
+            <form @submit.prevent="login()">
                 <div class="form-floating mb-2">
-                    <input type="text" :class="{ 'form-control': true, 'is-invalid': false }" id="login-id"
-                        placeholder="Password" v-model="loginUsername" required autocomplete />
+                    <input type="text" :class="{ 'form-control': true, 'is-invalid': idError }" id="login-id"
+                        placeholder="Password" v-model="loginID" required autocomplete />
                     <label for="login-password">Branch ID</label>
                     <div class="invalid-feedback">
-                        This ID does not exist. Please try again.
+                        {{ alertMsg }}
                     </div>
                 </div>
                 <div class="form-floating mb-2">
-                    <input type="password" :class="{ 'form-control': true, 'is-invalid': false }" id="login-password"
-                        placeholder="Password" v-model="loginPassword" required autocomplete />
+                    <input type="password" :class="{ 'form-control': true, 'is-invalid': passwordError }"
+                        id="login-password" placeholder="Password" v-model="loginPassword" required autocomplete />
                     <label for="login-password">Password</label>
                     <div class="invalid-feedback">
-                        The password is incorrect. Please try again.
+                        {{ alertMsg }}
                     </div>
                 </div>
                 <button class="btn btn-primary col-12" type="submit">Login</button>
