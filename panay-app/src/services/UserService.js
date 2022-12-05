@@ -29,8 +29,8 @@ class UserService {
         return false
     }
 
-    signup(data) {
-        return http.post("/signup", data);
+    createBranch(data) {
+        return http.post("/createbranch", data);
     }
 
     login(data) {

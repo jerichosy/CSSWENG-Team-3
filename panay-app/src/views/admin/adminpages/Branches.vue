@@ -54,7 +54,7 @@ export default {
                 isadmin: 0
             }
 
-            UserService.signup(newBranch)
+            UserService.createBranch(newBranch)
                 .then(response => {
                     console.log(response);
                     this.retrieveBranches();
