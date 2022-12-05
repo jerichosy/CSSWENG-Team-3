@@ -509,7 +509,7 @@ const adminController = {
                 }
 
                 for (var j = 0; j < dailycheque.length; j++) {
-                    daily.dcheque += dailycheque[i].amount
+                    daily.dcheque += dailycheque[j].amount
                 }
                 daily.dtotalexpense = daily.dexpense + daily.dcheque
                 daily.dnet = daily.dsales - daily.dtotalexpense
