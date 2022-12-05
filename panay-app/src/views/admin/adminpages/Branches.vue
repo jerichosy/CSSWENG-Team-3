@@ -80,6 +80,10 @@ export default {
                 .catch(e => {
                     console.log(e);
                 });
+        },
+
+        changeBranchPassword(data) {
+
         }
     }
 }
@@ -88,7 +92,7 @@ export default {
 <template>
     <AddBranchModal @add-branch="addBranch" />
     <DeleteBranchModal :selected-branch="selectedBranch" @delete-branch="deleteBranch" />
-    <EditBranchModal :selected-branch="selectedBranch" />
+    <EditBranchModal :selected-branch="selectedBranch" @change-branch-password="changeBranchPassword" />
     <div class="row">
         <h1 class="p-3 m-0">Branches</h1>
         <hr />
