@@ -2,6 +2,7 @@
 import BranchCard from '../../../components/admin/branches/BranchCard.vue'
 import AddBranchModal from '../../../components/admin/branches/AddBranchModal.vue'
 import DeleteBranchModal from '../../../components/admin/branches/DeleteBranchModal.vue'
+import EditBranchModal from '../../../components/admin/branches/EditBranchModal.vue'
 import UserService from '../../../services/UserService.js'
 import { computed } from 'vue'
 
@@ -9,7 +10,8 @@ export default {
     components: {
         BranchCard,
         AddBranchModal,
-        DeleteBranchModal
+        DeleteBranchModal,
+        EditBranchModal
     },
     data() {
         return {
@@ -86,6 +88,7 @@ export default {
 <template>
     <AddBranchModal @add-branch="addBranch" />
     <DeleteBranchModal :selected-branch="selectedBranch" @delete-branch="deleteBranch" />
+    <EditBranchModal :selected-branch="selectedBranch" />
     <div class="row">
         <h1 class="p-3 m-0">Branches</h1>
         <hr />
