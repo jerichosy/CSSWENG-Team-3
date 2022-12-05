@@ -1,43 +1,39 @@
 const express = require('express');
 const router = express.Router();
-const controller = require('../controller/controller.js');
+const adminController = require('../controller/adminController.js');
+const branchController = require('../controller/branchController.js');
+const accountController = require('../controller/accountController.js');
 
-router.get('/', controller.getIndex);
+router.post('/login', accountController.login);
+router.post('/editadminpassword', accountController.editAdminPassword);
+router.post('/createbranch', accountController.createBranch);
+router.get('/viewbranch', accountController.viewBranch);
+router.post('/editbranch', accountController.editBranch);
+router.post('/deletebranch', accountController.deleteBranch);
 
-router.post('/login', controller.login);
-router.post('/signup', controller.signup);
-router.get('/viewbranch', controller.viewBranch);
-router.post('/editbranch', controller.editBranch);
-router.post('/deletebranch', controller.deleteBranch);
-router.post('/addsales', controller.addSales);
-router.post('/addexpense', controller.addExpense);
-router.post('/editsales', controller.editSales)
-router.post('/editexpense', controller.editExpense)
-router.post('/deletesales', controller.deleteSales);
-router.post('/deleteexpense', controller.deleteExpense);
-router.get('/submit', controller.submitSalesAndExpenses);
+router.post('/addsales', branchController.addSales);
+router.post('/addexpense', branchController.addExpense);
+router.post('/editsales', branchController.editSales)
+router.post('/editexpense', branchController.editExpense)
+router.post('/deletesales', branchController.deleteSales);
+router.post('/deleteexpense', branchController.deleteExpense);
+router.get('/submit', branchController.submitSalesAndExpenses);
 
-router.get('/adminviewsales', controller.adminViewSales);
-router.get('/adminviewexpense', controller.adminViewExpense);
-router.get('/adminviewcheque', controller.viewCheque);
-
-router.post('/adminaddsales', controller.adminAddSales);
-router.post('/adminaddexpense', controller.adminAddExpense);
-router.post('/adminaddcheque', controller.addCheque);
-
-router.post('/admineditsales', controller.adminEditSales);
-router.post('/admineditexpense', controller.adminEditExpense);
-router.post('/admineditcheque', controller.editCheque);
-
-router.post('/admindeletesales', controller.adminDeleteSales);
-router.post('/admindeleteexpense', controller.adminDeleteExpense);
-router.post('/admindeletecheque', controller.deleteCheque);
-
-router.post('/adminviewsalesfilter', controller.adminViewSalesFilter);
-router.post('/addcheque', controller.addCheque);
-router.post('/editcheque', controller.editCheque);
-router.post('/deletecheque', controller.deleteCheque);
+router.post('/adminaddsales', adminController.adminAddSales);
+router.post('/adminaddexpense', adminController.adminAddExpense);
+router.get('/adminviewsales', adminController.adminViewSales);
+router.get('/adminviewexpense', adminController.adminViewExpense);
+router.post('/adminviewsalesfilter', adminController.adminViewSalesFilter);
 // router.post('/adminviewexpensefilter', controller.adminViewExpenseFilter);
-router.post('/genreport', controller.generateReport)
-router.post('/genqrtr', controller.generateQuarterlyReport);
+router.post('/admineditsales', adminController.adminEditSales);
+router.post('/admineditexpense', adminController.adminEditExpense);
+router.post('/admindeletesales', adminController.adminDeleteSales);
+router.post('/admindeleteexpense', adminController.adminDeleteExpense);
+router.post('/addcheque', adminController.addCheque);
+router.get('/viewcheque', adminController.viewCheque);
+router.post('/editcheque', adminController.editCheque);
+router.post('/deletecheque', adminController.deleteCheque);
+router.post('/genreport', adminController.generateReport)
+router.post('/genqrtr', adminController.generateQuarterlyReport);
+
 module.exports = router;
