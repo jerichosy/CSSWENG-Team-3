@@ -13,23 +13,6 @@ export default {
         }
     },
     methods: {
-        signUp() {
-            const data = {
-                'name': this.signupUsername,
-                'password': this.signupPassword,
-                'isadmin': this.signupIsAdmin
-            };
-            UserService.signup(data)
-                .then(response => {
-                    console.log(response.data.msg);
-                    this.alert = response.data.msg;
-                })
-                .catch(e => {
-                    console.log(e);
-                    this.alert = e;
-                });
-        },
-
         login() {
             const data = {
                 'name': this.loginUsername,
@@ -50,19 +33,37 @@ export default {
 </script>
 
 <template>
-    <form method="POST">
-        <input type="text" v-model="loginUsername" placeholder="Username" id="username" name="name" required />
-        <input type="password" v-model="loginPassword" placeholder="Password" id="password" name="password" required />
-        <button type="submit" @click="login">Login</button>
-    </form>
+    <div class="container d-flex justify-content-center center-div align-items-center">
+        <div class="col-lg-5 col-md-8 col-sm-11 col-11">
+            <h1 class="text-primary">Panay Tinapay</h1>
+            <form>
+                <div class="form-floating mb-2">
+                    <input type="text" :class="{ 'form-control': true, 'is-invalid': false }" id="login-id"
+                        placeholder="Password" v-model="loginUsername" required autocomplete />
+                    <label for="login-password">Branch ID</label>
+                    <div class="invalid-feedback">
+                        This ID does not exist. Please try again.
+                    </div>
+                </div>
+                <div class="form-floating mb-2">
+                    <input type="password" :class="{ 'form-control': true, 'is-invalid': false }" id="login-password"
+                        placeholder="Password" v-model="loginPassword" required autocomplete />
+                    <label for="login-password">Password</label>
+                    <div class="invalid-feedback">
+                        The password is incorrect. Please try again.
+                    </div>
+                </div>
+                <button class="btn btn-primary col-12" type="submit">Login</button>
+            </form>
+        </div>
 
-    <p>{{ alert }}</p>
 
-    <div>
-        <input type="text" placeholder="Username" v-model="signupUsername" required name="name" />
-        <input type="text" placeholder="Password" v-model="signupPassword" required name="password" />
-        <input type="number" placeholder="isAdmin" v-model="signupIsAdmin" required name="isadmin" />
-        <button @click="signUp">Sign Up</button>
     </div>
 
 </template>
+
+<style scoped>
+.center-div {
+    min-height: 100vh;
+}
+</style>
