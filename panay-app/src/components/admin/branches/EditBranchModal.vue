@@ -1,7 +1,5 @@
 <script>
 // FIXME: Reset forms when outside of modal is clicked
-
-import { Modal } from 'bootstrap';
 import UserService from '../../../services/UserService';
 export default {
     inject: {
@@ -133,7 +131,8 @@ export default {
                 <!-- Modal Body -->
                 <div class="modal-body">
                     <div class="container-fluid">
-                        <form @submit.prevent="onSubmitBranchName" novalidate>
+
+                        <form class="mb-3" @submit.prevent="onSubmitBranchName" novalidate>
                             <fieldset>
                                 <legend>Change Branch Name</legend>
                                 <div class="form-floating mb-2">
@@ -195,7 +194,6 @@ export default {
                 <!-- Modal Footer -->
                 <div class="modal-footer">
                     <button type="reset" class="btn btn-cancel" data-bs-dismiss="modal">Close</button>
-                    <!-- <button type="submit" class="btn btn-primary">Save Changes</button> -->
                 </div>
             </div>
         </div>
