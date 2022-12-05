@@ -32,7 +32,9 @@ export default {
             this.resetInputs();
         });
 
-        editModalEl.addEventListener('show.bs.modal', event => {
+        // Update edit fields to show selected record data
+        // TODO: Update other edit modals to use this way
+        editModalEl.addEventListener('shown.bs.modal', event => {
             this.branchName = this.selectedBranch.branchName;
         });
     },
