@@ -28,6 +28,23 @@ export default {
 
     mounted() {
         this.retrieveBranches();
+
+        const addModalEl = document.getElementById('addModal');
+        const deleteModalEl = document.getElementById('deleteModal');
+        const editModalEl = document.getElementById('editModal');
+
+
+        // Reset all fields and component data when modal is hidden
+        addModalEl.addEventListener('hidden.bs.modal', event => {
+            this.deselectBranch();
+        });
+        deleteModalEl.addEventListener('hidden.bs.modal', event => {
+            this.deselectBranch();
+        });
+        editModalEl.addEventListener('hidden.bs.modal', event => {
+            this.deselectBranch();
+        });
+
     },
 
 
@@ -74,7 +91,6 @@ export default {
             UserService.deleteBranch(data)
                 .then(response => {
                     console.log(response);
-                    this.deselectBranch();
                     this.retrieveBranches();
                 })
                 .catch(e => {
