@@ -5,21 +5,21 @@ class RecordService {
 
     getAdminExpenses() { return http.get("/adminviewexpense"); }
 
-    getAdminCheques() { return http.get("/adminviewcheque"); }
+    getAdminCheques() { return http.get("/viewcheque"); }
 
-    addAdminCheque(data) { return http.post("/adminaddcheque", data); }
+    addAdminCheque(data) { return http.post("/addcheque", data); }
 
     editAdminSales(data) { return http.post("/admineditsales", data); }
 
     editAdminExpense(data) { return http.post("/admineditexpense", data); }
 
-    editAdminCheque(data) { return http.post("/admineditcheque", data); }
+    editAdminCheque(data) { return http.post("/editcheque", data); }
 
     deleteAdminSales(data) { return http.post("/admindeletesales", data); }
 
     deleteAdminExpense(data) { return http.post("/admindeleteexpense", data); }
 
-    deleteAdminCheque(data) { return http.post("/admindeletecheque", data); }
+    deleteAdminCheque(data) { return http.post("/deletecheque", data); }
 }
 
 export default new RecordService();
