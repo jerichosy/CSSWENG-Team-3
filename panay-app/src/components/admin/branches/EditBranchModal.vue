@@ -1,5 +1,4 @@
 <script>
-// FIXME: Reset forms when outside of modal is clicked
 import UserService from '../../../services/UserService';
 export default {
     inject: {
@@ -27,7 +26,7 @@ export default {
     mounted() {
         const editModalEl = document.getElementById('editModal');
         // Reset all fields and component data when modal is hidden
-        // TODO: Add this for other modals
+        // TODO: Add this for records modals
         editModalEl.addEventListener('hidden.bs.modal', event => {
             this.resetInputs();
         });

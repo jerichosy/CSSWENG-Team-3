@@ -1,6 +1,4 @@
 <script>
-// FIXME: Reset forms when outside of modal is clicked
-
 import { Modal } from 'bootstrap';
 export default {
 
@@ -15,6 +13,15 @@ export default {
         }
     },
 
+    mounted() {
+        const deleteModalEl = document.getElementById('deleteModal');
+
+        // Reset all fields and component data when modal is hidden
+        deleteModalEl.addEventListener('hidden.bs.modal', event => {
+            this.resetInputs();
+        });
+    },
+
     methods: {
         onSubmit() {
             // Server-side password validation
@@ -22,6 +29,10 @@ export default {
             const deleteModalElement = document.getElementById('deleteModal');
             const modal = Modal.getInstance(deleteModalElement);
             modal.hide();
+        },
+
+        resetInputs() {
+            this.adminPassword = '';
         }
     }
 
@@ -62,8 +73,7 @@ export default {
 
                     <!-- Modal Footer -->
                     <div class="modal-footer">
-                        <button type="reset" class="btn btn-cancel" data-bs-dismiss="modal"
-                            @click="resetInputs">Close</button>
+                        <button type="reset" class="btn btn-cancel" data-bs-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-danger">Delete Branch</button>
                     </div>
                 </form>
