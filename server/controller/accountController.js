@@ -134,7 +134,7 @@ const authController = {
         var { _id, newBranchName } = req.body;
         console.log(newBranchName)
 
-        db.findOne(User, { _id: _id }, '', (result) => {
+        db.findOne(User, { _id: _id, isDeleted: false }, '', (result) => {
             if (result) {
                 db.updateOne(User, { _id: _id }, { branchName: newBranchName }, (result) => {
                     if (result) {
@@ -161,7 +161,7 @@ const authController = {
                         // passed the admin password check
 
                         // check that the new password is not the same as the old password
-                        db.findOne(User, { _id: _id }, 'branchPassword', (user) => {
+                        db.findOne(User, { _id: _id, isDeleted: false }, 'branchPassword', (user) => {
                             //TODO: Adopt the ff. better error handling strategy for all the other functions and routes
 
                             // check that the branch exists
