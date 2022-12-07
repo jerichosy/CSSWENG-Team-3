@@ -120,13 +120,13 @@ const authController = {
     },
 
     editBranch: (req, res) => {
-        var { branchID, branchName, branchPassword } = req.body;
+        var { _id, branchName, branchPassword } = req.body;
         console.log(branchPassword)
         const saltRounds = 10;
         bcrypt.hash(branchPassword, saltRounds, function (err, hashed) {
             branchPassword = hashed
             console.log(branchPassword)
-            db.updateOne(User, { branchID: branchID }, {
+            db.updateOne(User, { _id: _id }, {
                 branchName: branchName,
                 branchPassword: branchPassword
             }, function (flag) {
@@ -137,9 +137,9 @@ const authController = {
     },
 
     deleteBranch: (req, res) => {
-        const { name } = req.body;
+        const { _id } = req.body;
         console.log(req.body)
-        db.deleteOne(User, { branchID: name }, function (flag) {
+        db.deleteOne(User, { _id: _id }, function (flag) {
             if (flag) {
                 console.log(` deleted`);
                 res.status(201).json({ msg: 'branch deleted' }) //201 Created
