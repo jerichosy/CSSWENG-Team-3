@@ -1,5 +1,6 @@
 <script>
 import { Modal } from 'bootstrap';
+import UserService from '../../../services/UserService';
 export default {
 
     props: {
@@ -9,7 +10,8 @@ export default {
 
     data() {
         return {
-            adminPassword: ''
+            adminPassword: '',
+            correctAdminPassword: false
         }
     },
 
@@ -23,12 +25,27 @@ export default {
     },
 
     methods: {
-        onSubmit() {
+        onSubmitDeleteBranch() {
             // Server-side password validation
-            this.$emit('deleteBranch', this.selectedBranch._id);
-            const deleteModalElement = document.getElementById('deleteModal');
-            const modal = Modal.getInstance(deleteModalElement);
-            modal.hide();
+            // this.$emit('deleteBranch', this.selectedBranch._id);
+            // const deleteModalElement = document.getElementById('deleteModal');
+            // const modal = Modal.getInstance(deleteModalElement);
+            // modal.hide();
+
+            // TODO: Test when backend connected
+            const data = {
+                id: this.selectedBranch._id,
+                adminPassword: this.adminPassword
+            };
+
+            // TODO: handle wrong admin password
+            UserService.deleteBranch()
+                .then(response => {
+                    console.log(response);
+                })
+                .catch(e => {
+                    console.log(e.response.data.msg);
+                });
         },
 
         resetInputs() {
@@ -44,7 +61,7 @@ export default {
     <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form @submit.prevent="onSubmit" novalidate>
+                <form @submit.prevent="onSubmitDeleteBranch" novalidate>
 
                     <!-- Modal Header -->
                     <div class="modal-header">
@@ -66,6 +83,7 @@ export default {
                                     id="admin-password" placeholder="Admin Password" v-model="adminPassword" required />
                                 <label for="admin-password">Password</label>
                                 <div class="invalid-feedback">
+                                    Wrong Password.
                                 </div>
                             </div>
                         </div>
