@@ -2,6 +2,7 @@ const db = require('../models/db.js');
 const Sales = require('../models/branch/salesSchema.js');
 const Expense = require('../models/branch/expenseSchema.js');
 const Cheque = require('../models/admin/adminChequeSchema.js')
+const ExcelJS = require('exceljs');
 
 
 const adminController = {
@@ -451,6 +452,7 @@ const adminController = {
         }
 
 
+
         //getting daily record
         for (var i = 1; i <= callimit; i++) {
             var dailyrecord = []
@@ -583,8 +585,40 @@ const adminController = {
 
         }
 
+        const workbook = new ExcelJS.Workbook();
+        const worksheet = workbook.addWorksheet('My Sheet');
+        worksheet.columns = [
+            { header: 'Date', key: 'date' },
+            { header: 'Gross Sales', key: 'grosssales' },
+            { header: 'Cash Expenses', key: 'cashexpenses' },
+            { header: 'Net Sales', key: 'netsales' },
+            { header: 'Salary', key: 'salary' },
+            { header: 'Grocery', key: 'grocery' },
+            { header: 'Utilities', key: ' ' },
+            { header: 'Food', key: 'food' },
+            { header: 'Gasul', key: 'gasul' },
+            { header: 'Bakery', key: 'bakery' },
+            { header: 'Rent', key: 'rent' },
+            { header: 'Misc', key: 'misc' },
+            { header: 'Tax', key: 'Tax' },
+        ]
+
+        for (var i = 1; i <= excellimit; i++) {
+            worksheet.addRow({ date: new Date(), grosssales });
+        }
+
+
+        worksheet.addRow()
+
+        res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        res.setHeader('Content-Disposition', 'attachment; filename=' + 'MonthReport.xlsx');
+        workbook.xlsx.write(res).then(() => {
+            res.end();
+            //res.status(201).json({ msg: 'Done' });
+        });
+
         //console.log(reports)
-        res.status(201).json({ msg: 'Done' });
+
 
     },
 
