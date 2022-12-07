@@ -588,8 +588,8 @@ const adminController = {
         worksheet.getCell('A2').value = monthNames[dateinput.getMonth()] + " " + branchID
         worksheet.getCell('A3').value = monthNames[dateinput.getMonth()] + "Transactions"
 
-        worksheet.getCell('A2').value = { vertical: 'middle', horizontal: 'center' }
-        worksheet.getCell('A3').value = { vertical: 'middle', horizontal: 'center' }
+        worksheet.getCell('A2').alignment = { vertical: 'middle', horizontal: 'center' }
+        worksheet.getCell('A3').alignment = { vertical: 'middle', horizontal: 'center' }
 
         worksheet.getCell('A4').value = "Date"
         worksheet.getCell('B4').value = "Gross Sales"
@@ -685,15 +685,31 @@ const adminController = {
             console.log(i + " " + date + cellVal)
         }
 
-        // lastrow = worksheet.lastRow
-        // for (var i = 0; i < 5; i++) {
-        //     rowVal = []
-        //     for (var j = 1; j < 2; j++) {
-        //         rowVal[j + 1] = "Total Sales"
-        //     }
+        lastrow = worksheet.lastRow
+        text = ["Total Sales", "Total Expense Cash", "Total Expense Cheque", "Total Expenses", "Net Sales"]
 
-        //     lastrow.addRow(rowVal)
-        // }
+        for (var i = 0; i < 5; i++) {
+            switch (i) {
+                case 0:
+                    totalval = totals.sales
+                    break;
+                case 1:
+                    totalval = totals.expense
+                    break;
+                case 2:
+                    totalval = totals.cheque
+                    break;
+                case 3:
+                    totalval = totals.totalexpense
+                    break;
+                case 4:
+                    totalval = totals.net
+                    break;
+            }
+
+            rowVal = [text[i], totalval]
+            worksheet.addRow(rowVal)
+        }
         // lastrow.addRow("Total Sales")
         // worksheet.addRow("")
 
