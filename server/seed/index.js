@@ -31,7 +31,7 @@ mongoose.connect(url, options, function (error) {
     }
 
     async function seedAll() {
-        await seed(User, users);
+        await seed(User, users);  //FIXME: This does not do hashing on passwords
         console.log("Users seeded\n")
         await seed(Sales.Admin, adminsales);
         console.log("Admin Sales seeded\n")
