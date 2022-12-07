@@ -10,6 +10,8 @@ const Sales = require('../models/branch/salesSchema.js');
 const Expense = require('../models/branch/expenseSchema.js');
 const Cheque = require('../models/admin/adminChequeSchema.js')
 
+// Source data
+// Converf from Excel to JSON using https://www.convertcsv.com/csv-to-json.htm
 const adminexpenses = require('./adminexpenses.json');
 const adminsales = require('./adminsales.json');
 const users = require('./users.json');
