@@ -207,14 +207,12 @@ const authController = {
                                 return;
                             }
 
-                            // delete the branch
-                            db.deleteOne(User, { _id: _id }, function (flag) {
-                                if (flag) {
-                                    console.log(` deleted`);
-                                    res.status(201).json({ msg: 'branch deleted' }) //201 Created
+                            // do soft delete
+                            db.updateOne(User, { _id: _id }, { isDeleted: true }, (result) => {
+                                if (result) {
+                                    res.status(200).json({ msg: 'Branch successfully deleted!' });
                                 } else {
-                                    console.log(` not deleted`);
-                                    res.status(400).json({ msg: 'Something went wrong. Please try again.' })
+                                    res.status(400).json({ msg: 'An error occured.' });
                                 }
                             })
                         })
