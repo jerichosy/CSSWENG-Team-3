@@ -39,7 +39,7 @@ export default {
             };
 
             // TODO: handle wrong admin password
-            UserService.deleteBranch()
+            UserService.deleteBranch(data)
                 .then(response => {
                     console.log(response);
                 })
