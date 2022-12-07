@@ -203,7 +203,7 @@ const authController = {
                         // check that the branch exists
                         db.findOne(User, { _id: _id }, '', (user) => {
                             if (!user) {
-                                res.status(404).json({ msg: 'The specified username was not found.' });
+                                res.status(404).json({ msg: 'The specified ObjectId was not found.' });
                                 return;
                             }
 
