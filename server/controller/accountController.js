@@ -16,6 +16,8 @@ const authController = {
                 console.log(user);
 
                 // check that we're not logging into deleted account
+                // For security, this check should actually be done after the password check succeeds.
+                // However, to make troubleshooting easier, we're doing it here for now.
                 if (user.isDeleted) {
                     res.status(401).json({ msg: 'The account is deleted.' });
                     return;
