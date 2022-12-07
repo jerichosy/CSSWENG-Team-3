@@ -10,6 +10,7 @@ import Records from '../views/admin/adminpages/records/Records.vue'
 import Reports from '../views/admin/adminpages/Reports.vue'
 import Sales from '../views/admin/adminpages/records/SalesView.vue'
 import Expenses from '../views/admin/adminpages/records/ExpensesView.vue'
+import CashierView from '../views/cashier/CashierView.vue'
 
 
 const router = createRouter({
@@ -82,12 +83,10 @@ const router = createRouter({
       name: 'login',
       component: LoginView
     },
-    // For testing HTTP Requests, delete in prod
     {
-      path: "/users",
-      alias: "/users",
-      name: "users",
-      component: () => import('../components/UserList.vue')
+      path: '/cashier',
+      name: 'cashier',
+      component: CashierView
     }
   ]
 })
