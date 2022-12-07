@@ -213,6 +213,11 @@ const authController = {
                                 res.status(404).json({ msg: 'The specified ObjectId was not found.' });
                                 return;
                             }
+                            // check that the branch has already been deleted
+                            if (user.isDeleted) {
+                                res.status(400).json({ msg: 'The specified branch has already been deleted.' });
+                                return;
+                            }
 
                             // do soft delete
                             db.updateOne(User, { _id: _id }, { isDeleted: true }, (result) => {
