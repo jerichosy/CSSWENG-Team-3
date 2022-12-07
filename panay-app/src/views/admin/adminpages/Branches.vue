@@ -1,4 +1,5 @@
 <script>
+// TODO: Set up edit branch functionality
 import BranchCard from '../../../components/admin/branches/BranchCard.vue'
 import AddBranchModal from '../../../components/admin/branches/AddBranchModal.vue'
 import DeleteBranchModal from '../../../components/admin/branches/DeleteBranchModal.vue'
@@ -80,27 +81,6 @@ export default {
                     console.log(e);
                 })
         },
-
-        deleteBranch(id) {
-            // TODO: Bring up id property naming to devs
-            const data = {
-                "id": id
-            }
-            console.log(data);
-
-            UserService.deleteBranch(data)
-                .then(response => {
-                    console.log(response);
-                    this.retrieveBranches();
-                })
-                .catch(e => {
-                    console.log(e);
-                });
-        },
-
-        changeBranchPassword(data) {
-
-        }
     }
 }
 </script>
