@@ -1,6 +1,7 @@
 // seed mongoDB with sample data
 
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
 // const db = require('../config/keys').mongoURI;
 const url = process.env.MONGODB_URI || 'mongodb://localhost:27017/CSSWENG-Team-3';
 
@@ -24,20 +25,26 @@ mongoose.connect(url, options, function (error) {
     if (error) throw error;
     console.log('Connected to: ' + url + '\n');
 
-    async function seed(model, doc) {
+    async function seed(model, doc, isUsers) {
         await model.deleteMany({});
+        if (isUsers) {
+            // Perform hashing on passwords
+            for (let i = 0; i < doc.length; i++) {
+                doc[i].branchPassword = await bcrypt.hash(doc[i].branchPassword, 10);
+            }
+        }
         await model.insertMany(doc);
         console.log("Insert done")
     }
 
     async function seedAll() {
-        await seed(User, users);  //FIXME: This does not do hashing on passwords
+        await seed(User, users, true);
         console.log("Users seeded\n")
-        await seed(Sales.Admin, adminsales);
+        await seed(Sales.Admin, adminsales, false);
         console.log("Admin Sales seeded\n")
-        await seed(Expense.Admin, adminexpenses);
+        await seed(Expense.Admin, adminexpenses, false);
         console.log("Admin Expenses seeded\n")
-        await seed(Cheque, cheques);
+        await seed(Cheque, cheques, false);
         console.log("Cheques seeded\n")
     }
 
