@@ -89,40 +89,6 @@ const adminController = {
         })
     },
 
-    // TODO: Finalize decision on this. 
-    // One problem is that by doing client side filtering in conjunction with limit,
-    // the filter only acts on the first 100 records for example. Thereby possibly neccessating a backend request still.
-    // Unless ofc, that's down to whether the user selects "Show All" or not.
-    adminViewSalesFilter: (req, res) => {
-        var { dateRangeFrom, dateRangeTo, timeRangeFrom, timeRangeTo, branches } = req.body;
-        console.log(req.body);
-        var dateRangeFrom = new Date(dateRangeFrom)
-        var dateRangeTo = new Date(dateRangeTo)
-        dateRangeTo.setDate(dateRangeTo.getDate() + 1)
-
-        var filter = {
-            createdAt: { $gte: dateRangeFrom, $lte: dateRangeTo },
-            time: { $gte: timeRangeFrom, $lte: timeRangeTo },
-            branchID: branches
-        }
-        console.log(filter)
-        //change to admin
-        db.findMany(Sales.Admin, filter, '', function (result) {
-            if (result) {
-                console.log('Result shown');
-                res.status(201).json({ result });  //201 Created
-            } else {
-                console.log('Result not shown');
-                res.status(400).json({ msg: 'Something went wrong. Please try again.' })
-            }
-        })
-    },
-
-    // TODO: Same as above
-    adminViewExpenseFilter: (req, res) => {
-
-    },
-
     adminEditSales: (req, res) => {
         const { id, branchID, branchName, amount, customerCount, datetime } = req.body;
         console.log(req.body)

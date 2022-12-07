@@ -26,8 +26,6 @@ router.post('/adminaddsales', adminController.adminAddSales);
 router.post('/adminaddexpense', adminController.adminAddExpense);
 router.get('/adminviewsales', adminController.adminViewSales);
 router.get('/adminviewexpense', adminController.adminViewExpense);
-router.post('/adminviewsalesfilter', adminController.adminViewSalesFilter);
-// router.post('/adminviewexpensefilter', controller.adminViewExpenseFilter);
 router.post('/admineditsales', adminController.adminEditSales);
 router.post('/admineditexpense', adminController.adminEditExpense);
 router.post('/admindeletesales', adminController.adminDeleteSales);
