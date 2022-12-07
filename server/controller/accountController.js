@@ -68,10 +68,11 @@ const authController = {
         const { name, password } = req.body;
         console.log(req.body)
 
-        db.findOne(User, { branchID: name }, '', (result) => {
+        db.findOne(User, { branchName: name }, '', (result) => {
+            console.log(result)
             if (result) {
-                console.log("User already exists");
-                res.status(409).json({ msg: 'The specified username already exists.' });  //409 conflict
+                console.log("branchName already exists");
+                res.status(409).json({ msg: 'The specified branch name already exists.' });  //409 conflict
             }
             else {
                 // FIXME: Finalize issues with branchID numbering
