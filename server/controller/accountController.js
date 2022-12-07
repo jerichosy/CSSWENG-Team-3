@@ -11,9 +11,18 @@ const authController = {
     login: (req, res) => {
         const { id, password } = req.body;
         console.log(req.body)
-        db.findOne(User, { branchID: id }, 'branchID branchName branchPassword isAdmin', (user) => {
+        db.findOne(User, { branchID: id }, 'branchID branchName branchPassword isAdmin isDeleted', (user) => {
             if (user) {
                 console.log(user);
+
+                // check that we're not logging into deleted account
+                // For security, this check should actually be done after the password check succeeds.
+                // However, to make troubleshooting easier, we're doing it here for now.
+                if (user.isDeleted) {
+                    res.status(401).json({ msg: 'The account is deleted.' });
+                    return;
+                }
+
                 bcrypt.compare(password, user.branchPassword, (err, result) => {
                     console.log(result);
                     if (result) {
@@ -68,49 +77,39 @@ const authController = {
         const { name, password } = req.body;
         console.log(req.body)
 
-        db.findOne(User, { branchName: name }, '', (result) => {
-            console.log(result)
-            if (result) {
-                console.log("branchName already exists");
-                res.status(409).json({ msg: 'The specified branch name already exists.' });  //409 conflict
+        // find the last branchID and increment it by 1
+        // this assumes that the branchIDs are in ascending order 
+        // db.findMany(User, {}, 'branchID', { sort: { branchID: -1 }, limit: 1 }, (result) => {
+        db.findMany(User, {}, 'branchID', (result) => {
+            console.log(result);
+            var branchID = 1;
+            if (result.length >= 1) {
+                branchID = parseInt(result[result.length - 1].branchID) + 1;
             }
-            else {
-                // FIXME: Finalize issues with branchID numbering
-                // find the last branchID and increment it by 1
-                // this assumes that the branchIDs are in ascending order 
-                // db.findMany(User, {}, 'branchID', { sort: { branchID: -1 }, limit: 1 }, (result) => {
-                db.findMany(User, {}, 'branchID', (result) => {
-                    console.log(result);
-                    var branchID = 1;
-                    if (result.length >= 1) {
-                        branchID = parseInt(result[result.length - 1].branchID) + 1;
+
+            const saltRounds = 10;
+            bcrypt.hash(password, saltRounds, function (err, hashed) {
+                var user = {
+                    branchID: branchID,
+                    branchName: name,
+                    branchPassword: hashed,
+                }
+
+                db.insertOne(User, user, function (flag) {
+                    if (flag) {
+                        console.log('Sign up successful');
+                        res.status(201).json({ msg: 'Sign Up Successful' });
+                    } else {
+                        console.log('Sign up failed');
+                        res.status(400).json({ msg: 'Something went wrong. Please try again.' })
                     }
-
-                    const saltRounds = 10;
-                    bcrypt.hash(password, saltRounds, function (err, hashed) {
-                        var user = {
-                            branchID: branchID,
-                            branchName: name,
-                            branchPassword: hashed,
-                        }
-
-                        db.insertOne(User, user, function (flag) {
-                            if (flag) {
-                                console.log('Sign up successful');
-                                res.status(201).json({ msg: 'Sign Up Successful' });
-                            } else {
-                                console.log('Sign up failed');
-                                res.status(400).json({ msg: 'Something went wrong. Please try again.' })
-                            }
-                        })
-                    })
                 })
-            }
+            })
         })
     },
 
     viewBranch: (req, res) => {
-        db.findMany(User, { isAdmin: false }, 'branchID branchName', function (branch) {
+        db.findMany(User, { isAdmin: false, isDeleted: false }, 'branchID branchName', function (branch) {
             if (branch) {
                 console.log('Branch shown');
                 res.status(201).json(branch);  //201 Created
@@ -125,7 +124,7 @@ const authController = {
         var { _id, newBranchName } = req.body;
         console.log(newBranchName)
 
-        db.findOne(User, { _id: _id }, '', (result) => {
+        db.findOne(User, { _id: _id, isDeleted: false }, '', (result) => {
             if (result) {
                 db.updateOne(User, { _id: _id }, { branchName: newBranchName }, (result) => {
                     if (result) {
@@ -152,7 +151,7 @@ const authController = {
                         // passed the admin password check
 
                         // check that the new password is not the same as the old password
-                        db.findOne(User, { _id: _id }, 'branchPassword', (user) => {
+                        db.findOne(User, { _id: _id, isDeleted: false }, 'branchPassword', (user) => {
                             //TODO: Adopt the ff. better error handling strategy for all the other functions and routes
 
                             // check that the branch exists
@@ -203,18 +202,21 @@ const authController = {
                         // check that the branch exists
                         db.findOne(User, { _id: _id }, '', (user) => {
                             if (!user) {
-                                res.status(404).json({ msg: 'The specified username was not found.' });
+                                res.status(404).json({ msg: 'The specified ObjectId was not found.' });
+                                return;
+                            }
+                            // check that the branch has already been deleted
+                            if (user.isDeleted) {
+                                res.status(400).json({ msg: 'The specified branch has already been deleted.' });
                                 return;
                             }
 
-                            // delete the branch
-                            db.deleteOne(User, { _id: _id }, function (flag) {
-                                if (flag) {
-                                    console.log(` deleted`);
-                                    res.status(201).json({ msg: 'branch deleted' }) //201 Created
+                            // do soft delete
+                            db.updateOne(User, { _id: _id }, { isDeleted: true }, (result) => {
+                                if (result) {
+                                    res.status(200).json({ msg: 'Branch successfully deleted!' });
                                 } else {
-                                    console.log(` not deleted`);
-                                    res.status(400).json({ msg: 'Something went wrong. Please try again.' })
+                                    res.status(400).json({ msg: 'An error occured.' });
                                 }
                             })
                         })
