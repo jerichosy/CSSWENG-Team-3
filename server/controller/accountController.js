@@ -4,6 +4,8 @@ const User = require('../models/userSchema.js');
 const bcrypt = require('bcrypt');
 
 
+// Note: user CRUDs should not be able to modify admin doc. Only admin can modify admin doc.
+
 const authController = {
     login: (req, res) => {
         const { name, password } = req.body;
