@@ -77,44 +77,34 @@ const authController = {
         const { name, password } = req.body;
         console.log(req.body)
 
-        db.findOne(User, { branchName: name }, '', (result) => {
-            console.log(result)
-            if (result) {
-                console.log("branchName already exists");
-                res.status(409).json({ msg: 'The specified branch name already exists.' });  //409 conflict
+        // find the last branchID and increment it by 1
+        // this assumes that the branchIDs are in ascending order 
+        // db.findMany(User, {}, 'branchID', { sort: { branchID: -1 }, limit: 1 }, (result) => {
+        db.findMany(User, {}, 'branchID', (result) => {
+            console.log(result);
+            var branchID = 1;
+            if (result.length >= 1) {
+                branchID = parseInt(result[result.length - 1].branchID) + 1;
             }
-            else {
-                // FIXME: Finalize issues with branchID numbering
-                // find the last branchID and increment it by 1
-                // this assumes that the branchIDs are in ascending order 
-                // db.findMany(User, {}, 'branchID', { sort: { branchID: -1 }, limit: 1 }, (result) => {
-                db.findMany(User, {}, 'branchID', (result) => {
-                    console.log(result);
-                    var branchID = 1;
-                    if (result.length >= 1) {
-                        branchID = parseInt(result[result.length - 1].branchID) + 1;
+
+            const saltRounds = 10;
+            bcrypt.hash(password, saltRounds, function (err, hashed) {
+                var user = {
+                    branchID: branchID,
+                    branchName: name,
+                    branchPassword: hashed,
+                }
+
+                db.insertOne(User, user, function (flag) {
+                    if (flag) {
+                        console.log('Sign up successful');
+                        res.status(201).json({ msg: 'Sign Up Successful' });
+                    } else {
+                        console.log('Sign up failed');
+                        res.status(400).json({ msg: 'Something went wrong. Please try again.' })
                     }
-
-                    const saltRounds = 10;
-                    bcrypt.hash(password, saltRounds, function (err, hashed) {
-                        var user = {
-                            branchID: branchID,
-                            branchName: name,
-                            branchPassword: hashed,
-                        }
-
-                        db.insertOne(User, user, function (flag) {
-                            if (flag) {
-                                console.log('Sign up successful');
-                                res.status(201).json({ msg: 'Sign Up Successful' });
-                            } else {
-                                console.log('Sign up failed');
-                                res.status(400).json({ msg: 'Something went wrong. Please try again.' })
-                            }
-                        })
-                    })
                 })
-            }
+            })
         })
     },
 
