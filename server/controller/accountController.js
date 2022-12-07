@@ -11,9 +11,16 @@ const authController = {
     login: (req, res) => {
         const { id, password } = req.body;
         console.log(req.body)
-        db.findOne(User, { branchID: id }, 'branchID branchName branchPassword isAdmin', (user) => {
+        db.findOne(User, { branchID: id }, 'branchID branchName branchPassword isAdmin isDeleted', (user) => {
             if (user) {
                 console.log(user);
+
+                // check that we're not logging into deleted account
+                if (user.isDeleted) {
+                    res.status(401).json({ msg: 'The account is deleted.' });
+                    return;
+                }
+
                 bcrypt.compare(password, user.branchPassword, (err, result) => {
                     console.log(result);
                     if (result) {
