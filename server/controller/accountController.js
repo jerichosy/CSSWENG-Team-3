@@ -110,7 +110,7 @@ const authController = {
     },
 
     viewBranch: (req, res) => {
-        db.findMany(User, { isAdmin: false }, 'branchID branchName', function (branch) {
+        db.findMany(User, { isAdmin: false, isDeleted: false }, 'branchID branchName', function (branch) {
             if (branch) {
                 console.log('Branch shown');
                 res.status(201).json(branch);  //201 Created
