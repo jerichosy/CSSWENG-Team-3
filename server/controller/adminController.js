@@ -424,17 +424,7 @@ const adminController = {
         salesLast = salesLast[0].datetime.toISOString().split('-')[2].split('T')[0]
         expenseLast = expenseLast[0].datetime.toISOString().split('-')[2].split('T')[0]
 
-        if (salesLast >= expenseLast) {
-            maxlimit = salesLast
-        }
-        else {
-            maxlimit = expenseLast
-        }
-
-        if (callimit <= maxlimit) {
-            maxlimit = callimit
-        }
-
+        maxlimit = Math.max(salesLast, expenseLast, callimit)
 
         //getting daily record
         for (var i = 1; i <= maxlimit; i++) {
@@ -571,88 +561,75 @@ const adminController = {
         const monthNames = ["January", "February", "March", "April", "May", "June",
             "July", "August", "September", "October", "November", "December"];
 
+
+        //Creating Excel Workbook
         const workbook = new ExcelJS.Workbook();
         const worksheet = workbook.addWorksheet(monthNames[dateinput.getMonth()]);
 
-        worksheet.mergeCells('A2:Q2');
-        worksheet.mergeCells('A3:Q3');
+        //Formatting
+        {
+            worksheet.mergeCells('A2:Q2');
+            worksheet.mergeCells('A3:Q3');
 
-        worksheet.mergeCells('A4:A5');
-        worksheet.mergeCells('B4:B5');
-        worksheet.mergeCells('C4:C5');
-        worksheet.mergeCells('D4:D5');
-        worksheet.mergeCells('N4:Q4');
+            worksheet.mergeCells('A4:A5');
+            worksheet.mergeCells('B4:B5');
+            worksheet.mergeCells('C4:C5');
+            worksheet.mergeCells('D4:D5');
+            worksheet.mergeCells('N4:Q4');
 
-        worksheet.mergeCells('E4:M4');
+            worksheet.mergeCells('E4:M4');
 
-        worksheet.getCell('A2').value = monthNames[dateinput.getMonth()] + " " + branchID
-        worksheet.getCell('A3').value = monthNames[dateinput.getMonth()] + "Transactions"
+            worksheet.getCell('A2').value = monthNames[dateinput.getMonth()] + " " + branchID
+            worksheet.getCell('A3').value = monthNames[dateinput.getMonth()] + "Transactions"
 
-        worksheet.getCell('A2').alignment = { vertical: 'middle', horizontal: 'center' }
-        worksheet.getCell('A3').alignment = { vertical: 'middle', horizontal: 'center' }
+            worksheet.getCell('A2').alignment = { vertical: 'middle', horizontal: 'center' }
+            worksheet.getCell('A3').alignment = { vertical: 'middle', horizontal: 'center' }
 
-        worksheet.getCell('A4').value = "Date"
-        worksheet.getCell('B4').value = "Gross Sales"
-        worksheet.getCell('C4').value = "Cash Expenses"
-        worksheet.getCell('D4').value = "Net Sales"
-        worksheet.getCell('E4').value = "Cash Payments"
-        worksheet.getCell('N4').value = "Cheque Payments"
+            worksheet.getCell('A4').value = "Date"
+            worksheet.getCell('B4').value = "Gross Sales"
+            worksheet.getCell('C4').value = "Cash Expenses"
+            worksheet.getCell('D4').value = "Net Sales"
+            worksheet.getCell('E4').value = "Cash Payments"
+            worksheet.getCell('N4').value = "Cheque Payments"
 
-        worksheet.getCell('E5').value = "Salary"
-        worksheet.getCell('F5').value = "Grocery"
-        worksheet.getCell('G5').value = "Utilities"
-        worksheet.getCell('H5').value = "Food"
-        worksheet.getCell('I5').value = "Gasul"
-        worksheet.getCell('J5').value = "Bakery"
-        worksheet.getCell('K5').value = "Rent"
-        worksheet.getCell('L5').value = "Misc"
-        worksheet.getCell('M5').value = "Tax"
+            worksheet.getCell('E5').value = "Salary"
+            worksheet.getCell('F5').value = "Grocery"
+            worksheet.getCell('G5').value = "Utilities"
+            worksheet.getCell('H5').value = "Food"
+            worksheet.getCell('I5').value = "Gasul"
+            worksheet.getCell('J5').value = "Bakery"
+            worksheet.getCell('K5').value = "Rent"
+            worksheet.getCell('L5').value = "Misc"
+            worksheet.getCell('M5').value = "Tax"
 
-        worksheet.getCell('N5').value = "Date"
-        worksheet.getCell('O5').value = "Account"
-        worksheet.getCell('P5').value = "Classification"
-        worksheet.getCell('Q5').value = "Amount"
+            worksheet.getCell('N5').value = "Date"
+            worksheet.getCell('O5').value = "Account"
+            worksheet.getCell('P5').value = "Classification"
+            worksheet.getCell('Q5').value = "Amount"
 
-        worksheet.getCell('A4').alignment = { vertical: 'middle', horizontal: 'center' }
-        worksheet.getCell('B4').alignment = { vertical: 'middle', horizontal: 'center' }
-        worksheet.getCell('C4').alignment = { vertical: 'middle', horizontal: 'center' }
-        worksheet.getCell('D4').alignment = { vertical: 'middle', horizontal: 'center' }
-        worksheet.getCell('E4').alignment = { vertical: 'middle', horizontal: 'center' }
-        worksheet.getCell('N4').alignment = { vertical: 'middle', horizontal: 'center' }
+            worksheet.getCell('A4').alignment = { vertical: 'middle', horizontal: 'center' }
+            worksheet.getCell('B4').alignment = { vertical: 'middle', horizontal: 'center' }
+            worksheet.getCell('C4').alignment = { vertical: 'middle', horizontal: 'center' }
+            worksheet.getCell('D4').alignment = { vertical: 'middle', horizontal: 'center' }
+            worksheet.getCell('E4').alignment = { vertical: 'middle', horizontal: 'center' }
+            worksheet.getCell('N4').alignment = { vertical: 'middle', horizontal: 'center' }
 
-        worksheet.getCell('E5').alignment = { vertical: 'middle', horizontal: 'center' }
-        worksheet.getCell('F5').alignment = { vertical: 'middle', horizontal: 'center' }
-        worksheet.getCell('G5').alignment = { vertical: 'middle', horizontal: 'center' }
-        worksheet.getCell('H5').alignment = { vertical: 'middle', horizontal: 'center' }
-        worksheet.getCell('I5').alignment = { vertical: 'middle', horizontal: 'center' }
-        worksheet.getCell('J5').alignment = { vertical: 'middle', horizontal: 'center' }
-        worksheet.getCell('K5').alignment = { vertical: 'middle', horizontal: 'center' }
-        worksheet.getCell('L5').alignment = { vertical: 'middle', horizontal: 'center' }
-        worksheet.getCell('M5').alignment = { vertical: 'middle', horizontal: 'center' }
-        worksheet.getCell('N5').alignment = { vertical: 'middle', horizontal: 'center' }
-        worksheet.getCell('O5').alignment = { vertical: 'middle', horizontal: 'center' }
-        worksheet.getCell('P5').alignment = { vertical: 'middle', horizontal: 'center' }
-        worksheet.getCell('Q5').alignment = { vertical: 'middle', horizontal: 'center' }
+            worksheet.getCell('E5').alignment = { vertical: 'middle', horizontal: 'center' }
+            worksheet.getCell('F5').alignment = { vertical: 'middle', horizontal: 'center' }
+            worksheet.getCell('G5').alignment = { vertical: 'middle', horizontal: 'center' }
+            worksheet.getCell('H5').alignment = { vertical: 'middle', horizontal: 'center' }
+            worksheet.getCell('I5').alignment = { vertical: 'middle', horizontal: 'center' }
+            worksheet.getCell('J5').alignment = { vertical: 'middle', horizontal: 'center' }
+            worksheet.getCell('K5').alignment = { vertical: 'middle', horizontal: 'center' }
+            worksheet.getCell('L5').alignment = { vertical: 'middle', horizontal: 'center' }
+            worksheet.getCell('M5').alignment = { vertical: 'middle', horizontal: 'center' }
+            worksheet.getCell('N5').alignment = { vertical: 'middle', horizontal: 'center' }
+            worksheet.getCell('O5').alignment = { vertical: 'middle', horizontal: 'center' }
+            worksheet.getCell('P5').alignment = { vertical: 'middle', horizontal: 'center' }
+            worksheet.getCell('Q5').alignment = { vertical: 'middle', horizontal: 'center' }
+        }
 
-
-        //worksheet.addRow(["Date", "Gross Sales", "Cash Expenses", "Net Sales", "Salary", "Grocery", "Utilities", "Food", "Gasul", "Bakery", "Rent", "Misc", "Tax"])
-        // worksheet.columns = [
-        //     { header: 'Date', key: 'date' },
-        //     { header: 'Gross Sales', key: 'grosssales' },
-        //     { header: 'Cash Expenses', key: 'cashexpenses' },
-        //     { header: 'Net Sales', key: 'netsales' },
-        //     { header: 'Salary', key: 'salary' },
-        //     { header: 'Grocery', key: 'grocery' },
-        //     { header: 'Utilities', key: ' ' },
-        //     { header: 'Food', key: 'food' },
-        //     { header: 'Gasul', key: 'gasul' },
-        //     { header: 'Bakery', key: 'bakery' },
-        //     { header: 'Rent', key: 'rent' },
-        //     { header: 'Misc', key: 'misc' },
-        //     { header: 'Tax', key: 'Tax' },
-        // ]
-        console.log(callimit)
-        console.log(maxlimit)
+        //Populate Daily
         for (var i = 0; i < callimit; i++) {
             rowVal = []
             //rowVal[i] = i + 1
@@ -670,7 +647,7 @@ const adminController = {
             worksheet.addRow(rowVal);
         }
 
-        console.log(cheque[1])
+        //Populate Cheque
         for (var i = 0; i < cheque.length; i++) {
             cellVal = "N" + (i + 6)
             date = cheque[i].datetime.toISOString().split('-')[2].split('T')[0]
@@ -681,20 +658,9 @@ const adminController = {
             worksheet.getCell(cellVal).value = cheque[i].category
             cellVal = "Q" + (i + 6)
             worksheet.getCell(cellVal).value = cheque[i].amount
-
-            console.log(i + " " + date + cellVal)
         }
 
-        //lastrow = worksheet.lastRow
-        text = ["Total Sales", "Total Expense Cash", "Total Expense Cheque", "Total Expenses", "Net Sales"]
-
-        // end = B+calllimit + 6 
-        // add formula SUM(B6+end)
-
-        //merging 
-
-
-
+        //Populate Summary
         for (var i = 0; i < 5; i++) {
             switch (i) {
                 case 0:
@@ -734,48 +700,11 @@ const adminController = {
         worksheet.mergeCells(`B${callimit + 7}:D${callimit + 7}`);
         worksheet.mergeCells(`B${callimit + 8}:D${callimit + 8}`);
         worksheet.mergeCells(`B${callimit + 9}:D${callimit + 9}`);
-        // lastrow.addRow("Total Sales")
-        // worksheet.addRow("")
-
-
-        // for (var i = 0; i < 5; i++) {
-        //     rowVal = []
-        //     if (i == 0) {
-        //         rowVal[i] = "Total Sales"
-        //     }
-        //     else if (i == 1) {
-        //         rowVal[i] = "Total Expense Cash"
-        //     }
-        //     else if (i == 2) {
-        //         rowVal[i] = "Total Expense Cheque"
-        //     }
-        //     else if (i == 3) {
-        //         rowVal[i] = "Total Expenses"
-        //     }
-        //     else if (i == 4) {
-        //         rowVal[i] = "Net Sales"
-        //     }
-
-        // }
-
-        // rowVal = {
-        //     ["Total Sales", 123],
-        //     ["Total Sales", 123]
-        // }
-
-
-
-
-
-
-
-        //worksheet.addRow()
 
         res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
         res.setHeader('Content-Disposition', 'attachment; filename=' + 'MonthReport.xlsx');
         workbook.xlsx.write(res).then(() => {
             res.end();
-            //res.status(201).json({ msg: 'Done' });
         });
 
         //console.log(reports)
