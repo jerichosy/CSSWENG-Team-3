@@ -2,22 +2,7729 @@
   {
     "branchID": 101,
     "branchName": "Panay Avenue Paligsahan QC",
-    "datetime": "2022-11-25T07:00:42.389Z",
-    "amount": 4450,
-    "customerCount": 41
+    "datetime": "2022-10-01T07:00:42.389Z",
+    "amount": 2128,
+    "customerCount": 27
   },
   {
-    "branchID": 102,
-    "branchName": "Pag-asa QC",
-    "datetime": "2022-11-25T07:00:42.389Z",
-    "amount": 4750,
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-01T08:00:42.389Z",
+    "amount": 885,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-01T09:00:42.389Z",
+    "amount": 3299,
+    "customerCount": 51
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-01T10:00:42.389Z",
+    "amount": 5000,
+    "customerCount": 17
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-01T11:00:42.389Z",
+    "amount": 1397,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-01T12:00:42.389Z",
+    "amount": 1071,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-01T13:00:42.389Z",
+    "amount": 1194,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-01T14:00:42.389Z",
+    "amount": 1643,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-01T15:00:42.389Z",
+    "amount": 1572,
+    "customerCount": 67
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-01T16:00:42.389Z",
+    "amount": 4878,
+    "customerCount": 67
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-01T17:00:42.389Z",
+    "amount": 1715,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-01T18:00:42.389Z",
+    "amount": 2283,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-02T07:00:42.389Z",
+    "amount": 501,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-02T08:00:42.389Z",
+    "amount": 3464,
+    "customerCount": 52
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-02T09:00:42.389Z",
+    "amount": 3134,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-02T10:00:42.389Z",
+    "amount": 1004,
+    "customerCount": 83
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-02T11:00:42.389Z",
+    "amount": 1278,
+    "customerCount": 60
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-02T12:00:42.389Z",
+    "amount": 3136,
+    "customerCount": 19
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-02T13:00:42.389Z",
+    "amount": 1342,
+    "customerCount": 69
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-02T14:00:42.389Z",
+    "amount": 1319,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-02T15:00:42.389Z",
+    "amount": 2390,
+    "customerCount": 37
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-02T16:00:42.389Z",
+    "amount": 3683,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-02T17:00:42.389Z",
+    "amount": 2469,
+    "customerCount": 2
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-02T18:00:42.389Z",
+    "amount": 1686,
+    "customerCount": 18
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-03T07:00:42.389Z",
+    "amount": 760,
+    "customerCount": 57
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-03T08:00:42.389Z",
+    "amount": 356,
+    "customerCount": 13
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-03T09:00:42.389Z",
+    "amount": 1025,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-03T10:00:42.389Z",
+    "amount": 3053,
+    "customerCount": 12
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-03T11:00:42.389Z",
+    "amount": 845,
     "customerCount": 45
   },
   {
     "branchID": 101,
     "branchName": "Panay Avenue Paligsahan QC",
-    "datetime": "2022-11-25T08:00:42.389Z",
-    "amount": 3150,
+    "datetime": "2022-10-03T12:00:42.389Z",
+    "amount": 2714,
+    "customerCount": 13
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-03T13:00:42.389Z",
+    "amount": 2548,
+    "customerCount": 23
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-03T14:00:42.389Z",
+    "amount": 3399,
+    "customerCount": 37
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-03T15:00:42.389Z",
+    "amount": 1502,
+    "customerCount": 9
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-03T16:00:42.389Z",
+    "amount": 2992,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-03T17:00:42.389Z",
+    "amount": 449,
+    "customerCount": 42
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-03T18:00:42.389Z",
+    "amount": 1082,
+    "customerCount": 45
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-04T07:00:42.389Z",
+    "amount": 3596,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-04T08:00:42.389Z",
+    "amount": 2050,
+    "customerCount": 52
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-04T09:00:42.389Z",
+    "amount": 2316,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-04T10:00:42.389Z",
+    "amount": 578,
+    "customerCount": 7
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-04T11:00:42.389Z",
+    "amount": 168,
+    "customerCount": 56
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-04T12:00:42.389Z",
+    "amount": 4697,
+    "customerCount": 29
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-04T13:00:42.389Z",
+    "amount": 1328,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-04T14:00:42.389Z",
+    "amount": 3933,
+    "customerCount": 18
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-04T15:00:42.389Z",
+    "amount": 899,
+    "customerCount": 79
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-04T16:00:42.389Z",
+    "amount": 4511,
+    "customerCount": 31
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-04T17:00:42.389Z",
+    "amount": 2481,
+    "customerCount": 58
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-04T18:00:42.389Z",
+    "amount": 3412,
+    "customerCount": 60
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-05T07:00:42.389Z",
+    "amount": 1755,
+    "customerCount": 71
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-05T08:00:42.389Z",
+    "amount": 4081,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-05T09:00:42.389Z",
+    "amount": 2998,
+    "customerCount": 15
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-05T10:00:42.389Z",
+    "amount": 1650,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-05T11:00:42.389Z",
+    "amount": 2577,
+    "customerCount": 59
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-05T12:00:42.389Z",
+    "amount": 1023,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-05T13:00:42.389Z",
+    "amount": 235,
+    "customerCount": 59
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-05T14:00:42.389Z",
+    "amount": 1713,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-05T15:00:42.389Z",
+    "amount": 4239,
+    "customerCount": 51
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-05T16:00:42.389Z",
+    "amount": 360,
+    "customerCount": 73
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-05T17:00:42.389Z",
+    "amount": 1836,
+    "customerCount": 75
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-05T18:00:42.389Z",
+    "amount": 244,
+    "customerCount": 9
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-06T07:00:42.389Z",
+    "amount": 118,
+    "customerCount": 61
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-06T08:00:42.389Z",
+    "amount": 4722,
+    "customerCount": 53
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-06T09:00:42.389Z",
+    "amount": 4615,
+    "customerCount": 18
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-06T10:00:42.389Z",
+    "amount": 3105,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-06T11:00:42.389Z",
+    "amount": 598,
+    "customerCount": 2
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-06T12:00:42.389Z",
+    "amount": 1904,
+    "customerCount": 37
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-06T13:00:42.389Z",
+    "amount": 268,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-06T14:00:42.389Z",
+    "amount": 3698,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-06T15:00:42.389Z",
+    "amount": 801,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-06T16:00:42.389Z",
+    "amount": 3800,
+    "customerCount": 63
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-06T17:00:42.389Z",
+    "amount": 2929,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-06T18:00:42.389Z",
+    "amount": 3831,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-07T07:00:42.389Z",
+    "amount": 1222,
+    "customerCount": 63
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-07T08:00:42.389Z",
+    "amount": 615,
+    "customerCount": 43
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-07T09:00:42.389Z",
+    "amount": 2961,
+    "customerCount": 64
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-07T10:00:42.389Z",
+    "amount": 923,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-07T11:00:42.389Z",
+    "amount": 2690,
+    "customerCount": 42
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-07T12:00:42.389Z",
+    "amount": 4754,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-07T13:00:42.389Z",
+    "amount": 1009,
+    "customerCount": 7
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-07T14:00:42.389Z",
+    "amount": 1603,
+    "customerCount": 21
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-07T15:00:42.389Z",
+    "amount": 2524,
+    "customerCount": 53
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-07T16:00:42.389Z",
+    "amount": 3503,
+    "customerCount": 42
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-07T17:00:42.389Z",
+    "amount": 3490,
+    "customerCount": 58
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-07T18:00:42.389Z",
+    "amount": 1555,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-08T07:00:42.389Z",
+    "amount": 1109,
+    "customerCount": 29
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-08T08:00:42.389Z",
+    "amount": 710,
+    "customerCount": 35
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-08T09:00:42.389Z",
+    "amount": 1547,
+    "customerCount": 27
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-08T10:00:42.389Z",
+    "amount": 4361,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-08T11:00:42.389Z",
+    "amount": 325,
+    "customerCount": 54
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-08T12:00:42.389Z",
+    "amount": 3324,
+    "customerCount": 43
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-08T13:00:42.389Z",
+    "amount": 347,
+    "customerCount": 72
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-08T14:00:42.389Z",
+    "amount": 3981,
+    "customerCount": 55
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-08T15:00:42.389Z",
+    "amount": 807,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-08T16:00:42.389Z",
+    "amount": 4593,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-08T17:00:42.389Z",
+    "amount": 1621,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-08T18:00:42.389Z",
+    "amount": 4689,
+    "customerCount": 15
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-09T07:00:42.389Z",
+    "amount": 789,
+    "customerCount": 56
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-09T08:00:42.389Z",
+    "amount": 1721,
+    "customerCount": 14
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-09T09:00:42.389Z",
+    "amount": 3928,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-09T10:00:42.389Z",
+    "amount": 759,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-09T11:00:42.389Z",
+    "amount": 4354,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-09T12:00:42.389Z",
+    "amount": 3893,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-09T13:00:42.389Z",
+    "amount": 3541,
+    "customerCount": 35
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-09T14:00:42.389Z",
+    "amount": 3629,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-09T15:00:42.389Z",
+    "amount": 2499,
+    "customerCount": 15
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-09T16:00:42.389Z",
+    "amount": 3463,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-09T17:00:42.389Z",
+    "amount": 2284,
+    "customerCount": 54
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-09T18:00:42.389Z",
+    "amount": 392,
+    "customerCount": 31
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-10T07:00:42.389Z",
+    "amount": 2441,
+    "customerCount": 16
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-10T08:00:42.389Z",
+    "amount": 3755,
+    "customerCount": 18
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-10T09:00:42.389Z",
+    "amount": 4953,
+    "customerCount": 28
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-10T10:00:42.389Z",
+    "amount": 2183,
+    "customerCount": 13
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-10T11:00:42.389Z",
+    "amount": 2923,
+    "customerCount": 24
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-10T12:00:42.389Z",
+    "amount": 4559,
+    "customerCount": 43
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-10T13:00:42.389Z",
+    "amount": 1676,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-10T14:00:42.389Z",
+    "amount": 1534,
+    "customerCount": 57
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-10T15:00:42.389Z",
+    "amount": 2774,
+    "customerCount": 6
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-10T16:00:42.389Z",
+    "amount": 2879,
+    "customerCount": 41
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-10T17:00:42.389Z",
+    "amount": 3976,
+    "customerCount": 49
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-10T18:00:42.389Z",
+    "amount": 2579,
+    "customerCount": 61
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-11T07:00:42.389Z",
+    "amount": 416,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-11T08:00:42.389Z",
+    "amount": 3144,
+    "customerCount": 21
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-11T09:00:42.389Z",
+    "amount": 4331,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-11T10:00:42.389Z",
+    "amount": 3955,
+    "customerCount": 2
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-11T11:00:42.389Z",
+    "amount": 3173,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-11T12:00:42.389Z",
+    "amount": 2796,
+    "customerCount": 45
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-11T13:00:42.389Z",
+    "amount": 2488,
+    "customerCount": 29
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-11T14:00:42.389Z",
+    "amount": 3767,
+    "customerCount": 3
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-11T15:00:42.389Z",
+    "amount": 3338,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-11T16:00:42.389Z",
+    "amount": 4417,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-11T17:00:42.389Z",
+    "amount": 2688,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-11T18:00:42.389Z",
+    "amount": 4593,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-12T07:00:42.389Z",
+    "amount": 1936,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-12T08:00:42.389Z",
+    "amount": 382,
+    "customerCount": 25
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-12T09:00:42.389Z",
+    "amount": 1652,
+    "customerCount": 19
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-12T10:00:42.389Z",
+    "amount": 1348,
+    "customerCount": 18
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-12T11:00:42.389Z",
+    "amount": 289,
+    "customerCount": 4
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-12T12:00:42.389Z",
+    "amount": 1978,
+    "customerCount": 40
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-12T13:00:42.389Z",
+    "amount": 2016,
+    "customerCount": 32
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-12T14:00:42.389Z",
+    "amount": 1773,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-12T15:00:42.389Z",
+    "amount": 2516,
+    "customerCount": 29
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-12T16:00:42.389Z",
+    "amount": 2918,
+    "customerCount": 2
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-12T17:00:42.389Z",
+    "amount": 4666,
+    "customerCount": 18
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-12T18:00:42.389Z",
+    "amount": 3378,
+    "customerCount": 18
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-13T07:00:42.389Z",
+    "amount": 3512,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-13T08:00:42.389Z",
+    "amount": 2434,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-13T09:00:42.389Z",
+    "amount": 1203,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-13T10:00:42.389Z",
+    "amount": 2468,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-13T11:00:42.389Z",
+    "amount": 214,
+    "customerCount": 43
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-13T12:00:42.389Z",
+    "amount": 3295,
     "customerCount": 34
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-13T13:00:42.389Z",
+    "amount": 3683,
+    "customerCount": 18
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-13T14:00:42.389Z",
+    "amount": 1161,
+    "customerCount": 9
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-13T15:00:42.389Z",
+    "amount": 4278,
+    "customerCount": 14
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-13T16:00:42.389Z",
+    "amount": 4527,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-13T17:00:42.389Z",
+    "amount": 4864,
+    "customerCount": 46
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-13T18:00:42.389Z",
+    "amount": 4218,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-14T07:00:42.389Z",
+    "amount": 3505,
+    "customerCount": 51
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-14T08:00:42.389Z",
+    "amount": 1236,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-14T09:00:42.389Z",
+    "amount": 2625,
+    "customerCount": 27
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-14T10:00:42.389Z",
+    "amount": 2059,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-14T11:00:42.389Z",
+    "amount": 3786,
+    "customerCount": 43
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-14T12:00:42.389Z",
+    "amount": 2125,
+    "customerCount": 22
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-14T13:00:42.389Z",
+    "amount": 3924,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-14T14:00:42.389Z",
+    "amount": 2957,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-14T15:00:42.389Z",
+    "amount": 1735,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-14T16:00:42.389Z",
+    "amount": 782,
+    "customerCount": 8
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-14T17:00:42.389Z",
+    "amount": 1385,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-14T18:00:42.389Z",
+    "amount": 2178,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-15T07:00:42.389Z",
+    "amount": 4935,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-15T08:00:42.389Z",
+    "amount": 3194,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-15T09:00:42.389Z",
+    "amount": 273,
+    "customerCount": 11
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-15T10:00:42.389Z",
+    "amount": 804,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-15T11:00:42.389Z",
+    "amount": 2869,
+    "customerCount": 73
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-15T12:00:42.389Z",
+    "amount": 3753,
+    "customerCount": 39
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-15T13:00:42.389Z",
+    "amount": 495,
+    "customerCount": 22
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-15T14:00:42.389Z",
+    "amount": 3480,
+    "customerCount": 24
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-15T15:00:42.389Z",
+    "amount": 3525,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-15T16:00:42.389Z",
+    "amount": 4195,
+    "customerCount": 20
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-15T17:00:42.389Z",
+    "amount": 383,
+    "customerCount": 11
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-15T18:00:42.389Z",
+    "amount": 3807,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-16T07:00:42.389Z",
+    "amount": 1558,
+    "customerCount": 14
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-16T08:00:42.389Z",
+    "amount": 495,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-16T09:00:42.389Z",
+    "amount": 3219,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-16T10:00:42.389Z",
+    "amount": 4665,
+    "customerCount": 40
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-16T11:00:42.389Z",
+    "amount": 3940,
+    "customerCount": 51
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-16T12:00:42.389Z",
+    "amount": 2723,
+    "customerCount": 5
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-16T13:00:42.389Z",
+    "amount": 2042,
+    "customerCount": 10
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-16T14:00:42.389Z",
+    "amount": 851,
+    "customerCount": 51
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-16T15:00:42.389Z",
+    "amount": 3675,
+    "customerCount": 14
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-16T16:00:42.389Z",
+    "amount": 4578,
+    "customerCount": 11
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-16T17:00:42.389Z",
+    "amount": 3062,
+    "customerCount": 30
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-16T18:00:42.389Z",
+    "amount": 4201,
+    "customerCount": 46
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-17T07:00:42.389Z",
+    "amount": 2285,
+    "customerCount": 25
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-17T08:00:42.389Z",
+    "amount": 4965,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-17T09:00:42.389Z",
+    "amount": 4462,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-17T10:00:42.389Z",
+    "amount": 4397,
+    "customerCount": 15
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-17T11:00:42.389Z",
+    "amount": 4330,
+    "customerCount": 46
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-17T12:00:42.389Z",
+    "amount": 2873,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-17T13:00:42.389Z",
+    "amount": 4746,
+    "customerCount": 71
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-17T14:00:42.389Z",
+    "amount": 1210,
+    "customerCount": 45
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-17T15:00:42.389Z",
+    "amount": 3681,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-17T16:00:42.389Z",
+    "amount": 522,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-17T17:00:42.389Z",
+    "amount": 4640,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-17T18:00:42.389Z",
+    "amount": 4559,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-18T07:00:42.389Z",
+    "amount": 3860,
+    "customerCount": 11
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-18T08:00:42.389Z",
+    "amount": 2465,
+    "customerCount": 2
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-18T09:00:42.389Z",
+    "amount": 467,
+    "customerCount": 9
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-18T10:00:42.389Z",
+    "amount": 722,
+    "customerCount": 30
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-18T11:00:42.389Z",
+    "amount": 4462,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-18T12:00:42.389Z",
+    "amount": 868,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-18T13:00:42.389Z",
+    "amount": 2897,
+    "customerCount": 63
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-18T14:00:42.389Z",
+    "amount": 2979,
+    "customerCount": 24
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-18T15:00:42.389Z",
+    "amount": 464,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-18T16:00:42.389Z",
+    "amount": 4163,
+    "customerCount": 56
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-18T17:00:42.389Z",
+    "amount": 939,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-18T18:00:42.389Z",
+    "amount": 1668,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-19T07:00:42.389Z",
+    "amount": 3512,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-19T08:00:42.389Z",
+    "amount": 3691,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-19T09:00:42.389Z",
+    "amount": 2515,
+    "customerCount": 26
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-19T10:00:42.389Z",
+    "amount": 4958,
+    "customerCount": 34
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-19T11:00:42.389Z",
+    "amount": 2319,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-19T12:00:42.389Z",
+    "amount": 3195,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-19T13:00:42.389Z",
+    "amount": 1397,
+    "customerCount": 26
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-19T14:00:42.389Z",
+    "amount": 1071,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-19T15:00:42.389Z",
+    "amount": 435,
+    "customerCount": 23
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-19T16:00:42.389Z",
+    "amount": 1469,
+    "customerCount": 17
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-19T17:00:42.389Z",
+    "amount": 4345,
+    "customerCount": 74
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-19T18:00:42.389Z",
+    "amount": 1509,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-20T07:00:42.389Z",
+    "amount": 302,
+    "customerCount": 51
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-20T08:00:42.389Z",
+    "amount": 1234,
+    "customerCount": 5
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-20T09:00:42.389Z",
+    "amount": 4105,
+    "customerCount": 60
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-20T10:00:42.389Z",
+    "amount": 152,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-20T11:00:42.389Z",
+    "amount": 3160,
+    "customerCount": 34
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-20T12:00:42.389Z",
+    "amount": 1885,
+    "customerCount": 7
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-20T13:00:42.389Z",
+    "amount": 3368,
+    "customerCount": 53
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-20T14:00:42.389Z",
+    "amount": 3595,
+    "customerCount": 82
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-20T15:00:42.389Z",
+    "amount": 501,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-20T16:00:42.389Z",
+    "amount": 467,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-20T17:00:42.389Z",
+    "amount": 4498,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-20T18:00:42.389Z",
+    "amount": 4171,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-21T07:00:42.389Z",
+    "amount": 194,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-21T08:00:42.389Z",
+    "amount": 4442,
+    "customerCount": 58
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-21T09:00:42.389Z",
+    "amount": 325,
+    "customerCount": 20
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-21T10:00:42.389Z",
+    "amount": 930,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-21T11:00:42.389Z",
+    "amount": 1298,
+    "customerCount": 30
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-21T12:00:42.389Z",
+    "amount": 613,
+    "customerCount": 39
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-21T13:00:42.389Z",
+    "amount": 1255,
+    "customerCount": 17
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-21T14:00:42.389Z",
+    "amount": 4146,
+    "customerCount": 31
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-21T15:00:42.389Z",
+    "amount": 1019,
+    "customerCount": 53
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-21T16:00:42.389Z",
+    "amount": 1377,
+    "customerCount": 32
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-21T17:00:42.389Z",
+    "amount": 3545,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-21T18:00:42.389Z",
+    "amount": 3176,
+    "customerCount": 19
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-22T07:00:42.389Z",
+    "amount": 1945,
+    "customerCount": 1
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-22T08:00:42.389Z",
+    "amount": 1448,
+    "customerCount": 6
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-22T09:00:42.389Z",
+    "amount": 3576,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-22T10:00:42.389Z",
+    "amount": 3352,
+    "customerCount": 46
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-22T11:00:42.389Z",
+    "amount": 4263,
+    "customerCount": 7
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-22T12:00:42.389Z",
+    "amount": 3566,
+    "customerCount": 19
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-22T13:00:42.389Z",
+    "amount": 2229,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-22T14:00:42.389Z",
+    "amount": 4052,
+    "customerCount": 6
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-22T15:00:42.389Z",
+    "amount": 3378,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-22T16:00:42.389Z",
+    "amount": 4802,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-22T17:00:42.389Z",
+    "amount": 402,
+    "customerCount": 25
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-22T18:00:42.389Z",
+    "amount": 771,
+    "customerCount": 82
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-23T07:00:42.389Z",
+    "amount": 4486,
+    "customerCount": 30
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-23T08:00:42.389Z",
+    "amount": 257,
+    "customerCount": 10
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-23T09:00:42.389Z",
+    "amount": 1501,
+    "customerCount": 20
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-23T10:00:42.389Z",
+    "amount": 4143,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-23T11:00:42.389Z",
+    "amount": 2427,
+    "customerCount": 36
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-23T12:00:42.389Z",
+    "amount": 1420,
+    "customerCount": 36
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-23T13:00:42.389Z",
+    "amount": 4534,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-23T14:00:42.389Z",
+    "amount": 1745,
+    "customerCount": 35
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-23T15:00:42.389Z",
+    "amount": 2600,
+    "customerCount": 22
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-23T16:00:42.389Z",
+    "amount": 2799,
+    "customerCount": 30
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-23T17:00:42.389Z",
+    "amount": 4904,
+    "customerCount": 49
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-23T18:00:42.389Z",
+    "amount": 3983,
+    "customerCount": 53
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-24T07:00:42.389Z",
+    "amount": 1432,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-24T08:00:42.389Z",
+    "amount": 2822,
+    "customerCount": 21
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-24T09:00:42.389Z",
+    "amount": 1597,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-24T10:00:42.389Z",
+    "amount": 4771,
+    "customerCount": 32
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-24T11:00:42.389Z",
+    "amount": 874,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-24T12:00:42.389Z",
+    "amount": 329,
+    "customerCount": 42
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-24T13:00:42.389Z",
+    "amount": 2793,
+    "customerCount": 67
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-24T14:00:42.389Z",
+    "amount": 2725,
+    "customerCount": 62
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-24T15:00:42.389Z",
+    "amount": 2559,
+    "customerCount": 43
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-24T16:00:42.389Z",
+    "amount": 3087,
+    "customerCount": 15
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-24T17:00:42.389Z",
+    "amount": 2588,
+    "customerCount": 10
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-24T18:00:42.389Z",
+    "amount": 2814,
+    "customerCount": 3
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-25T07:00:42.389Z",
+    "amount": 3911,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-25T08:00:42.389Z",
+    "amount": 4556,
+    "customerCount": 28
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-25T09:00:42.389Z",
+    "amount": 1798,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-25T10:00:42.389Z",
+    "amount": 4659,
+    "customerCount": 54
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-25T11:00:42.389Z",
+    "amount": 1482,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-25T12:00:42.389Z",
+    "amount": 1747,
+    "customerCount": 19
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-25T13:00:42.389Z",
+    "amount": 2986,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-25T14:00:42.389Z",
+    "amount": 4453,
+    "customerCount": 2
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-25T15:00:42.389Z",
+    "amount": 4089,
+    "customerCount": 13
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-25T16:00:42.389Z",
+    "amount": 4243,
+    "customerCount": 5
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-25T17:00:42.389Z",
+    "amount": 4324,
+    "customerCount": 17
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-25T18:00:42.389Z",
+    "amount": 2707,
+    "customerCount": 39
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-26T07:00:42.389Z",
+    "amount": 1184,
+    "customerCount": 40
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-26T08:00:42.389Z",
+    "amount": 4589,
+    "customerCount": 38
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-26T09:00:42.389Z",
+    "amount": 617,
+    "customerCount": 2
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-26T10:00:42.389Z",
+    "amount": 2968,
+    "customerCount": 8
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-26T11:00:42.389Z",
+    "amount": 4721,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-26T12:00:42.389Z",
+    "amount": 4066,
+    "customerCount": 42
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-26T13:00:42.389Z",
+    "amount": 198,
+    "customerCount": 33
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-26T14:00:42.389Z",
+    "amount": 2421,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-26T15:00:42.389Z",
+    "amount": 4171,
+    "customerCount": 53
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-26T16:00:42.389Z",
+    "amount": 3661,
+    "customerCount": 56
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-26T17:00:42.389Z",
+    "amount": 216,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-26T18:00:42.389Z",
+    "amount": 4041,
+    "customerCount": 32
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-27T07:00:42.389Z",
+    "amount": 3063,
+    "customerCount": 40
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-27T08:00:42.389Z",
+    "amount": 328,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-27T09:00:42.389Z",
+    "amount": 4431,
+    "customerCount": 21
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-27T10:00:42.389Z",
+    "amount": 4176,
+    "customerCount": 22
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-27T11:00:42.389Z",
+    "amount": 1426,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-27T12:00:42.389Z",
+    "amount": 2768,
+    "customerCount": 30
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-27T13:00:42.389Z",
+    "amount": 2498,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-27T14:00:42.389Z",
+    "amount": 3423,
+    "customerCount": 2
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-27T15:00:42.389Z",
+    "amount": 3566,
+    "customerCount": 9
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-27T16:00:42.389Z",
+    "amount": 2036,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-27T17:00:42.389Z",
+    "amount": 4706,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-27T18:00:42.389Z",
+    "amount": 4595,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-28T07:00:42.389Z",
+    "amount": 2134,
+    "customerCount": 53
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-28T08:00:42.389Z",
+    "amount": 3989,
+    "customerCount": 19
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-28T09:00:42.389Z",
+    "amount": 1262,
+    "customerCount": 59
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-28T10:00:42.389Z",
+    "amount": 3195,
+    "customerCount": 21
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-28T11:00:42.389Z",
+    "amount": 663,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-28T12:00:42.389Z",
+    "amount": 1266,
+    "customerCount": 47
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-28T13:00:42.389Z",
+    "amount": 2028,
+    "customerCount": 3
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-28T14:00:42.389Z",
+    "amount": 1093,
+    "customerCount": 42
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-28T15:00:42.389Z",
+    "amount": 2448,
+    "customerCount": 46
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-28T16:00:42.389Z",
+    "amount": 4339,
+    "customerCount": 27
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-28T17:00:42.389Z",
+    "amount": 3473,
+    "customerCount": 48
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-28T18:00:42.389Z",
+    "amount": 4533,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-29T07:00:42.389Z",
+    "amount": 3948,
+    "customerCount": 54
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-29T08:00:42.389Z",
+    "amount": 3794,
+    "customerCount": 40
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-29T09:00:42.389Z",
+    "amount": 815,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-29T10:00:42.389Z",
+    "amount": 4209,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-29T11:00:42.389Z",
+    "amount": 3499,
+    "customerCount": 25
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-29T12:00:42.389Z",
+    "amount": 3874,
+    "customerCount": 22
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-29T13:00:42.389Z",
+    "amount": 297,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-29T14:00:42.389Z",
+    "amount": 4333,
+    "customerCount": 47
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-29T15:00:42.389Z",
+    "amount": 3361,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-29T16:00:42.389Z",
+    "amount": 1851,
+    "customerCount": 28
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-29T17:00:42.389Z",
+    "amount": 1976,
+    "customerCount": 86
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-29T18:00:42.389Z",
+    "amount": 4838,
+    "customerCount": 18
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-30T07:00:42.389Z",
+    "amount": 3849,
+    "customerCount": 13
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-30T08:00:42.389Z",
+    "amount": 3314,
+    "customerCount": 68
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-30T09:00:42.389Z",
+    "amount": 4497,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-30T10:00:42.389Z",
+    "amount": 4674,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-30T11:00:42.389Z",
+    "amount": 3603,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-30T12:00:42.389Z",
+    "amount": 2438,
+    "customerCount": 19
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-30T13:00:42.389Z",
+    "amount": 4740,
+    "customerCount": 10
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-30T14:00:42.389Z",
+    "amount": 1526,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-30T15:00:42.389Z",
+    "amount": 653,
+    "customerCount": 31
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-30T16:00:42.389Z",
+    "amount": 4720,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-30T17:00:42.389Z",
+    "amount": 1284,
+    "customerCount": 52
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-30T18:00:42.389Z",
+    "amount": 1221,
+    "customerCount": 32
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-31T07:00:42.389Z",
+    "amount": 3353,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-31T08:00:42.389Z",
+    "amount": 401,
+    "customerCount": 30
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-31T09:00:42.389Z",
+    "amount": 4621,
+    "customerCount": 45
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-31T10:00:42.389Z",
+    "amount": 3070,
+    "customerCount": 1
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-31T11:00:42.389Z",
+    "amount": 674,
+    "customerCount": 34
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-31T12:00:42.389Z",
+    "amount": 642,
+    "customerCount": 45
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-31T13:00:42.389Z",
+    "amount": 4023,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-31T14:00:42.389Z",
+    "amount": 1199,
+    "customerCount": 21
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-31T15:00:42.389Z",
+    "amount": 1932,
+    "customerCount": 15
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-31T16:00:42.389Z",
+    "amount": 2362,
+    "customerCount": 46
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-31T17:00:42.389Z",
+    "amount": 626,
+    "customerCount": 32
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-31T18:00:42.389Z",
+    "amount": 1316,
+    "customerCount": 40
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-01T07:00:42.389Z",
+    "amount": 4371,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-01T08:00:42.389Z",
+    "amount": 2603,
+    "customerCount": 38
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-01T09:00:42.389Z",
+    "amount": 2562,
+    "customerCount": 13
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-01T10:00:42.389Z",
+    "amount": 3945,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-01T11:00:42.389Z",
+    "amount": 1463,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-01T12:00:42.389Z",
+    "amount": 4554,
+    "customerCount": 59
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-01T13:00:42.389Z",
+    "amount": 2237,
+    "customerCount": 18
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-01T14:00:42.389Z",
+    "amount": 3390,
+    "customerCount": 50
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-01T15:00:42.389Z",
+    "amount": 4470,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-01T16:00:42.389Z",
+    "amount": 4560,
+    "customerCount": 19
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-01T17:00:42.389Z",
+    "amount": 4583,
+    "customerCount": 21
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-01T18:00:42.389Z",
+    "amount": 2771,
+    "customerCount": 10
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-02T07:00:42.389Z",
+    "amount": 2452,
+    "customerCount": 19
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-02T08:00:42.389Z",
+    "amount": 313,
+    "customerCount": 7
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-02T09:00:42.389Z",
+    "amount": 2272,
+    "customerCount": 53
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-02T10:00:42.389Z",
+    "amount": 2837,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-02T11:00:42.389Z",
+    "amount": 3393,
+    "customerCount": 56
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-02T12:00:42.389Z",
+    "amount": 4487,
+    "customerCount": 43
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-02T13:00:42.389Z",
+    "amount": 1974,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-02T14:00:42.389Z",
+    "amount": 4868,
+    "customerCount": 5
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-02T15:00:42.389Z",
+    "amount": 4470,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-02T16:00:42.389Z",
+    "amount": 2138,
+    "customerCount": 45
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-02T17:00:42.389Z",
+    "amount": 1993,
+    "customerCount": 41
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-02T18:00:42.389Z",
+    "amount": 4303,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-03T07:00:42.389Z",
+    "amount": 652,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-03T08:00:42.389Z",
+    "amount": 4284,
+    "customerCount": 57
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-03T09:00:42.389Z",
+    "amount": 172,
+    "customerCount": 59
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-03T10:00:42.389Z",
+    "amount": 2657,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-03T11:00:42.389Z",
+    "amount": 2506,
+    "customerCount": 14
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-03T12:00:42.389Z",
+    "amount": 580,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-03T13:00:42.389Z",
+    "amount": 4268,
+    "customerCount": 44
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-03T14:00:42.389Z",
+    "amount": 461,
+    "customerCount": 45
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-03T15:00:42.389Z",
+    "amount": 3426,
+    "customerCount": 64
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-03T16:00:42.389Z",
+    "amount": 4678,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-03T17:00:42.389Z",
+    "amount": 3547,
+    "customerCount": 45
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-03T18:00:42.389Z",
+    "amount": 1800,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-04T07:00:42.389Z",
+    "amount": 3148,
+    "customerCount": 39
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-04T08:00:42.389Z",
+    "amount": 4774,
+    "customerCount": 33
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-04T09:00:42.389Z",
+    "amount": 2619,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-04T10:00:42.389Z",
+    "amount": 1672,
+    "customerCount": 37
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-04T11:00:42.389Z",
+    "amount": 4813,
+    "customerCount": 31
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-04T12:00:42.389Z",
+    "amount": 3221,
+    "customerCount": 20
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-04T13:00:42.389Z",
+    "amount": 1985,
+    "customerCount": 34
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-04T14:00:42.389Z",
+    "amount": 480,
+    "customerCount": 77
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-04T15:00:42.389Z",
+    "amount": 3627,
+    "customerCount": 17
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-04T16:00:42.389Z",
+    "amount": 2201,
+    "customerCount": 61
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-04T17:00:42.389Z",
+    "amount": 3817,
+    "customerCount": 24
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-04T18:00:42.389Z",
+    "amount": 1483,
+    "customerCount": 48
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-05T07:00:42.389Z",
+    "amount": 4138,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-05T08:00:42.389Z",
+    "amount": 2426,
+    "customerCount": 5
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-05T09:00:42.389Z",
+    "amount": 817,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-05T10:00:42.389Z",
+    "amount": 846,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-05T11:00:42.389Z",
+    "amount": 898,
+    "customerCount": 47
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-05T12:00:42.389Z",
+    "amount": 275,
+    "customerCount": 50
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-05T13:00:42.389Z",
+    "amount": 4778,
+    "customerCount": 13
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-05T14:00:42.389Z",
+    "amount": 4465,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-05T15:00:42.389Z",
+    "amount": 1479,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-05T16:00:42.389Z",
+    "amount": 2650,
+    "customerCount": 45
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-05T17:00:42.389Z",
+    "amount": 4543,
+    "customerCount": 16
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-05T18:00:42.389Z",
+    "amount": 3022,
+    "customerCount": 42
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-06T07:00:42.389Z",
+    "amount": 2748,
+    "customerCount": 66
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-06T08:00:42.389Z",
+    "amount": 2460,
+    "customerCount": 22
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-06T09:00:42.389Z",
+    "amount": 1447,
+    "customerCount": 98
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-06T10:00:42.389Z",
+    "amount": 3711,
+    "customerCount": 18
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-06T11:00:42.389Z",
+    "amount": 2736,
+    "customerCount": 10
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-06T12:00:42.389Z",
+    "amount": 4556,
+    "customerCount": 40
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-06T13:00:42.389Z",
+    "amount": 3201,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-06T14:00:42.389Z",
+    "amount": 1928,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-06T15:00:42.389Z",
+    "amount": 4352,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-06T16:00:42.389Z",
+    "amount": 3155,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-06T17:00:42.389Z",
+    "amount": 722,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-06T18:00:42.389Z",
+    "amount": 2335,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-07T07:00:42.389Z",
+    "amount": 4164,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-07T08:00:42.389Z",
+    "amount": 3093,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-07T09:00:42.389Z",
+    "amount": 1699,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-07T10:00:42.389Z",
+    "amount": 3452,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-07T11:00:42.389Z",
+    "amount": 2733,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-07T12:00:42.389Z",
+    "amount": 3517,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-07T13:00:42.389Z",
+    "amount": 2826,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-07T14:00:42.389Z",
+    "amount": 3045,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-07T15:00:42.389Z",
+    "amount": 4949,
+    "customerCount": 31
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-07T16:00:42.389Z",
+    "amount": 277,
+    "customerCount": 25
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-07T17:00:42.389Z",
+    "amount": 1295,
+    "customerCount": 61
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-07T18:00:42.389Z",
+    "amount": 4266,
+    "customerCount": 44
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-08T07:00:42.389Z",
+    "amount": 291,
+    "customerCount": 46
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-08T08:00:42.389Z",
+    "amount": 2604,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-08T09:00:42.389Z",
+    "amount": 1165,
+    "customerCount": 28
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-08T10:00:42.389Z",
+    "amount": 3772,
+    "customerCount": 35
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-08T11:00:42.389Z",
+    "amount": 4493,
+    "customerCount": 50
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-08T12:00:42.389Z",
+    "amount": 1575,
+    "customerCount": 32
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-08T13:00:42.389Z",
+    "amount": 491,
+    "customerCount": 43
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-08T14:00:42.389Z",
+    "amount": 3285,
+    "customerCount": 5
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-08T15:00:42.389Z",
+    "amount": 3699,
+    "customerCount": 52
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-08T16:00:42.389Z",
+    "amount": 2746,
+    "customerCount": 44
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-08T17:00:42.389Z",
+    "amount": 3822,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-08T18:00:42.389Z",
+    "amount": 4299,
+    "customerCount": 36
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-09T07:00:42.389Z",
+    "amount": 1123,
+    "customerCount": 10
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-09T08:00:42.389Z",
+    "amount": 1102,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-09T09:00:42.389Z",
+    "amount": 489,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-09T10:00:42.389Z",
+    "amount": 1311,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-09T11:00:42.389Z",
+    "amount": 1188,
+    "customerCount": 37
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-09T12:00:42.389Z",
+    "amount": 694,
+    "customerCount": 58
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-09T13:00:42.389Z",
+    "amount": 3658,
+    "customerCount": 20
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-09T14:00:42.389Z",
+    "amount": 601,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-09T15:00:42.389Z",
+    "amount": 373,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-09T16:00:42.389Z",
+    "amount": 1307,
+    "customerCount": 6
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-09T17:00:42.389Z",
+    "amount": 1622,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-09T18:00:42.389Z",
+    "amount": 509,
+    "customerCount": 58
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-10T07:00:42.389Z",
+    "amount": 479,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-10T08:00:42.389Z",
+    "amount": 1002,
+    "customerCount": 8
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-10T09:00:42.389Z",
+    "amount": 1628,
+    "customerCount": 45
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-10T10:00:42.389Z",
+    "amount": 3703,
+    "customerCount": 38
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-10T11:00:42.389Z",
+    "amount": 2971,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-10T12:00:42.389Z",
+    "amount": 1300,
+    "customerCount": 11
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-10T13:00:42.389Z",
+    "amount": 2841,
+    "customerCount": 53
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-10T14:00:42.389Z",
+    "amount": 1893,
+    "customerCount": 34
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-10T15:00:42.389Z",
+    "amount": 113,
+    "customerCount": 20
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-10T16:00:42.389Z",
+    "amount": 1129,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-10T17:00:42.389Z",
+    "amount": 2953,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-10T18:00:42.389Z",
+    "amount": 3408,
+    "customerCount": 9
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-11T07:00:42.389Z",
+    "amount": 2742,
+    "customerCount": 5
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-11T08:00:42.389Z",
+    "amount": 1934,
+    "customerCount": 30
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-11T09:00:42.389Z",
+    "amount": 2942,
+    "customerCount": 7
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-11T10:00:42.389Z",
+    "amount": 248,
+    "customerCount": 22
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-11T11:00:42.389Z",
+    "amount": 3394,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-11T12:00:42.389Z",
+    "amount": 1878,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-11T13:00:42.389Z",
+    "amount": 4974,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-11T14:00:42.389Z",
+    "amount": 4357,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-11T15:00:42.389Z",
+    "amount": 1323,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-11T16:00:42.389Z",
+    "amount": 3460,
+    "customerCount": 43
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-11T17:00:42.389Z",
+    "amount": 3361,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-11T18:00:42.389Z",
+    "amount": 1599,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-12T07:00:42.389Z",
+    "amount": 4062,
+    "customerCount": 14
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-12T08:00:42.389Z",
+    "amount": 4910,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-12T09:00:42.389Z",
+    "amount": 1694,
+    "customerCount": 64
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-12T10:00:42.389Z",
+    "amount": 3327,
+    "customerCount": 68
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-12T11:00:42.389Z",
+    "amount": 3734,
+    "customerCount": 66
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-12T12:00:42.389Z",
+    "amount": 2213,
+    "customerCount": 57
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-12T13:00:42.389Z",
+    "amount": 3857,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-12T14:00:42.389Z",
+    "amount": 1394,
+    "customerCount": 25
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-12T15:00:42.389Z",
+    "amount": 1445,
+    "customerCount": 58
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-12T16:00:42.389Z",
+    "amount": 4389,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-12T17:00:42.389Z",
+    "amount": 1798,
+    "customerCount": 58
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-12T18:00:42.389Z",
+    "amount": 3368,
+    "customerCount": 59
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-13T07:00:42.389Z",
+    "amount": 4146,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-13T08:00:42.389Z",
+    "amount": 3795,
+    "customerCount": 46
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-13T09:00:42.389Z",
+    "amount": 3171,
+    "customerCount": 15
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-13T10:00:42.389Z",
+    "amount": 4880,
+    "customerCount": 51
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-13T11:00:42.389Z",
+    "amount": 1153,
+    "customerCount": 23
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-13T12:00:42.389Z",
+    "amount": 658,
+    "customerCount": 33
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-13T13:00:42.389Z",
+    "amount": 4276,
+    "customerCount": 50
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-13T14:00:42.389Z",
+    "amount": 4745,
+    "customerCount": 54
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-13T15:00:42.389Z",
+    "amount": 1853,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-13T16:00:42.389Z",
+    "amount": 2862,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-13T17:00:42.389Z",
+    "amount": 3334,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-13T18:00:42.389Z",
+    "amount": 877,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-14T07:00:42.389Z",
+    "amount": 2726,
+    "customerCount": 21
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-14T08:00:42.389Z",
+    "amount": 1347,
+    "customerCount": 51
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-14T09:00:42.389Z",
+    "amount": 4414,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-14T10:00:42.389Z",
+    "amount": 2131,
+    "customerCount": 36
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-14T11:00:42.389Z",
+    "amount": 453,
+    "customerCount": 17
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-14T12:00:42.389Z",
+    "amount": 3342,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-14T13:00:42.389Z",
+    "amount": 2759,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-14T14:00:42.389Z",
+    "amount": 2293,
+    "customerCount": 17
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-14T15:00:42.389Z",
+    "amount": 1343,
+    "customerCount": 18
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-14T16:00:42.389Z",
+    "amount": 1054,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-14T17:00:42.389Z",
+    "amount": 1227,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-14T18:00:42.389Z",
+    "amount": 3971,
+    "customerCount": 65
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-15T07:00:42.389Z",
+    "amount": 3254,
+    "customerCount": 54
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-15T08:00:42.389Z",
+    "amount": 2225,
+    "customerCount": 37
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-15T09:00:42.389Z",
+    "amount": 3736,
+    "customerCount": 85
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-15T10:00:42.389Z",
+    "amount": 3310,
+    "customerCount": 29
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-15T11:00:42.389Z",
+    "amount": 2559,
+    "customerCount": 28
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-15T12:00:42.389Z",
+    "amount": 571,
+    "customerCount": 14
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-15T13:00:42.389Z",
+    "amount": 3130,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-15T14:00:42.389Z",
+    "amount": 3003,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-15T15:00:42.389Z",
+    "amount": 4491,
+    "customerCount": 46
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-15T16:00:42.389Z",
+    "amount": 3414,
+    "customerCount": 14
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-15T17:00:42.389Z",
+    "amount": 2314,
+    "customerCount": 62
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-15T18:00:42.389Z",
+    "amount": 3359,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-16T07:00:42.389Z",
+    "amount": 1213,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-16T08:00:42.389Z",
+    "amount": 427,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-16T09:00:42.389Z",
+    "amount": 482,
+    "customerCount": 27
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-16T10:00:42.389Z",
+    "amount": 4524,
+    "customerCount": 17
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-16T11:00:42.389Z",
+    "amount": 1620,
+    "customerCount": 9
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-16T12:00:42.389Z",
+    "amount": 1918,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-16T13:00:42.389Z",
+    "amount": 3352,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-16T14:00:42.389Z",
+    "amount": 4158,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-16T15:00:42.389Z",
+    "amount": 4339,
+    "customerCount": 20
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-16T16:00:42.389Z",
+    "amount": 2777,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-16T17:00:42.389Z",
+    "amount": 2267,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-16T18:00:42.389Z",
+    "amount": 4615,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-17T07:00:42.389Z",
+    "amount": 1312,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-17T08:00:42.389Z",
+    "amount": 2443,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-17T09:00:42.389Z",
+    "amount": 1760,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-17T10:00:42.389Z",
+    "amount": 4966,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-17T11:00:42.389Z",
+    "amount": 2671,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-17T12:00:42.389Z",
+    "amount": 2961,
+    "customerCount": 27
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-17T13:00:42.389Z",
+    "amount": 162,
+    "customerCount": 42
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-17T14:00:42.389Z",
+    "amount": 2884,
+    "customerCount": 75
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-17T15:00:42.389Z",
+    "amount": 2766,
+    "customerCount": 19
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-17T16:00:42.389Z",
+    "amount": 391,
+    "customerCount": 36
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-17T17:00:42.389Z",
+    "amount": 4561,
+    "customerCount": 42
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-17T18:00:42.389Z",
+    "amount": 2796,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-18T07:00:42.389Z",
+    "amount": 2411,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-18T08:00:42.389Z",
+    "amount": 2306,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-18T09:00:42.389Z",
+    "amount": 3832,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-18T10:00:42.389Z",
+    "amount": 3176,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-18T11:00:42.389Z",
+    "amount": 2018,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-18T12:00:42.389Z",
+    "amount": 1580,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-18T13:00:42.389Z",
+    "amount": 2960,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-18T14:00:42.389Z",
+    "amount": 679,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-18T15:00:42.389Z",
+    "amount": 4724,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-18T16:00:42.389Z",
+    "amount": 1456,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-18T17:00:42.389Z",
+    "amount": 3342,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-18T18:00:42.389Z",
+    "amount": 1062,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-19T07:00:42.389Z",
+    "amount": 3321,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-19T08:00:42.389Z",
+    "amount": 1364,
+    "customerCount": 58
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-19T09:00:42.389Z",
+    "amount": 883,
+    "customerCount": 34
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-19T10:00:42.389Z",
+    "amount": 3782,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-19T11:00:42.389Z",
+    "amount": 2951,
+    "customerCount": 28
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-19T12:00:42.389Z",
+    "amount": 3337,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-19T13:00:42.389Z",
+    "amount": 4982,
+    "customerCount": 7
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-19T14:00:42.389Z",
+    "amount": 2218,
+    "customerCount": 7
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-19T15:00:42.389Z",
+    "amount": 403,
+    "customerCount": 8
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-19T16:00:42.389Z",
+    "amount": 1881,
+    "customerCount": 13
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-19T17:00:42.389Z",
+    "amount": 1833,
+    "customerCount": 74
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-19T18:00:42.389Z",
+    "amount": 4005,
+    "customerCount": 46
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-20T07:00:42.389Z",
+    "amount": 175,
+    "customerCount": 26
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-20T08:00:42.389Z",
+    "amount": 2206,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-20T09:00:42.389Z",
+    "amount": 3737,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-20T10:00:42.389Z",
+    "amount": 4334,
+    "customerCount": 9
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-20T11:00:42.389Z",
+    "amount": 4352,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-20T12:00:42.389Z",
+    "amount": 387,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-20T13:00:42.389Z",
+    "amount": 4173,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-20T14:00:42.389Z",
+    "amount": 3923,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-20T15:00:42.389Z",
+    "amount": 1982,
+    "customerCount": 47
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-20T16:00:42.389Z",
+    "amount": 135,
+    "customerCount": 14
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-20T17:00:42.389Z",
+    "amount": 1949,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-20T18:00:42.389Z",
+    "amount": 3833,
+    "customerCount": 42
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-21T07:00:42.389Z",
+    "amount": 4961,
+    "customerCount": 47
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-21T08:00:42.389Z",
+    "amount": 446,
+    "customerCount": 34
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-21T09:00:42.389Z",
+    "amount": 2232,
+    "customerCount": 3
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-21T10:00:42.389Z",
+    "amount": 4755,
+    "customerCount": 4
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-21T11:00:42.389Z",
+    "amount": 4181,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-21T12:00:42.389Z",
+    "amount": 428,
+    "customerCount": 5
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-21T13:00:42.389Z",
+    "amount": 3568,
+    "customerCount": 51
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-21T14:00:42.389Z",
+    "amount": 1687,
+    "customerCount": 18
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-21T15:00:42.389Z",
+    "amount": 3557,
+    "customerCount": 63
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-21T16:00:42.389Z",
+    "amount": 971,
+    "customerCount": 21
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-21T17:00:42.389Z",
+    "amount": 1695,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-21T18:00:42.389Z",
+    "amount": 1855,
+    "customerCount": 18
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-22T07:00:42.389Z",
+    "amount": 1394,
+    "customerCount": 9
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-22T08:00:42.389Z",
+    "amount": 2180,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-22T09:00:42.389Z",
+    "amount": 2860,
+    "customerCount": 8
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-22T10:00:42.389Z",
+    "amount": 3448,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-22T11:00:42.389Z",
+    "amount": 1684,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-22T12:00:42.389Z",
+    "amount": 2658,
+    "customerCount": 27
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-22T13:00:42.389Z",
+    "amount": 130,
+    "customerCount": 43
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-22T14:00:42.389Z",
+    "amount": 3071,
+    "customerCount": 91
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-22T15:00:42.389Z",
+    "amount": 4433,
+    "customerCount": 16
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-22T16:00:42.389Z",
+    "amount": 1807,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-22T17:00:42.389Z",
+    "amount": 2353,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-22T18:00:42.389Z",
+    "amount": 4943,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-23T07:00:42.389Z",
+    "amount": 2800,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-23T08:00:42.389Z",
+    "amount": 3942,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-23T09:00:42.389Z",
+    "amount": 2344,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-23T10:00:42.389Z",
+    "amount": 3216,
+    "customerCount": 33
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-23T11:00:42.389Z",
+    "amount": 1700,
+    "customerCount": 22
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-23T12:00:42.389Z",
+    "amount": 3735,
+    "customerCount": 30
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-23T13:00:42.389Z",
+    "amount": 2908,
+    "customerCount": 5
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-23T14:00:42.389Z",
+    "amount": 397,
+    "customerCount": 3
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-23T15:00:42.389Z",
+    "amount": 2039,
+    "customerCount": 19
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-23T16:00:42.389Z",
+    "amount": 3965,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-23T17:00:42.389Z",
+    "amount": 4285,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-23T18:00:42.389Z",
+    "amount": 1044,
+    "customerCount": 4
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-24T07:00:42.389Z",
+    "amount": 2008,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-24T08:00:42.389Z",
+    "amount": 4398,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-24T09:00:42.389Z",
+    "amount": 3170,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-24T10:00:42.389Z",
+    "amount": 1986,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-24T11:00:42.389Z",
+    "amount": 4022,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-24T12:00:42.389Z",
+    "amount": 1859,
+    "customerCount": 30
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-24T13:00:42.389Z",
+    "amount": 2944,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-24T14:00:42.389Z",
+    "amount": 4233,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-24T15:00:42.389Z",
+    "amount": 3389,
+    "customerCount": 35
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-24T16:00:42.389Z",
+    "amount": 3198,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-24T17:00:42.389Z",
+    "amount": 2722,
+    "customerCount": 35
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-24T18:00:42.389Z",
+    "amount": 2227,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-25T07:00:42.389Z",
+    "amount": 2132,
+    "customerCount": 53
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-25T08:00:42.389Z",
+    "amount": 2455,
+    "customerCount": 31
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-25T09:00:42.389Z",
+    "amount": 2695,
+    "customerCount": 13
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-25T10:00:42.389Z",
+    "amount": 3396,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-25T11:00:42.389Z",
+    "amount": 3238,
+    "customerCount": 56
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-25T12:00:42.389Z",
+    "amount": 2136,
+    "customerCount": 68
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-25T13:00:42.389Z",
+    "amount": 4549,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-25T14:00:42.389Z",
+    "amount": 2963,
+    "customerCount": 24
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-25T15:00:42.389Z",
+    "amount": 883,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-25T16:00:42.389Z",
+    "amount": 575,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-25T17:00:42.389Z",
+    "amount": 4495,
+    "customerCount": 45
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-25T18:00:42.389Z",
+    "amount": 300,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-26T07:00:42.389Z",
+    "amount": 4625,
+    "customerCount": 9
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-26T08:00:42.389Z",
+    "amount": 1188,
+    "customerCount": 10
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-26T09:00:42.389Z",
+    "amount": 3791,
+    "customerCount": 15
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-26T10:00:42.389Z",
+    "amount": 699,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-26T11:00:42.389Z",
+    "amount": 2543,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-26T12:00:42.389Z",
+    "amount": 593,
+    "customerCount": 9
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-26T13:00:42.389Z",
+    "amount": 4735,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-26T14:00:42.389Z",
+    "amount": 254,
+    "customerCount": 57
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-26T15:00:42.389Z",
+    "amount": 4248,
+    "customerCount": 31
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-26T16:00:42.389Z",
+    "amount": 2615,
+    "customerCount": 48
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-26T17:00:42.389Z",
+    "amount": 4936,
+    "customerCount": 46
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-26T18:00:42.389Z",
+    "amount": 595,
+    "customerCount": 31
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-27T07:00:42.389Z",
+    "amount": 2894,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-27T08:00:42.389Z",
+    "amount": 1747,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-27T09:00:42.389Z",
+    "amount": 2401,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-27T10:00:42.389Z",
+    "amount": 2379,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-27T11:00:42.389Z",
+    "amount": 2635,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-27T12:00:42.389Z",
+    "amount": 4315,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-27T13:00:42.389Z",
+    "amount": 2985,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-27T14:00:42.389Z",
+    "amount": 328,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-27T15:00:42.389Z",
+    "amount": 3053,
+    "customerCount": 21
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-27T16:00:42.389Z",
+    "amount": 3440,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-27T17:00:42.389Z",
+    "amount": 4599,
+    "customerCount": 48
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-27T18:00:42.389Z",
+    "amount": 3094,
+    "customerCount": 12
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-28T07:00:42.389Z",
+    "amount": 4909,
+    "customerCount": 55
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-28T08:00:42.389Z",
+    "amount": 2762,
+    "customerCount": 32
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-28T09:00:42.389Z",
+    "amount": 2586,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-28T10:00:42.389Z",
+    "amount": 3865,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-28T11:00:42.389Z",
+    "amount": 1364,
+    "customerCount": 37
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-28T12:00:42.389Z",
+    "amount": 2679,
+    "customerCount": 35
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-28T13:00:42.389Z",
+    "amount": 2140,
+    "customerCount": 34
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-28T14:00:42.389Z",
+    "amount": 4876,
+    "customerCount": 7
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-28T15:00:42.389Z",
+    "amount": 1251,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-28T16:00:42.389Z",
+    "amount": 2785,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-28T17:00:42.389Z",
+    "amount": 3328,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-28T18:00:42.389Z",
+    "amount": 3920,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-29T07:00:42.389Z",
+    "amount": 4144,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-29T08:00:42.389Z",
+    "amount": 1122,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-29T09:00:42.389Z",
+    "amount": 803,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-29T10:00:42.389Z",
+    "amount": 3969,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-29T11:00:42.389Z",
+    "amount": 771,
+    "customerCount": 38
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-29T12:00:42.389Z",
+    "amount": 3284,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-29T13:00:42.389Z",
+    "amount": 3128,
+    "customerCount": 42
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-29T14:00:42.389Z",
+    "amount": 501,
+    "customerCount": 29
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-29T15:00:42.389Z",
+    "amount": 2150,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-29T16:00:42.389Z",
+    "amount": 1240,
+    "customerCount": 33
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-29T17:00:42.389Z",
+    "amount": 4015,
+    "customerCount": 33
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-29T18:00:42.389Z",
+    "amount": 552,
+    "customerCount": 15
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-30T07:00:42.389Z",
+    "amount": 2534,
+    "customerCount": 34
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-30T08:00:42.389Z",
+    "amount": 2692,
+    "customerCount": 26
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-30T09:00:42.389Z",
+    "amount": 4271,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-30T10:00:42.389Z",
+    "amount": 1638,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-30T11:00:42.389Z",
+    "amount": 2993,
+    "customerCount": 54
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-30T12:00:42.389Z",
+    "amount": 1709,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-30T13:00:42.389Z",
+    "amount": 707,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-30T14:00:42.389Z",
+    "amount": 2605,
+    "customerCount": 30
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-30T15:00:42.389Z",
+    "amount": 4407,
+    "customerCount": 34
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-30T16:00:42.389Z",
+    "amount": 618,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-30T17:00:42.389Z",
+    "amount": 2962,
+    "customerCount": 11
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-30T18:00:42.389Z",
+    "amount": 2657,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-01T07:00:42.389Z",
+    "amount": 4300,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-01T08:00:42.389Z",
+    "amount": 2419,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-01T09:00:42.389Z",
+    "amount": 4075,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-01T10:00:42.389Z",
+    "amount": 4424,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-01T11:00:42.389Z",
+    "amount": 4496,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-01T12:00:42.389Z",
+    "amount": 1056,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-01T13:00:42.389Z",
+    "amount": 273,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-01T14:00:42.389Z",
+    "amount": 641,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-01T15:00:42.389Z",
+    "amount": 4017,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-01T16:00:42.389Z",
+    "amount": 925,
+    "customerCount": 35
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-01T17:00:42.389Z",
+    "amount": 581,
+    "customerCount": 27
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-01T18:00:42.389Z",
+    "amount": 4127,
+    "customerCount": 9
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-02T07:00:42.389Z",
+    "amount": 2773,
+    "customerCount": 23
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-02T08:00:42.389Z",
+    "amount": 1115,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-02T09:00:42.389Z",
+    "amount": 4006,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-02T10:00:42.389Z",
+    "amount": 4215,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-02T11:00:42.389Z",
+    "amount": 2345,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-02T12:00:42.389Z",
+    "amount": 299,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-02T13:00:42.389Z",
+    "amount": 3567,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-02T14:00:42.389Z",
+    "amount": 3232,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-02T15:00:42.389Z",
+    "amount": 295,
+    "customerCount": 6
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-02T16:00:42.389Z",
+    "amount": 300,
+    "customerCount": 25
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-02T17:00:42.389Z",
+    "amount": 2660,
+    "customerCount": 85
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-02T18:00:42.389Z",
+    "amount": 886,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-03T07:00:42.389Z",
+    "amount": 3441,
+    "customerCount": 20
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-03T08:00:42.389Z",
+    "amount": 2193,
+    "customerCount": 45
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-03T09:00:42.389Z",
+    "amount": 3427,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-03T10:00:42.389Z",
+    "amount": 2070,
+    "customerCount": 59
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-03T11:00:42.389Z",
+    "amount": 1482,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-03T12:00:42.389Z",
+    "amount": 3705,
+    "customerCount": 43
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-03T13:00:42.389Z",
+    "amount": 2286,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-03T14:00:42.389Z",
+    "amount": 4147,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-03T15:00:42.389Z",
+    "amount": 541,
+    "customerCount": 27
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-03T16:00:42.389Z",
+    "amount": 3290,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-03T17:00:42.389Z",
+    "amount": 400,
+    "customerCount": 48
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-03T18:00:42.389Z",
+    "amount": 3450,
+    "customerCount": 18
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-04T07:00:42.389Z",
+    "amount": 4481,
+    "customerCount": 46
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-04T08:00:42.389Z",
+    "amount": 2040,
+    "customerCount": 54
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-04T09:00:42.389Z",
+    "amount": 4758,
+    "customerCount": 57
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-04T10:00:42.389Z",
+    "amount": 3717,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-04T11:00:42.389Z",
+    "amount": 153,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-04T12:00:42.389Z",
+    "amount": 3749,
+    "customerCount": 32
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-04T13:00:42.389Z",
+    "amount": 2774,
+    "customerCount": 59
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-04T14:00:42.389Z",
+    "amount": 2507,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-04T15:00:42.389Z",
+    "amount": 2075,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-04T16:00:42.389Z",
+    "amount": 2016,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-04T17:00:42.389Z",
+    "amount": 3614,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-04T18:00:42.389Z",
+    "amount": 4777,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-05T07:00:42.389Z",
+    "amount": 3270,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-05T08:00:42.389Z",
+    "amount": 4193,
+    "customerCount": 6
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-05T09:00:42.389Z",
+    "amount": 1994,
+    "customerCount": 34
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-05T10:00:42.389Z",
+    "amount": 1093,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-05T11:00:42.389Z",
+    "amount": 2097,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-05T12:00:42.389Z",
+    "amount": 939,
+    "customerCount": 4
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-05T13:00:42.389Z",
+    "amount": 2296,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-05T14:00:42.389Z",
+    "amount": 2242,
+    "customerCount": 4
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-05T15:00:42.389Z",
+    "amount": 2742,
+    "customerCount": 27
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-05T16:00:42.389Z",
+    "amount": 918,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-05T17:00:42.389Z",
+    "amount": 3712,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-05T18:00:42.389Z",
+    "amount": 326,
+    "customerCount": 19
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-06T07:00:42.389Z",
+    "amount": 4599,
+    "customerCount": 39
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-06T08:00:42.389Z",
+    "amount": 4020,
+    "customerCount": 18
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-06T09:00:42.389Z",
+    "amount": 2116,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-06T10:00:42.389Z",
+    "amount": 1124,
+    "customerCount": 34
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-06T11:00:42.389Z",
+    "amount": 3265,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-06T12:00:42.389Z",
+    "amount": 4913,
+    "customerCount": 12
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-06T13:00:42.389Z",
+    "amount": 3925,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-06T14:00:42.389Z",
+    "amount": 4543,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-06T15:00:42.389Z",
+    "amount": 1635,
+    "customerCount": 5
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-06T16:00:42.389Z",
+    "amount": 2801,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-06T17:00:42.389Z",
+    "amount": 1639,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-06T18:00:42.389Z",
+    "amount": 4126,
+    "customerCount": 18
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-07T07:00:42.389Z",
+    "amount": 3039,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-07T08:00:42.389Z",
+    "amount": 3680,
+    "customerCount": 49
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-07T09:00:42.389Z",
+    "amount": 1489,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-07T10:00:42.389Z",
+    "amount": 2536,
+    "customerCount": 40
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-07T11:00:42.389Z",
+    "amount": 3068,
+    "customerCount": 18
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-07T12:00:42.389Z",
+    "amount": 912,
+    "customerCount": 9
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-07T13:00:42.389Z",
+    "amount": 1358,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-07T14:00:42.389Z",
+    "amount": 1566,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-07T15:00:42.389Z",
+    "amount": 4823,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-07T16:00:42.389Z",
+    "amount": 1753,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-07T17:00:42.389Z",
+    "amount": 2313,
+    "customerCount": 3
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-07T18:00:42.389Z",
+    "amount": 975,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-08T07:00:42.389Z",
+    "amount": 4765,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-08T08:00:42.389Z",
+    "amount": 3129,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-08T09:00:42.389Z",
+    "amount": 3890,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-08T10:00:42.389Z",
+    "amount": 4845,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-08T11:00:42.389Z",
+    "amount": 2788,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-08T12:00:42.389Z",
+    "amount": 2513,
+    "customerCount": 59
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-08T13:00:42.389Z",
+    "amount": 1171,
+    "customerCount": 49
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-08T14:00:42.389Z",
+    "amount": 4817,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-08T15:00:42.389Z",
+    "amount": 3075,
+    "customerCount": 39
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-08T16:00:42.389Z",
+    "amount": 2497,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-08T17:00:42.389Z",
+    "amount": 1133,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-08T18:00:42.389Z",
+    "amount": 4167,
+    "customerCount": 45
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-09T07:00:42.389Z",
+    "amount": 639,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-09T08:00:42.389Z",
+    "amount": 1045,
+    "customerCount": 46
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-09T09:00:42.389Z",
+    "amount": 1778,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-09T10:00:42.389Z",
+    "amount": 2462,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-09T11:00:42.389Z",
+    "amount": 3812,
+    "customerCount": 38
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-09T12:00:42.389Z",
+    "amount": 1534,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-09T13:00:42.389Z",
+    "amount": 4768,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-09T14:00:42.389Z",
+    "amount": 2008,
+    "customerCount": 25
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-09T15:00:42.389Z",
+    "amount": 4964,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-09T16:00:42.389Z",
+    "amount": 119,
+    "customerCount": 19
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-09T17:00:42.389Z",
+    "amount": 4717,
+    "customerCount": 11
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-09T18:00:42.389Z",
+    "amount": 4848,
+    "customerCount": 25
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-10T07:00:42.389Z",
+    "amount": 4645,
+    "customerCount": 52
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-10T08:00:42.389Z",
+    "amount": 1838,
+    "customerCount": 35
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-10T09:00:42.389Z",
+    "amount": 1263,
+    "customerCount": 13
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-10T10:00:42.389Z",
+    "amount": 588,
+    "customerCount": 11
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-10T11:00:42.389Z",
+    "amount": 2719,
+    "customerCount": 42
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-10T12:00:42.389Z",
+    "amount": 3862,
+    "customerCount": 44
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-10T13:00:42.389Z",
+    "amount": 1830,
+    "customerCount": 27
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-10T14:00:42.389Z",
+    "amount": 2636,
+    "customerCount": 53
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-10T15:00:42.389Z",
+    "amount": 4515,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-10T16:00:42.389Z",
+    "amount": 545,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-10T17:00:42.389Z",
+    "amount": 2948,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-10T18:00:42.389Z",
+    "amount": 4177,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-11T07:00:42.389Z",
+    "amount": 1580,
+    "customerCount": 12
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-11T08:00:42.389Z",
+    "amount": 3653,
+    "customerCount": 47
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-11T09:00:42.389Z",
+    "amount": 2192,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-11T10:00:42.389Z",
+    "amount": 954,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-11T11:00:42.389Z",
+    "amount": 1801,
+    "customerCount": 71
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-11T12:00:42.389Z",
+    "amount": 3938,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-11T13:00:42.389Z",
+    "amount": 362,
+    "customerCount": 42
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-11T14:00:42.389Z",
+    "amount": 243,
+    "customerCount": 69
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-11T15:00:42.389Z",
+    "amount": 2400,
+    "customerCount": 11
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-11T16:00:42.389Z",
+    "amount": 1476,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-11T17:00:42.389Z",
+    "amount": 3335,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-11T18:00:42.389Z",
+    "amount": 3220,
+    "customerCount": 37
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-12T07:00:42.389Z",
+    "amount": 3018,
+    "customerCount": 49
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-12T08:00:42.389Z",
+    "amount": 1071,
+    "customerCount": 10
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-12T09:00:42.389Z",
+    "amount": 4572,
+    "customerCount": 32
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-12T10:00:42.389Z",
+    "amount": 2346,
+    "customerCount": 55
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-12T11:00:42.389Z",
+    "amount": 4553,
+    "customerCount": 3
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-12T12:00:42.389Z",
+    "amount": 4410,
+    "customerCount": 14
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-12T13:00:42.389Z",
+    "amount": 3899,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-12T14:00:42.389Z",
+    "amount": 3018,
+    "customerCount": 39
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-12T15:00:42.389Z",
+    "amount": 1303,
+    "customerCount": 38
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-12T16:00:42.389Z",
+    "amount": 3291,
+    "customerCount": 34
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-12T17:00:42.389Z",
+    "amount": 1828,
+    "customerCount": 24
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-12T18:00:42.389Z",
+    "amount": 3611,
+    "customerCount": 58
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-13T07:00:42.389Z",
+    "amount": 4062,
+    "customerCount": 39
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-13T08:00:42.389Z",
+    "amount": 3607,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-13T09:00:42.389Z",
+    "amount": 3214,
+    "customerCount": 63
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-13T10:00:42.389Z",
+    "amount": 143,
+    "customerCount": 36
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-13T11:00:42.389Z",
+    "amount": 2850,
+    "customerCount": 19
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-13T12:00:42.389Z",
+    "amount": 1856,
+    "customerCount": 39
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-13T13:00:42.389Z",
+    "amount": 1913,
+    "customerCount": 96
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-13T14:00:42.389Z",
+    "amount": 4529,
+    "customerCount": 26
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-13T15:00:42.389Z",
+    "amount": 4450,
+    "customerCount": 23
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-13T16:00:42.389Z",
+    "amount": 1339,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-13T17:00:42.389Z",
+    "amount": 3156,
+    "customerCount": 25
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-13T18:00:42.389Z",
+    "amount": 4212,
+    "customerCount": 21
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-14T07:00:42.389Z",
+    "amount": 4178,
+    "customerCount": 55
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-14T08:00:42.389Z",
+    "amount": 967,
+    "customerCount": 12
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-14T09:00:42.389Z",
+    "amount": 4988,
+    "customerCount": 62
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-14T10:00:42.389Z",
+    "amount": 702,
+    "customerCount": 29
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-14T11:00:42.389Z",
+    "amount": 2642,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-14T12:00:42.389Z",
+    "amount": 3892,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-14T13:00:42.389Z",
+    "amount": 4315,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-14T14:00:42.389Z",
+    "amount": 304,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-14T15:00:42.389Z",
+    "amount": 837,
+    "customerCount": 59
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-14T16:00:42.389Z",
+    "amount": 498,
+    "customerCount": 9
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-14T17:00:42.389Z",
+    "amount": 2130,
+    "customerCount": 48
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-14T18:00:42.389Z",
+    "amount": 3600,
+    "customerCount": 79
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-15T07:00:42.389Z",
+    "amount": 1706,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-15T08:00:42.389Z",
+    "amount": 2210,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-15T09:00:42.389Z",
+    "amount": 4477,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-15T10:00:42.389Z",
+    "amount": 4203,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-15T11:00:42.389Z",
+    "amount": 1522,
+    "customerCount": 8
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-15T12:00:42.389Z",
+    "amount": 4862,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-15T13:00:42.389Z",
+    "amount": 3461,
+    "customerCount": 56
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-15T14:00:42.389Z",
+    "amount": 2000,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-15T15:00:42.389Z",
+    "amount": 541,
+    "customerCount": 50
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-15T16:00:42.389Z",
+    "amount": 2667,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-15T17:00:42.389Z",
+    "amount": 3714,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-15T18:00:42.389Z",
+    "amount": 2824,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-16T07:00:42.389Z",
+    "amount": 3201,
+    "customerCount": 5
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-16T08:00:42.389Z",
+    "amount": 3356,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-16T09:00:42.389Z",
+    "amount": 754,
+    "customerCount": 70
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-16T10:00:42.389Z",
+    "amount": 3345,
+    "customerCount": 27
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-16T11:00:42.389Z",
+    "amount": 4918,
+    "customerCount": 2
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-16T12:00:42.389Z",
+    "amount": 4891,
+    "customerCount": 10
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-16T13:00:42.389Z",
+    "amount": 2010,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-16T14:00:42.389Z",
+    "amount": 2970,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-16T15:00:42.389Z",
+    "amount": 1711,
+    "customerCount": 57
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-16T16:00:42.389Z",
+    "amount": 878,
+    "customerCount": 46
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-16T17:00:42.389Z",
+    "amount": 3001,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-16T18:00:42.389Z",
+    "amount": 1425,
+    "customerCount": 57
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-17T07:00:42.389Z",
+    "amount": 2638,
+    "customerCount": 48
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-17T08:00:42.389Z",
+    "amount": 1265,
+    "customerCount": 39
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-17T09:00:42.389Z",
+    "amount": 1100,
+    "customerCount": 68
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-17T10:00:42.389Z",
+    "amount": 1144,
+    "customerCount": 38
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-17T11:00:42.389Z",
+    "amount": 784,
+    "customerCount": 21
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-17T12:00:42.389Z",
+    "amount": 2708,
+    "customerCount": 78
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-17T13:00:42.389Z",
+    "amount": 377,
+    "customerCount": 4
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-17T14:00:42.389Z",
+    "amount": 2266,
+    "customerCount": 47
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-17T15:00:42.389Z",
+    "amount": 3589,
+    "customerCount": 53
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-17T16:00:42.389Z",
+    "amount": 397,
+    "customerCount": 6
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-17T17:00:42.389Z",
+    "amount": 3776,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-17T18:00:42.389Z",
+    "amount": 2000,
+    "customerCount": 45
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-18T07:00:42.389Z",
+    "amount": 3267,
+    "customerCount": 25
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-18T08:00:42.389Z",
+    "amount": 382,
+    "customerCount": 2
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-18T09:00:42.389Z",
+    "amount": 2431,
+    "customerCount": 18
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-18T10:00:42.389Z",
+    "amount": 1194,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-18T11:00:42.389Z",
+    "amount": 1676,
+    "customerCount": 73
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-18T12:00:42.389Z",
+    "amount": 4617,
+    "customerCount": 33
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-18T13:00:42.389Z",
+    "amount": 285,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-18T14:00:42.389Z",
+    "amount": 3528,
+    "customerCount": 45
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-18T15:00:42.389Z",
+    "amount": 3880,
+    "customerCount": 82
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-18T16:00:42.389Z",
+    "amount": 2023,
+    "customerCount": 28
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-18T17:00:42.389Z",
+    "amount": 3476,
+    "customerCount": 97
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-18T18:00:42.389Z",
+    "amount": 1295,
+    "customerCount": 29
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-19T07:00:42.389Z",
+    "amount": 1084,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-19T08:00:42.389Z",
+    "amount": 149,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-19T09:00:42.389Z",
+    "amount": 1258,
+    "customerCount": 34
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-19T10:00:42.389Z",
+    "amount": 593,
+    "customerCount": 2
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-19T11:00:42.389Z",
+    "amount": 4033,
+    "customerCount": 41
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-19T12:00:42.389Z",
+    "amount": 4689,
+    "customerCount": 46
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-19T13:00:42.389Z",
+    "amount": 3869,
+    "customerCount": 2
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-19T14:00:42.389Z",
+    "amount": 3002,
+    "customerCount": 37
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-19T15:00:42.389Z",
+    "amount": 587,
+    "customerCount": 22
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-19T16:00:42.389Z",
+    "amount": 278,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-19T17:00:42.389Z",
+    "amount": 1390,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-19T18:00:42.389Z",
+    "amount": 888,
+    "customerCount": 5
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-20T07:00:42.389Z",
+    "amount": 1869,
+    "customerCount": 44
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-20T08:00:42.389Z",
+    "amount": 3565,
+    "customerCount": 27
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-20T09:00:42.389Z",
+    "amount": 1424,
+    "customerCount": 9
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-20T10:00:42.389Z",
+    "amount": 3564,
+    "customerCount": 68
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-20T11:00:42.389Z",
+    "amount": 2418,
+    "customerCount": 54
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-20T12:00:42.389Z",
+    "amount": 1690,
+    "customerCount": 26
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-20T13:00:42.389Z",
+    "amount": 4404,
+    "customerCount": 32
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-20T14:00:42.389Z",
+    "amount": 4443,
+    "customerCount": 81
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-20T15:00:42.389Z",
+    "amount": 117,
+    "customerCount": 94
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-20T16:00:42.389Z",
+    "amount": 1708,
+    "customerCount": 88
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-20T17:00:42.389Z",
+    "amount": 751,
+    "customerCount": 54
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-20T18:00:42.389Z",
+    "amount": 2290,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-21T07:00:42.389Z",
+    "amount": 666,
+    "customerCount": 41
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-21T08:00:42.389Z",
+    "amount": 4557,
+    "customerCount": 91
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-21T09:00:42.389Z",
+    "amount": 859,
+    "customerCount": 70
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-21T10:00:42.389Z",
+    "amount": 2027,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-21T11:00:42.389Z",
+    "amount": 2071,
+    "customerCount": 41
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-21T12:00:42.389Z",
+    "amount": 4909,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-21T13:00:42.389Z",
+    "amount": 1356,
+    "customerCount": 30
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-21T14:00:42.389Z",
+    "amount": 3776,
+    "customerCount": 39
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-21T15:00:42.389Z",
+    "amount": 3447,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-21T16:00:42.389Z",
+    "amount": 3120,
+    "customerCount": 12
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-21T17:00:42.389Z",
+    "amount": 2370,
+    "customerCount": 39
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-21T18:00:42.389Z",
+    "amount": 4833,
+    "customerCount": 49
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-22T07:00:42.389Z",
+    "amount": 1537,
+    "customerCount": 40
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-22T08:00:42.389Z",
+    "amount": 2138,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-22T09:00:42.389Z",
+    "amount": 4930,
+    "customerCount": 20
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-22T10:00:42.389Z",
+    "amount": 2741,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-22T11:00:42.389Z",
+    "amount": 2186,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-22T12:00:42.389Z",
+    "amount": 1764,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-22T13:00:42.389Z",
+    "amount": 1763,
+    "customerCount": 32
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-22T14:00:42.389Z",
+    "amount": 1509,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-22T15:00:42.389Z",
+    "amount": 3203,
+    "customerCount": 57
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-22T16:00:42.389Z",
+    "amount": 1904,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-22T17:00:42.389Z",
+    "amount": 208,
+    "customerCount": 60
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-22T18:00:42.389Z",
+    "amount": 3945,
+    "customerCount": 14
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-23T07:00:42.389Z",
+    "amount": 3503,
+    "customerCount": 16
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-23T08:00:42.389Z",
+    "amount": 4996,
+    "customerCount": 36
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-23T09:00:42.389Z",
+    "amount": 4381,
+    "customerCount": 23
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-23T10:00:42.389Z",
+    "amount": 4406,
+    "customerCount": 45
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-23T11:00:42.389Z",
+    "amount": 3326,
+    "customerCount": 5
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-23T12:00:42.389Z",
+    "amount": 4916,
+    "customerCount": 33
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-23T13:00:42.389Z",
+    "amount": 2586,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-23T14:00:42.389Z",
+    "amount": 4462,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-23T15:00:42.389Z",
+    "amount": 275,
+    "customerCount": 51
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-23T16:00:42.389Z",
+    "amount": 4469,
+    "customerCount": 52
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-23T17:00:42.389Z",
+    "amount": 2516,
+    "customerCount": 55
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-23T18:00:42.389Z",
+    "amount": 232,
+    "customerCount": 70
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-24T07:00:42.389Z",
+    "amount": 3943,
+    "customerCount": 39
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-24T08:00:42.389Z",
+    "amount": 538,
+    "customerCount": 59
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-24T09:00:42.389Z",
+    "amount": 1512,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-24T10:00:42.389Z",
+    "amount": 4029,
+    "customerCount": 74
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-24T11:00:42.389Z",
+    "amount": 4735,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-24T12:00:42.389Z",
+    "amount": 2133,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-24T13:00:42.389Z",
+    "amount": 1429,
+    "customerCount": 6
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-24T14:00:42.389Z",
+    "amount": 3749,
+    "customerCount": 56
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-24T15:00:42.389Z",
+    "amount": 2752,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-24T16:00:42.389Z",
+    "amount": 2199,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-24T17:00:42.389Z",
+    "amount": 3107,
+    "customerCount": 47
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-24T18:00:42.389Z",
+    "amount": 2593,
+    "customerCount": 9
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-25T07:00:42.389Z",
+    "amount": 3021,
+    "customerCount": 7
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-25T08:00:42.389Z",
+    "amount": 1975,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-25T09:00:42.389Z",
+    "amount": 782,
+    "customerCount": 43
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-25T10:00:42.389Z",
+    "amount": 2742,
+    "customerCount": 50
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-25T11:00:42.389Z",
+    "amount": 4918,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-25T12:00:42.389Z",
+    "amount": 952,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-25T13:00:42.389Z",
+    "amount": 3872,
+    "customerCount": 2
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-25T14:00:42.389Z",
+    "amount": 4229,
+    "customerCount": 48
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-25T15:00:42.389Z",
+    "amount": 586,
+    "customerCount": 9
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-25T16:00:42.389Z",
+    "amount": 2087,
+    "customerCount": 51
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-25T17:00:42.389Z",
+    "amount": 3193,
+    "customerCount": 47
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-25T18:00:42.389Z",
+    "amount": 248,
+    "customerCount": 3
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-26T07:00:42.389Z",
+    "amount": 1395,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-26T08:00:42.389Z",
+    "amount": 1832,
+    "customerCount": 48
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-26T09:00:42.389Z",
+    "amount": 2081,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-26T10:00:42.389Z",
+    "amount": 3702,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-26T11:00:42.389Z",
+    "amount": 742,
+    "customerCount": 20
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-26T12:00:42.389Z",
+    "amount": 398,
+    "customerCount": 9
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-26T13:00:42.389Z",
+    "amount": 303,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-26T14:00:42.389Z",
+    "amount": 3540,
+    "customerCount": 56
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-26T15:00:42.389Z",
+    "amount": 1680,
+    "customerCount": 46
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-26T16:00:42.389Z",
+    "amount": 151,
+    "customerCount": 24
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-26T17:00:42.389Z",
+    "amount": 2785,
+    "customerCount": 39
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-26T18:00:42.389Z",
+    "amount": 1790,
+    "customerCount": 54
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-27T07:00:42.389Z",
+    "amount": 4877,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-27T08:00:42.389Z",
+    "amount": 4130,
+    "customerCount": 22
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-27T09:00:42.389Z",
+    "amount": 694,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-27T10:00:42.389Z",
+    "amount": 1666,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-27T11:00:42.389Z",
+    "amount": 4332,
+    "customerCount": 5
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-27T12:00:42.389Z",
+    "amount": 1118,
+    "customerCount": 82
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-27T13:00:42.389Z",
+    "amount": 2957,
+    "customerCount": 54
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-27T14:00:42.389Z",
+    "amount": 3607,
+    "customerCount": 2
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-27T15:00:42.389Z",
+    "amount": 1590,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-27T16:00:42.389Z",
+    "amount": 4874,
+    "customerCount": 69
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-27T17:00:42.389Z",
+    "amount": 3512,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-27T18:00:42.389Z",
+    "amount": 4036,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-28T07:00:42.389Z",
+    "amount": 517,
+    "customerCount": 52
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-28T08:00:42.389Z",
+    "amount": 1174,
+    "customerCount": 50
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-28T09:00:42.389Z",
+    "amount": 3358,
+    "customerCount": 23
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-28T10:00:42.389Z",
+    "amount": 4364,
+    "customerCount": 73
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-28T11:00:42.389Z",
+    "amount": 1428,
+    "customerCount": 27
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-28T12:00:42.389Z",
+    "amount": 4903,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-28T13:00:42.389Z",
+    "amount": 4171,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-28T14:00:42.389Z",
+    "amount": 2978,
+    "customerCount": 65
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-28T15:00:42.389Z",
+    "amount": 4183,
+    "customerCount": 4
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-28T16:00:42.389Z",
+    "amount": 2589,
+    "customerCount": 58
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-28T17:00:42.389Z",
+    "amount": 1820,
+    "customerCount": 65
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-28T18:00:42.389Z",
+    "amount": 2586,
+    "customerCount": 69
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-29T07:00:42.389Z",
+    "amount": 3612,
+    "customerCount": 62
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-29T08:00:42.389Z",
+    "amount": 256,
+    "customerCount": 63
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-29T09:00:42.389Z",
+    "amount": 2166,
+    "customerCount": 74
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-29T10:00:42.389Z",
+    "amount": 3798,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-29T11:00:42.389Z",
+    "amount": 747,
+    "customerCount": 11
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-29T12:00:42.389Z",
+    "amount": 1757,
+    "customerCount": 32
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-29T13:00:42.389Z",
+    "amount": 2254,
+    "customerCount": 42
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-29T14:00:42.389Z",
+    "amount": 3567,
+    "customerCount": 12
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-29T15:00:42.389Z",
+    "amount": 2888,
+    "customerCount": 16
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-29T16:00:42.389Z",
+    "amount": 3774,
+    "customerCount": 29
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-29T17:00:42.389Z",
+    "amount": 1793,
+    "customerCount": 33
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-29T18:00:42.389Z",
+    "amount": 2445,
+    "customerCount": 60
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-30T07:00:42.389Z",
+    "amount": 1470,
+    "customerCount": 28
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-30T08:00:42.389Z",
+    "amount": 681,
+    "customerCount": 64
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-30T09:00:42.389Z",
+    "amount": 1436,
+    "customerCount": 93
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-30T10:00:42.389Z",
+    "amount": 1610,
+    "customerCount": 20
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-30T11:00:42.389Z",
+    "amount": 3749,
+    "customerCount": 22
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-30T12:00:42.389Z",
+    "amount": 1354,
+    "customerCount": 36
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-30T13:00:42.389Z",
+    "amount": 2768,
+    "customerCount": 10
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-30T14:00:42.389Z",
+    "amount": 2840,
+    "customerCount": 30
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-30T15:00:42.389Z",
+    "amount": 4748,
+    "customerCount": 31
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-30T16:00:42.389Z",
+    "amount": 4146,
+    "customerCount": 75
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-30T17:00:42.389Z",
+    "amount": 140,
+    "customerCount": 63
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-30T18:00:42.389Z",
+    "amount": 4312,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-31T07:00:42.389Z",
+    "amount": 702,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-31T08:00:42.389Z",
+    "amount": 566,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-31T09:00:42.389Z",
+    "amount": 3393,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-31T10:00:42.389Z",
+    "amount": 535,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-31T11:00:42.389Z",
+    "amount": 4932,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-31T12:00:42.389Z",
+    "amount": 599,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-31T13:00:42.389Z",
+    "amount": 3108,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-31T14:00:42.389Z",
+    "amount": 1668,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-31T15:00:42.389Z",
+    "amount": 2092,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-31T16:00:42.389Z",
+    "amount": 3654,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-31T17:00:42.389Z",
+    "amount": 1007,
+    "customerCount": null
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-31T18:00:42.389Z",
+    "amount": 2707,
+    "customerCount": null
   }
 ]

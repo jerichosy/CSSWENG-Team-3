@@ -226,31 +226,58 @@ const adminController = {
     generateReport: async (req, res) => {
         var { branchID, date } = req.body
 
+        var dateinput = new Date(date)
+        var monthvar = dateinput.getMonth() + 1
+
+        //change bruteforce
+        //account for leap years 
+        {
+            if (monthvar == 1 || monthvar == 3 || monthvar == 5 || monthvar == 7 || monthvar == 8 || monthvar == 10 || monthvar == 12) {
+                callimit = 31
+            }
+            else if (monthvar == 4 || monthvar == 6 || monthvar == 9 || monthvar == 11) {
+                callimit = 30
+            }
+            else if (monthvar == 2) {
+                callimit = 28
+            }
+
+            if (monthvar < 10) {
+                monthvar = "0" + monthvar
+            }
+        }
+
+        var startdate = dateinput.getFullYear() + "-" + monthvar + "-01T00:00:00.000Z"
+        var enddate = dateinput.getFullYear() + "-" + monthvar + "-" + callimit + "T23:59:59.000Z"
+        var monthstartdate = new Date(startdate)
+        var monthenddate = new Date(enddate)
+
         //Get expenses, sales, cheques
         {
-            var salary = await Expense.Admin.find({ branchID: branchID, category: 'Salary' })
-            var grocery = await Expense.Admin.find({ branchID: branchID, category: 'Grocery' })
-            var utilities = await Expense.Admin.find({ branchID: branchID, category: 'Utilities' })
-            var food = await Expense.Admin.find({ branchID: branchID, category: 'Food' })
-            var gasul = await Expense.Admin.find({ branchID: branchID, category: 'Gasul' })
-            var bakeryitems = await Expense.Admin.find({ branchID: branchID, category: 'Bakery Items' })
-            var rent = await Expense.Admin.find({ branchID: branchID, category: 'Rent' })
-            var misc = await Expense.Admin.find({ branchID: branchID, category: 'Misc' })
-            var taxes = await Expense.Admin.find({ branchID: branchID, category: 'Taxes' })
+            var salary = await Expense.Admin.find({ branchID: branchID, category: 'Salary', datetime: { $gte: monthstartdate, $lt: monthenddate } })
+            var grocery = await Expense.Admin.find({ branchID: branchID, category: 'Grocery', datetime: { $gte: monthstartdate, $lt: monthenddate } })
+            var utilities = await Expense.Admin.find({ branchID: branchID, category: 'Utilities', datetime: { $gte: monthstartdate, $lt: monthenddate } })
+            var food = await Expense.Admin.find({ branchID: branchID, category: 'Food', datetime: { $gte: monthstartdate, $lt: monthenddate } })
+            var gasul = await Expense.Admin.find({ branchID: branchID, category: 'Gasul', datetime: { $gte: monthstartdate, $lt: monthenddate } })
+            var bakeryitems = await Expense.Admin.find({ branchID: branchID, category: 'Bakery Items', datetime: { $gte: monthstartdate, $lt: monthenddate } })
+            var rent = await Expense.Admin.find({ branchID: branchID, category: 'Rent', datetime: { $gte: monthstartdate, $lt: monthenddate } })
+            var misc = await Expense.Admin.find({ branchID: branchID, category: 'Misc.', datetime: { $gte: monthstartdate, $lt: monthenddate } })
+            var taxes = await Expense.Admin.find({ branchID: branchID, category: 'Taxes', datetime: { $gte: monthstartdate, $lt: monthenddate } })
 
-            var csalary = await Cheque.find({ branchID: branchID, category: 'Salary' })
-            var cgrocery = await Cheque.find({ branchID: branchID, category: 'Grocery' })
-            var cutilities = await Cheque.find({ branchID: branchID, category: 'Utilities' })
-            var cfood = await Cheque.find({ branchID: branchID, category: 'Food' })
-            var cgasul = await Cheque.find({ branchID: branchID, category: 'Gasul' })
-            var cbakeryitems = await Cheque.find({ branchID: branchID, category: 'Bakery Items' })
-            var crent = await Cheque.find({ branchID: branchID, category: 'Rent' })
-            var cmisc = await Cheque.find({ branchID: branchID, category: 'Misc' })
-            var ctaxes = await Cheque.find({ branchID: branchID, category: 'Taxes' })
+            var csalary = await Cheque.find({ branchID: branchID, category: 'Salary', datetime: { $gte: monthstartdate, $lt: monthenddate } })
+            var cgrocery = await Cheque.find({ branchID: branchID, category: 'Grocery', datetime: { $gte: monthstartdate, $lt: monthenddate } })
+            var cutilities = await Cheque.find({ branchID: branchID, category: 'Utilities', datetime: { $gte: monthstartdate, $lt: monthenddate } })
+            var cfood = await Cheque.find({ branchID: branchID, category: 'Food', datetime: { $gte: monthstartdate, $lt: monthenddate } })
+            var cgasul = await Cheque.find({ branchID: branchID, category: 'Gasul', datetime: { $gte: monthstartdate, $lt: monthenddate } })
+            var cbakeryitems = await Cheque.find({ branchID: branchID, category: 'Bakery Items', datetime: { $gte: monthstartdate, $lt: monthenddate } })
+            var crent = await Cheque.find({ branchID: branchID, category: 'Rent', datetime: { $gte: monthstartdate, $lt: monthenddate } })
+            var cmisc = await Cheque.find({ branchID: branchID, category: 'Misc.', datetime: { $gte: monthstartdate, $lt: monthenddate } })
+            var ctaxes = await Cheque.find({ branchID: branchID, category: 'Taxes', datetime: { $gte: monthstartdate, $lt: monthenddate } })
 
-            var sales = await Sales.Admin.find({ branchID: branchID })
-            var cheque = await Cheque.find({ branchID: branchID })
+            var sales = await Sales.Admin.find({ branchID: branchID, datetime: { $gte: monthstartdate, $lt: monthenddate } })
+            var cheque = await Cheque.find({ branchID: branchID, datetime: { $gte: monthstartdate, $lt: monthenddate } })
         }
+
 
         const expense = [salary, grocery, utilities, food, gasul, bakeryitems, rent, misc, taxes]
 
@@ -396,26 +423,7 @@ const adminController = {
         console.log(totals)
 
         var reports = []
-        var dateinput = new Date(date)
-        var monthvar = dateinput.getMonth() + 1
 
-        //change bruteforce
-        //account for leap years
-        {
-            if (monthvar == 1 || monthvar == 3 || monthvar == 5 || monthvar == 7 || monthvar == 8 || monthvar == 10 || monthvar == 12) {
-                callimit = 31
-            }
-            else if (monthvar == 4 || monthvar == 6 || monthvar == 9 || monthvar == 11) {
-                callimit = 30
-            }
-            else if (monthvar == 2) {
-                callimit = 28
-            }
-
-            if (monthvar < 10) {
-                monthvar = "0" + monthvar
-            }
-        }
 
 
         var salesLast = await Sales.Admin.find().sort({ datetime: -1 }).limit(1)
@@ -453,7 +461,7 @@ const adminController = {
                 var dailygasul = await Expense.Admin.find({ branchID: branchID, category: 'Gasul', datetime: { $gte: startDate, $lt: endDate } })
                 var dailybakeryitems = await Expense.Admin.find({ branchID: branchID, category: 'Bakery Items', datetime: { $gte: startDate, $lt: endDate } })
                 var dailyrent = await Expense.Admin.find({ branchID: branchID, category: 'Rent', datetime: { $gte: startDate, $lt: endDate } })
-                var dailymisc = await Expense.Admin.find({ branchID: branchID, category: 'Misc', datetime: { $gte: startDate, $lt: endDate } })
+                var dailymisc = await Expense.Admin.find({ branchID: branchID, category: 'Misc.', datetime: { $gte: startDate, $lt: endDate } })
                 var dailytaxes = await Expense.Admin.find({ branchID: branchID, category: 'Taxes', datetime: { $gte: startDate, $lt: endDate } })
             }
 
@@ -597,9 +605,9 @@ const adminController = {
             worksheet.getCell('G5').value = "Utilities"
             worksheet.getCell('H5').value = "Food"
             worksheet.getCell('I5').value = "Gasul"
-            worksheet.getCell('J5').value = "Bakery"
+            worksheet.getCell('J5').value = "Bakery Items"
             worksheet.getCell('K5').value = "Rent"
-            worksheet.getCell('L5').value = "Misc"
+            worksheet.getCell('L5').value = "Misc."
             worksheet.getCell('M5').value = "Tax"
 
             worksheet.getCell('N5').value = "Date"
