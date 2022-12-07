@@ -2,6 +2,7 @@ const db = require('../models/db.js');
 const Sales = require('../models/branch/salesSchema.js');
 const Expense = require('../models/branch/expenseSchema.js');
 const Cheque = require('../models/admin/adminChequeSchema.js')
+const ExcelJS = require('exceljs');
 
 
 const adminController = {
@@ -417,8 +418,26 @@ const adminController = {
         }
 
 
+        var salesLast = await Sales.Admin.find().sort({ datetime: -1 }).limit(1)
+        var expenseLast = await Expense.Admin.find().sort({ datetime: -1 }).limit(1)
+
+        salesLast = salesLast[0].datetime.toISOString().split('-')[2].split('T')[0]
+        expenseLast = expenseLast[0].datetime.toISOString().split('-')[2].split('T')[0]
+
+        if (salesLast >= expenseLast) {
+            maxlimit = salesLast
+        }
+        else {
+            maxlimit = expenseLast
+        }
+
+        if (callimit <= maxlimit) {
+            maxlimit = callimit
+        }
+
+
         //getting daily record
-        for (var i = 1; i <= callimit; i++) {
+        for (var i = 1; i <= maxlimit; i++) {
             var dailyrecord = []
             if (i < 10) {
                 var day = "0" + i
@@ -483,9 +502,9 @@ const adminController = {
 
             dailyrecord.push(parseInt(day))
             dailyrecord.push(daily.dsales)
-            dailyrecord.push(daily.dcheque)
+            //dailyrecord.push(daily.dcheque)
             dailyrecord.push(daily.dexpense)
-            dailyrecord.push(daily.totalexpense)
+            //dailyrecord.push(daily.dtotalexpense)
             dailyrecord.push(daily.dnet)
 
             //Populate expense categories
@@ -549,8 +568,57 @@ const adminController = {
 
         }
 
+
+
+        const workbook = new ExcelJS.Workbook();
+        const worksheet = workbook.addWorksheet('My Sheet');
+        worksheet.columns = [
+            { header: 'Date', key: 'date' },
+            { header: 'Gross Sales', key: 'grosssales' },
+            { header: 'Cash Expenses', key: 'cashexpenses' },
+            { header: 'Net Sales', key: 'netsales' },
+            { header: 'Salary', key: 'salary' },
+            { header: 'Grocery', key: 'grocery' },
+            { header: 'Utilities', key: ' ' },
+            { header: 'Food', key: 'food' },
+            { header: 'Gasul', key: 'gasul' },
+            { header: 'Bakery', key: 'bakery' },
+            { header: 'Rent', key: 'rent' },
+            { header: 'Misc', key: 'misc' },
+            { header: 'Tax', key: 'Tax' },
+        ]
+        console.log(callimit)
+        console.log(maxlimit)
+        for (var i = 0; i < callimit; i++) {
+            rowVal = []
+            //rowVal[i] = i + 1
+            if (i < maxlimit) {
+                for (var j = 0; j <= reports[i].length; j++) {
+                    rowVal[j] = reports[i][j]
+                }
+            }
+            else {
+                rowVal[0] = i + 1
+                for (var j = 1; j < reports[maxlimit - 1].length; j++) {
+                    rowVal[j] = 0
+                }
+            }
+
+            worksheet.addRow(rowVal);
+        }
+
+
+        //worksheet.addRow()
+
+        res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        res.setHeader('Content-Disposition', 'attachment; filename=' + 'MonthReport.xlsx');
+        workbook.xlsx.write(res).then(() => {
+            res.end();
+            //res.status(201).json({ msg: 'Done' });
+        });
+
         //console.log(reports)
-        res.status(201).json({ msg: 'Done' });
+
 
     },
 
