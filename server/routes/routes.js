@@ -11,7 +11,8 @@ router.post('/login', accountController.login);
 router.post('/editadminpassword', accountController.editAdminPassword);
 router.post('/createbranch', accountController.createBranch);
 router.get('/viewbranch', accountController.viewBranch);
-router.post('/editbranch', accountController.editBranch);
+router.post('/editbranchname', accountController.editBranchName);
+router.post('/editbranchpassword', accountController.editBranchPassword);
 router.post('/deletebranch', accountController.deleteBranch);
 
 router.post('/addsales', branchController.addSales);
