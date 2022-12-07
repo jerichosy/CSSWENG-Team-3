@@ -452,9 +452,26 @@ const adminController = {
         }
 
 
+        var salesLast = await Sales.Admin.find().sort({ datetime: -1 }).limit(1)
+        var expenseLast = await Expense.Admin.find().sort({ datetime: -1 }).limit(1)
+
+        salesLast = salesLast[0].datetime.toISOString().split('-')[2].split('T')[0]
+        expenseLast = expenseLast[0].datetime.toISOString().split('-')[2].split('T')[0]
+
+        if (salesLast >= expenseLast) {
+            maxlimit = salesLast
+        }
+        else {
+            maxlimit = expenseLast
+        }
+
+        if (callimit <= maxlimit) {
+            maxlimit = callimit
+        }
+
 
         //getting daily record
-        for (var i = 1; i <= callimit; i++) {
+        for (var i = 1; i <= maxlimit; i++) {
             var dailyrecord = []
             if (i < 10) {
                 var day = "0" + i
@@ -521,7 +538,7 @@ const adminController = {
             dailyrecord.push(daily.dsales)
             dailyrecord.push(daily.dcheque)
             dailyrecord.push(daily.dexpense)
-            dailyrecord.push(daily.totalexpense)
+            dailyrecord.push(daily.dtotalexpense)
             dailyrecord.push(daily.dnet)
 
             //Populate expense categories
@@ -584,6 +601,9 @@ const adminController = {
             reports.push(dailyrecord)
 
         }
+
+        console.log(reports)
+
 
         const workbook = new ExcelJS.Workbook();
         const worksheet = workbook.addWorksheet('My Sheet');
