@@ -60,42 +60,44 @@ export default {
             }
             return true;
         },
-        validatePassword(data) {
-            this.adminPasswordIsCorrect = UserService.validatePassword(data);
-            console.log(this.adminPasswordIsCorrect);
-            // .then(response => {
-            //     // expecting boolean
-            //     console.log(response);
-            //     this.adminPasswordIsCorrect = response;
-            // })
-            // .catch(e => {
-            //     console.log(e);
-            // })
-        },
 
         onSubmitPassword() {
             this.submitAttemptPassword = true;
 
-            const adminData = {
-                // TODO: get _id or similar from session
-                "_id": 1234,
-                "password": this.adminPassword
-            };
-            this.validatePassword(adminData);
-
-            if (this.validPassword() && this.samePassword() && this.adminPasswordIsCorrect) {
+            if (this.validPassword() && this.samePassword()) {
                 const data = {
-                    "id": this.selectedBranch._id,
-                    "branchPassword": this.branchPassword
-                }
-                console.log('changing branch password');
-                // TODO: emit change branch password
-                // this.$emit('changeBranchPassword', data);
-                this.resetInputs();
+                    id: this.selectedBranch._id,
+                    newBranchPassword: this.branchPassword,
+                    adminPassword: this.adminPassword
+                };
+
+                UserService.changeBranchPassword(data)
+                    .then(response => {
+                        console.log(response);
+                        this.resetInputs();
+                    })
+                    .catch(e => {
+                        console.log(e.response);
+                    });
             }
         },
         onSubmitBranchName() {
             this.submitAttemptBranchName = true;
+
+            if (this.validBranchName()) {
+                const data = {
+                    id: this.selectedBranch._id,
+                    branchName: newBranchName
+                };
+
+                UserService.changeBranchName(data)
+                    .then(response => {
+                        console.log(response);
+                    })
+                    .catch(e => {
+                        console.log(e.response);
+                    });
+            }
         },
 
         resetInputs() {
