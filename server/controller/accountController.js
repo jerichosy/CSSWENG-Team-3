@@ -189,15 +189,42 @@ const authController = {
     },
 
     deleteBranch: (req, res) => {
-        const { _id } = req.body;
+        const { _id, adminPassword } = req.body;
         console.log(req.body)
-        db.deleteOne(User, { _id: _id }, function (flag) {
-            if (flag) {
-                console.log(` deleted`);
-                res.status(201).json({ msg: 'branch deleted' }) //201 Created
-            } else {
-                console.log(` not deleted`);
-                res.status(400).json({ msg: 'Something went wrong. Please try again.' })
+
+        // confirm admin password
+        db.findOne(User, { isAdmin: true }, 'branchPassword', (user) => {
+            if (user) {
+                bcrypt.compare(adminPassword, user.branchPassword, (err, result) => {
+                    if (result) {
+                        // passed the admin password check
+
+                        // check that the branch exists
+                        db.findOne(User, { _id: _id }, '', (user) => {
+                            if (!user) {
+                                res.status(404).json({ msg: 'The specified username was not found.' });
+                                return;
+                            }
+
+                            // delete the branch
+                            db.deleteOne(User, { _id: _id }, function (flag) {
+                                if (flag) {
+                                    console.log(` deleted`);
+                                    res.status(201).json({ msg: 'branch deleted' }) //201 Created
+                                } else {
+                                    console.log(` not deleted`);
+                                    res.status(400).json({ msg: 'Something went wrong. Please try again.' })
+                                }
+                            })
+                        })
+                    } else {
+                        res.status(401).json({ msg: 'The admin password is incorrect.' });
+                    }
+                });
+            }
+            else {
+                // THIS SHOULD NEVER HAPPEN
+                res.status(404).json({ msg: 'The admin doc was not found.' });
             }
         })
     }
