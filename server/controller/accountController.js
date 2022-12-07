@@ -4,6 +4,9 @@ const User = require('../models/userSchema.js');
 const bcrypt = require('bcrypt');
 
 
+// Note: user CRUDs should not be able to modify admin doc. Only admin can modify admin doc.
+// FIXME: Remove console.log() on passwords
+
 const authController = {
     login: (req, res) => {
         const { name, password } = req.body;
@@ -106,7 +109,7 @@ const authController = {
     },
 
     viewBranch: (req, res) => {
-        db.findMany(User, { isAdmin: false }, '', function (branch) {
+        db.findMany(User, { isAdmin: false }, 'branchID branchName', function (branch) {
             if (branch) {
                 console.log('Branch shown');
                 res.status(201).json(branch);  //201 Created
@@ -117,27 +120,78 @@ const authController = {
         })
     },
 
-    editBranch: (req, res) => {
-        var { branchID, branchName, branchPassword } = req.body;
-        console.log(branchPassword)
-        const saltRounds = 10;
-        bcrypt.hash(branchPassword, saltRounds, function (err, hashed) {
-            branchPassword = hashed
-            console.log(branchPassword)
-            db.updateOne(User, { branchID: branchID }, {
-                branchName: branchName,
-                branchPassword: branchPassword
-            }, function (flag) {
-                console.log('Edit success: ' + flag);
-                res.status(201).json({ msg: 'Edit success' })
-            })
+    editBranchName: (req, res) => {
+        var { _id, newBranchName } = req.body;
+        console.log(newBranchName)
+
+        db.findOne(User, { _id: _id }, '', (result) => {
+            if (result) {
+                db.updateOne(User, { _id: _id }, { branchName: newBranchName }, (result) => {
+                    if (result) {
+                        res.status(200).json({ msg: 'Branch name successfully changed!' });
+                    } else {
+                        res.status(400).json({ msg: 'An error occured.' });
+                    }
+                })
+            } else {
+                res.status(404).json({ msg: 'The specified username was not found.' });
+            }
+        })
+    },
+
+    editBranchPassword: (req, res) => {
+        var { _id, newBranchPassword, adminPassword } = req.body;
+        console.log(newBranchPassword)
+
+        // check if the admin password is correct
+        db.findOne(User, { isAdmin: true }, 'branchPassword', (user) => {
+            if (user) {
+                bcrypt.compare(adminPassword, user.branchPassword, (err, result) => {
+                    if (result) {
+                        // passed the admin password check
+
+                        // check that the new password is not the same as the old password
+                        db.findOne(User, { _id: _id }, 'branchPassword', (user) => {
+                            //TODO: Adopt the ff. better error handling strategy for all the other functions and routes
+
+                            // check that the branch exists
+                            if (!user) {
+                                res.status(404).json({ msg: 'The specified username was not found.' });
+                                return;
+                            }
+
+                            bcrypt.compare(newBranchPassword, user.branchPassword, (err, result) => {
+                                if (result) {
+                                    res.status(400).json({ msg: 'The new password must be different from the old password.' });
+                                } else {
+                                    bcrypt.hash(newBranchPassword, 10, (err, hash) => {
+                                        db.updateOne(User, { _id: _id }, { branchPassword: hash }, (result) => {
+                                            if (result) {
+                                                res.status(200).json({ msg: 'Password successfully changed!' });
+                                            } else {
+                                                res.status(400).json({ msg: 'An error occured.' });
+                                            }
+                                        })
+                                    })
+                                }
+                            })
+                        })
+                    } else {
+                        res.status(401).json({ msg: 'The admin password is incorrect.' });
+                    }
+                });
+            }
+            else {
+                // THIS SHOULD NEVER HAPPEN
+                res.status(404).json({ msg: 'The admin doc was not found.' });
+            }
         })
     },
 
     deleteBranch: (req, res) => {
-        const { name } = req.body;
+        const { _id } = req.body;
         console.log(req.body)
-        db.deleteOne(User, { branchID: name }, function (flag) {
+        db.deleteOne(User, { _id: _id }, function (flag) {
             if (flag) {
                 console.log(` deleted`);
                 res.status(201).json({ msg: 'branch deleted' }) //201 Created
