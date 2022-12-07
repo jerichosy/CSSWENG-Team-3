@@ -536,9 +536,9 @@ const adminController = {
 
             dailyrecord.push(parseInt(day))
             dailyrecord.push(daily.dsales)
-            dailyrecord.push(daily.dcheque)
+            //dailyrecord.push(daily.dcheque)
             dailyrecord.push(daily.dexpense)
-            dailyrecord.push(daily.dtotalexpense)
+            //dailyrecord.push(daily.dtotalexpense)
             dailyrecord.push(daily.dnet)
 
             //Populate expense categories
@@ -602,7 +602,6 @@ const adminController = {
 
         }
 
-        console.log(reports)
 
 
         const workbook = new ExcelJS.Workbook();
@@ -622,13 +621,28 @@ const adminController = {
             { header: 'Misc', key: 'misc' },
             { header: 'Tax', key: 'Tax' },
         ]
+        console.log(callimit)
+        console.log(maxlimit)
+        for (var i = 0; i < callimit; i++) {
+            rowVal = []
+            //rowVal[i] = i + 1
+            if (i < maxlimit) {
+                for (var j = 0; j <= reports[i].length; j++) {
+                    rowVal[j] = reports[i][j]
+                }
+            }
+            else {
+                rowVal[0] = i + 1
+                for (var j = 1; j < reports[maxlimit - 1].length; j++) {
+                    rowVal[j] = 0
+                }
+            }
 
-        for (var i = 1; i <= excellimit; i++) {
-            worksheet.addRow({ date: new Date(), grosssales });
+            worksheet.addRow(rowVal);
         }
 
 
-        worksheet.addRow()
+        //worksheet.addRow()
 
         res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
         res.setHeader('Content-Disposition', 'attachment; filename=' + 'MonthReport.xlsx');
