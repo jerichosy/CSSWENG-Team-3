@@ -685,31 +685,55 @@ const adminController = {
             console.log(i + " " + date + cellVal)
         }
 
-        lastrow = worksheet.lastRow
+        //lastrow = worksheet.lastRow
         text = ["Total Sales", "Total Expense Cash", "Total Expense Cheque", "Total Expenses", "Net Sales"]
+
+        // end = B+calllimit + 6 
+        // add formula SUM(B6+end)
+
+        //merging 
+
+
 
         for (var i = 0; i < 5; i++) {
             switch (i) {
                 case 0:
                     totalval = totals.sales
+                    rowVal = ["Total Sales", { formula: `SUM(B6:B${callimit + 5})` }]
                     break;
                 case 1:
                     totalval = totals.expense
+                    rowVal = ["Total Expense Cash", { formula: `SUM(C6:C${callimit + 5})` }, , , { formula: `SUM(E6:E${callimit + 5})` }, { formula: `SUM(F6:F${callimit + 5})` }
+                        , { formula: `SUM(G6:G${callimit + 5})` }, { formula: `SUM(H6:H${callimit + 5})` }, { formula: `SUM(I6:I${callimit + 5})` }
+                        , { formula: `SUM(J6:J${callimit + 5})` }, { formula: `SUM(K6:K${callimit + 5})` }, { formula: `SUM(L6:L${callimit + 5})` }
+                        , { formula: `SUM(M6:M${callimit + 5})` }]
                     break;
                 case 2:
                     totalval = totals.cheque
+                    climit = Math.max(callimit, cheque.length)
+                    rowVal = ["Total Expense Cheque", { formula: `SUM(Q6:Q${climit})` }, , , { formula: `SUMIF($P$7:$P$${climit}40,E5,$Q$7:$Q$${climit})` }, { formula: `SUMIF($P$7:$P$${climit}40,F5,$Q$7:$Q$${climit})` }
+                        , { formula: `SUMIF($P$7:$P$${climit}40,G5,$Q$7:$Q$${climit})` }, { formula: `SUMIF($P$7:$P$${climit}40,H5,$Q$7:$Q$${climit})` }, { formula: `SUMIF($P$7:$P$${climit}40,I5,$Q$7:$Q$${climit})` }
+                        , { formula: `SUMIF($P$7:$P$${climit}40,J5,$Q$7:$Q$${climit})` }, { formula: `SUMIF($P$7:$P$${climit}40,K5,$Q$7:$Q$${climit})` }, { formula: `SUMIF($P$7:$P$${climit}40,L5,$Q$7:$Q$${climit})` }
+                        , { formula: `SUMIF($P$7:$P$${climit}40,M5,$Q$7:$Q$${climit})` }]
                     break;
                 case 3:
                     totalval = totals.totalexpense
+                    rowVal = ["Total Expenses", { formula: `SUM(B${callimit + 7}:B${callimit + 8})` }, , , { formula: `SUM(E${callimit + 7}:E${callimit + 8})` }, { formula: `SUM(F${callimit + 7}:F${callimit + 8})` }
+                        , { formula: `SUM(G${callimit + 7}:G${callimit + 8})` }, { formula: `SUM(H${callimit + 7}:H${callimit + 8})` }, { formula: `SUM(I${callimit + 7}:I${callimit + 8})` }
+                        , { formula: `SUM(J${callimit + 7}:J${callimit + 8})` }, { formula: `SUM(K${callimit + 7}:K${callimit + 8})` }, { formula: `SUM(L${callimit + 7}:L${callimit + 8})` }
+                        , { formula: `SUM(M${callimit + 7}:M${callimit + 8})` },]
                     break;
                 case 4:
                     totalval = totals.net
+                    rowVal = ["Net Sales", { formula: `B${callimit + 6}-B${callimit + 9}` }]
                     break;
             }
-
-            rowVal = [text[i], totalval]
             worksheet.addRow(rowVal)
         }
+        worksheet.mergeCells(`B${callimit + 6}:D${callimit + 6}`);
+        worksheet.mergeCells(`B${callimit + 7}:D${callimit + 7}`);
+        worksheet.mergeCells(`B${callimit + 8}:D${callimit + 8}`);
+        worksheet.mergeCells(`B${callimit + 9}:D${callimit + 9}`);
         // lastrow.addRow("Total Sales")
         // worksheet.addRow("")
 
