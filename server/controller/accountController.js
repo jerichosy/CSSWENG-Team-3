@@ -109,7 +109,13 @@ const authController = {
     },
 
     viewBranch: (req, res) => {
-        db.findMany(User, { isAdmin: false, isDeleted: false }, 'branchID branchName', function (branch) {
+        query = { isAdmin: false, isDeleted: false };
+        if (req.query.showDeleted === 'true') {
+            console.log('showing deleted branches');
+            delete query.isDeleted;
+        }
+
+        db.findMany(User, query, 'branchID branchName', function (branch) {
             if (branch) {
                 console.log('Branch shown');
                 res.status(201).json(branch);  //201 Created
