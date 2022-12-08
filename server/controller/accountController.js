@@ -156,20 +156,20 @@ const authController = {
 
                             // check that the branch exists
                             if (!user) {
-                                res.status(404).json({ msg: 'The specified username was not found.' });
+                                res.status(404).json({ reason: '_id', msg: 'The specified username was not found.' });
                                 return;
                             }
 
                             bcrypt.compare(newBranchPassword, user.branchPassword, (err, result) => {
                                 if (result) {
-                                    res.status(400).json({ msg: 'The new password must be different from the old password.' });
+                                    res.status(400).json({ reason: 'newBranchPassword', msg: 'The new password must be different from the old password.' });
                                 } else {
                                     bcrypt.hash(newBranchPassword, 10, (err, hash) => {
                                         db.updateOne(User, { _id: _id }, { branchPassword: hash }, (result) => {
                                             if (result) {
                                                 res.status(200).json({ msg: 'Password successfully changed!' });
                                             } else {
-                                                res.status(400).json({ msg: 'An error occured.' });
+                                                res.status(400).json({ reason: 'generic', msg: 'An error occured.' });
                                             }
                                         })
                                     })
@@ -177,7 +177,7 @@ const authController = {
                             })
                         })
                     } else {
-                        res.status(401).json({ msg: 'The admin password is incorrect.' });
+                        res.status(401).json({ reason: 'adminPassword', msg: 'The admin password is incorrect.' });
                     }
                 });
             }
