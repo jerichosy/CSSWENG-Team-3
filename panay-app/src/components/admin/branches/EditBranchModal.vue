@@ -21,9 +21,12 @@ export default {
 
             branchPassword: '',
             branchRetypePassword: '',
+            branchPasswordAlert: '',
             adminPassword: '',
-            submitAttemptPassword: false,
-            adminPasswordIsCorrect: false
+            invalidBranchPassword: false,
+            invalidAdminPassword: false,
+            branchPasswordChanged: false,
+            submitAttemptPassword: false
         }
     },
 
@@ -32,7 +35,8 @@ export default {
         // Reset all fields and component data when modal is hidden
         // TODO: Add this for records modals
         editModalEl.addEventListener('hidden.bs.modal', event => {
-            this.resetInputs();
+            this.resetBranchNameInputs();
+            this.resetBranchPasswordInputs();
         });
 
         // Update edit fields to show selected record data
@@ -56,6 +60,7 @@ export default {
         },
         validPassword() {
             if (this.branchPassword.length < 6) {
+                this.branchPasswordAlert = "Please enter a password with a minimum of 6 characters."
                 return false;
             }
             return true;
@@ -68,23 +73,45 @@ export default {
         },
 
         onSubmitPassword() {
+            this.branchPasswordChanged = false;
             this.submitAttemptPassword = true;
+            this.invalidBranchPassword = false;
+            this.invalidAdminPassword = false;
 
             if (this.validPassword() && this.samePassword()) {
                 const data = {
-                    id: this.selectedBranch._id,
+                    _id: this.selectedBranch._id,
                     newBranchPassword: this.branchPassword,
                     adminPassword: this.adminPassword
                 };
 
-                UserService.changeBranchPassword(data)
+                UserService.editBranchPassword(data)
                     .then(response => {
-                        console.log(response);
-                        this.resetInputs();
+                        console.log(response.data.msg);
+                        this.resetBranchPasswordInputs();
+                        this.branchPasswordAlert = response.data.msg;
+                        this.branchPasswordChanged = true;
+                        this.submitAttemptPassword = false;
                     })
                     .catch(e => {
-                        console.log(e.response);
+                        this.branchPasswordAlert = e.response.data.msg
+                        if (e.response.data.reason === '_id') {
+                            this.invalidBranchPassword = true;
+                        }
+                        else if (e.response.data.reason === 'newBranchPassword') {
+                            this.invalidBranchPassword = true;
+                        }
+                        else if (e.response.data.reason === 'adminPassword') {
+                            this.invalidAdminPassword = true;
+                        }
+                        // generic
+                        else {
+                            this.invalidBranchPassword = true;
+                        }
                     });
+            }
+            else {
+                this.invalidBranchPassword = true;
             }
         },
         onSubmitBranchName() {
@@ -117,18 +144,22 @@ export default {
             }
         },
 
-        resetInputs() {
+        resetBranchNameInputs() {
             this.branchName = '';
             this.invalidBranchName = false;
             this.branchNameAlert = '';
             this.submitAttemptBranchName = false;
             this.branchNameChanged = false;
+        },
 
+        resetBranchPasswordInputs() {
             this.branchPassword = '';
             this.branchRetypePassword = '';
             this.adminPassword = '';
+            this.invalidBranchPassword = false;
+            this.invalidAdminPassword = false;
+            this.branchPasswordChanged = false;
             this.submitAttemptPassword = false;
-            this.adminPasswordIsCorrect = false;;
         }
     }
 
@@ -176,12 +207,15 @@ export default {
                                 <!-- Branch Password Input -->
                                 <div class="form-floating mb-2">
                                     <input type="password"
-                                        :class="{ 'form-control': true, 'is-invalid': !validPassword() && submitAttemptPassword }"
+                                        :class="{ 'form-control': true, 'is-invalid': invalidBranchPassword && submitAttemptPassword, 'is-valid': branchPasswordChanged }"
                                         id="change-branch-password" placeholder="Branch Password"
                                         v-model="branchPassword" required />
                                     <label for="change-branch-password">New Branch Password</label>
                                     <div class="invalid-feedback">
-                                        Please enter a password with a minimum of 6 characters.
+                                        {{ branchPasswordAlert }}
+                                    </div>
+                                    <div class="valid-feedback">
+                                        {{ branchPasswordAlert }}
                                     </div>
                                 </div>
                                 <!-- Retype Branch Password Input -->
@@ -197,13 +231,13 @@ export default {
                                 </div>
 
                                 <div class="form-floating mb-2">
-                                    <!-- TODO: Validate Password -->
-                                    <input type="password" :class="{ 'form-control': true, 'is-invalid': false }"
+                                    <input type="password"
+                                        :class="{ 'form-control': true, 'is-invalid': invalidAdminPassword && submitAttemptPassword }"
                                         id="edit-branch-admin-password" placeholder="Admin Password"
                                         v-model="adminPassword" required />
                                     <label for="edit-branch-admin-password">Admin Password</label>
                                     <div class="invalid-feedback">
-                                        Admin password is incorrect.
+                                        {{ branchPasswordAlert }}
                                     </div>
                                 </div>
                             </fieldset>
