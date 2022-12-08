@@ -9,9 +9,8 @@ class UserService {
         return http.post("/deletebranch", data);
     }
 
-    changeBranchPassword(data) {
-        console.log(data);
-        // return http.post("/changebranchpassword", data);
+    editBranchPassword(data) {
+        return http.post("/editbranchpassword", data);
     }
 
     editBranchName(data) {
