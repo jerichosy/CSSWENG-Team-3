@@ -275,7 +275,7 @@ const adminController = {
             var ctaxes = await Cheque.find({ branchID: branchID, category: 'Taxes', datetime: { $gte: monthstartdate, $lt: monthenddate } })
 
             var sales = await Sales.Admin.find({ branchID: branchID, datetime: { $gte: monthstartdate, $lt: monthenddate } })
-            var cheque = await Cheque.find({ branchID: branchID, datetime: { $gte: monthstartdate, $lt: monthenddate } })
+            var cheque = await Cheque.find({ branchID: branchID })
         }
 
 
@@ -655,19 +655,6 @@ const adminController = {
             worksheet.addRow(rowVal);
         }
 
-        //Populate Cheque
-        for (var i = 0; i < cheque.length; i++) {
-            cellVal = "N" + (i + 6)
-            date = cheque[i].datetime.toISOString().split('-')[2].split('T')[0]
-            worksheet.getCell(cellVal).value = date
-            cellVal = "O" + (i + 6)
-            worksheet.getCell(cellVal).value = cheque[i].account
-            cellVal = "P" + (i + 6)
-            worksheet.getCell(cellVal).value = cheque[i].category
-            cellVal = "Q" + (i + 6)
-            worksheet.getCell(cellVal).value = cheque[i].amount
-        }
-
         //Populate Summary
         for (var i = 0; i < 5; i++) {
             switch (i) {
@@ -685,10 +672,10 @@ const adminController = {
                 case 2:
                     totalval = totals.cheque
                     climit = Math.max(callimit, cheque.length)
-                    rowVal = ["Total Expense Cheque", { formula: `SUM(Q6:Q${climit})` }, , , { formula: `SUMIF($P$7:$P$${climit}40,E5,$Q$7:$Q$${climit})` }, { formula: `SUMIF($P$7:$P$${climit}40,F5,$Q$7:$Q$${climit})` }
-                        , { formula: `SUMIF($P$7:$P$${climit}40,G5,$Q$7:$Q$${climit})` }, { formula: `SUMIF($P$7:$P$${climit}40,H5,$Q$7:$Q$${climit})` }, { formula: `SUMIF($P$7:$P$${climit}40,I5,$Q$7:$Q$${climit})` }
-                        , { formula: `SUMIF($P$7:$P$${climit}40,J5,$Q$7:$Q$${climit})` }, { formula: `SUMIF($P$7:$P$${climit}40,K5,$Q$7:$Q$${climit})` }, { formula: `SUMIF($P$7:$P$${climit}40,L5,$Q$7:$Q$${climit})` }
-                        , { formula: `SUMIF($P$7:$P$${climit}40,M5,$Q$7:$Q$${climit})` }]
+                    rowVal = ["Total Expense Cheque", { formula: `SUM(Q6:Q${climit + 5})` }, , , { formula: `SUMIF($P$6:$P$${climit + 5},E5,$Q$6:$Q$${climit + 5})` }, { formula: `SUMIF($P$6:$P$${climit + 5},F5,$Q$6:$Q$${climit + 5})` }
+                        , { formula: `SUMIF($P$6:$P$${climit + 5},G5,$Q$6:$Q$${climit + 5})` }, { formula: `SUMIF($P$6:$P$${climit + 5},H5,$Q$6:$Q$${climit + 5})` }, { formula: `SUMIF($P$6:$P$${climit + 5},I5,$Q$6:$Q$${climit + 5})` }
+                        , { formula: `SUMIF($P$6:$P$${climit + 5},J5,$Q$6:$Q$${climit + 5})` }, { formula: `SUMIF($P$6:$P$${climit + 5},K5,$Q$6:$Q$${climit + 5})` }, { formula: `SUMIF($P$6:$P$${climit + 5},L5,$Q$6:$Q$${climit + 5})` }
+                        , { formula: `SUMIF($P$6:$P$${climit + 5},M5,$Q$6:$Q$${climit + 5})` }]
                     break;
                 case 3:
                     totalval = totals.totalexpense
@@ -704,6 +691,21 @@ const adminController = {
             }
             worksheet.addRow(rowVal)
         }
+
+        //Populate Cheque
+        for (var i = 0; i < cheque.length; i++) {
+            cellVal = "N" + (i + 6)
+            date = cheque[i].datetime.toISOString().split('-')[2].split('T')[0]
+            worksheet.getCell(cellVal).value = date
+            cellVal = "O" + (i + 6)
+            worksheet.getCell(cellVal).value = cheque[i].account
+            cellVal = "P" + (i + 6)
+            worksheet.getCell(cellVal).value = cheque[i].category
+            cellVal = "Q" + (i + 6)
+            worksheet.getCell(cellVal).value = cheque[i].amount
+        }
+
+
         worksheet.mergeCells(`B${callimit + 6}:D${callimit + 6}`);
         worksheet.mergeCells(`B${callimit + 7}:D${callimit + 7}`);
         worksheet.mergeCells(`B${callimit + 8}:D${callimit + 8}`);
