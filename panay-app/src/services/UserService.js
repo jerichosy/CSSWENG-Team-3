@@ -1,8 +1,8 @@
 import http from '../http-common';
 
 class UserService {
-    getBranches() {
-        return http.get("/viewbranch");
+    getBranches(params) {
+        return http.get("/viewbranch", { params });
     }
 
     deleteBranch(data) {

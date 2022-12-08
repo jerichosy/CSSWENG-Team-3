@@ -42,7 +42,7 @@ export default {
     methods: {
 
         retrieveBranches() {
-            UserService.getBranches()
+            UserService.getBranches(new URLSearchParams([['showDeleted', true]]))
                 .then(response => {
                     this.branchOptions = response.data;
                 })
