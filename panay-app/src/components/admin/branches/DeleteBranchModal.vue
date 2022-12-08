@@ -6,12 +6,14 @@ export default {
     props: {
         selectedBranch: Object
     },
-    emits: ['deleteBranch'],
+    emits: ['deleteBranch', 'retrieveBranches'],
 
     data() {
         return {
             adminPassword: '',
-            correctAdminPassword: false
+            adminPasswordAlert: '',
+            submitAttempt: false,
+            invalidAdminPassword: false
         }
     },
 
@@ -26,25 +28,31 @@ export default {
 
     methods: {
         onSubmitDeleteBranch() {
-            // Server-side password validation
-            // this.$emit('deleteBranch', this.selectedBranch._id);
-            // const deleteModalElement = document.getElementById('deleteModal');
-            // const modal = Modal.getInstance(deleteModalElement);
-            // modal.hide();
+            this.invalidAdminPassword = false;
+            this.submitAttempt = true;
 
-            // TODO: Test when backend connected
             const data = {
-                id: this.selectedBranch._id,
+                _id: this.selectedBranch._id,
                 adminPassword: this.adminPassword
             };
 
-            // TODO: handle wrong admin password
             UserService.deleteBranch(data)
                 .then(response => {
                     console.log(response);
+                    this.$emit('retrieveBranches');
+                    const deleteModalEl = document.getElementById('deleteModal');
+                    const modal = Modal.getInstance(deleteModalEl);
+                    modal.hide();
                 })
                 .catch(e => {
-                    console.log(e.response.data.msg);
+                    this.invalidAdminPassword = true;
+                    console.log(e)
+                    if (e.response.data.reason === 'adminPassword') {
+                        this.adminPasswordAlert = e.response.data.msg;
+                    }
+                    else {
+                        console.log(e.response.data.msg);
+                    }
                 });
         },
 
@@ -79,11 +87,12 @@ export default {
 
                             <div class="form-floating mb-2">
                                 <!-- TODO: Validate Password -->
-                                <input type="password" :class="{ 'form-control': true, 'is-invalid': false }"
+                                <input type="password"
+                                    :class="{ 'form-control': true, 'is-invalid': submitAttempt && invalidAdminPassword }"
                                     id="admin-password" placeholder="Admin Password" v-model="adminPassword" required />
                                 <label for="admin-password">Password</label>
                                 <div class="invalid-feedback">
-                                    Wrong Password.
+                                    {{ adminPasswordAlert }}
                                 </div>
                             </div>
                         </div>

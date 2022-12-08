@@ -87,7 +87,7 @@ export default {
 
 <template>
     <AddBranchModal @add-branch="addBranch" />
-    <DeleteBranchModal :selected-branch="selectedBranch" />
+    <DeleteBranchModal :selected-branch="selectedBranch" @retrieve-branches="retrieveBranches" />
     <EditBranchModal :selected-branch="selectedBranch" @retrieve-branches="retrieveBranches" />
     <div class="row">
         <h1 class="p-3 m-0">Branches</h1>
