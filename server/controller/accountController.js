@@ -202,12 +202,12 @@ const authController = {
                         // check that the branch exists
                         db.findOne(User, { _id: _id }, '', (user) => {
                             if (!user) {
-                                res.status(404).json({ msg: 'The specified ObjectId was not found.' });
+                                res.status(404).json({ reason: '_id', msg: 'The specified ObjectId was not found.' });
                                 return;
                             }
                             // check that the branch has already been deleted
                             if (user.isDeleted) {
-                                res.status(400).json({ msg: 'The specified branch has already been deleted.' });
+                                res.status(400).json({ reason: '_id', msg: 'The specified branch has already been deleted.' });
                                 return;
                             }
 
@@ -216,12 +216,12 @@ const authController = {
                                 if (result) {
                                     res.status(200).json({ msg: 'Branch successfully deleted!' });
                                 } else {
-                                    res.status(400).json({ msg: 'An error occured.' });
+                                    res.status(400).json({ reason: 'generic', msg: 'An error occured.' });
                                 }
                             })
                         })
                     } else {
-                        res.status(401).json({ msg: 'The admin password is incorrect.' });
+                        res.status(401).json({ reason: 'adminPassword', msg: 'The admin password is incorrect.' });
                     }
                 });
             }
