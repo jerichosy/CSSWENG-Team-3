@@ -1,41 +1,313 @@
 [
     {
-        "datetime": "2022-11-25T07:00:42.389Z",
-        "account": "Meralco",
-        "category": "Utilities",
-        "amount": 11250,
+        "datetime": "2022-10-01T07:00:42.389Z",
+        "account": "BIR",
+        "category": "Taxes",
+        "amount": 9550,
         "branchID": 101,
         "branchName": "Panay Avenue Paligsahan QC"
     },
     {
-        "datetime": "2022-11-26T07:00:42.389Z",
-        "account": "Rent",
-        "category": "Rent",
-        "amount": 35000,
-        "branchID": 102,
-        "branchName": "Pag-asa QC"
+        "datetime": "2022-10-05T07:00:42.389Z",
+        "account": "Gordo",
+        "category": "Bakery Items",
+        "amount": 63420,
+        "branchID": 101,
+        "branchName": "Panay Avenue Paligsahan QC"
     },
     {
-        "datetime": "2022-11-26T07:00:42.389Z",
-        "account": "DTI",
+        "datetime": "2022-10-08T07:00:42.389Z",
+        "account": "Petron",
+        "category": "Gasul",
+        "amount": 7000,
+        "branchID": 101,
+        "branchName": "Panay Avenue Paligsahan QC"
+    },
+    {
+        "datetime": "2022-10-10T07:00:42.389Z",
+        "account": "Gordo",
+        "category": "Bakery Items",
+        "amount": 44310,
+        "branchID": 101,
+        "branchName": "Panay Avenue Paligsahan QC"
+    },
+    {
+        "datetime": "2022-10-12T07:00:42.389Z",
+        "account": "Allday",
+        "category": "Grocery",
+        "amount": 13450,
+        "branchID": 101,
+        "branchName": "Panay Avenue Paligsahan QC"
+    },
+    {
+        "datetime": "2022-10-15T07:00:42.389Z",
+        "account": "Maynilad",
+        "category": "Utilities",
+        "amount": 3250,
+        "branchID": 101,
+        "branchName": "Panay Avenue Paligsahan QC"
+    },
+    {
+        "datetime": "2022-10-16T07:00:42.389Z",
+        "account": "PLDT",
+        "category": "Utilities",
+        "amount": 2100,
+        "branchID": 101,
+        "branchName": "Panay Avenue Paligsahan QC"
+    },
+    {
+        "datetime": "2022-10-17T07:00:42.389Z",
+        "account": "Meralco",
+        "category": "Utilities",
+        "amount": 8540,
+        "branchID": 101,
+        "branchName": "Panay Avenue Paligsahan QC"
+    },
+    {
+        "datetime": "2022-10-19T07:00:42.389Z",
+        "account": "Petron",
+        "category": "Gasul",
+        "amount": 6780,
+        "branchID": 101,
+        "branchName": "Panay Avenue Paligsahan QC"
+    },
+    {
+        "datetime": "2022-10-22T07:00:42.389Z",
+        "account": "Customs",
         "category": "Taxes",
-        "amount": 22400,
+        "amount": 8765,
+        "branchID": 101,
+        "branchName": "Panay Avenue Paligsahan QC"
+    },
+    {
+        "datetime": "2022-10-25T07:00:42.389Z",
+        "account": "Gordo",
+        "category": "Bakery Items",
+        "amount": 45325,
+        "branchID": 101,
+        "branchName": "Panay Avenue Paligsahan QC"
+    },
+    {
+        "datetime": "2022-10-30T07:00:42.389Z",
+        "account": "Michael",
+        "category": "Salary",
+        "amount": 13000,
+        "branchID": 101,
+        "branchName": "Panay Avenue Paligsahan QC"
+    },
+    {
+        "datetime": "2022-10-31T07:00:42.389Z",
+        "account": "Rent",
+        "category": "Rent",
+        "amount": 55450,
+        "branchID": 101,
+        "branchName": "Panay Avenue Paligsahan QC"
+    },
+    {
+        "datetime": "2022-11-01T07:00:42.389Z",
+        "account": "BIR",
+        "category": "Taxes",
+        "amount": 6500,
+        "branchID": 101,
+        "branchName": "Panay Avenue Paligsahan QC"
+    },
+    {
+        "datetime": "2022-11-06T07:00:42.389Z",
+        "account": "Gordo",
+        "category": "Bakery Items",
+        "amount": 52100,
+        "branchID": 101,
+        "branchName": "Panay Avenue Paligsahan QC"
+    },
+    {
+        "datetime": "2022-11-08T07:00:42.389Z",
+        "account": "Petron",
+        "category": "Gasul",
+        "amount": 6550,
+        "branchID": 101,
+        "branchName": "Panay Avenue Paligsahan QC"
+    },
+    {
+        "datetime": "2022-11-11T07:00:42.389Z",
+        "account": "Gordo",
+        "category": "Bakery Items",
+        "amount": 43450,
+        "branchID": 101,
+        "branchName": "Panay Avenue Paligsahan QC"
+    },
+    {
+        "datetime": "2022-11-14T07:00:42.389Z",
+        "account": "PLDT",
+        "category": "Utilities",
+        "amount": 2100,
+        "branchID": 101,
+        "branchName": "Panay Avenue Paligsahan QC"
+    },
+    {
+        "datetime": "2022-11-15T07:00:42.389Z",
+        "account": "Meralco",
+        "category": "Utilities",
+        "amount": 9010,
+        "branchID": 101,
+        "branchName": "Panay Avenue Paligsahan QC"
+    },
+    {
+        "datetime": "2022-11-16T07:00:42.389Z",
+        "account": "Maynilad",
+        "category": "Utilities",
+        "amount": 3000,
+        "branchID": 101,
+        "branchName": "Panay Avenue Paligsahan QC"
+    },
+    {
+        "datetime": "2022-11-17T07:00:42.389Z",
+        "account": "Petron",
+        "category": "Gasul",
+        "amount": 5500,
+        "branchID": 101,
+        "branchName": "Panay Avenue Paligsahan QC"
+    },
+    {
+        "datetime": "2022-11-21T07:00:42.389Z",
+        "account": "SM Supermarket",
+        "category": "Grocery",
+        "amount": 15540,
+        "branchID": 101,
+        "branchName": "Panay Avenue Paligsahan QC"
+    },
+    {
+        "datetime": "2022-11-25T07:00:42.389Z",
+        "account": "Customs",
+        "category": "Taxes",
+        "amount": 5400,
         "branchID": 101,
         "branchName": "Panay Avenue Paligsahan QC"
     },
     {
         "datetime": "2022-11-27T07:00:42.389Z",
-        "account": "DTI",
-        "category": "Taxes",
-        "amount": 19800,
-        "branchID": 102,
-        "branchName": "Pag-asa QC"
+        "account": "Gordo",
+        "category": "Bakery Items",
+        "amount": 34210,
+        "branchID": 101,
+        "branchName": "Panay Avenue Paligsahan QC"
     },
     {
-        "datetime": "2022-11-28T07:00:42.389Z",
+        "datetime": "2022-11-29T07:00:42.389Z",
+        "account": "Dianne",
+        "category": "Salaray",
+        "amount": 16000,
+        "branchID": 101,
+        "branchName": "Panay Avenue Paligsahan QC"
+    },
+    {
+        "datetime": "2022-11-30T07:00:42.389Z",
+        "account": "Rent",
+        "category": "Rent",
+        "amount": 55450,
+        "branchID": 101,
+        "branchName": "Panay Avenue Paligsahan QC"
+    },
+    {
+        "datetime": "2022-12-01T07:00:42.389Z",
+        "account": "BIR",
+        "category": "Taxes",
+        "amount": 7250,
+        "branchID": 101,
+        "branchName": "Panay Avenue Paligsahan QC"
+    },
+    {
+        "datetime": "2022-12-06T07:00:42.389Z",
+        "account": "Petron",
+        "category": "Gasul",
+        "amount": 6500,
+        "branchID": 101,
+        "branchName": "Panay Avenue Paligsahan QC"
+    },
+    {
+        "datetime": "2022-12-09T07:00:42.389Z",
+        "account": "Gordo",
+        "category": "Bakery Items",
+        "amount": 12450,
+        "branchID": 101,
+        "branchName": "Panay Avenue Paligsahan QC"
+    },
+    {
+        "datetime": "2022-12-13T07:00:42.389Z",
+        "account": "Gordo",
+        "category": "Bakery Items",
+        "amount": 9560,
+        "branchID": 101,
+        "branchName": "Panay Avenue Paligsahan QC"
+    },
+    {
+        "datetime": "2022-12-15T07:00:42.389Z",
+        "account": "PLDT",
+        "category": "Utilities",
+        "amount": 2100,
+        "branchID": 101,
+        "branchName": "Panay Avenue Paligsahan QC"
+    },
+    {
+        "datetime": "2022-12-16T07:00:42.389Z",
+        "account": "Petron",
+        "category": "Gasul",
+        "amount": 5550,
+        "branchID": 101,
+        "branchName": "Panay Avenue Paligsahan QC"
+    },
+    {
+        "datetime": "2022-12-17T07:00:42.389Z",
+        "account": "Meralco",
+        "category": "Utilities",
+        "amount": 8760,
+        "branchID": 101,
+        "branchName": "Panay Avenue Paligsahan QC"
+    },
+    {
+        "datetime": "2022-12-18T07:00:42.389Z",
         "account": "Maynilad",
         "category": "Utilities",
-        "amount": 4300,
+        "amount": 4500,
+        "branchID": 101,
+        "branchName": "Panay Avenue Paligsahan QC"
+    },
+    {
+        "datetime": "2022-12-22T07:00:42.389Z",
+        "account": "Puregold",
+        "category": "Grocery",
+        "amount": 21540,
+        "branchID": 101,
+        "branchName": "Panay Avenue Paligsahan QC"
+    },
+    {
+        "datetime": "2022-12-25T07:00:42.389Z",
+        "account": "Gordo",
+        "category": "Bakery Items",
+        "amount": 22045,
+        "branchID": 101,
+        "branchName": "Panay Avenue Paligsahan QC"
+    },
+    {
+        "datetime": "2022-12-28T08:00:42.389Z",
+        "account": "Customs",
+        "category": "Taxes",
+        "amount": 6500,
+        "branchID": 101,
+        "branchName": "Panay Avenue Paligsahan QC"
+    },
+    {
+        "datetime": "2022-12-30T07:00:42.389Z",
+        "account": "James",
+        "category": "Salary",
+        "amount": 15500,
+        "branchID": 101,
+        "branchName": "Panay Avenue Paligsahan QC"
+    },
+    {
+        "datetime": "2022-12-31T07:00:42.389Z",
+        "account": "Rent",
+        "category": "Rent",
+        "amount": 55450,
         "branchID": 101,
         "branchName": "Panay Avenue Paligsahan QC"
     }

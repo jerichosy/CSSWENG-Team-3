@@ -2,19 +2,1540 @@
   {
     "branchID": 101,
     "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-01T07:00:42.389Z",
+    "item": "LPG",
+    "category": "Gasul",
+    "amount": 2458,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-01T08:00:42.389Z",
+    "item": "Salt",
+    "category": "Grocery",
+    "amount": 281,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-01T09:00:42.389Z",
+    "item": "Orange Juice",
+    "category": "Food",
+    "amount": 1534,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-02T07:00:42.389Z",
+    "item": "Sugar",
+    "category": "Grocery",
+    "amount": 423,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-02T08:00:42.389Z",
+    "item": "Aluminum Foil",
+    "category": "Bakery Items",
+    "amount": 206,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-02T09:00:42.389Z",
+    "item": "Milk",
+    "category": "Grocery",
+    "amount": 1979,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-03T07:00:42.389Z",
+    "item": "Ice",
+    "category": "Grocery",
+    "amount": 313,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-03T08:00:42.389Z",
+    "item": "Plastic Bag",
+    "category": "Bakery Items",
+    "amount": 491,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-03T09:00:42.389Z",
+    "item": "Yeast",
+    "category": "Grocery",
+    "amount": 136,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-04T07:00:42.389Z",
+    "item": "Chocolate",
+    "category": "Grocery",
+    "amount": 2061,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-04T08:00:42.389Z",
+    "item": "Water",
+    "category": "Utilities",
+    "amount": 1753,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-04T09:00:42.389Z",
+    "item": "Tape",
+    "category": "Misc.",
+    "amount": 58,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-05T07:00:42.389Z",
+    "item": "Baking Paper",
+    "category": "Bakery Items",
+    "amount": 38,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-05T08:00:42.389Z",
+    "item": "Rolling Pin",
+    "category": "Bakery Items",
+    "amount": 1231,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-05T09:00:42.389Z",
+    "item": "Flour",
+    "category": "Grocery",
+    "amount": 605,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-06T07:00:42.389Z",
+    "item": "Energy Drinks",
+    "category": "Food",
+    "amount": 2472,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-06T08:00:42.389Z",
+    "item": "Egg",
+    "category": "Grocery",
+    "amount": 1123,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-06T09:00:42.389Z",
+    "item": "Plastic Bag",
+    "category": "Bakery Items",
+    "amount": 713,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-07T07:00:42.389Z",
+    "item": "Shortening",
+    "category": "Grocery",
+    "amount": 163,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-07T08:00:42.389Z",
+    "item": "Softdrinks",
+    "category": "Food",
+    "amount": 2064,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-07T09:00:42.389Z",
+    "item": "Strawberry Jam",
+    "category": "Food",
+    "amount": 883,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-08T07:00:42.389Z",
+    "item": "Spoon",
+    "category": "Bakery Items",
+    "amount": 1976,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-08T08:00:42.389Z",
+    "item": "Fork",
+    "category": "Bakery Items",
+    "amount": 826,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-08T09:00:42.389Z",
+    "item": "Sugar",
+    "category": "Grocery",
+    "amount": 548,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-09T07:00:42.389Z",
+    "item": "Spatula",
+    "category": "Bakery Items",
+    "amount": 114,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-09T08:00:42.389Z",
+    "item": "Cheese",
+    "category": "Grocery",
+    "amount": 353,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-09T09:00:42.389Z",
+    "item": "Butter",
+    "category": "Grocery",
+    "amount": 1736,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-10T07:00:42.389Z",
+    "item": "Baking Powder",
+    "category": "Grocery",
+    "amount": 1365,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-10T08:00:42.389Z",
+    "item": "Thermometer",
+    "category": "Misc.",
+    "amount": 2487,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-10T09:00:42.389Z",
+    "item": "Box",
+    "category": "Bakery Items",
+    "amount": 294,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-11T07:00:42.389Z",
+    "item": "Charger",
+    "category": "Misc.",
+    "amount": 896,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-11T08:00:42.389Z",
+    "item": "Paper Bag",
+    "category": "Bakery Items",
+    "amount": 1567,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-11T09:00:42.389Z",
+    "item": "Parchment Paper",
+    "category": "Bakery Items",
+    "amount": 403,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-12T07:00:42.389Z",
+    "item": "Spatula",
+    "category": "Bakery Items",
+    "amount": 2034,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-12T08:00:42.389Z",
+    "item": "Water Drinks",
+    "category": "Food",
+    "amount": 696,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-12T09:00:42.389Z",
+    "item": "Peanut Butter",
+    "category": "Food",
+    "amount": 1181,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-13T07:00:42.389Z",
+    "item": "Salt",
+    "category": "Grocery",
+    "amount": 1012,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-13T08:00:42.389Z",
+    "item": "Oil",
+    "category": "Grocery",
+    "amount": 1529,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-13T09:00:42.389Z",
+    "item": "Honey",
+    "category": "Grocery",
+    "amount": 1969,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-14T07:00:42.389Z",
+    "item": "Yeast",
+    "category": "Grocery",
+    "amount": 925,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-14T08:00:42.389Z",
+    "item": "Flour",
+    "category": "Grocery",
+    "amount": 726,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-14T09:00:42.389Z",
+    "item": "Paper",
+    "category": "Misc.",
+    "amount": 50,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-15T07:00:42.389Z",
+    "item": "Nuts",
+    "category": "Grocery",
+    "amount": 1592,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-15T08:00:42.389Z",
+    "item": "Softdrinks",
+    "category": "Food",
+    "amount": 1101,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-15T09:00:42.389Z",
+    "item": "Electricity",
+    "category": "Utilities",
+    "amount": 2468,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-16T07:00:42.389Z",
+    "item": "Baking Soda",
+    "category": "Grocery",
+    "amount": 2267,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-16T08:00:42.389Z",
+    "item": "LPG",
+    "category": "Gasul",
+    "amount": 2423,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-16T09:00:42.389Z",
+    "item": "Plastic Bag",
+    "category": "Bakery Items",
+    "amount": 1274,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-17T07:00:42.389Z",
+    "item": "Water Drinks",
+    "category": "Food",
+    "amount": 1510,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-17T08:00:42.389Z",
+    "item": "Breadcrumbs",
+    "category": "Grocery",
+    "amount": 238,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-17T09:00:42.389Z",
+    "item": "Soap",
+    "category": "Misc.",
+    "amount": 642,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-18T07:00:42.389Z",
+    "item": "Sprinkles",
+    "category": "Grocery",
+    "amount": 1464,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-18T08:00:42.389Z",
+    "item": "Knife",
+    "category": "Bakery Items",
+    "amount": 1478,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-18T09:00:42.389Z",
+    "item": "Pan Liners",
+    "category": "Bakery Items",
+    "amount": 2218,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-19T07:00:42.389Z",
+    "item": "Strawberry Jam",
+    "category": "Food",
+    "amount": 1190,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-19T08:00:42.389Z",
+    "item": "Salt",
+    "category": "Grocery",
+    "amount": 281,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-19T09:00:42.389Z",
+    "item": "Orange Juice",
+    "category": "Food",
+    "amount": 1534,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-20T07:00:42.389Z",
+    "item": "Sprinkles",
+    "category": "Grocery",
+    "amount": 1411,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-20T08:00:42.389Z",
+    "item": "Sugar",
+    "category": "Grocery",
+    "amount": 536,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-20T09:00:42.389Z",
+    "item": "Milk",
+    "category": "Grocery",
+    "amount": 1134,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-21T07:00:42.389Z",
+    "item": "Baking Powder",
+    "category": "Grocery",
+    "amount": 1502,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-21T08:00:42.389Z",
+    "item": "Yeast",
+    "category": "Grocery",
+    "amount": 384,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-21T09:00:42.389Z",
+    "item": "Egg",
+    "category": "Grocery",
+    "amount": 1123,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-22T07:00:42.389Z",
+    "item": "Cocoa Powder",
+    "category": "Grocery",
+    "amount": 2151,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-22T08:00:42.389Z",
+    "item": "Paper Bag",
+    "category": "Bakery Items",
+    "amount": 349,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-22T09:00:42.389Z",
+    "item": "LPG",
+    "category": "Gasul",
+    "amount": 2118,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-23T07:00:42.389Z",
+    "item": "Butter",
+    "category": "Grocery",
+    "amount": 226,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-23T08:00:42.389Z",
+    "item": "Tissue",
+    "category": "Misc.",
+    "amount": 410,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-23T09:00:42.389Z",
+    "item": "Vanilla Flavoring",
+    "category": "Grocery",
+    "amount": 848,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-24T07:00:42.389Z",
+    "item": "Box",
+    "category": "Bakery Items",
+    "amount": 2369,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-24T08:00:42.389Z",
+    "item": "Plastic Bag",
+    "category": "Bakery Items",
+    "amount": 1439,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-24T09:00:42.389Z",
+    "item": "Honey",
+    "category": "Grocery",
+    "amount": 3197,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-25T07:00:42.389Z",
+    "item": "Cheese",
+    "category": "Grocery",
+    "amount": 1077,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-25T08:00:42.389Z",
+    "item": "Funnel",
+    "category": "Bakery Items",
+    "amount": 2164,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-25T10:00:42.389Z",
+    "item": "Sponge",
+    "category": "Misc.",
+    "amount": 157,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-25T13:00:42.389Z",
+    "item": "Chocolate",
+    "category": "Grocery",
+    "amount": 1143,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-26T08:00:42.389Z",
+    "item": "Sugar",
+    "category": "Grocery",
+    "amount": 423,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-26T09:00:42.389Z",
+    "item": "Nuts",
+    "category": "Grocery",
+    "amount": 1592,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-26T14:00:42.389Z",
+    "item": "Jordan",
+    "category": "Salary",
+    "amount": 1498,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-26T18:00:42.389Z",
+    "item": "Jack",
+    "category": "Salary",
+    "amount": 300,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-27T07:00:42.389Z",
+    "item": "Glue",
+    "category": "Misc.",
+    "amount": 52,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-27T11:00:42.389Z",
+    "item": "Plastic Wrap",
+    "category": "Bakery Items",
+    "amount": 222,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-27T12:00:42.389Z",
+    "item": "Internet",
+    "category": "Utilities",
+    "amount": 1568,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-27T15:00:42.389Z",
+    "item": "Softdrinks",
+    "category": "Food",
+    "amount": 2718,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-28T08:00:42.389Z",
+    "item": "Food Coloring",
+    "category": "Grocery",
+    "amount": 867,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-28T10:00:42.389Z",
+    "item": "Parchment Paper",
+    "category": "Bakery Items",
+    "amount": 410,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-28T12:00:42.389Z",
+    "item": "Egg",
+    "category": "Grocery",
+    "amount": 2584,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-28T18:00:42.389Z",
+    "item": "Vince",
+    "category": "Salary",
+    "amount": 750,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-29T07:00:42.389Z",
+    "item": "Spoon",
+    "category": "Bakery Items",
+    "amount": 778,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-29T11:00:42.389Z",
+    "item": "Aluminum Foil",
+    "category": "Bakery Items",
+    "amount": 514,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-29T14:00:42.389Z",
+    "item": "Milk",
+    "category": "Grocery",
+    "amount": 657,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-29T18:00:42.389Z",
+    "item": "Brown Sugar",
+    "category": "Grocery",
+    "amount": 1471,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-30T07:00:42.389Z",
+    "item": "Electricity",
+    "category": "Utilities",
+    "amount": 1143,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-30T08:00:42.389Z",
+    "item": "Internet",
+    "category": "Utilities",
+    "amount": 3000,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-30T09:00:42.389Z",
+    "item": "Water Drinks",
+    "category": "Food",
+    "amount": 1701,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-31T07:00:42.389Z",
+    "item": "Baking Paper",
+    "category": "Bakery Items",
+    "amount": 174,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-31T08:00:42.389Z",
+    "item": "Baking Powder",
+    "category": "Grocery",
+    "amount": 1289,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-10-31T09:00:42.389Z",
+    "item": "LPG",
+    "category": "Gasul",
+    "amount": 2323,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-01T07:00:42.389Z",
+    "item": "Sugar",
+    "category": "Grocery",
+    "amount": 536,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-01T08:00:42.389Z",
+    "item": "Milk",
+    "category": "Grocery",
+    "amount": 1134,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-01T09:00:42.389Z",
+    "item": "Ice",
+    "category": "Grocery",
+    "amount": 1277,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-02T07:00:42.389Z",
+    "item": "Flour",
+    "category": "Grocery",
+    "amount": 410,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-02T08:00:42.389Z",
+    "item": "Yeast",
+    "category": "Grocery",
+    "amount": 384,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-02T09:00:42.389Z",
+    "item": "Parchment Paper",
+    "category": "Bakery Items",
+    "amount": 910,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-03T07:00:42.389Z",
+    "item": "Baking Paper",
+    "category": "Bakery Items",
+    "amount": 671,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-03T08:00:42.389Z",
+    "item": "LPG",
+    "category": "Gasul",
+    "amount": 1350,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-03T09:00:42.389Z",
+    "item": "Soap",
+    "category": "Misc.",
+    "amount": 642,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-04T07:00:42.389Z",
+    "item": "Food Coloring",
+    "category": "Grocery",
+    "amount": 867,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-04T08:00:42.389Z",
+    "item": "Water Drinks",
+    "category": "Food",
+    "amount": 1191,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-04T09:00:42.389Z",
+    "item": "Funnel",
+    "category": "Bakery Items",
+    "amount": 955,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-05T07:00:42.389Z",
+    "item": "Egg",
+    "category": "Grocery",
+    "amount": 1760,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-05T08:00:42.389Z",
+    "item": "Energy Drinks",
+    "category": "Food",
+    "amount": 1373,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-05T09:00:42.389Z",
+    "item": "Salt",
+    "category": "Grocery",
+    "amount": 968,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-06T07:00:42.389Z",
+    "item": "Baking Powder",
+    "category": "Grocery",
+    "amount": 1353,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-06T08:00:42.389Z",
+    "item": "Butter",
+    "category": "Grocery",
+    "amount": 226,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-06T09:00:42.389Z",
+    "item": "Sugar",
+    "category": "Grocery",
+    "amount": 914,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-07T07:00:42.389Z",
+    "item": "Plastic Bag",
+    "category": "Bakery Items",
+    "amount": 1439,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-07T08:00:42.389Z",
+    "item": "Box",
+    "category": "Bakery Items",
+    "amount": 1057,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-07T09:00:42.389Z",
+    "item": "Baking Soda",
+    "category": "Grocery",
+    "amount": 151,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-08T07:00:42.389Z",
+    "item": "Tissue",
+    "category": "Misc.",
+    "amount": 410,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-08T08:00:42.389Z",
+    "item": "Softdrinks",
+    "category": "Food",
+    "amount": 780,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-08T09:00:42.389Z",
+    "item": "Honey",
+    "category": "Grocery",
+    "amount": 3197,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-09T07:00:42.389Z",
+    "item": "Cheese",
+    "category": "Grocery",
+    "amount": 1077,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-09T08:00:42.389Z",
+    "item": "Plastic Bag",
+    "category": "Bakery Items",
+    "amount": 1228,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-09T09:00:42.389Z",
+    "item": "Aluminum Foil",
+    "category": "Bakery Items",
+    "amount": 343,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-10T07:00:42.389Z",
+    "item": "Vanilla Flavoring",
+    "category": "Grocery",
+    "amount": 848,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-10T08:00:42.389Z",
+    "item": "Strawberry Jam",
+    "category": "Food",
+    "amount": 1190,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-10T09:00:42.389Z",
+    "item": "Ice",
+    "category": "Grocery",
+    "amount": 607,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-11T07:00:42.389Z",
+    "item": "Water Drinks",
+    "category": "Food",
+    "amount": 696,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-11T08:00:42.389Z",
+    "item": "Spoon",
+    "category": "Bakery Items",
+    "amount": 1491,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-11T09:00:42.389Z",
+    "item": "Fork",
+    "category": "Bakery Items",
+    "amount": 981,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-12T07:00:42.389Z",
+    "item": "Ice",
+    "category": "Grocery",
+    "amount": 66,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-12T08:00:42.389Z",
+    "item": "Sugar",
+    "category": "Grocery",
+    "amount": 294,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-12T09:00:42.389Z",
+    "item": "Brown Sugar",
+    "category": "Grocery",
+    "amount": 1100,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-13T07:00:42.389Z",
+    "item": "Box",
+    "category": "Bakery Items",
+    "amount": 991,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-13T08:00:42.389Z",
+    "item": "Aluminum Foil",
+    "category": "Bakery Items",
+    "amount": 506,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-13T09:00:42.389Z",
+    "item": "Chocolate",
+    "category": "Grocery",
+    "amount": 1205,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-14T07:00:42.389Z",
+    "item": "Salt",
+    "category": "Grocery",
+    "amount": 918,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-14T08:00:42.389Z",
+    "item": "Oil",
+    "category": "Grocery",
+    "amount": 1139,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-14T09:00:42.389Z",
+    "item": "Honey",
+    "category": "Grocery",
+    "amount": 1424,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-15T07:00:42.389Z",
+    "item": "Yeast",
+    "category": "Grocery",
+    "amount": 1185,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-15T08:00:42.389Z",
+    "item": "Flour",
+    "category": "Grocery",
+    "amount": 724,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-15T09:00:42.389Z",
+    "item": "Orange Juice",
+    "category": "Food",
+    "amount": 712,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-16T07:00:42.389Z",
+    "item": "Baking Powder",
+    "category": "Grocery",
+    "amount": 1264,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-16T08:00:42.389Z",
+    "item": "LPG",
+    "category": "Gasul",
+    "amount": 1385,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-16T09:00:42.389Z",
+    "item": "Box",
+    "category": "Bakery Items",
+    "amount": 1051,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-17T07:00:42.389Z",
+    "item": "Pan Liners",
+    "category": "Bakery Items",
+    "amount": 2468,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-17T08:00:42.389Z",
+    "item": "Cocoa Powder",
+    "category": "Grocery",
+    "amount": 609,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-17T09:00:42.389Z",
+    "item": "Breadcrumbs",
+    "category": "Grocery",
+    "amount": 238,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-18T07:00:42.389Z",
+    "item": "Shortening",
+    "category": "Grocery",
+    "amount": 163,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-18T08:00:42.389Z",
+    "item": "Butter",
+    "category": "Grocery",
+    "amount": 226,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-18T09:00:42.389Z",
+    "item": "Strawberry Jam",
+    "category": "Food",
+    "amount": 1190,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-19T07:00:42.389Z",
+    "item": "Box",
+    "category": "Bakery Items",
+    "amount": 200,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-19T08:00:42.389Z",
+    "item": "Plastic Bag",
+    "category": "Bakery Items",
+    "amount": 1460,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-19T09:00:42.389Z",
+    "item": "Sprinkles",
+    "category": "Grocery",
+    "amount": 1411,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-20T07:00:42.389Z",
+    "item": "Nuts",
+    "category": "Grocery",
+    "amount": 747,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-20T08:00:42.389Z",
+    "item": "Tissue",
+    "category": "Misc.",
+    "amount": 410,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-20T09:00:42.389Z",
+    "item": "Yeast",
+    "category": "Grocery",
+    "amount": 136,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-21T07:00:42.389Z",
+    "item": "Chocolate",
+    "category": "Grocery",
+    "amount": 2061,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-21T08:00:42.389Z",
+    "item": "Vanilla Flavoring",
+    "category": "Grocery",
+    "amount": 736,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-21T09:00:42.389Z",
+    "item": "Glue",
+    "category": "Misc.",
+    "amount": 436,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-22T07:00:42.389Z",
+    "item": "Oil",
+    "category": "Grocery",
+    "amount": 1273,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-22T08:00:42.389Z",
+    "item": "Ice",
+    "category": "Grocery",
+    "amount": 329,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-22T09:00:42.389Z",
+    "item": "Soap",
+    "category": "Misc.",
+    "amount": 642,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-23T07:00:42.389Z",
+    "item": "Milk",
+    "category": "Grocery",
+    "amount": 1979,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-23T08:00:42.389Z",
+    "item": "Ice",
+    "category": "Grocery",
+    "amount": 313,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-23T09:00:42.389Z",
+    "item": "Nuts",
+    "category": "Grocery",
+    "amount": 1592,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-24T07:00:42.389Z",
+    "item": "Egg",
+    "category": "Grocery",
+    "amount": 1432,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-24T08:00:42.389Z",
+    "item": "Electricity",
+    "category": "Utilities",
+    "amount": 1135,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-24T09:00:42.389Z",
+    "item": "Internet",
+    "category": "Utilities",
+    "amount": 1175,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
     "datetime": "2022-11-25T07:00:42.389Z",
     "item": "LPG",
     "category": "Gasul",
     "amount": 6500,
-    "notes": ""
-  },
-  {
-    "branchID": 102,
-    "branchName": "Pag-asa QC",
-    "datetime": "2022-11-25T07:00:42.389Z",
-    "item": "LPG",
-    "category": "Gasul",
-    "amount": 6000,
     "notes": ""
   },
   {
@@ -24,6 +1545,1077 @@
     "item": "Flour",
     "category": "Grocery",
     "amount": 2500,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-25T10:00:42.389Z",
+    "item": "Plastic Bag",
+    "category": "Bakery Items",
+    "amount": 685,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-25T13:00:42.389Z",
+    "item": "Bread Crumbs",
+    "category": "Food",
+    "amount": 950,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-26T08:00:42.389Z",
+    "item": "Tongs",
+    "category": "Bakery Items",
+    "amount": 630,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-26T09:00:42.389Z",
+    "item": "Milk",
+    "category": "Grocery",
+    "amount": 1250,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-26T14:00:42.389Z",
+    "item": "Ice",
+    "category": "Food",
+    "amount": 800,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-26T18:00:42.389Z",
+    "item": "Jack",
+    "category": "Salary",
+    "amount": 500,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-27T07:00:42.389Z",
+    "item": "Water",
+    "category": "Utilities",
+    "amount": 2000,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-27T11:00:42.389Z",
+    "item": "Water Drinks",
+    "category": "Food",
+    "amount": 1545,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-27T12:00:42.389Z",
+    "item": "Spoon",
+    "category": "Bakery Items",
+    "amount": 900,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-27T15:00:42.389Z",
+    "item": "Varnish",
+    "category": "Misc.",
+    "amount": 100,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-28T08:00:42.389Z",
+    "item": "Oil",
+    "category": "Grocery",
+    "amount": 2100,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-28T10:00:42.389Z",
+    "item": "Softdrinks",
+    "category": "Food",
+    "amount": 1500,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-28T12:00:42.389Z",
+    "item": "Plastic Wrap",
+    "category": "Bakery Items",
+    "amount": 222,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-28T18:00:42.389Z",
+    "item": "Vince",
+    "category": "Salary",
+    "amount": 450,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-29T07:00:42.389Z",
+    "item": "Energy Drinks",
+    "category": "Food",
+    "amount": 1655,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-29T11:00:42.389Z",
+    "item": "Paper",
+    "category": "Bakery Items",
+    "amount": 800,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-29T14:00:42.389Z",
+    "item": "LPG",
+    "category": "Gasul",
+    "amount": 5500,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-29T18:00:42.389Z",
+    "item": "Jordan",
+    "category": "Salary",
+    "amount": 1000,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-30T07:00:42.389Z",
+    "item": "Baking Powder",
+    "category": "Grocery",
+    "amount": 1337,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-30T08:00:42.389Z",
+    "item": "Box",
+    "category": "Bakery Items",
+    "amount": 901,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-11-30T09:00:42.389Z",
+    "item": "Paper Bag",
+    "category": "Bakery Items",
+    "amount": 551,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-01T07:00:42.389Z",
+    "item": "Plastic Bag",
+    "category": "Bakery Items",
+    "amount": 733,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-01T08:00:42.389Z",
+    "item": "Cocoa Powder",
+    "category": "Grocery",
+    "amount": 609,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-01T09:00:42.389Z",
+    "item": "Oil",
+    "category": "Grocery",
+    "amount": 1837,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-02T07:00:42.389Z",
+    "item": "LPG",
+    "category": "Gasul",
+    "amount": 1581,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-02T08:00:42.389Z",
+    "item": "Cheese",
+    "category": "Grocery",
+    "amount": 214,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-02T09:00:42.389Z",
+    "item": "Cookies",
+    "category": "Food",
+    "amount": 1593,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-03T07:00:42.389Z",
+    "item": "Water Drinks",
+    "category": "Food",
+    "amount": 263,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-03T08:00:42.389Z",
+    "item": "Paper Bag",
+    "category": "Bakery Items",
+    "amount": 447,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-03T09:00:42.389Z",
+    "item": "Tape",
+    "category": "Misc.",
+    "amount": 533,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-04T07:00:42.389Z",
+    "item": "Parchment Paper",
+    "category": "Bakery Items",
+    "amount": 1601,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-04T08:00:42.389Z",
+    "item": "Box",
+    "category": "Bakery Items",
+    "amount": 274,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-04T09:00:42.389Z",
+    "item": "Strawberry Jam",
+    "category": "Food",
+    "amount": 1742,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-05T07:00:42.389Z",
+    "item": "Pan Liners",
+    "category": "Bakery Items",
+    "amount": 2468,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-05T08:00:42.389Z",
+    "item": "Sprinkles",
+    "category": "Grocery",
+    "amount": 259,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-05T09:00:42.389Z",
+    "item": "Soap",
+    "category": "Misc.",
+    "amount": 642,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-06T07:00:42.389Z",
+    "item": "Sponge",
+    "category": "Misc.",
+    "amount": 157,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-06T08:00:42.389Z",
+    "item": "Sugar",
+    "category": "Grocery",
+    "amount": 1308,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-06T09:00:42.389Z",
+    "item": "Milk",
+    "category": "Grocery",
+    "amount": 1283,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-07T07:00:42.389Z",
+    "item": "Tissue",
+    "category": "Misc.",
+    "amount": 410,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-07T08:00:42.389Z",
+    "item": "Stick",
+    "category": "Misc.",
+    "amount": 67,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-07T09:00:42.389Z",
+    "item": "Orange Juice",
+    "category": "Food",
+    "amount": 759,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-08T07:00:42.389Z",
+    "item": "Energy Drinks",
+    "category": "Food",
+    "amount": 1537,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-08T08:00:42.389Z",
+    "item": "Water Drinks",
+    "category": "Food",
+    "amount": 1506,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-08T09:00:42.389Z",
+    "item": "Softdrinks",
+    "category": "Food",
+    "amount": 1977,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-09T07:00:42.389Z",
+    "item": "Scissors",
+    "category": "Misc.",
+    "amount": 638,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-09T08:00:42.389Z",
+    "item": "Spoon",
+    "category": "Bakery Items",
+    "amount": 1976,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-09T09:00:42.389Z",
+    "item": "Fork",
+    "category": "Bakery Items",
+    "amount": 826,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-10T07:00:42.389Z",
+    "item": "Honey",
+    "category": "Grocery",
+    "amount": 3197,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-10T08:00:42.389Z",
+    "item": "Yeast",
+    "category": "Grocery",
+    "amount": 384,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-10T09:00:42.389Z",
+    "item": "Ice",
+    "category": "Grocery",
+    "amount": 66,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-11T07:00:42.389Z",
+    "item": "Oil",
+    "category": "Grocery",
+    "amount": 1139,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-11T08:00:42.389Z",
+    "item": "Aluminum Foil",
+    "category": "Bakery Items",
+    "amount": 506,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-11T09:00:42.389Z",
+    "item": "Chocolate",
+    "category": "Grocery",
+    "amount": 1205,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-12T07:00:42.389Z",
+    "item": "Tongs",
+    "category": "Bakery Items",
+    "amount": 630,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-12T08:00:42.389Z",
+    "item": "Breadcrumbs",
+    "category": "Grocery",
+    "amount": 238,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-12T09:00:42.389Z",
+    "item": "Tissue",
+    "category": "Misc.",
+    "amount": 410,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-13T07:00:42.389Z",
+    "item": "Nuts",
+    "category": "Grocery",
+    "amount": 1592,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-13T08:00:42.389Z",
+    "item": "Egg",
+    "category": "Grocery",
+    "amount": 1432,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-13T09:00:42.389Z",
+    "item": "Box",
+    "category": "Bakery Items",
+    "amount": 339,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-14T07:00:42.389Z",
+    "item": "Aluminum Foil",
+    "category": "Bakery Items",
+    "amount": 514,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-14T08:00:42.389Z",
+    "item": "Brown Sugar",
+    "category": "Grocery",
+    "amount": 1344,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-14T09:00:42.389Z",
+    "item": "Peanut Butter",
+    "category": "Food",
+    "amount": 510,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-15T07:00:42.389Z",
+    "item": "LPG",
+    "category": "Gasul",
+    "amount": 1885,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-15T08:00:42.389Z",
+    "item": "Sugar",
+    "category": "Grocery",
+    "amount": 1547,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-15T09:00:42.389Z",
+    "item": "Plastic Bag",
+    "category": "Bakery Items",
+    "amount": 1097,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-16T07:00:42.389Z",
+    "item": "Milk",
+    "category": "Grocery",
+    "amount": 1791,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-16T08:00:42.389Z",
+    "item": "Ice",
+    "category": "Grocery",
+    "amount": 1876,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-16T09:00:42.389Z",
+    "item": "Honey",
+    "category": "Grocery",
+    "amount": 1300,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-17T07:00:42.389Z",
+    "item": "Yeast",
+    "category": "Grocery",
+    "amount": 1012,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-17T08:00:42.389Z",
+    "item": "Water Drinks",
+    "category": "Food",
+    "amount": 970,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-17T09:00:42.389Z",
+    "item": "Softdrinks",
+    "category": "Food",
+    "amount": 948,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-18T07:00:42.389Z",
+    "item": "Nuts",
+    "category": "Grocery",
+    "amount": 1592,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-18T08:00:42.389Z",
+    "item": "Flour",
+    "category": "Grocery",
+    "amount": 1742,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-18T09:00:42.389Z",
+    "item": "Egg",
+    "category": "Grocery",
+    "amount": 1123,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-19T07:00:42.389Z",
+    "item": "Plastic Bag",
+    "category": "Bakery Items",
+    "amount": 733,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-19T08:00:42.389Z",
+    "item": "Parchment Paper",
+    "category": "Bakery Items",
+    "amount": 1729,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-19T09:00:42.389Z",
+    "item": "Baking Paper",
+    "category": "Bakery Items",
+    "amount": 85,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-20T07:00:42.389Z",
+    "item": "Ribbon",
+    "category": "Misc.",
+    "amount": 751,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-20T08:00:42.389Z",
+    "item": "Shortening",
+    "category": "Grocery",
+    "amount": 163,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-20T09:00:42.389Z",
+    "item": "Butter",
+    "category": "Grocery",
+    "amount": 226,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-21T07:00:42.389Z",
+    "item": "Ice",
+    "category": "Grocery",
+    "amount": 313,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-21T08:00:42.389Z",
+    "item": "Honey",
+    "category": "Grocery",
+    "amount": 1424,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-21T09:00:42.389Z",
+    "item": "Salt",
+    "category": "Grocery",
+    "amount": 1518,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-22T07:00:42.389Z",
+    "item": "Plastic Container",
+    "category": "Bakery Items",
+    "amount": 1648,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-22T08:00:42.389Z",
+    "item": "Candy",
+    "category": "Food",
+    "amount": 805,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-22T09:00:42.389Z",
+    "item": "Baking Soda",
+    "category": "Grocery",
+    "amount": 829,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-23T07:00:42.389Z",
+    "item": "Orange Juice",
+    "category": "Food",
+    "amount": 1453,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-23T08:00:42.389Z",
+    "item": "Chocolate",
+    "category": "Grocery",
+    "amount": 2061,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-23T09:00:42.389Z",
+    "item": "Plastic Wrap",
+    "category": "Bakery Items",
+    "amount": 222,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-24T07:00:42.389Z",
+    "item": "Vanilla Flavoring",
+    "category": "Grocery",
+    "amount": 736,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-24T08:00:42.389Z",
+    "item": "Energy Drinks",
+    "category": "Food",
+    "amount": 1397,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-24T09:00:42.389Z",
+    "item": "Tongs",
+    "category": "Bakery Items",
+    "amount": 434,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-25T07:00:42.389Z",
+    "item": "Flour",
+    "category": "Grocery",
+    "amount": 720,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-25T08:00:42.389Z",
+    "item": "Tissue",
+    "category": "Misc.",
+    "amount": 410,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-25T10:00:42.389Z",
+    "item": "Ice",
+    "category": "Grocery",
+    "amount": 66,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-25T13:00:42.389Z",
+    "item": "Brown Sugar",
+    "category": "Grocery",
+    "amount": 1100,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-26T08:00:42.389Z",
+    "item": "Box",
+    "category": "Bakery Items",
+    "amount": 1051,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-26T09:00:42.389Z",
+    "item": "Pan Liners",
+    "category": "Bakery Items",
+    "amount": 2468,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-26T14:00:42.389Z",
+    "item": "Internet",
+    "category": "Utilities",
+    "amount": 1896,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-26T18:00:42.389Z",
+    "item": "Jordan",
+    "category": "Salary",
+    "amount": 1000,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-27T07:00:42.389Z",
+    "item": "Food Coloring",
+    "category": "Grocery",
+    "amount": 867,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-27T11:00:42.389Z",
+    "item": "Paper Bag",
+    "category": "Bakery Items",
+    "amount": 685,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-27T12:00:42.389Z",
+    "item": "Salt",
+    "category": "Grocery",
+    "amount": 1738,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-27T15:00:42.389Z",
+    "item": "Baking Powder",
+    "category": "Grocery",
+    "amount": 298,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-28T08:00:42.389Z",
+    "item": "Butter",
+    "category": "Grocery",
+    "amount": 1655,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-28T10:00:42.389Z",
+    "item": "Water Drinks",
+    "category": "Food",
+    "amount": 1545,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-28T12:00:42.389Z",
+    "item": "Oil",
+    "category": "Grocery",
+    "amount": 2100,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-28T18:00:42.389Z",
+    "item": "Butter",
+    "category": "Grocery",
+    "amount": 226,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-29T07:00:42.389Z",
+    "item": "Box",
+    "category": "Bakery Items",
+    "amount": 1081,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-29T11:00:42.389Z",
+    "item": "Ice",
+    "category": "Grocery",
+    "amount": 1168,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-29T14:00:42.389Z",
+    "item": "Milk",
+    "category": "Grocery",
+    "amount": 1227,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-29T18:00:42.389Z",
+    "item": "Vince",
+    "category": "Salary",
+    "amount": 500,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-30T07:00:42.389Z",
+    "item": "Egg",
+    "category": "Grocery",
+    "amount": 361,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-30T08:00:42.389Z",
+    "item": "Flour",
+    "category": "Grocery",
+    "amount": 1936,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-30T09:00:42.389Z",
+    "item": "Plastic Bag",
+    "category": "Bakery Items",
+    "amount": 812,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-31T07:00:42.389Z",
+    "item": "Electricity",
+    "category": "Utilities",
+    "amount": 3671,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-31T08:00:42.389Z",
+    "item": "Internet",
+    "category": "Utilities",
+    "amount": 1560,
+    "notes": ""
+  },
+  {
+    "branchID": 101,
+    "branchName": "Panay Avenue Paligsahan QC",
+    "datetime": "2022-12-31T09:00:42.389Z",
+    "item": "Water",
+    "category": "Utilities",
+    "amount": 1263,
     "notes": ""
   }
 ]
