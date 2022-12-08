@@ -9,15 +9,19 @@ export default {
     props: {
         selectedBranch: Object
     },
-    emits: ['changeBranchPassword'],
+    emits: ['changeBranchPassword', 'retrieveBranches'],
 
     data() {
         return {
             branchName: '',
+            invalidBranchName: false,
+            branchNameAlert: '',
+            submitAttemptBranchName: false,
+            branchNameChanged: false,
+
             branchPassword: '',
             branchRetypePassword: '',
             adminPassword: '',
-            submitAttemptBranchName: false,
             submitAttemptPassword: false,
             adminPasswordIsCorrect: false
         }
@@ -41,9 +45,11 @@ export default {
     methods: {
         validBranchName() {
             if (this.branchName.length < 3) {
+                this.branchNameAlert = "Please enter a branch name with a minimum of 3 characters."
                 return false;
             }
             else if (this.branches.some(b => b.branchName.toLowerCase() === this.branchName.toLowerCase())) {
+                this.branchNameAlert = "This branch name already exists."
                 return false;
             }
             return true;
@@ -85,29 +91,44 @@ export default {
             this.submitAttemptBranchName = true;
 
             if (this.validBranchName()) {
+                this.invalidBranchName = false;
+                this.branchNameAlert = '';
                 const data = {
-                    id: this.selectedBranch._id,
-                    branchName: newBranchName
+                    _id: this.selectedBranch._id,
+                    newBranchName: this.branchName
                 };
 
-                UserService.changeBranchName(data)
+                UserService.editBranchName(data)
                     .then(response => {
-                        console.log(response);
+                        this.branchNameChanged = true;
+                        this.branchNameAlert = response.data.msg;
+                        console.log(response.data.msg);
+                        this.$emit('retrieveBranches');
                     })
                     .catch(e => {
                         console.log(e.response);
+                        this.invalidBranchName = true;
+                        this.branchNameChanged = false;
+                        this.branchNameAlert = e.response.data.msg;
                     });
+            }
+            else {
+                this.invalidBranchName = true;
             }
         },
 
         resetInputs() {
             this.branchName = '';
+            this.invalidBranchName = false;
+            this.branchNameAlert = '';
+            this.submitAttemptBranchName = false;
+            this.branchNameChanged = false;
+
             this.branchPassword = '';
             this.branchRetypePassword = '';
             this.adminPassword = '';
-            this.adminPasswordIsCorrect = false;
-            this.submitAttemptBranchName = false;
             this.submitAttemptPassword = false;
+            this.adminPasswordIsCorrect = false;;
         }
     }
 
@@ -135,11 +156,14 @@ export default {
                                 <legend>Change Branch Name</legend>
                                 <div class="form-floating mb-2">
                                     <input type="text"
-                                        :class="{ 'form-control': true, 'is-invalid': !validBranchName() && submitAttemptBranchName }"
+                                        :class="{ 'form-control': true, 'is-invalid': invalidBranchName && submitAttemptBranchName, 'is-valid': branchNameChanged }"
                                         id="edit-branch-name" placeholder="Branch Name" v-model="branchName" required />
                                     <label for="edit-branch-name">Branch Name</label>
+                                    <div class="valid-feedback">
+                                        {{ branchNameAlert }}
+                                    </div>
                                     <div class="invalid-feedback">
-                                        Please enter a branch name with a minimum of 3 characters.
+                                        {{ branchNameAlert }}
                                     </div>
                                 </div>
                             </fieldset>
