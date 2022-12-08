@@ -14,8 +14,8 @@ class UserService {
         // return http.post("/changebranchpassword", data);
     }
 
-    changeBranchName(data) {
-        return http.post("/changebranchname", data);
+    editBranchName(data) {
+        return http.post("/editbranchname", data);
     }
 
     validatePassword(data) {
