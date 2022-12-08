@@ -59,7 +59,7 @@ export default {
         retrieveBranches() {
             UserService.getBranches()
                 .then(response => {
-                    this.branches = response.data
+                    this.branches = response.data;
                 })
                 .catch(e => {
                     console.log(e);
@@ -87,8 +87,8 @@ export default {
 
 <template>
     <AddBranchModal @add-branch="addBranch" />
-    <DeleteBranchModal :selected-branch="selectedBranch" @delete-branch="deleteBranch" />
-    <EditBranchModal :selected-branch="selectedBranch" @change-branch-password="changeBranchPassword" />
+    <DeleteBranchModal :selected-branch="selectedBranch" />
+    <EditBranchModal :selected-branch="selectedBranch" @retrieve-branches="retrieveBranches" />
     <div class="row">
         <h1 class="p-3 m-0">Branches</h1>
         <hr />
