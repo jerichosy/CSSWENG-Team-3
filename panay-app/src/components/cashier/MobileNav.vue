@@ -37,7 +37,7 @@
     </ul>
 </template>
 
-<style>
+<style scoped>
 #mobile-nav {
     height: 4rem
 }
