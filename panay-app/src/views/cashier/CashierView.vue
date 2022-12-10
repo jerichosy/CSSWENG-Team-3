@@ -10,7 +10,7 @@ export default {
 
 <template>
     <div id="cashier-view-container" col="container-fluid bg-info">
-        cashier view
+        <RouterView />
         <MobileNav />
     </div>
 

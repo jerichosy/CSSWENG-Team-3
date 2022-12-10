@@ -11,6 +11,10 @@ import Reports from '../views/admin/adminpages/Reports.vue'
 import Sales from '../views/admin/adminpages/records/SalesView.vue'
 import Expenses from '../views/admin/adminpages/records/ExpensesView.vue'
 import CashierView from '../views/cashier/CashierView.vue'
+import CashierHome from '../views/cashier/CashierHome.vue'
+import CashierSales from '../views/cashier/CashierSales.vue'
+import CashierExpenses from '../views/cashier/CashierExpenses.vue'
+import CashierReview from '../views/cashier/CashierReview.vue'
 
 
 const router = createRouter({
@@ -86,7 +90,33 @@ const router = createRouter({
     {
       path: '/cashier',
       name: 'cashier',
-      component: CashierView
+      component: CashierView,
+      children: [
+        {
+          path: '',
+          redirect: { name: 'cashierhome' }
+        },
+        {
+          path: 'home',
+          name: 'cashierhome',
+          component: CashierHome
+        },
+        {
+          path: 'sales',
+          name: 'cashiersales',
+          component: CashierSales
+        },
+        {
+          path: 'expenses',
+          name: 'cashierexpenses',
+          component: CashierExpenses
+        },
+        {
+          path: 'review',
+          name: 'cashierreview',
+          component: CashierReview
+        },
+      ]
     }
   ]
 })

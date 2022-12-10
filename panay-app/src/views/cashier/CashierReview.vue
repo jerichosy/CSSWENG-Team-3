@@ -1,7 +1,6 @@
 <script>
-
 </script>
 
 <template>
-    cashier home
+    cashier review
 </template>
