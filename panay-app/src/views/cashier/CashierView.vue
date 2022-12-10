@@ -9,17 +9,12 @@ export default {
 </script>
 
 <template>
-    <div id="cashier-view-container" col="container-fluid bg-info">
-        <RouterView />
-        <MobileNav />
-    </div>
-
-
+    <RouterView />
+    <MobileNav />
 </template>
 
 <style scoped>
 #cashier-view-container {
-    background-color: rgb(224, 224, 224);
-    height: 100vh;
+    background-color: var(--bs-bgdefault);
 }
 </style>
