@@ -273,7 +273,7 @@ const adminController = {
             var bakeryitems = await Expense.Admin.find({ branchID: branchID, category: 'Bakery Items', datetime: { $gte: monthstartdate, $lt: monthenddate } })
             var rent = await Expense.Admin.find({ branchID: branchID, category: 'Rent', datetime: { $gte: monthstartdate, $lt: monthenddate } })
             var misc = await Expense.Admin.find({ branchID: branchID, category: 'Misc.', datetime: { $gte: monthstartdate, $lt: monthenddate } })
-            var taxes = await Expense.Admin.find({ branchID: branchID, category: 'Taxes', datetime: { $gte: monthstartdate, $lt: monthenddate } })
+            var taxes = await Expense.Admin.find({ branchID: branchID, category: 'Tax', datetime: { $gte: monthstartdate, $lt: monthenddate } })
 
             var csalary = await Cheque.find({ branchID: branchID, category: 'Salary', datetime: { $gte: monthstartdate, $lt: monthenddate } })
             var cgrocery = await Cheque.find({ branchID: branchID, category: 'Grocery', datetime: { $gte: monthstartdate, $lt: monthenddate } })
@@ -283,7 +283,7 @@ const adminController = {
             var cbakeryitems = await Cheque.find({ branchID: branchID, category: 'Bakery Items', datetime: { $gte: monthstartdate, $lt: monthenddate } })
             var crent = await Cheque.find({ branchID: branchID, category: 'Rent', datetime: { $gte: monthstartdate, $lt: monthenddate } })
             var cmisc = await Cheque.find({ branchID: branchID, category: 'Misc.', datetime: { $gte: monthstartdate, $lt: monthenddate } })
-            var ctaxes = await Cheque.find({ branchID: branchID, category: 'Taxes', datetime: { $gte: monthstartdate, $lt: monthenddate } })
+            var ctaxes = await Cheque.find({ branchID: branchID, category: 'Tax', datetime: { $gte: monthstartdate, $lt: monthenddate } })
 
             var sales = await Sales.Admin.find({ branchID: branchID, datetime: { $gte: monthstartdate, $lt: monthenddate } })
             var cheque = await Cheque.find({ branchID: branchID, datetime: { $gte: monthstartdate, $lt: monthenddate } })
@@ -470,7 +470,7 @@ const adminController = {
                 var dailybakeryitems = await Expense.Admin.find({ branchID: branchID, category: 'Bakery Items', datetime: { $gte: startDate, $lt: endDate } })
                 var dailyrent = await Expense.Admin.find({ branchID: branchID, category: 'Rent', datetime: { $gte: startDate, $lt: endDate } })
                 var dailymisc = await Expense.Admin.find({ branchID: branchID, category: 'Misc.', datetime: { $gte: startDate, $lt: endDate } })
-                var dailytaxes = await Expense.Admin.find({ branchID: branchID, category: 'Taxes', datetime: { $gte: startDate, $lt: endDate } })
+                var dailytaxes = await Expense.Admin.find({ branchID: branchID, category: 'Tax', datetime: { $gte: startDate, $lt: endDate } })
             }
 
             //get daily sales, expenses, cheques
@@ -799,8 +799,8 @@ const adminController = {
                         var dailygasul = await Expense.Admin.find({ branchID: branchID, category: 'Gasul', datetime: { $gte: startDate, $lt: endDate } })
                         var dailybakeryitems = await Expense.Admin.find({ branchID: branchID, category: 'Bakery Items', datetime: { $gte: startDate, $lt: endDate } })
                         var dailyrent = await Expense.Admin.find({ branchID: branchID, category: 'Rent', datetime: { $gte: startDate, $lt: endDate } })
-                        var dailymisc = await Expense.Admin.find({ branchID: branchID, category: 'Misc', datetime: { $gte: startDate, $lt: endDate } })
-                        var dailytaxes = await Expense.Admin.find({ branchID: branchID, category: 'Taxes', datetime: { $gte: startDate, $lt: endDate } })
+                        var dailymisc = await Expense.Admin.find({ branchID: branchID, category: 'Misc.', datetime: { $gte: startDate, $lt: endDate } })
+                        var dailytaxes = await Expense.Admin.find({ branchID: branchID, category: 'Tax', datetime: { $gte: startDate, $lt: endDate } })
 
                         var csalary = await Cheque.find({ branchID: branchID, category: 'Salary', datetime: { $gte: startDate, $lt: endDate } })
                         var cgrocery = await Cheque.find({ branchID: branchID, category: 'Grocery', datetime: { $gte: startDate, $lt: endDate } })
@@ -810,7 +810,7 @@ const adminController = {
                         var cbakeryitems = await Cheque.find({ branchID: branchID, category: 'Bakery Items', datetime: { $gte: startDate, $lt: endDate } })
                         var crent = await Cheque.find({ branchID: branchID, category: 'Rent', datetime: { $gte: startDate, $lt: endDate } })
                         var cmisc = await Cheque.find({ branchID: branchID, category: 'Misc.', datetime: { $gte: startDate, $lt: endDate } })
-                        var ctaxes = await Cheque.find({ branchID: branchID, category: 'Taxes', datetime: { $gte: startDate, $lt: endDate } })
+                        var ctaxes = await Cheque.find({ branchID: branchID, category: 'Tax', datetime: { $gte: startDate, $lt: endDate } })
 
                         var dailysales = await Sales.Admin.find({ branchID: branchID, datetime: { $gte: startDate, $lt: endDate } })
                         var dailycheque = await Cheque.find({ branchID: branchID, datetime: { $gte: startDate, $lt: endDate } })
@@ -858,9 +858,9 @@ const adminController = {
 
                     dailyrecord.push(parseInt(day))
                     dailyrecord.push(daily.dsales)
-                    dailyrecord.push(daily.dcheque)
+                    //dailyrecord.push(daily.dcheque)
                     dailyrecord.push(daily.dexpense)
-                    dailyrecord.push(daily.dtotalexpense)
+                    //dailyrecord.push(daily.dtotalexpense)
                     dailyrecord.push(daily.dnet)
 
                     //Populate expense categories
@@ -983,7 +983,7 @@ const adminController = {
                 reports.push(monthlyrecord)
                 totals.push(monthlytotals)
 
-                var worksheet = WB.addWorksheet(MONTHNAMES[qrtrmonth]);
+                var worksheet = WB.addWorksheet(MONTHNAMES[qrtrmonth - 1]);
 
                 //Formatting
                 {
@@ -999,7 +999,7 @@ const adminController = {
                     worksheet.mergeCells('E4:M4');
 
                     worksheet.getCell('A2').value = branchName
-                    worksheet.getCell('A3').value = MONTHNAMES[qrtrmonth] + " Transactions"
+                    worksheet.getCell('A3').value = MONTHNAMES[qrtrmonth - 1] + " Transactions"
 
                     worksheet.getCell('A2').alignment = { vertical: 'middle', horizontal: 'center' }
                     worksheet.getCell('A3').alignment = { vertical: 'middle', horizontal: 'center' }
@@ -1138,7 +1138,8 @@ const adminController = {
                 worksheet.mergeCells(`B${callimit + 7}:D${callimit + 7}`);
                 worksheet.mergeCells(`B${callimit + 8}:D${callimit + 8}`);
                 worksheet.mergeCells(`B${callimit + 9}:D${callimit + 9}`);
-
+                console.log(monthlyrecord)
+                console.log("BREAK")
             }
 
             res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
