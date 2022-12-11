@@ -2,7 +2,7 @@
     {
         "datetime": "2022-10-01T07:00:42.389Z",
         "account": "BIR",
-        "category": "Tax",
+        "category": "Taxes",
         "amount": 9550,
         "branchID": 101,
         "branchName": "Panay Avenue Paligsahan QC"
@@ -74,7 +74,7 @@
     {
         "datetime": "2022-10-22T07:00:42.389Z",
         "account": "Customs",
-        "category": "Tax",
+        "category": "Taxes",
         "amount": 8765,
         "branchID": 101,
         "branchName": "Panay Avenue Paligsahan QC"
@@ -106,7 +106,7 @@
     {
         "datetime": "2022-11-01T07:00:42.389Z",
         "account": "BIR",
-        "category": "Tax",
+        "category": "Taxes",
         "amount": 6500,
         "branchID": 101,
         "branchName": "Panay Avenue Paligsahan QC"
@@ -178,7 +178,7 @@
     {
         "datetime": "2022-11-25T07:00:42.389Z",
         "account": "Customs",
-        "category": "Tax",
+        "category": "Taxes",
         "amount": 5400,
         "branchID": 101,
         "branchName": "Panay Avenue Paligsahan QC"
@@ -210,7 +210,7 @@
     {
         "datetime": "2022-12-01T07:00:42.389Z",
         "account": "BIR",
-        "category": "Tax",
+        "category": "Taxes",
         "amount": 7250,
         "branchID": 101,
         "branchName": "Panay Avenue Paligsahan QC"
@@ -290,7 +290,7 @@
     {
         "datetime": "2022-12-28T08:00:42.389Z",
         "account": "Customs",
-        "category": "Tax",
+        "category": "Taxes",
         "amount": 6500,
         "branchID": 101,
         "branchName": "Panay Avenue Paligsahan QC"
