@@ -740,6 +740,7 @@ const adminController = {
         else {
             //Creating Excel Workbook
             const WB = new ExcelJS.Workbook();
+            var calendar = []
 
             for (var qrtrmonth = monthvar, ctr = 0; ctr <= 2; qrtrmonth++, ctr++) {
                 var monthlyrecord = []
@@ -765,6 +766,7 @@ const adminController = {
                             callimit = 28
                         }
                     }
+                    calendar.push(callimit)
 
                     if (qrtrmonth < 10) {
                         qrtrmonth = "0" + qrtrmonth
@@ -1138,9 +1140,36 @@ const adminController = {
                 worksheet.mergeCells(`B${callimit + 7}:D${callimit + 7}`);
                 worksheet.mergeCells(`B${callimit + 8}:D${callimit + 8}`);
                 worksheet.mergeCells(`B${callimit + 9}:D${callimit + 9}`);
-                console.log(monthlyrecord)
-                console.log("BREAK")
             }
+
+            //Summary Worksheet
+            {
+                var summary = WB.addWorksheet('Summary');
+
+                summary.mergeCells('B2:F2');
+                summary.mergeCells('B3:F3');
+
+                summary.getCell('B2').value = branchName
+                summary.getCell('B3').value = "Monthly Summary"
+                // console.log(monthvar)
+                // var month1 = MONTHNAMES[monthvar - 1].toUpperCase()
+                // var month2 = MONTHNAMES[monthvar].toUpperCase()
+                // var month3 = MONTHNAMES[monthvar + 1].toUpperCase()
+
+                summary.addRow([" ", , MONTHNAMES[monthvar - 1].toUpperCase(), MONTHNAMES[monthvar].toUpperCase(), MONTHNAMES[monthvar + 1].toUpperCase()])
+                summary.addRow([])
+                console.log(WB.worksheets[0].getCell(`B${calendar[0] + 6}`))
+
+                summary.addRow([" ", "GROSS SALES", { formula: `${MONTHNAMES[monthvar - 1]}!${`B${calendar[0] + 6}`}` },
+                    { formula: `${MONTHNAMES[monthvar]}!${`B${calendar[1] + 6}`}` }, { formula: `${MONTHNAMES[monthvar + 1]}!${`B${calendar[2] + 6}`}` }])
+
+                summary.addRow([" ", "Daily Average", { formula: `C6/${calendar[0]}` }, { formula: `D6/${calendar[1]}` }, { formula: `E6/${calendar[2]}` }])
+                summary.addRow([])
+
+                summary.addRow([])
+            }
+
+
 
             res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
             res.setHeader('Content-Disposition', 'attachment; filename=' + 'MonthReport.xlsx');
