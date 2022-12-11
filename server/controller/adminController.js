@@ -1164,6 +1164,50 @@ const adminController = {
                 worksheet.mergeCells(`B${callimit + 9}:D${callimit + 9}`);
             }
 
+            //FS Worksheet
+            {
+                var finstatement = WB.addWorksheet('FS');
+
+                finstatement.mergeCells('B2:J2');
+                finstatement.mergeCells('B3:J3');
+                finstatement.mergeCells('B4:J4');
+
+                finstatement.getCell('B2').value = branchName
+                finstatement.getCell('B3').value = "Income Statement"
+                finstatement.getCell('B3').value = "For the Period Ended " + MONTHNAMES[monthvar + 1] + " " + dateinput.getFullYear()
+                finstatement.addRow([])
+
+                finstatement.addRow([" ", "Sales", , , , , , { formula: `Summary!F6` }, , { formula: `H6/H6` }])
+                finstatement.addRow([])
+
+                finstatement.addRow([" ", , "Cost of Goods Sold"])
+                finstatement.addRow([" ", , , "Grocery/ Softdrinks", , { formula: `Summary!F10` }, , , , { formula: `F9/H6` }])
+                finstatement.addRow([" ", , , "Bakery Items", , { formula: `Summary!F14` }, , , , { formula: `F10/H6` }])
+                finstatement.addRow([" ", , , "Gasul", , { formula: `Summary!F13` }, , , , { formula: `F11/H6` }])
+                finstatement.addRow([" ", , "Total Cost of Goods Sold", , , , , { formula: `SUM(F9:F11)` }, , { formula: `H12/H6` }])
+                finstatement.addRow([])
+
+                finstatement.addRow([" ", "Gross Margin", , , , , , { formula: `H6-H12` }, , { formula: `H14/H6` }])
+                finstatement.addRow([])
+
+                finstatement.addRow([" ", , "Operating Costs"])
+                finstatement.addRow([" ", , , "Salary/ Vale", , { formula: `Summary!F9` }, , , , { formula: `F17/H6` }])
+                finstatement.addRow([" ", , , "Rent", , { formula: `Summary!F15` }, , , , { formula: `F18/H6` }])
+                finstatement.addRow([" ", , , "Food", , { formula: `Summary!F12` }, , , , { formula: `F19/H6` }])
+                finstatement.addRow([" ", , , "Utilities", , { formula: `Summary!F11` }, , , , { formula: `F20/H6` }])
+                finstatement.addRow([" ", , , "Miscellaneous", , { formula: `Summary!F16` }, , , , { formula: `F21/H6` }])
+                finstatement.addRow([" ", , "Total Operating Costs", , , , , { formula: `SUM(F17:F21)` }, , { formula: `H22/H6` }])
+                finstatement.addRow([])
+
+                finstatement.addRow([" ", "Net Margin before taxes", , , , , , { formula: `H14-H12` }, , { formula: `H24/H6` }])
+                finstatement.addRow([])
+
+                finstatement.addRow([" ", , "Taxes", , , , , { formula: `Summary!F17` }, , { formula: `H26/H6` }])
+                finstatement.addRow([])
+
+                finstatement.addRow([" ", "Net Margin", , , , , , { formula: `H24-H26` }, , { formula: `H28/H6` }])
+            }
+
             //Summary Worksheet
             {
                 var summary = WB.addWorksheet('Summary');
@@ -1175,7 +1219,7 @@ const adminController = {
                 summary.getCell('B3').value = "Monthly Summary"
 
                 worksheet.getCell('B2').alignment = { vertical: 'middle', horizontal: 'center' }
-                worksheet.getCell('B3s').alignment = { vertical: 'middle', horizontal: 'center' }
+                worksheet.getCell('B3').alignment = { vertical: 'middle', horizontal: 'center' }
 
                 summary.addRow([" ", , MONTHNAMES[monthvar - 1].toUpperCase(), MONTHNAMES[monthvar].toUpperCase(), MONTHNAMES[monthvar + 1].toUpperCase(), "TOTAL"])
                 summary.addRow([])
@@ -1196,9 +1240,9 @@ const adminController = {
                 summary.addRow([" ", "Misc", { formula: `${MONTHNAMES[monthvar - 1]}!${`L${calendar[0] + 9}`}` }, { formula: `${MONTHNAMES[monthvar]}!${`L${calendar[1] + 9}`}` }, { formula: `${MONTHNAMES[monthvar + 1]}!${`L${calendar[2] + 9}`}` }, { formula: `SUM(C16:E16)` }])
                 summary.addRow([" ", "Taxes", { formula: `${MONTHNAMES[monthvar - 1]}!${`M${calendar[0] + 9}`}` }, { formula: `${MONTHNAMES[monthvar]}!${`M${calendar[1] + 9}`}` }, { formula: `${MONTHNAMES[monthvar + 1]}!${`M${calendar[2] + 9}`}` }, { formula: `SUM(C17:E17)` }])
                 summary.addRow([" ", "Total Expenses", { formula: `SUM(C9:C17)` }, { formula: `SUM(D9:D17)` }, { formula: `SUM(E9:E17)` }, { formula: `SUM(C18:E18)` }])
+                summary.addRow([])
                 summary.addRow([" ", "Net Sales", { formula: `C6-C18` }, { formula: `D6-D18` }, { formula: `E6-E18` }, { formula: `SUM(C20:E20)` }])
             }
-
 
 
             res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
@@ -1208,9 +1252,6 @@ const adminController = {
             });
         }
 
-        //console.log(reports)
-        //console.log(totals)
-        //res.status(201).json({ msg: 'Done' });
     }
 }
 
