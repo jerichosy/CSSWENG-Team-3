@@ -437,8 +437,19 @@ const adminController = {
         var salesLast = await Sales.Admin.find().sort({ datetime: -1 }).limit(1)
         var expenseLast = await Expense.Admin.find().sort({ datetime: -1 }).limit(1)
 
-        salesLast = salesLast[0].datetime.toISOString().split('-')[2].split('T')[0]
-        expenseLast = expenseLast[0].datetime.toISOString().split('-')[2].split('T')[0]
+        if (salesLast.size == 0) {
+            salesLast = 0;
+        }
+        else {
+            salesLast = salesLast[0].datetime.toISOString().split('-')[2].split('T')[0]
+        }
+
+        if (expenseLast.size == 0) {
+            expenseLast = 0;
+        }
+        else {
+            expenseLast = expenseLast[0].datetime.toISOString().split('-')[2].split('T')[0]
+        }
 
         maxlimit = Math.max(salesLast, expenseLast, callimit)
 
@@ -1061,8 +1072,19 @@ const adminController = {
                 var salesLast = await Sales.Admin.find({ datetime: { $gte: monthstartdate, $lt: monthenddate } }).sort({ datetime: -1 }).limit(1)
                 var expenseLast = await Expense.Admin.find({ datetime: { $gte: monthstartdate, $lt: monthenddate } }).sort({ datetime: -1 }).limit(1)
 
-                salesLast = salesLast[0].datetime.toISOString().split('-')[2].split('T')[0]
-                expenseLast = expenseLast[0].datetime.toISOString().split('-')[2].split('T')[0]
+                if (salesLast.size == 0) {
+                    salesLast = 0;
+                }
+                else {
+                    salesLast = salesLast[0].datetime.toISOString().split('-')[2].split('T')[0]
+                }
+
+                if (expenseLast.size == 0) {
+                    expenseLast = 0;
+                }
+                else {
+                    expenseLast = expenseLast[0].datetime.toISOString().split('-')[2].split('T')[0]
+                }
 
                 maxlimit = Math.max(salesLast, expenseLast, callimit)
 
