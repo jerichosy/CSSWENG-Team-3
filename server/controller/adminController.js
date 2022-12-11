@@ -747,6 +747,7 @@ const adminController = {
 
         if (monthvar != 1 && monthvar != 4 && monthvar != 7 && monthvar != 10) {
             console.log('Invalid Quarter');
+            res.status(400).json({ msg: 'Invalid Quarter' })
         }
         else {
             //Creating Excel Workbook
