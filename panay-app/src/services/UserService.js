@@ -36,6 +36,11 @@ class UserService {
         return http.post("/createbranch", data);
     }
 
+    editAdminPassword(data) {
+        console.log(data);
+        return http.post("/editadminpassword", data);
+    }
+
     login(data) {
         return http.post("/login", data);
     }

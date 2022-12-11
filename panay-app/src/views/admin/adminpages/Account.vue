@@ -1,27 +1,81 @@
 <script>
+import UserService from '../../../services/UserService.js'
 export default {
     data() {
         return {
-            changePassword: {
+            oldPassword: '',
+            newPassword: '',
+            newPasswordRetyped: '',
+            alertMessages: {
                 oldPassword: '',
                 newPassword: '',
-                newPasswordRetyped: ''
-            },
-            alertMessage: ''
+                newPasswordRetyped: '',
+                generic: ''
+            }
         }
     },
 
     methods: {
-        validatePassword() {
-            // TODO: Validate old password. Show error from backend.
-            // TODO: Check if new password is the same as the old password (taken from backend).
-            // TODO: Submit password change if no problems.
-            if (this.changePassword.newPassword !== this.changePassword.newPasswordRetyped) {
-                this.alertMessage = 'Please make sure the new passwords are the same on both fields.'
+        validateRetypedPassword() {
+            if (this.newPassword !== this.newPasswordRetyped) {
+                this.alertMessages.newPasswordRetyped = 'Please make sure the new passwords are the same on both fields.'
+                return false;
             }
             else {
-                this.alertMessage = ''
+                this.alertMessages.newPasswordRetyped = ''
+                return true;
             }
+        },
+
+        editAdminPassword() {
+            this.resetAlertMessages();
+            const data = {
+                oldPassword: this.oldPassword,
+                newPassword: this.newPassword
+            };
+
+            if (this.validateRetypedPassword()) {
+                UserService.editAdminPassword(data)
+                    .then(response => {
+                        this.resetAlertMessages();
+                        this.resetInputs();
+                        this.alertMessages.generic = "Password successfully changed!"
+                    })
+                    .catch(e => {
+                        const msg = e.response.data.msg;
+                        const reason = e.response.data.reason;
+
+                        switch (reason) {
+                            case 'oldPassword':
+                                this.alertMessages.oldPassword = msg;
+                                break;
+                            case 'newPassword':
+                                this.alertMessages.newPassword = msg;
+                                break;
+                            default:
+                                this.alertMessages.generic = msg;
+                        }
+                    })
+            }
+            else {
+                console.log(this.alertMessages);
+            }
+
+        },
+
+        resetInputs() {
+            this.oldPassword = '';
+            this.newPassword = '';
+            this.newPasswordRetyped = '';
+        },
+
+        resetAlertMessages() {
+            this.alertMessages = {
+                oldPassword: '',
+                newPassword: '',
+                newPasswordRetyped: '',
+                generic: ''
+            };
         }
     }
 }
@@ -34,30 +88,45 @@ export default {
     </div>
 
     <div class="row">
-        {{ alertMessage }}
-        <form class="col-md-8 col-sm-12">
+        <form @click="resetAlertMessages" @submit.prevent="editAdminPassword" class="col-md-8 col-sm-12">
+            <!-- FIXME: put this message in an alert box -->
+            {{ alertMessages.generic }}
             <fieldset>
                 <legend>Change Admin Password</legend>
                 <div class="form-floating mb-2">
-                    <input type="password" class="form-control" id="current-password" placeholder="Current Password"
-                        v-model="changePassword.oldPassword" required autocomplete />
+                    <input type="password"
+                        :class="{ 'form-control': true, 'is-invalid': this.alertMessages.oldPassword }"
+                        id="current-password" placeholder="Current Password" v-model="oldPassword" required
+                        autocomplete />
                     <label for="current-password">Current Password</label>
+                    <div class="invalid-feedback">
+                        {{ alertMessages.oldPassword }}
+                    </div>
                 </div>
 
                 <div class="form-floating mb-2">
-                    <input type="password" class="form-control" id="new-password" placeholder="New Password"
-                        v-model="changePassword.newPassword" required autocomplete="false" />
+                    <input type="password"
+                        :class="{ 'form-control': true, 'is-invalid': this.alertMessages.newPassword }" id="
+                        new-password" placeholder="New Password" v-model="newPassword" required autocomplete="false" />
                     <label for="new-password">New Password</label>
+                    <div class="invalid-feedback">
+                        {{ alertMessages.newPassword }}
+                    </div>
                 </div>
 
                 <div class="form-floating mb-2">
-                    <input type="password" class="form-control" id="retype-password" placeholder="Retype New Password"
-                        v-model="changePassword.newPasswordRetyped" required autocomplete="false" />
+                    <input type="password"
+                        :class="{ 'form-control': true, 'is-invalid': this.alertMessages.newPasswordRetyped }" id="
+                        retype-password" placeholder="Retype New Password" v-model="newPasswordRetyped" required
+                        autocomplete="false" />
                     <label for="retype-password">Retype New Password</label>
+                    <div class="invalid-feedback">
+                        {{ alertMessages.newPasswordRetyped }}
+                    </div>
                 </div>
 
                 <div class="d-flex justify-content-end">
-                    <button class="btn btn-primary" @click="validatePassword">Submit</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
 
             </fieldset>
