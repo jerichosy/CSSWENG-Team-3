@@ -437,14 +437,14 @@ const adminController = {
         var salesLast = await Sales.Admin.find().sort({ datetime: -1 }).limit(1)
         var expenseLast = await Expense.Admin.find().sort({ datetime: -1 }).limit(1)
 
-        if (salesLast.size == 0) {
+        if (salesLast.length == 0) {
             salesLast = 0;
         }
         else {
             salesLast = salesLast[0].datetime.toISOString().split('-')[2].split('T')[0]
         }
 
-        if (expenseLast.size == 0) {
+        if (expenseLast.length == 0) {
             expenseLast = 0;
         }
         else {
@@ -1072,14 +1072,14 @@ const adminController = {
                 var salesLast = await Sales.Admin.find({ datetime: { $gte: monthstartdate, $lt: monthenddate } }).sort({ datetime: -1 }).limit(1)
                 var expenseLast = await Expense.Admin.find({ datetime: { $gte: monthstartdate, $lt: monthenddate } }).sort({ datetime: -1 }).limit(1)
 
-                if (salesLast.size == 0) {
+                if (salesLast.length == 0) {
                     salesLast = 0;
                 }
                 else {
                     salesLast = salesLast[0].datetime.toISOString().split('-')[2].split('T')[0]
                 }
 
-                if (expenseLast.size == 0) {
+                if (expenseLast.length == 0) {
                     expenseLast = 0;
                 }
                 else {
