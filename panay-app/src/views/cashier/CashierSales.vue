@@ -28,16 +28,37 @@ export default {
     },
 
     computed: {
+
+        sortedSales: function () {
+            let sales = this.cashierSales;
+            return sales.sort((a, b) => {
+                let modifier = -1;
+                if (a['datetime'] === undefined) return 1;
+                if (b['datetime'] === undefined) return -1
+                if (a['datetime'] < b['datetime']) return -1 * modifier;
+                if (a['datetime'] > b['datetime']) return 1 * modifier;
+                return 0
+            })
+        },
+
         runningTotal: function () {
-            let tempTotal = 0;
-            return this.cashierSales.map((sales) => {
-                return tempTotal += sales.amount;
+            let tempTotal = this.totalSales;
+            let first = true;
+            return this.sortedSales.map((sales) => {
+                if (first) {
+                    const firstTotal = tempTotal;
+                    tempTotal -= sales.amount;
+                    return firstTotal;
+                }
+                return tempTotal -= sales.amount;
             });
         },
 
         totalSales: function () {
-            return this.runningTotal[this.runningTotal.length - 1];
-        }
+            return this.cashierSales.reduce((accumulator, currentValue) =>
+                accumulator + currentValue.amount, 0
+            );
+        },
     }
 }
 </script>
@@ -57,7 +78,7 @@ export default {
         </div>
 
         <div class="row-cols-1 m-1 justify-content-center">
-            <template v-for="(sales, index) in cashierSales">
+            <template v-for="(sales, index) in sortedSales">
                 <RecordItem record-type="sales" :record="sales">
                     <template #runningTotal>
                         (₱{{ runningTotal[index].toFixed(2) }})
