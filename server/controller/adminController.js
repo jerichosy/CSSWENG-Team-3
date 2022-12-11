@@ -1173,21 +1173,30 @@ const adminController = {
 
                 summary.getCell('B2').value = branchName
                 summary.getCell('B3').value = "Monthly Summary"
-                // console.log(monthvar)
-                // var month1 = MONTHNAMES[monthvar - 1].toUpperCase()
-                // var month2 = MONTHNAMES[monthvar].toUpperCase()
-                // var month3 = MONTHNAMES[monthvar + 1].toUpperCase()
+
+                worksheet.getCell('B2').alignment = { vertical: 'middle', horizontal: 'center' }
+                worksheet.getCell('B3s').alignment = { vertical: 'middle', horizontal: 'center' }
 
                 summary.addRow([" ", , MONTHNAMES[monthvar - 1].toUpperCase(), MONTHNAMES[monthvar].toUpperCase(), MONTHNAMES[monthvar + 1].toUpperCase(), "TOTAL"])
                 summary.addRow([])
 
                 summary.addRow([" ", "GROSS SALES", { formula: `${MONTHNAMES[monthvar - 1]}!${`B${calendar[0] + 6}`}` },
-                    { formula: `${MONTHNAMES[monthvar]}!${`B${calendar[1] + 6}`}` }, { formula: `${MONTHNAMES[monthvar + 1]}!${`B${calendar[2] + 6}`}` }])
+                    { formula: `${MONTHNAMES[monthvar]}!${`B${calendar[1] + 6}`}` }, { formula: `${MONTHNAMES[monthvar + 1]}!${`B${calendar[2] + 6}`}` }, { formula: `SUM(C6:E6)` }])
 
                 summary.addRow([" ", "Daily Average", { formula: `C6/${calendar[0]}` }, { formula: `D6/${calendar[1]}` }, { formula: `E6/${calendar[2]}` }])
                 summary.addRow([])
 
-                summary.addRow([])
+                summary.addRow([" ", "Salary", { formula: `${MONTHNAMES[monthvar - 1]}!${`E${calendar[0] + 9}`}` }, { formula: `${MONTHNAMES[monthvar]}!${`E${calendar[1] + 9}`}` }, { formula: `${MONTHNAMES[monthvar + 1]}!${`E${calendar[2] + 9}`}` }, { formula: `SUM(C9:E9)` }])
+                summary.addRow([" ", "Groceries", { formula: `${MONTHNAMES[monthvar - 1]}!${`F${calendar[0] + 9}`}` }, { formula: `${MONTHNAMES[monthvar]}!${`F${calendar[1] + 9}`}` }, { formula: `${MONTHNAMES[monthvar + 1]}!${`F${calendar[2] + 9}`}` }, { formula: `SUM(C10:E10)` }])
+                summary.addRow([" ", "Utilities", { formula: `${MONTHNAMES[monthvar - 1]}!${`G${calendar[0] + 9}`}` }, { formula: `${MONTHNAMES[monthvar]}!${`G${calendar[1] + 9}`}` }, { formula: `${MONTHNAMES[monthvar + 1]}!${`G${calendar[2] + 9}`}` }, { formula: `SUM(C11:E11)` }])
+                summary.addRow([" ", "Food", { formula: `${MONTHNAMES[monthvar - 1]}!${`H${calendar[0] + 9}`}` }, { formula: `${MONTHNAMES[monthvar]}!${`H${calendar[1] + 9}`}` }, { formula: `${MONTHNAMES[monthvar + 1]}!${`H${calendar[2] + 9}`}` }, { formula: `SUM(C12:E12)` }])
+                summary.addRow([" ", "Gasul", { formula: `${MONTHNAMES[monthvar - 1]}!${`I${calendar[0] + 9}`}` }, { formula: `${MONTHNAMES[monthvar]}!${`I${calendar[1] + 9}`}` }, { formula: `${MONTHNAMES[monthvar + 1]}!${`I${calendar[2] + 9}`}` }, { formula: `SUM(C13:E13)` }])
+                summary.addRow([" ", "Bakery Items", { formula: `${MONTHNAMES[monthvar - 1]}!${`J${calendar[0] + 9}`}` }, { formula: `${MONTHNAMES[monthvar]}!${`J${calendar[1] + 9}`}` }, { formula: `${MONTHNAMES[monthvar + 1]}!${`J${calendar[2] + 9}`}` }, { formula: `SUM(C14:E14)` }])
+                summary.addRow([" ", "Rent", { formula: `${MONTHNAMES[monthvar - 1]}!${`K${calendar[0] + 9}`}` }, { formula: `${MONTHNAMES[monthvar]}!${`K${calendar[1] + 9}`}` }, { formula: `${MONTHNAMES[monthvar + 1]}!${`K${calendar[2] + 9}`}` }, { formula: `SUM(C15:E15)` }])
+                summary.addRow([" ", "Misc", { formula: `${MONTHNAMES[monthvar - 1]}!${`L${calendar[0] + 9}`}` }, { formula: `${MONTHNAMES[monthvar]}!${`L${calendar[1] + 9}`}` }, { formula: `${MONTHNAMES[monthvar + 1]}!${`L${calendar[2] + 9}`}` }, { formula: `SUM(C16:E16)` }])
+                summary.addRow([" ", "Taxes", { formula: `${MONTHNAMES[monthvar - 1]}!${`M${calendar[0] + 9}`}` }, { formula: `${MONTHNAMES[monthvar]}!${`M${calendar[1] + 9}`}` }, { formula: `${MONTHNAMES[monthvar + 1]}!${`M${calendar[2] + 9}`}` }, { formula: `SUM(C17:E17)` }])
+                summary.addRow([" ", "Total Expenses", { formula: `SUM(C9:C17)` }, { formula: `SUM(D9:D17)` }, { formula: `SUM(E9:E17)` }, { formula: `SUM(C18:E18)` }])
+                summary.addRow([" ", "Net Sales", { formula: `C6-C18` }, { formula: `D6-D18` }, { formula: `E6-E18` }, { formula: `SUM(C20:E20)` }])
             }
 
 
