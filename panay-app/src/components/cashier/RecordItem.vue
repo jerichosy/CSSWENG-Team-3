@@ -1,11 +1,42 @@
 <script>
 
 export default {
+
     props: {
-        recordType: String
+        recordType: String,
+        record: Object,
+        currentTotal: Number
     },
 
-    mounted() {
+    data() {
+        return {
+            salesRecord: {
+                branchID: this.record.branchID,
+                branchName: this.record.branchName,
+                amount: this.record.amount,
+                customerCount: this.record.customerCount,
+                datetime: this.record.datetime
+            }
+        }
+    },
+
+    computed: {
+        computedCustomerCount() {
+            if (this.salesRecord.customerCount === null) {
+                return '--';
+            }
+            else {
+                return this.salesRecord.customerCount;
+            }
+        },
+
+        computedTime() {
+            const time = this.salesRecord.datetime.split('T')[1].split('.')[0].slice(0, -3)
+            return new Date('1970-01-01T' + time + 'Z')
+                .toLocaleTimeString('en-US',
+                    { timeZone: 'UTC', hour12: true, hour: 'numeric', minute: 'numeric' }
+                );
+        }
     }
 }
 </script>
@@ -18,20 +49,22 @@ export default {
                 <div class="col">
                     <div class="row-cols-1 text-start">
                         <div class="col h4">
-                            06:00 AM
+                            {{ computedTime }}
                         </div>
                         <div class="col h6">
-                            Customer Count --
+                            Customer Count: {{ computedCustomerCount }}
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="row-cols-1 text-end">
                         <div class="col h4">
-                            P1,400.00
+                            ₱{{ salesRecord.amount.toFixed(2) }}
                         </div>
                         <div class="col h6">
-                            (P1,400.00)
+                            <slot name="runningTotal">
+                                (₱ 0.00)
+                            </slot>
                         </div>
                     </div>
                 </div>
