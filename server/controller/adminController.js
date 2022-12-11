@@ -1,7 +1,8 @@
 const db = require('../models/db.js');
 const Sales = require('../models/branch/salesSchema.js');
 const Expense = require('../models/branch/expenseSchema.js');
-const Cheque = require('../models/admin/adminChequeSchema.js')
+const Cheque = require('../models/admin/adminChequeSchema.js');
+const User = require('../models/userSchema.js');
 const ExcelJS = require('exceljs');
 
 
@@ -226,11 +227,14 @@ const adminController = {
     generateReport: async (req, res) => {
         var { branchID, date } = req.body
 
+        var branchName = await User.find({ branchID: branchID }).limit(1)
+        branchName = branchName[0].branchName.toUpperCase()
+        console.log(branchName)
+
         var dateinput = new Date(date)
         var monthvar = dateinput.getMonth() + 1
 
-        //change bruteforce
-        //account for leap years 
+        //setting calendar limit
         {
             if (monthvar == 1 || monthvar == 3 || monthvar == 5 || monthvar == 7 || monthvar == 8 || monthvar == 10 || monthvar == 12) {
                 callimit = 31
@@ -239,7 +243,11 @@ const adminController = {
                 callimit = 30
             }
             else if (monthvar == 2) {
-                callimit = 28
+                if ((0 == dateinput.getFullYear() % 4) && (0 != dateinput.getFullYear() % 100) || (0 == dateinput.getFullYear() % 400)) {
+                    callimit = 29
+                } else {
+                    callimit = 28
+                }
             }
 
             if (monthvar < 10) {
@@ -275,11 +283,11 @@ const adminController = {
             var ctaxes = await Cheque.find({ branchID: branchID, category: 'Taxes', datetime: { $gte: monthstartdate, $lt: monthenddate } })
 
             var sales = await Sales.Admin.find({ branchID: branchID, datetime: { $gte: monthstartdate, $lt: monthenddate } })
-            var cheque = await Cheque.find({ branchID: branchID })
+            var cheque = await Cheque.find({ branchID: branchID, datetime: { $gte: monthstartdate, $lt: monthenddate } })
         }
 
 
-        const expense = [salary, grocery, utilities, food, gasul, bakeryitems, rent, misc, taxes]
+        var expense = [salary, grocery, utilities, food, gasul, bakeryitems, rent, misc, taxes]
 
         var totals = {
             sales: 0, expense: 0, cheque: 0, totalexpense: 0, net: 0,
@@ -424,8 +432,6 @@ const adminController = {
 
         var reports = []
 
-
-
         var salesLast = await Sales.Admin.find().sort({ datetime: -1 }).limit(1)
         var expenseLast = await Expense.Admin.find().sort({ datetime: -1 }).limit(1)
 
@@ -566,13 +572,13 @@ const adminController = {
 
         }
 
-        const monthNames = ["January", "February", "March", "April", "May", "June",
+        const MONTHNAMES = ["January", "February", "March", "April", "May", "June",
             "July", "August", "September", "October", "November", "December"];
 
 
         //Creating Excel Workbook
-        const workbook = new ExcelJS.Workbook();
-        const worksheet = workbook.addWorksheet(monthNames[dateinput.getMonth()]);
+        const WB = new ExcelJS.Workbook();
+        var worksheet = WB.addWorksheet(MONTHNAMES[dateinput.getMonth()]);
 
         //Formatting
         {
@@ -587,8 +593,8 @@ const adminController = {
 
             worksheet.mergeCells('E4:M4');
 
-            worksheet.getCell('A2').value = monthNames[dateinput.getMonth()] + " " + branchID
-            worksheet.getCell('A3').value = monthNames[dateinput.getMonth()] + "Transactions"
+            worksheet.getCell('A2').value = branchName
+            worksheet.getCell('A3').value = MONTHNAMES[dateinput.getMonth()] + " Transactions"
 
             worksheet.getCell('A2').alignment = { vertical: 'middle', horizontal: 'center' }
             worksheet.getCell('A3').alignment = { vertical: 'middle', horizontal: 'center' }
@@ -640,7 +646,6 @@ const adminController = {
         //Populate Daily
         for (var i = 0; i < callimit; i++) {
             rowVal = []
-            //rowVal[i] = i + 1
             if (i < maxlimit) {
                 for (var j = 0; j <= reports[i].length; j++) {
                     rowVal[j] = reports[i][j]
@@ -705,7 +710,6 @@ const adminController = {
             worksheet.getCell(cellVal).value = cheque[i].amount
         }
 
-
         worksheet.mergeCells(`B${callimit + 6}:D${callimit + 6}`);
         worksheet.mergeCells(`B${callimit + 7}:D${callimit + 7}`);
         worksheet.mergeCells(`B${callimit + 8}:D${callimit + 8}`);
@@ -713,12 +717,9 @@ const adminController = {
 
         res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
         res.setHeader('Content-Disposition', 'attachment; filename=' + 'MonthReport.xlsx');
-        workbook.xlsx.write(res).then(() => {
+        WB.xlsx.write(res).then(() => {
             res.end();
         });
-
-        //console.log(reports)
-
 
     },
 
