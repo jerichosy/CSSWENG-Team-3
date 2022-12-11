@@ -5,6 +5,9 @@ const Cheque = require('../models/admin/adminChequeSchema.js');
 const User = require('../models/userSchema.js');
 const ExcelJS = require('exceljs');
 
+const MONTHNAMES = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"];
+
 
 const adminController = {
     adminAddSales: (req, res) => {
@@ -285,7 +288,6 @@ const adminController = {
             var sales = await Sales.Admin.find({ branchID: branchID, datetime: { $gte: monthstartdate, $lt: monthenddate } })
             var cheque = await Cheque.find({ branchID: branchID, datetime: { $gte: monthstartdate, $lt: monthenddate } })
         }
-
 
         var expense = [salary, grocery, utilities, food, gasul, bakeryitems, rent, misc, taxes]
 
@@ -572,8 +574,6 @@ const adminController = {
 
         }
 
-        const MONTHNAMES = ["January", "February", "March", "April", "May", "June",
-            "July", "August", "September", "October", "November", "December"];
 
 
         //Creating Excel Workbook
@@ -725,6 +725,10 @@ const adminController = {
 
     generateQuarterlyReport: async (req, res) => {
         var { branchID, date } = req.body
+
+        var branchName = await User.find({ branchID: branchID }).limit(1)
+        branchName = branchName[0].branchName.toUpperCase()
+
         var reports = []
         var totals = []
         var dateinput = new Date(date)
@@ -734,6 +738,9 @@ const adminController = {
             console.log('Invalid Quarter');
         }
         else {
+            //Creating Excel Workbook
+            const WB = new ExcelJS.Workbook();
+
             for (var qrtrmonth = monthvar, ctr = 0; ctr <= 2; qrtrmonth++, ctr++) {
                 var monthlyrecord = []
                 var monthlytotals = {
@@ -742,8 +749,8 @@ const adminController = {
                     food: 0, gasul: 0, bakeryitems: 0,
                     rent: 0, misc: 0, taxes: 0
                 }
-                //change bruteforce
-                //account for leap years
+
+                //setting calendar limit
                 {
                     if (qrtrmonth == 1 || qrtrmonth == 3 || qrtrmonth == 5 || qrtrmonth == 7 || qrtrmonth == 8 || qrtrmonth == 10 || qrtrmonth == 12) {
                         callimit = 31
@@ -752,14 +759,17 @@ const adminController = {
                         callimit = 30
                     }
                     else if (qrtrmonth == 2) {
-                        callimit = 28
+                        if ((0 == dateinput.getFullYear() % 4) && (0 != dateinput.getFullYear() % 100) || (0 == dateinput.getFullYear() % 400)) {
+                            callimit = 29
+                        } else {
+                            callimit = 28
+                        }
                     }
 
                     if (qrtrmonth < 10) {
                         qrtrmonth = "0" + qrtrmonth
                     }
                 }
-
 
                 //getting daily record
                 for (var i = 1; i <= callimit; i++) {
@@ -780,7 +790,7 @@ const adminController = {
                         var endDate = new Date(newenddate)
                     }
 
-                    //get daily expenses
+                    //get daily sales, expenses, cheques
                     {
                         var dailysalary = await Expense.Admin.find({ branchID: branchID, category: 'Salary', datetime: { $gte: startDate, $lt: endDate } })
                         var dailygrocery = await Expense.Admin.find({ branchID: branchID, category: 'Grocery', datetime: { $gte: startDate, $lt: endDate } })
@@ -791,13 +801,21 @@ const adminController = {
                         var dailyrent = await Expense.Admin.find({ branchID: branchID, category: 'Rent', datetime: { $gte: startDate, $lt: endDate } })
                         var dailymisc = await Expense.Admin.find({ branchID: branchID, category: 'Misc', datetime: { $gte: startDate, $lt: endDate } })
                         var dailytaxes = await Expense.Admin.find({ branchID: branchID, category: 'Taxes', datetime: { $gte: startDate, $lt: endDate } })
-                    }
 
-                    //get daily sales, expenses, cheques
-                    {
+                        var csalary = await Cheque.find({ branchID: branchID, category: 'Salary', datetime: { $gte: startDate, $lt: endDate } })
+                        var cgrocery = await Cheque.find({ branchID: branchID, category: 'Grocery', datetime: { $gte: startDate, $lt: endDate } })
+                        var cutilities = await Cheque.find({ branchID: branchID, category: 'Utilities', datetime: { $gte: startDate, $lt: endDate } })
+                        var cfood = await Cheque.find({ branchID: branchID, category: 'Food', datetime: { $gte: startDate, $lt: endDate } })
+                        var cgasul = await Cheque.find({ branchID: branchID, category: 'Gasul', datetime: { $gte: startDate, $lt: endDate } })
+                        var cbakeryitems = await Cheque.find({ branchID: branchID, category: 'Bakery Items', datetime: { $gte: startDate, $lt: endDate } })
+                        var crent = await Cheque.find({ branchID: branchID, category: 'Rent', datetime: { $gte: startDate, $lt: endDate } })
+                        var cmisc = await Cheque.find({ branchID: branchID, category: 'Misc.', datetime: { $gte: startDate, $lt: endDate } })
+                        var ctaxes = await Cheque.find({ branchID: branchID, category: 'Taxes', datetime: { $gte: startDate, $lt: endDate } })
+
                         var dailysales = await Sales.Admin.find({ branchID: branchID, datetime: { $gte: startDate, $lt: endDate } })
                         var dailycheque = await Cheque.find({ branchID: branchID, datetime: { $gte: startDate, $lt: endDate } })
                         var dailyexpense = [dailysalary, dailygrocery, dailyutilities, dailyfood, dailygasul, dailybakeryitems, dailyrent, dailymisc, dailytaxes]
+
                     }
 
                     var daily = {
@@ -805,6 +823,12 @@ const adminController = {
                         dsalary: 0, dgrocery: 0, dutilities: 0,
                         dfood: 0, dgasul: 0, dbakeryitems: 0,
                         drent: 0, dmisc: 0, dtaxes: 0
+                    }
+
+                    var cheques = {
+                        salary: 0, grocery: 0, utilities: 0,
+                        food: 0, gasul: 0, bakeryitems: 0,
+                        rent: 0, misc: 0, taxes: 0
                     }
 
                     //Populate daily sales, expenses, cheques, net
@@ -903,16 +927,230 @@ const adminController = {
                         }
                         dailyrecord.push(daily.dtaxes)
                     }
+
+                    //TODO: Check if needed
+                    //Populate Cheque Categories
+                    {
+                        //Salary
+                        for (var j = 0; j < csalary.length; j++) {
+                            cheques.salary += csalary[j].amount
+                        }
+
+                        //Grocery
+                        for (var j = 0; j < cgrocery.length; j++) {
+                            cheques.grocery += cgrocery[j].amount
+                        }
+
+                        //Utilities
+                        for (var j = 0; j < cutilities.length; j++) {
+                            cheques.utilities += cutilities[j].amount
+                        }
+
+                        //Food
+                        for (var j = 0; j < cfood.length; j++) {
+                            cheques.food += cfood[j].amount
+                        }
+
+                        //Gasul
+                        for (var j = 0; j < cgasul.length; j++) {
+                            cheques.gasul += cgasul[j].amount
+                        }
+
+                        //Bakery Items
+                        for (var j = 0; j < cbakeryitems.length; j++) {
+                            cheques.bakeryitems += cbakeryitems[j].amount
+                        }
+
+                        //Rent
+                        for (var j = 0; j < crent.length; j++) {
+                            cheques.rent += crent[j].amount
+                        }
+
+                        //Misc
+                        for (var j = 0; j < cmisc.length; j++) {
+                            cheques.misc += cmisc[j].amount
+                        }
+
+                        //Taxes
+                        for (var j = 0; j < ctaxes.length; j++) {
+                            cheques.taxes += ctaxes[j].amount
+                        }
+                    }
+
                     monthlyrecord.push(dailyrecord)
                 }
+
                 reports.push(monthlyrecord)
                 totals.push(monthlytotals)
+
+                var worksheet = WB.addWorksheet(MONTHNAMES[qrtrmonth]);
+
+                //Formatting
+                {
+                    worksheet.mergeCells('A2:Q2');
+                    worksheet.mergeCells('A3:Q3');
+
+                    worksheet.mergeCells('A4:A5');
+                    worksheet.mergeCells('B4:B5');
+                    worksheet.mergeCells('C4:C5');
+                    worksheet.mergeCells('D4:D5');
+                    worksheet.mergeCells('N4:Q4');
+
+                    worksheet.mergeCells('E4:M4');
+
+                    worksheet.getCell('A2').value = branchName
+                    worksheet.getCell('A3').value = MONTHNAMES[qrtrmonth] + " Transactions"
+
+                    worksheet.getCell('A2').alignment = { vertical: 'middle', horizontal: 'center' }
+                    worksheet.getCell('A3').alignment = { vertical: 'middle', horizontal: 'center' }
+
+                    worksheet.getCell('A4').value = "Date"
+                    worksheet.getCell('B4').value = "Gross Sales"
+                    worksheet.getCell('C4').value = "Cash Expenses"
+                    worksheet.getCell('D4').value = "Net Sales"
+                    worksheet.getCell('E4').value = "Cash Payments"
+                    worksheet.getCell('N4').value = "Cheque Payments"
+
+                    worksheet.getCell('E5').value = "Salary"
+                    worksheet.getCell('F5').value = "Grocery"
+                    worksheet.getCell('G5').value = "Utilities"
+                    worksheet.getCell('H5').value = "Food"
+                    worksheet.getCell('I5').value = "Gasul"
+                    worksheet.getCell('J5').value = "Bakery Items"
+                    worksheet.getCell('K5').value = "Rent"
+                    worksheet.getCell('L5').value = "Misc."
+                    worksheet.getCell('M5').value = "Tax"
+
+                    worksheet.getCell('N5').value = "Date"
+                    worksheet.getCell('O5').value = "Account"
+                    worksheet.getCell('P5').value = "Classification"
+                    worksheet.getCell('Q5').value = "Amount"
+
+                    worksheet.getCell('A4').alignment = { vertical: 'middle', horizontal: 'center' }
+                    worksheet.getCell('B4').alignment = { vertical: 'middle', horizontal: 'center' }
+                    worksheet.getCell('C4').alignment = { vertical: 'middle', horizontal: 'center' }
+                    worksheet.getCell('D4').alignment = { vertical: 'middle', horizontal: 'center' }
+                    worksheet.getCell('E4').alignment = { vertical: 'middle', horizontal: 'center' }
+                    worksheet.getCell('N4').alignment = { vertical: 'middle', horizontal: 'center' }
+
+                    worksheet.getCell('E5').alignment = { vertical: 'middle', horizontal: 'center' }
+                    worksheet.getCell('F5').alignment = { vertical: 'middle', horizontal: 'center' }
+                    worksheet.getCell('G5').alignment = { vertical: 'middle', horizontal: 'center' }
+                    worksheet.getCell('H5').alignment = { vertical: 'middle', horizontal: 'center' }
+                    worksheet.getCell('I5').alignment = { vertical: 'middle', horizontal: 'center' }
+                    worksheet.getCell('J5').alignment = { vertical: 'middle', horizontal: 'center' }
+                    worksheet.getCell('K5').alignment = { vertical: 'middle', horizontal: 'center' }
+                    worksheet.getCell('L5').alignment = { vertical: 'middle', horizontal: 'center' }
+                    worksheet.getCell('M5').alignment = { vertical: 'middle', horizontal: 'center' }
+                    worksheet.getCell('N5').alignment = { vertical: 'middle', horizontal: 'center' }
+                    worksheet.getCell('O5').alignment = { vertical: 'middle', horizontal: 'center' }
+                    worksheet.getCell('P5').alignment = { vertical: 'middle', horizontal: 'center' }
+                    worksheet.getCell('Q5').alignment = { vertical: 'middle', horizontal: 'center' }
+                }
+
+                //date formatting
+                {
+                    var startdate = dateinput.getFullYear() + "-" + qrtrmonth + "-01T00:00:00.000Z"
+                    var enddate = dateinput.getFullYear() + "-" + qrtrmonth + "-" + callimit + "T23:59:59.000Z"
+                    var monthstartdate = new Date(startdate)
+                    var monthenddate = new Date(enddate)
+                }
+
+                var salesLast = await Sales.Admin.find({ datetime: { $gte: monthstartdate, $lt: monthenddate } }).sort({ datetime: -1 }).limit(1)
+                var expenseLast = await Expense.Admin.find({ datetime: { $gte: monthstartdate, $lt: monthenddate } }).sort({ datetime: -1 }).limit(1)
+
+                salesLast = salesLast[0].datetime.toISOString().split('-')[2].split('T')[0]
+                expenseLast = expenseLast[0].datetime.toISOString().split('-')[2].split('T')[0]
+
+                maxlimit = Math.max(salesLast, expenseLast, callimit)
+
+                //Populate Daily
+                for (var i = 0; i < callimit; i++) {
+                    rowVal = []
+                    if (i < maxlimit) {
+                        for (var j = 0; j <= monthlyrecord[i].length; j++) {
+                            rowVal[j] = monthlyrecord[i][j]
+                        }
+                    }
+                    else {
+                        rowVal[0] = i + 1
+                        for (var j = 1; j < monthlyrecord[maxlimit - 1].length; j++) {
+                            rowVal[j] = 0
+                        }
+                    }
+                    worksheet.addRow(rowVal);
+                }
+
+                var cheque = await Cheque.find({ branchID: branchID, datetime: { $gte: monthstartdate, $lt: monthenddate } })
+
+                //Populate Summary
+                for (var i = 0; i < 5; i++) {
+                    switch (i) {
+                        case 0:
+                            totalval = totals.sales
+                            rowVal = ["Total Sales", { formula: `SUM(B6:B${callimit + 5})` }]
+                            break;
+                        case 1:
+                            totalval = totals.expense
+                            rowVal = ["Total Expense Cash", { formula: `SUM(C6:C${callimit + 5})` }, , , { formula: `SUM(E6:E${callimit + 5})` }, { formula: `SUM(F6:F${callimit + 5})` }
+                                , { formula: `SUM(G6:G${callimit + 5})` }, { formula: `SUM(H6:H${callimit + 5})` }, { formula: `SUM(I6:I${callimit + 5})` }
+                                , { formula: `SUM(J6:J${callimit + 5})` }, { formula: `SUM(K6:K${callimit + 5})` }, { formula: `SUM(L6:L${callimit + 5})` }
+                                , { formula: `SUM(M6:M${callimit + 5})` }]
+                            break;
+                        case 2:
+                            totalval = totals.cheque
+
+                            climit = Math.max(callimit, cheque.length)
+                            rowVal = ["Total Expense Cheque", { formula: `SUM(Q6:Q${climit + 5})` }, , , { formula: `SUMIF($P$6:$P$${climit + 5},E5,$Q$6:$Q$${climit + 5})` }, { formula: `SUMIF($P$6:$P$${climit + 5},F5,$Q$6:$Q$${climit + 5})` }
+                                , { formula: `SUMIF($P$6:$P$${climit + 5},G5,$Q$6:$Q$${climit + 5})` }, { formula: `SUMIF($P$6:$P$${climit + 5},H5,$Q$6:$Q$${climit + 5})` }, { formula: `SUMIF($P$6:$P$${climit + 5},I5,$Q$6:$Q$${climit + 5})` }
+                                , { formula: `SUMIF($P$6:$P$${climit + 5},J5,$Q$6:$Q$${climit + 5})` }, { formula: `SUMIF($P$6:$P$${climit + 5},K5,$Q$6:$Q$${climit + 5})` }, { formula: `SUMIF($P$6:$P$${climit + 5},L5,$Q$6:$Q$${climit + 5})` }
+                                , { formula: `SUMIF($P$6:$P$${climit + 5},M5,$Q$6:$Q$${climit + 5})` }]
+                            break;
+                        case 3:
+                            totalval = totals.totalexpense
+                            rowVal = ["Total Expenses", { formula: `SUM(B${callimit + 7}:B${callimit + 8})` }, , , { formula: `SUM(E${callimit + 7}:E${callimit + 8})` }, { formula: `SUM(F${callimit + 7}:F${callimit + 8})` }
+                                , { formula: `SUM(G${callimit + 7}:G${callimit + 8})` }, { formula: `SUM(H${callimit + 7}:H${callimit + 8})` }, { formula: `SUM(I${callimit + 7}:I${callimit + 8})` }
+                                , { formula: `SUM(J${callimit + 7}:J${callimit + 8})` }, { formula: `SUM(K${callimit + 7}:K${callimit + 8})` }, { formula: `SUM(L${callimit + 7}:L${callimit + 8})` }
+                                , { formula: `SUM(M${callimit + 7}:M${callimit + 8})` },]
+                            break;
+                        case 4:
+                            totalval = totals.net
+                            rowVal = ["Net Sales", { formula: `B${callimit + 6}-B${callimit + 9}` }]
+                            break;
+                    }
+                    worksheet.addRow(rowVal)
+                }
+
+                //Populate Cheque
+                for (var i = 0; i < cheque.length; i++) {
+                    cellVal = "N" + (i + 6)
+                    date = cheque[i].datetime.toISOString().split('-')[2].split('T')[0]
+                    worksheet.getCell(cellVal).value = date
+                    cellVal = "O" + (i + 6)
+                    worksheet.getCell(cellVal).value = cheque[i].account
+                    cellVal = "P" + (i + 6)
+                    worksheet.getCell(cellVal).value = cheque[i].category
+                    cellVal = "Q" + (i + 6)
+                    worksheet.getCell(cellVal).value = cheque[i].amount
+                }
+
+                worksheet.mergeCells(`B${callimit + 6}:D${callimit + 6}`);
+                worksheet.mergeCells(`B${callimit + 7}:D${callimit + 7}`);
+                worksheet.mergeCells(`B${callimit + 8}:D${callimit + 8}`);
+                worksheet.mergeCells(`B${callimit + 9}:D${callimit + 9}`);
+
             }
+
+            res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+            res.setHeader('Content-Disposition', 'attachment; filename=' + 'MonthReport.xlsx');
+            WB.xlsx.write(res).then(() => {
+                res.end();
+            });
         }
 
         //console.log(reports)
         //console.log(totals)
-        res.status(201).json({ msg: 'Done' });
+        //res.status(201).json({ msg: 'Done' });
     }
 }
 
