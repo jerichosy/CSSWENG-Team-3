@@ -50,25 +50,25 @@ const authController = {
                     if (result) {
                         // check that the new password is not the same as the old password
                         if (oldPassword === newPassword) {
-                            res.status(400).json({ msg: 'The new password must be different from the old password.' });
+                            res.status(400).json({ reason: 'newPassword', msg: 'The new password must be different from the old password.' });
                         } else {
                             bcrypt.hash(newPassword, 10, (err, hash) => {
                                 db.updateOne(User, { isAdmin: true }, { branchPassword: hash }, (result) => {
                                     if (result) {
                                         res.status(200).json({ msg: 'Password successfully changed!' });
                                     } else {
-                                        res.status(400).json({ msg: 'An error occured.' });
+                                        res.status(400).json({ reason: 'generic', msg: 'An error occured.' });
                                     }
                                 })
                             })
                         }
                     } else {
-                        res.status(401).json({ msg: 'The password is incorrect.' });
+                        res.status(401).json({ reason: 'oldPassword', msg: 'The password is incorrect.' });
                     }
                 });
             }
             else {
-                res.status(404).json({ msg: 'The specified username was not found.' });
+                res.status(404).json({ reason: 'generic', msg: 'The specified username was not found.' });
             }
         })
     },
