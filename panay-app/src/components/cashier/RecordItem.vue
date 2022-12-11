@@ -10,7 +10,14 @@ export default {
 
     data() {
         return {
-            salesRecord: {
+            salesRecord: {},
+            expenseRecord: {}
+        }
+    },
+
+    created() {
+        if (this.recordType === 'sales') {
+            this.salesRecord = {
                 branchID: this.record.branchID,
                 branchName: this.record.branchName,
                 amount: this.record.amount,
