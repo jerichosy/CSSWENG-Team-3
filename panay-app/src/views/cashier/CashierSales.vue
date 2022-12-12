@@ -70,7 +70,7 @@ export default {
                 <h1>Sales</h1>
             </div>
             <div class="col text-center my-auto">
-                <p class="h5 align-middle">Total Sales: ₱{{ totalSales.toFixed(2) }}</p>
+                <p class="h5 align-middle">Total Sales: <span class="text-sale">₱{{ totalSales.toFixed(2) }}</span></p>
             </div>
             <div class="col my-auto text-end">
                 <button class="btn btn-primary">Add</button>

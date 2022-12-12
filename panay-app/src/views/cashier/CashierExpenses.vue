@@ -191,7 +191,8 @@ export default {
                 <h1>Expenses</h1>
             </div>
             <div class="col text-center my-auto">
-                <p class="h5 align-middle">Total Expenses: ₱{{ totalExpenses.toFixed(2) }}</p>
+                <p class="h5 align-middle">Total Expenses: <span class="text-expense">₱{{ totalExpenses.toFixed(2)
+                }}</span></p>
             </div>
             <div class="col my-auto text-end">
                 <button class="btn btn-primary">Add</button>
