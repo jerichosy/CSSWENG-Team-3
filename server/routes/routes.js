@@ -17,6 +17,8 @@ router.post('/deletebranch', accountController.deleteBranch);
 
 router.post('/addsales', branchController.addSales);
 router.post('/addexpense', branchController.addExpense);
+router.get('/viewsales', branchController.viewSales);
+router.get('/viewexpense', branchController.viewExpense);
 router.post('/editsales', branchController.editSales)
 router.post('/editexpense', branchController.editExpense)
 router.post('/deletesales', branchController.deleteSales);
