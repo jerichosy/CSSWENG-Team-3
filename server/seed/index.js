@@ -14,6 +14,8 @@ const Cheque = require('../models/admin/adminChequeSchema.js')
 // Converf from Excel to JSON using https://www.convertcsv.com/csv-to-json.htm
 const adminexpenses = require('./adminexpenses.json');
 const adminsales = require('./adminsales.json');
+const expenses = require('./expenses.json');
+const sales = require('./sales.json');
 const users = require('./users.json');
 const cheques = require('./cheques.json');
 
@@ -46,6 +48,10 @@ mongoose.connect(url, options, function (error) {
         console.log("Admin Sales seeded\n")
         await seed(Expense.Admin, adminexpenses, false);
         console.log("Admin Expenses seeded\n")
+        await seed(Sales.Branch, sales, false);
+        console.log("Branch Sales seeded\n")
+        await seed(Expense.Branch, expenses, false);
+        console.log("Branch Expenses seeded\n")
         await seed(Cheque, cheques, false);
         console.log("Cheques seeded\n")
     }
