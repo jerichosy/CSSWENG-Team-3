@@ -51,6 +51,32 @@ const branchController = {
         // res.redirect('/');
     },
 
+    viewSales: (req, res) => {
+        const { branchID } = req.query;  // TODO: Change to req.session.branchID when session is implemented
+        db.findMany(Sales.Branch, { branchID: branchID }, 'branchID branchName amount customerCount datetime', function (result) {
+            if (result) {
+                console.log('Sales found');
+                res.status(200).json(result);
+            } else {
+                console.log('Sales not found');
+                res.status(400).json({ msg: 'Something went wrong. Please try again.' })
+            }
+        })
+    },
+
+    viewExpense: (req, res) => {
+        const { branchID } = req.query;  // TODO: Change to req.session.branchID when session is implemented
+        db.findMany(Expense.Branch, { branchID: branchID }, 'branchID branchName item category amount notes datetime', function (result) {
+            if (result) {
+                console.log('Expense found');
+                res.status(200).json(result);
+            } else {
+                console.log('Expense not found');
+                res.status(400).json({ msg: 'Something went wrong. Please try again.' })
+            }
+        })
+    },
+
     editSales: (req, res) => {
         const { id, branchID, sales, customercount, time } = req.body;
         console.log(req.body)
