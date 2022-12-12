@@ -1,0 +1,191 @@
+[
+    {
+        "branchID": 101,
+        "branchName": "Panay Avenue Paligsahan QC",
+        "datetime": "2022-11-25T07:00:42.389Z",
+        "item": "LPG",
+        "category": "Gasul",
+        "amount": 6500,
+        "notes": ""
+    },
+    {
+        "branchID": 102,
+        "branchName": "Pag-asa QC",
+        "datetime": "2022-11-25T07:00:42.389Z",
+        "item": "LPG",
+        "category": "Gasul",
+        "amount": 6000,
+        "notes": ""
+    },
+    {
+        "branchID": 103,
+        "branchName": "Tandang Sora QC",
+        "datetime": "2022-11-25T08:00:42.389Z",
+        "item": "Flour",
+        "category": "Grocery",
+        "amount": 2500,
+        "notes": ""
+    },
+    {
+        "branchID": 102,
+        "branchName": "Pag-asa QC",
+        "datetime": "2022-11-25T08:00:42.389Z",
+        "item": "Flour",
+        "category": "Grocery",
+        "amount": 2100,
+        "notes": ""
+    },
+    {
+        "branchID": 101,
+        "branchName": "Panay Avenue Paligsahan QC",
+        "datetime": "2022-11-25T10:00:42.389Z",
+        "item": "Plastic Bag",
+        "category": "Bakery Items",
+        "amount": 685,
+        "notes": ""
+    },
+    {
+        "branchID": 103,
+        "branchName": "Tandang Sora QC",
+        "datetime": "2022-11-25T10:00:42.389Z",
+        "item": "Plastic Bag",
+        "category": "Bakery Items",
+        "amount": 710,
+        "notes": ""
+    },
+    {
+        "branchID": 101,
+        "branchName": "Panay Avenue Paligsahan QC",
+        "datetime": "2022-11-25T13:00:42.389Z",
+        "item": "Bread Crumbs",
+        "category": "Food",
+        "amount": 950,
+        "notes": ""
+    },
+    {
+        "branchID": 102,
+        "branchName": "Pag-asa QC",
+        "datetime": "2022-11-25T13:00:42.389Z",
+        "item": "Bread Crumbs",
+        "category": "Food",
+        "amount": 1000,
+        "notes": ""
+    },
+    {
+        "branchID": 103,
+        "branchName": "Tandang Sora QC",
+        "datetime": "2022-11-26T08:00:42.389Z",
+        "item": "Tongs",
+        "category": "Bakery Items",
+        "amount": 630,
+        "notes": ""
+    },
+    {
+        "branchID": 102,
+        "branchName": "Pag-asa QC",
+        "datetime": "2022-11-26T08:00:42.389Z",
+        "item": "Tongs",
+        "category": "Bakery Items",
+        "amount": 650,
+        "notes": ""
+    },
+    {
+        "branchID": 101,
+        "branchName": "Panay Avenue Paligsahan QC",
+        "datetime": "2022-11-26T09:00:42.389Z",
+        "item": "Milk",
+        "category": "Grocery",
+        "amount": 1250,
+        "notes": ""
+    },
+    {
+        "branchID": 103,
+        "branchName": "Tandang Sora QC",
+        "datetime": "2022-11-26T09:00:42.389Z",
+        "item": "Milk",
+        "category": "Grocery",
+        "amount": 2000,
+        "notes": ""
+    },
+    {
+        "branchID": 101,
+        "branchName": "Panay Avenue Paligsahan QC",
+        "datetime": "2022-11-26T14:00:42.389Z",
+        "item": "Ice",
+        "category": "Food",
+        "amount": 800,
+        "notes": ""
+    },
+    {
+        "branchID": 102,
+        "branchName": "Pag-asa QC",
+        "datetime": "2022-11-26T14:00:42.389Z",
+        "item": "Ice",
+        "category": "Food",
+        "amount": 750,
+        "notes": ""
+    },
+    {
+        "branchID": 103,
+        "branchName": "Tandang Sora QC",
+        "datetime": "2022-11-26T18:00:42.389Z",
+        "item": "Jack",
+        "category": "Salary",
+        "amount": 500,
+        "notes": ""
+    },
+    {
+        "branchID": 102,
+        "branchName": "Pag-asa QC",
+        "datetime": "2022-11-26T18:00:42.389Z",
+        "item": "Ysabel",
+        "category": "Salary",
+        "amount": 550,
+        "notes": ""
+    },
+    {
+        "branchID": 101,
+        "branchName": "Panay Avenue Paligsahan QC",
+        "datetime": "2022-11-27T07:00:42.389Z",
+        "item": "Water",
+        "category": "Utilities",
+        "amount": 2000,
+        "notes": ""
+    },
+    {
+        "branchID": 103,
+        "branchName": "Tandang Sora QC",
+        "datetime": "2022-11-27T07:00:42.389Z",
+        "item": "Water",
+        "category": "Utilities",
+        "amount": 1800,
+        "notes": ""
+    },
+    {
+        "branchID": 101,
+        "branchName": "Panay Avenue Paligsahan QC",
+        "datetime": "2022-11-27T11:00:42.389Z",
+        "item": "Water Drinks",
+        "category": "Food",
+        "amount": 1545,
+        "notes": ""
+    },
+    {
+        "branchID": 102,
+        "branchName": "Pag-asa QC",
+        "datetime": "2022-11-27T11:00:42.389Z",
+        "item": "Water Drinks",
+        "category": "Food",
+        "amount": 1255,
+        "notes": ""
+    },
+    {
+        "branchID": 103,
+        "branchName": "Tandang Sora QC",
+        "datetime": "2022-11-27T12:00:42.389Z",
+        "item": "Spoon",
+        "category": "Bakery Items",
+        "amount": 900,
+        "notes": ""
+    }
+]
