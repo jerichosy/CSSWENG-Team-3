@@ -65,7 +65,7 @@ export default {
 
 <template>
     <div id="sales-container" class="container">
-        <div class="row justify-content-center p-2">
+        <div class="row justify-content-center p-2 sticky-top">
             <div class="col my-auto">
                 <h1>Sales</h1>
             </div>
