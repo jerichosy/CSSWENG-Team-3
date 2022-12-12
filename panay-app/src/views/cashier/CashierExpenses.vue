@@ -185,7 +185,7 @@ export default {
 </script>
 
 <template>
-    <div id="expenses-container" class="container position">
+    <div id="expenses-container" class="container">
         <div class="row justify-content-center bg-bgdefault p-2 sticky-top">
             <div class="col my-auto">
                 <h1>Expenses</h1>
