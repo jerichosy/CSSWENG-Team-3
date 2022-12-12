@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const url = process.env.MONGODB_URI || 'mongodb://localhost:27017/CSSWENG-Team-3';
 
 const options = {
     useUnifiedTopology: true,
@@ -8,7 +7,7 @@ const options = {
 
 const database = {
 
-    connect: function () {
+    connect: function (url) {
         mongoose.connect(url, options, function (error) {
             if (error) throw error;
             console.log('Connected to: ' + url);
