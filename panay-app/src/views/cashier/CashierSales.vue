@@ -1,9 +1,11 @@
 <script>
 import RecordItem from '../../components/cashier/RecordItem.vue'
+import AddRecordModalCashier from '../../components/cashier/AddRecordModalCashier.vue'
 
 export default {
     components: {
-        RecordItem
+        RecordItem,
+        AddRecordModalCashier
     },
 
     data() {
@@ -64,6 +66,7 @@ export default {
 </script>
 
 <template>
+    <AddRecordModalCashier record-type="sales" />
     <div id="sales-container" class="container">
         <div class="row justify-content-center p-2 sticky-top">
             <div class="col my-auto">
@@ -73,7 +76,8 @@ export default {
                 <p class="h5 align-middle">Total Sales: <span class="text-sale">₱{{ totalSales.toFixed(2) }}</span></p>
             </div>
             <div class="col my-auto text-end">
-                <button class="btn btn-primary">Add</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#addModal">Add</button>
             </div>
         </div>
 
