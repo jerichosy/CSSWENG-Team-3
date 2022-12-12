@@ -8,37 +8,18 @@ export default {
         currentTotal: Number
     },
 
-    data() {
-        return {
-            salesRecord: {},
-            expenseRecord: {}
-        }
-    },
-
-    created() {
-        if (this.recordType === 'sales') {
-            this.salesRecord = {
-                branchID: this.record.branchID,
-                branchName: this.record.branchName,
-                amount: this.record.amount,
-                customerCount: this.record.customerCount,
-                datetime: this.record.datetime
-            }
-        }
-    },
-
     computed: {
         computedCustomerCount() {
-            if (this.salesRecord.customerCount === null) {
+            if (this.record.customerCount === null) {
                 return '--';
             }
             else {
-                return this.salesRecord.customerCount;
+                return this.record.customerCount;
             }
         },
 
         computedTime() {
-            const time = this.salesRecord.datetime.split('T')[1].split('.')[0].slice(0, -3)
+            const time = this.record.datetime.split('T')[1].split('.')[0].slice(0, -3)
             return new Date('1970-01-01T' + time + 'Z')
                 .toLocaleTimeString('en-US',
                     { timeZone: 'UTC', hour12: true, hour: 'numeric', minute: 'numeric' }
@@ -65,10 +46,10 @@ export default {
                 </div>
                 <div class="col">
                     <div class="row-cols-1 text-end">
-                        <div class="col h4">
-                            ₱{{ salesRecord.amount.toFixed(2) }}
+                        <div class="col h4 text-sale">
+                            <strong>₱{{ record.amount.toFixed(2) }}</strong>
                         </div>
-                        <div class="col h6">
+                        <div class="col h6 text-sale">
                             <slot name="runningTotal">
                                 (₱ 0.00)
                             </slot>
@@ -81,23 +62,25 @@ export default {
                 <div class="col">
                     <div class="row-cols-1 text-start">
                         <div class="col h4">
-                            Category
+                            {{ record.category }}
                         </div>
                         <div class="col h6">
-                            Item Name
+                            {{ record.item }}
                         </div>
                         <div class="col h6">
-                            Description
+                            {{ record.notes }}
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="row-cols-1 text-end">
-                        <div class="col h4">
-                            P500.00
+                        <div class="col h4 text-expense">
+                            <strong>₱{{ record.amount.toFixed(2) }}</strong>
                         </div>
-                        <div class="col h6">
-                            (P500.00)
+                        <div class="col h6 text-expense">
+                            <slot name="runningTotal">
+                                (₱ 0.00)
+                            </slot>
                         </div>
                     </div>
                 </div>
