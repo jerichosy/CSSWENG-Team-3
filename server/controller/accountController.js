@@ -9,9 +9,9 @@ const bcrypt = require('bcrypt');
 
 const authController = {
     login: (req, res) => {
-        const { id, password } = req.body;
+        const { name, password } = req.body;
         console.log(req.body)
-        db.findOne(User, { branchID: id }, 'branchID branchName branchPassword isAdmin isDeleted', (user) => {
+        db.findOne(User, { branchID: name }, 'branchID branchName branchPassword isAdmin isDeleted', (user) => {
             if (user) {
                 console.log(user);
 
