@@ -27,7 +27,17 @@ const authController = {
                     console.log(result);
                     if (result) {
                         console.log('Congrats')
-                        res.status(200).json({ msg: 'Logged in successfully!' });
+
+                        req.session.regenerate(function (err) {
+                            if (err) next(err);
+
+                            req.session.branchID = user.branchID;
+
+                            req.session.save(function (err) {
+                                if (err) next(err);
+                                res.status(200).json({ msg: 'Logged in successfully!' });
+                            });
+                        });
                     }
                     else {
                         console.log('Error 2 Wrong password')

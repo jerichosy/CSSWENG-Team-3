@@ -2,6 +2,8 @@ const express = require('express');
 const routes = require('./routes/routes.js');
 const db = require('./models/db.js');
 const cors = require('cors');
+const session = require('express-session');
+const MongoStore = require('connect-mongo');
 
 const app = new express();
 
@@ -19,6 +21,14 @@ app.use(express.urlencoded({ extended: true })); //for req.body
 // dbAdmin.createConnect();
 
 const DB_URI = "mongodb://localhost:27017/CSSWENG-Team-3";
+
+app.use(session({
+    secret: 'iYNhkHwBZYjKZB',
+    resave: false,
+    saveUninitialized: false,
+    store: MongoStore.create({ mongoUrl: DB_URI })
+    // TODO: is cookie needed?
+}));
 
 app.listen(3000, function () {
     console.log("Node Server is Running at Port 3000");
