@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-const url = 'http://localhost:3000/';
+const url = '\/api/';
 
 export default axios.create({
-    withCredentials: true,
+    // withCredentials: true,
     baseURL: url
 });
