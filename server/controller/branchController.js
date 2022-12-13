@@ -52,7 +52,9 @@ const branchController = {
     },
 
     viewSales: (req, res) => {
-        const { branchID } = req.query;  // TODO: Change to req.session.branchID when session is implemented
+        const branchID = req.session.branchID;  // TODO: Change to req.session.branchID when session is implemented
+        console.log(branchID)
+        console.log(req.session)
         db.findMany(Sales.Branch, { branchID: branchID }, 'branchID branchName amount customerCount datetime', function (result) {
             if (result) {
                 console.log('Sales found');
@@ -65,7 +67,9 @@ const branchController = {
     },
 
     viewExpense: (req, res) => {
-        const { branchID } = req.query;  // TODO: Change to req.session.branchID when session is implemented
+        const branchID = req.session.branchID;  // TODO: Change to req.session.branchID when session is implemented
+        console.log(branchID)
+        console.log(req.session)
         db.findMany(Expense.Branch, { branchID: branchID }, 'branchID branchName item category amount notes datetime', function (result) {
             if (result) {
                 console.log('Expense found');
