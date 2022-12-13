@@ -55,6 +55,7 @@ const branchController = {
         const branchID = req.session.branchID;  // TODO: Change to req.session.branchID when session is implemented
         console.log(branchID)
         console.log(req.session)
+        console.log(JSON.stringify(req.headers));
         db.findMany(Sales.Branch, { branchID: branchID }, 'branchID branchName amount customerCount datetime', function (result) {
             if (result) {
                 console.log('Sales found');
@@ -70,6 +71,7 @@ const branchController = {
         const branchID = req.session.branchID;  // TODO: Change to req.session.branchID when session is implemented
         console.log(branchID)
         console.log(req.session)
+        console.log(JSON.stringify(req.headers));
         db.findMany(Expense.Branch, { branchID: branchID }, 'branchID branchName item category amount notes datetime', function (result) {
             if (result) {
                 console.log('Expense found');
