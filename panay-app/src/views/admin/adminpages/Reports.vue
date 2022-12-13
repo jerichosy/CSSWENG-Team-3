@@ -107,52 +107,68 @@ export default {
 </script>
 
 <template>
-    <form @submit.prevent="submitMonthly">
-        <div class="form-floating">
-            <select class="form-select" id="select-branch" v-model="monthlyInputs.branchName">
-                <template v-for="branch in branchOptions">
-                    <option :value="branch.branchName">{{ branch.branchName }}</option>
-                </template>
-            </select>
-            <label for="select-branch">Branch</label>
-        </div>
-        <div class="form-floating">
-            <input type="month" class="form-control" id="select-date" v-model="monthlyInputs.date" />
-            <label for="select-date">Date</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+    <div class="row">
+        <h1 class="p-3 m-0">Reports</h1>
+        <hr />
+    </div>
+    <div id="reports-container">
+        <form class="mt-5 mb-5" @submit.prevent="submitMonthly">
+            <h2>Generate Monthly Report</h2>
+            <div class="form-floating mb-2">
+                <select class="form-select" id="select-branch" v-model="monthlyInputs.branchName">
+                    <template v-for="branch in branchOptions">
+                        <option :value="branch.branchName">{{ branch.branchName }}</option>
+                    </template>
+                </select>
+                <label for="select-branch">Branch</label>
+            </div>
+            <div class="form-floating mb-2">
+                <input type="month" class="form-control" id="select-date" v-model="monthlyInputs.date" />
+                <label for="select-date">Date</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Generate Spreadsheet</button>
+        </form>
 
-    <form @submit.prevent="submitQuarterly">
-        <div class="form-floating">
-            <select class="form-select" id="select-branch-quarterly" v-model="quarterlyInputs.branchName">
-                <template v-for="branch in branchOptions">
-                    <option :value="branch.branchName">{{ branch.branchName }}</option>
-                </template>
-            </select>
-            <label for="select-branch-quarterly">Branch</label>
-        </div>
+        <form @submit.prevent="submitQuarterly">
+            <h2>Generate Quarterly Report</h2>
+            <div class="form-floating mb-2">
+                <select class="form-select" id="select-branch-quarterly" v-model="quarterlyInputs.branchName">
+                    <template v-for="branch in branchOptions">
+                        <option :value="branch.branchName">{{ branch.branchName }}</option>
+                    </template>
+                </select>
+                <label for="select-branch-quarterly">Branch</label>
+            </div>
 
-        <div class="form-floating">
-            <select class="form-select" id="select-quarter" v-model="quarterlyInputs.quarter">
-                <option value="01-01">Q1</option>
-                <option value="04-01">Q2</option>
-                <option value="07-01">Q3</option>
-                <option value="10-01">Q4</option>
-            </select>
-            <label for="select-quarter">Quarter</label>
-        </div>
+            <div class="form-floating mb-2">
+                <select class="form-select" id="select-quarter" v-model="quarterlyInputs.quarter">
+                    <option value="01-01">Q1</option>
+                    <option value="04-01">Q2</option>
+                    <option value="07-01">Q3</option>
+                    <option value="10-01">Q4</option>
+                </select>
+                <label for="select-quarter">Quarter</label>
+            </div>
 
-        <div class="form-floating">
-            <select class="form-select" id="select-year" v-model="quarterlyInputs.year">
-                <option value="2022">2022</option>
-                <option value="2023">2023</option>
-                <option value="2024">2024</option>
-                <option value="2025">2025</option>
-            </select>
-            <label for="select-year">Year</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+            <div class="form-floating mb-2">
+                <select class="form-select" id="select-year" v-model="quarterlyInputs.year">
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                </select>
+                <label for="select-year">Year</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Generate Spreadsheet</button>
+        </form>
+    </div>
+
 
 </template>
+
+<style scoped>
+#reports-container {
+    width: 50rem;
+    margin: auto;
+}
+</style>
