@@ -22,6 +22,8 @@ class RecordService {
     deleteAdminCheque(data) { return http.post("/deletecheque", data); }
 
     getCashierSales(params) { return http.get("/viewsales", { params }); }
+
+    getCashierExpenses(params) { return http.get("/viewexpense", { params }); }
 }
 
 export default new RecordService();

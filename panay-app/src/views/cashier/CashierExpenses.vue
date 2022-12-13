@@ -1,6 +1,7 @@
 <script>
 import RecordItem from '../../components/cashier/RecordItem.vue'
 import AddRecordModalCashier from '../../components/cashier/AddRecordModalCashier.vue'
+import RecordService from '../../services/RecordService'
 
 export default {
     components: {
@@ -10,143 +11,7 @@ export default {
 
     data() {
         return {
-            cashierExpenses: [
-                {
-                    branchID: 101,
-                    branchName: "Panay Avenue Paligsahan QC",
-                    datetime: "2022-10-01T07:00:42.389Z",
-                    item: "LPG",
-                    category: "Gasul",
-                    amount: 2458,
-                    notes: "John's LPG"
-                },
-                {
-                    branchID: 101,
-                    branchName: "Panay Avenue Paligsahan QC",
-                    datetime: "2022-10-01T08:00:42.389Z",
-                    item: "Salt",
-                    category: "Grocery",
-                    amount: 281,
-                    notes: "Puregold"
-                },
-                {
-                    "branchID": 101,
-                    "branchName": "Panay Avenue Paligsahan QC",
-                    "datetime": "2022-10-01T09:00:42.389Z",
-                    "item": "Orange Juice",
-                    "category": "Food",
-                    "amount": 1534,
-                    "notes": ""
-                },
-                {
-                    "branchID": 101,
-                    "branchName": "Panay Avenue Paligsahan QC",
-                    "datetime": "2022-10-02T07:00:42.389Z",
-                    "item": "Sugar",
-                    "category": "Grocery",
-                    "amount": 423,
-                    "notes": ""
-                },
-                {
-                    "branchID": 101,
-                    "branchName": "Panay Avenue Paligsahan QC",
-                    "datetime": "2022-10-02T08:00:42.389Z",
-                    "item": "Aluminum Foil",
-                    "category": "Bakery Items",
-                    "amount": 206,
-                    "notes": ""
-                },
-                {
-                    "branchID": 101,
-                    "branchName": "Panay Avenue Paligsahan QC",
-                    "datetime": "2022-10-02T09:00:42.389Z",
-                    "item": "Milk",
-                    "category": "Grocery",
-                    "amount": 1979,
-                    "notes": ""
-                },
-                {
-                    "branchID": 101,
-                    "branchName": "Panay Avenue Paligsahan QC",
-                    "datetime": "2022-10-03T07:00:42.389Z",
-                    "item": "Ice",
-                    "category": "Grocery",
-                    "amount": 313,
-                    "notes": ""
-                },
-                {
-                    "branchID": 101,
-                    "branchName": "Panay Avenue Paligsahan QC",
-                    "datetime": "2022-10-03T08:00:42.389Z",
-                    "item": "Plastic Bag",
-                    "category": "Bakery Items",
-                    "amount": 491,
-                    "notes": ""
-                },
-                {
-                    "branchID": 101,
-                    "branchName": "Panay Avenue Paligsahan QC",
-                    "datetime": "2022-10-03T09:00:42.389Z",
-                    "item": "Yeast",
-                    "category": "Grocery",
-                    "amount": 136,
-                    "notes": ""
-                },
-                {
-                    "branchID": 101,
-                    "branchName": "Panay Avenue Paligsahan QC",
-                    "datetime": "2022-10-04T07:00:42.389Z",
-                    "item": "Chocolate",
-                    "category": "Grocery",
-                    "amount": 2061,
-                    "notes": ""
-                },
-                {
-                    "branchID": 101,
-                    "branchName": "Panay Avenue Paligsahan QC",
-                    "datetime": "2022-10-04T08:00:42.389Z",
-                    "item": "Water",
-                    "category": "Utilities",
-                    "amount": 1753,
-                    "notes": ""
-                },
-                {
-                    "branchID": 101,
-                    "branchName": "Panay Avenue Paligsahan QC",
-                    "datetime": "2022-10-04T09:00:42.389Z",
-                    "item": "Tape",
-                    "category": "Misc.",
-                    "amount": 58,
-                    "notes": ""
-                },
-                {
-                    "branchID": 101,
-                    "branchName": "Panay Avenue Paligsahan QC",
-                    "datetime": "2022-10-05T07:00:42.389Z",
-                    "item": "Baking Paper",
-                    "category": "Bakery Items",
-                    "amount": 38,
-                    "notes": ""
-                },
-                {
-                    "branchID": 101,
-                    "branchName": "Panay Avenue Paligsahan QC",
-                    "datetime": "2022-10-05T08:00:42.389Z",
-                    "item": "Rolling Pin",
-                    "category": "Bakery Items",
-                    "amount": 1231,
-                    "notes": ""
-                },
-                {
-                    "branchID": 101,
-                    "branchName": "Panay Avenue Paligsahan QC",
-                    "datetime": "2022-10-05T09:00:42.389Z",
-                    "item": "Flour",
-                    "category": "Grocery",
-                    "amount": 605,
-                    "notes": ""
-                }
-            ]
+            cashierExpenses: []
         }
     },
 
@@ -182,6 +47,23 @@ export default {
                 accumulator + currentValue.amount, 0
             );
         },
+    },
+
+    methods: {
+        retrieveExpenses() {
+            // set URLSearchParams to get branchID from session cookie
+            RecordService.getCashierExpenses(new URLSearchParams([['branchID', 101]]))
+                .then((response) => {
+                    this.cashierExpenses = response.data;
+                })
+                .catch(e => {
+                    console.log(e.response.data.msg);
+                })
+        }
+    },
+
+    mounted() {
+        this.retrieveExpenses();
     }
 }
 </script>
