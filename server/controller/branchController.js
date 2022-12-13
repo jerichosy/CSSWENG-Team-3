@@ -52,10 +52,10 @@ const branchController = {
     },
 
     viewSales: (req, res) => {
-        const branchID = req.session.branchID;  // TODO: Change to req.session.branchID when session is implemented
-        console.log(branchID)
-        console.log(req.session)
-        console.log(JSON.stringify(req.headers));
+        const branchID = req.query.branchID;  // TODO: Change to req.session.branchID when session is implemented
+        // console.log(branchID)
+        // console.log(req.session)
+        // console.log(JSON.stringify(req.headers));
         db.findMany(Sales.Branch, { branchID: branchID }, 'branchID branchName amount customerCount datetime', function (result) {
             if (result) {
                 console.log('Sales found');
@@ -68,10 +68,10 @@ const branchController = {
     },
 
     viewExpense: (req, res) => {
-        const branchID = req.session.branchID;  // TODO: Change to req.session.branchID when session is implemented
-        console.log(branchID)
-        console.log(req.session)
-        console.log(JSON.stringify(req.headers));
+        const branchID = req.query.branchID;  // TODO: Change to req.session.branchID when session is implemented
+        // console.log(branchID)
+        // console.log(req.session)
+        // console.log(JSON.stringify(req.headers));
         db.findMany(Expense.Branch, { branchID: branchID }, 'branchID branchName item category amount notes datetime', function (result) {
             if (result) {
                 console.log('Expense found');
@@ -152,11 +152,10 @@ const branchController = {
         })
     },
 
-    // TODO:: Verify response status codes 
-    // FIXME: Does not filter by branch.
     submitSalesAndExpenses: (req, res) => {
+        const branchID = req.query.branchID;
         function transfer(x, y) {
-            db.findMany(x.Branch, {}, '', (result) => {
+            db.findMany(x.Branch, { branchID: branchID }, '', (result) => {
                 console.log(y);
                 if (result.length >= 1) {
                     db.insertMany(x.Admin, result, (flag) => {
