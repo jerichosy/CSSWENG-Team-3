@@ -78,11 +78,10 @@ const branchController = {
     },
 
     editSales: (req, res) => {
-        const { id, branchID, branchName, amount, customerCount, datetime } = req.body;
+        const { id, branchID, amount, customerCount, datetime } = req.body;
         console.log(req.body)
         var sales = {
             branchID: branchID,
-            branchName: branchName,
             amount: amount,
             customerCount: customerCount,
             datetime: datetime
@@ -100,10 +99,9 @@ const branchController = {
     },
 
     editExpense: (req, res) => {
-        const { id, branchID, branchName, amount, item, category, notes, datetime } = req.body;
+        const { id, branchID, amount, item, category, notes, datetime } = req.body;
         var expense = {
             branchID: branchID,
-            branchName: branchName,
             amount: amount,
             item: item,
             category: category,
