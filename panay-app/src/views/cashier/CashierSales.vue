@@ -55,7 +55,6 @@ export default {
             RecordService.getCashierSales(new URLSearchParams([['branchID', 101]]))
                 .then((response) => {
                     this.cashierSales = response.data;
-                    console.log(response);
                 })
                 .catch(e => {
                     console.log(e.response.data.msg);
