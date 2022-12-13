@@ -9,12 +9,23 @@ $theme-colors: (
   "bgdefault": #FFFCF5,
   "primaryhover": #CC7066,
   "danger": #dc3545,
-  "cancel": #6c757d
+  "cancel": #6c757d,
+  "sale": #2b7232,
+  "expense": #BA090F
 );
 
 $nav-link-color: #E6E6E6;
 $nav-link-hover-color: white;
 $nav-tabs-link-active-bg: white;
+
+html,
+body,
+#app {
+  height: 100%;
+  min-height: --webkit-fill-available;
+  margin: 0;
+
+}
 
 @import "../node_modules/bootstrap/scss/bootstrap";
 
