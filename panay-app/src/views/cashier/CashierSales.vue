@@ -5,6 +5,7 @@ import EditRecordModalCashier from '../../components/cashier/EditRecordModalCash
 import RecordService from '../../services/RecordService';
 
 export default {
+    inheritAttrs: false,
     components: {
         RecordItem,
         AddRecordModalCashier,
@@ -15,6 +16,7 @@ export default {
             from: 'cashierSales'
         }
     },
+    emits: ['retrieveSales'],
 
     data() {
         return {
@@ -64,6 +66,7 @@ export default {
         editSales(data) {
             RecordService.editCashierSales(data)
                 .then(response => {
+                    this.$emit('retrieveSales');
                     console.log(response.data);
                 })
                 .catch(e => {
@@ -99,7 +102,6 @@ export default {
                     data-bs-target="#addModal">Add</button>
             </div>
         </div>
-        {{ selectedSales }}
         <div class="row-cols-1 m-1 justify-content-center">
             <template v-for="(sales, index) in sortedSales">
                 <RecordItem record-type="sales" :record="sales" @select-record="selectRecord">

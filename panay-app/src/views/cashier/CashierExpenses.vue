@@ -5,6 +5,7 @@ import RecordService from '../../services/RecordService'
 import EditRecordModalCashier from '../../components/cashier/EditRecordModalCashier.vue'
 
 export default {
+    inheritAttrs: false,
     components: {
         RecordItem,
         AddRecordModalCashier,
@@ -15,6 +16,7 @@ export default {
             from: 'cashierExpenses'
         }
     },
+    emits: ['retrieveExpenses'],
 
     data() {
         return {
@@ -63,6 +65,7 @@ export default {
         editExpense(data) {
             RecordService.editCashierExpense(data)
                 .then(response => {
+                    this.$emit('retrieveExpenses');
                     console.log(response.data);
                 })
                 .catch(e => {

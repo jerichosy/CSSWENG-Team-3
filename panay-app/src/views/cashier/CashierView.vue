@@ -57,7 +57,7 @@ export default {
 </script>
 
 <template>
-    <RouterView />
+    <RouterView @retrieve-sales="retrieveSales" @retrieve-expenses="retrieveExpenses" />
     <!-- FIXME: Last record in cashier view sales/expense is blocked by navbar when list is filled  -->
     <MobileNav />
 </template>
