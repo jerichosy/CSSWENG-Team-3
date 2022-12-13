@@ -1,10 +1,14 @@
 <script>
 import RecordItem from '../../components/cashier/RecordItem.vue'
 import RecordService from '../../services/RecordService';
+import ConfirmSubmitModal from '../../components/cashier/ConfirmSubmitModal.vue'
+import { Modal } from 'bootstrap';
 
 export default {
+    inheritAttrs: false,
     components: {
-        RecordItem
+        RecordItem,
+        ConfirmSubmitModal
     },
     inject: {
         cashierSales: {
@@ -14,9 +18,9 @@ export default {
             from: 'cashierExpenses'
         }
     },
+    emits: ['retrieveSales', 'retrieveExpenses'],
 
     computed: {
-
         sortedSales: function () {
             let sales = this.cashierSales;
             return sales.sort((a, b) => {
@@ -84,17 +88,27 @@ export default {
         submitRecords() {
             RecordService.submitRecords()
                 .then((response) => {
+                    this.closeSubmitModal();
+                    this.$emit('retrieveSales');
+                    this.$emit('retrieveExpenses');
                     console.log(response.data);
                 })
                 .catch(e => {
-                    console.log(e.response.data);
+                    console.log(e);
                 })
+        },
+
+        closeSubmitModal() {
+            let submitModalEl = document.getElementById('submitModal');
+            let modal = Modal.getInstance(submitModalEl);
+            modal.hide();
         }
     }
 }
 </script>
 
 <template>
+    <ConfirmSubmitModal @submit="submitRecords" />
     <div id="review-container" class="container">
         <div class="row justify-content-center bg-bgdefault p-2 sticky-top">
             <div class="col my-auto">
@@ -107,7 +121,7 @@ export default {
 
             </div>
             <div class="col my-auto text-end">
-                <button class="btn btn-primary" @click="submitRecords">Submit</button>
+                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#submitModal">Submit</button>
             </div>
         </div>
 
