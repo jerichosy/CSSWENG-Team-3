@@ -8,10 +8,9 @@ export default {
         RecordItem,
         AddRecordModalCashier
     },
-
-    data() {
-        return {
-            cashierSales: []
+    inject: {
+        cashierSales: {
+            from: 'cashierSales'
         }
     },
 
@@ -48,30 +47,13 @@ export default {
             );
         },
     },
-
-    methods: {
-        retrieveSales() {
-            // set URLSearchParams to get branchID from session cookie
-            RecordService.getCashierSales(new URLSearchParams([['branchID', 101]]))
-                .then((response) => {
-                    this.cashierSales = response.data;
-                })
-                .catch(e => {
-                    console.log(e.response.data.msg);
-                })
-        }
-    },
-
-    mounted() {
-        this.retrieveSales();
-    }
 }
 </script>
 
 <template>
     <AddRecordModalCashier record-type="sales" />
     <div id="sales-container" class="container">
-        <div class="row justify-content-center p-2 sticky-top">
+        <div class="row justify-content-center bg-bgdefault p-2 sticky-top">
             <div class="col my-auto">
                 <h1>Sales</h1>
             </div>

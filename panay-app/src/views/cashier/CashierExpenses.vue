@@ -8,10 +8,9 @@ export default {
         RecordItem,
         AddRecordModalCashier
     },
-
-    data() {
-        return {
-            cashierExpenses: []
+    inject: {
+        cashierExpenses: {
+            from: 'cashierExpenses'
         }
     },
 
@@ -49,22 +48,6 @@ export default {
         },
     },
 
-    methods: {
-        retrieveExpenses() {
-            // set URLSearchParams to get branchID from session cookie
-            RecordService.getCashierExpenses(new URLSearchParams([['branchID', 101]]))
-                .then((response) => {
-                    this.cashierExpenses = response.data;
-                })
-                .catch(e => {
-                    console.log(e.response.data.msg);
-                })
-        }
-    },
-
-    mounted() {
-        this.retrieveExpenses();
-    }
 }
 </script>
 
