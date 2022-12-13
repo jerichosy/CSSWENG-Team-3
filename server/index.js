@@ -7,7 +7,7 @@ const MongoStore = require('connect-mongo');
 
 const app = new express();
 
-app.use(cors());
+// app.use(cors());
 // app.use(cors({
 //     origin: "http://127.0.0.1:5173",
 //     credentials: true,
@@ -38,6 +38,6 @@ app.listen(3000, function () {
     console.log("Node Server is Running at Port 3000");
 });
 
-app.use('/api', routes);
+app.use('/', routes);
 
 db.connect(DB_URI);

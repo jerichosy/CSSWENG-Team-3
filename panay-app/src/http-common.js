@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = 'api/';
+const url = '\/api/';
 
 export default axios.create({
     // withCredentials: true,
