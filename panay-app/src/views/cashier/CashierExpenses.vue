@@ -100,7 +100,7 @@ export default {
 </script>
 
 <template>
-    <AddRecordModalCashier record-type="expense" />
+    <AddRecordModalCashier record-type="expense" @retrieve-expenses="this.$emit('retrieveExpenses')" />
     <EditRecordModalCashier record-type="expense" :selected-record="selectedExpense" @edit-expense="editExpense" />
     <DeleteRecordModalCashier :selected-record="selectedExpense" @delete-record="deleteExpense" />
     <div id="expenses-container" class="container">

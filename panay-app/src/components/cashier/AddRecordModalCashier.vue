@@ -1,4 +1,5 @@
 <script>
+import { Modal } from 'bootstrap';
 import RecordService from '../../services/RecordService';
 export default {
 
@@ -10,7 +11,7 @@ export default {
     props: {
         recordType: String
     },
-    emits: ['retrieveSales'],
+    emits: ['retrieveSales', 'retrieveExpenses'],
 
     data() {
         return {
@@ -84,13 +85,37 @@ export default {
                 RecordService.addCashierSales(data)
                     .then(response => {
                         this.$emit('retrieveSales');
+                        this.closeAddModal();
                         console.log(response.data);
                     })
                     .catch(e => {
-                        console.log(e.response);
+                        console.log(e);
                     })
             }
-            //TODO: if expense record
+            else if (this.isExpenseRecord) {
+
+
+                const datetime = new Date();
+                let data = {
+                    branchID: 101,
+                    branchName: 'Panay Avenue Paligsahan QC',
+                    item: this.expenseInput.item,
+                    category: this.expenseInput.category,
+                    amount: this.expenseInput.amount,
+                    notes: this.expenseInput.notes,
+                    datetime: datetime
+                }
+
+                RecordService.addCashierExpense(data)
+                    .then(response => {
+                        this.$emit('retrieveExpenses');
+                        this.closeAddModal();
+                        console.log(response.data);
+                    })
+                    .catch(e => {
+                        console.log(e);
+                    })
+            }
         },
 
         closeAddModal() {
@@ -136,7 +161,7 @@ export default {
                                         <span class="input-group-text">₱</span>
                                         <div class="form-floating">
                                             <input type="number" class="form-control" id="add-amount"
-                                                placeholder="Amount" v-model="salesInput.amount" />
+                                                placeholder="Amount" step=0.01 v-model="salesInput.amount" />
                                             <label for="add-amount">Amount</label>
                                         </div>
                                     </div>
@@ -168,7 +193,7 @@ export default {
                                         <span class="input-group-text">₱</span>
                                         <div class="form-floating">
                                             <input type="number" class="form-control" id="add-amount"
-                                                placeholder="Amount" v-model="expenseInput.amount" />
+                                                placeholder="Amount" step=0.01 v-model="expenseInput.amount" />
                                             <label for="add-amount">Amount</label>
                                         </div>
                                     </div>
