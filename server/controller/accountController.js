@@ -54,6 +54,14 @@ const authController = {
         })
     },
 
+    // TODO: test this
+    logout: (req, res) => {
+        req.session.destroy(function (err) {
+            if (err) next(err);
+            res.status(200).json({ msg: 'Logged out successfully!' });
+        });
+    },
+
     editAdminPassword: (req, res) => {
         const { oldPassword, newPassword } = req.body;
         console.log(req.body)

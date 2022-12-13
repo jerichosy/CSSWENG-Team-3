@@ -8,6 +8,7 @@ const accountController = require('../controller/accountController.js');
 // https://www.rfc-editor.org/rfc/rfc9110.html#name-get
 
 router.post('/login', accountController.login);
+router.get('/logout', accountController.logout);
 router.post('/editadminpassword', accountController.editAdminPassword);
 router.post('/createbranch', accountController.createBranch);
 router.get('/viewbranch', accountController.viewBranch);
