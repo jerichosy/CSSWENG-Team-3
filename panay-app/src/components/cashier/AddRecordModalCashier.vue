@@ -6,6 +6,10 @@ export default {
     inject: {
         categoryOptions: {
             from: 'categoryOptions'
+        },
+
+        cashierSales: {
+            from: 'cashierSales'
         }
     },
     props: {
@@ -26,7 +30,8 @@ export default {
                 item: '',
                 amount: null,
                 notes: ''
-            }
+            },
+            alertMessage: ''
         }
     },
 
@@ -71,7 +76,7 @@ export default {
 
                 let currentDate = `${year}-${month}-${day}`;
                 console.log(currentDate);
-                const datetime = new Date(currentDate + 'T' + this.salesInput.time + 'Z');
+                const datetime = new Date(currentDate + 'T' + this.salesInput.time + 'Z').toISOString();
                 console.log(datetime);
 
                 let data = {
@@ -81,7 +86,6 @@ export default {
                     customerCount: this.salesInput.customerCount,
                     datetime: datetime
                 }
-
                 RecordService.addCashierSales(data)
                     .then(response => {
                         this.$emit('retrieveSales');
@@ -89,7 +93,8 @@ export default {
                         console.log(response.data);
                     })
                     .catch(e => {
-                        console.log(e);
+                        console.log(e.response.data.msg);
+                        this.alertMessage = e.response.data.msg;
                     })
             }
             else if (this.isExpenseRecord) {
@@ -118,6 +123,7 @@ export default {
             }
         },
 
+
         closeAddModal() {
             let addModalEl = document.getElementById('addModal');
             let modal = Modal.getInstance(addModalEl);
@@ -130,6 +136,7 @@ export default {
         // Reset all fields and component data when modal is hidden
         addModalEl.addEventListener('hidden.bs.modal', event => {
             this.resetInputs();
+            this.alertMessage = '';
         });
     }
 }
@@ -152,6 +159,7 @@ export default {
                             <div class="row-cols-1">
                                 <!-- Sales -->
                                 <template v-if="isSalesRecord">
+                                    <span class="text-danger">{{ alertMessage }}</span>
                                     <div class="form-floating col mb-2">
                                         <input type="time" class="form-control" id="add-time" v-model="salesInput.time"
                                             required />
