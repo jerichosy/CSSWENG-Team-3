@@ -1,16 +1,24 @@
 <script>
-import RecordItem from '../../components/cashier/RecordItem.vue'
-import AddRecordModalCashier from '../../components/cashier/AddRecordModalCashier.vue'
-import RecordService from '../../services/RecordService'
+import RecordItem from '../../components/cashier/RecordItem.vue';
+import AddRecordModalCashier from '../../components/cashier/AddRecordModalCashier.vue';
+import EditRecordModalCashier from '../../components/cashier/EditRecordModalCashier.vue';
+import RecordService from '../../services/RecordService';
 
 export default {
     components: {
         RecordItem,
-        AddRecordModalCashier
+        AddRecordModalCashier,
+        EditRecordModalCashier
     },
     inject: {
         cashierSales: {
             from: 'cashierSales'
+        }
+    },
+
+    data() {
+        return {
+            selectedSales: {}
         }
     },
 
@@ -47,11 +55,37 @@ export default {
             );
         },
     },
+
+    methods: {
+        selectRecord(record) {
+            this.selectedSales = record;
+        },
+
+        editSales(data) {
+            RecordService.editCashierSales(data)
+                .then(response => {
+                    console.log(response.data);
+                })
+                .catch(e => {
+                    console.log(e.response.data);
+                })
+        }
+    },
+
+    mounted() {
+        const editModalEl = document.getElementById('editModal');
+
+        // Reset all fields and component data when modal is hidden
+        editModalEl.addEventListener('hidden.bs.modal', event => {
+            this.selectedSales = {};
+        });
+    }
 }
 </script>
 
 <template>
     <AddRecordModalCashier record-type="sales" />
+    <EditRecordModalCashier record-type="sales" :selected-record="selectedSales" @edit-sales="editSales" />
     <div id="sales-container" class="container">
         <div class="row justify-content-center bg-bgdefault p-2 sticky-top">
             <div class="col my-auto">
@@ -65,10 +99,10 @@ export default {
                     data-bs-target="#addModal">Add</button>
             </div>
         </div>
-
+        {{ selectedSales }}
         <div class="row-cols-1 m-1 justify-content-center">
             <template v-for="(sales, index) in sortedSales">
-                <RecordItem record-type="sales" :record="sales">
+                <RecordItem record-type="sales" :record="sales" @select-record="selectRecord">
                     <template #runningTotal>
                         (₱{{ runningTotal[index].toFixed(2) }})
                     </template>

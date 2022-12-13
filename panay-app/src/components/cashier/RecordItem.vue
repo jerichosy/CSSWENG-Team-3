@@ -7,6 +7,7 @@ export default {
         record: Object,
         currentTotal: Number
     },
+    emits: ['selectRecord'],
 
     computed: {
         computedCustomerCount() {
@@ -25,12 +26,19 @@ export default {
                     { timeZone: 'UTC', hour12: true, hour: 'numeric', minute: 'numeric' }
                 );
         }
+    },
+
+    methods: {
+        selectRecord() {
+            this.$emit('selectRecord', this.record);
+        }
     }
 }
 </script>
 
 <template>
-    <div class="col mb-2 border border-1 border-primary bg-white">
+    <div class="col mb-2 border border-1 border-primary bg-white" @click="selectRecord" data-bs-toggle="modal"
+        data-bs-target="#editModal">
         <div class="row p-2">
 
             <template v-if="recordType === 'sales'">

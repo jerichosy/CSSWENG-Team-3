@@ -2,11 +2,13 @@
 import RecordItem from '../../components/cashier/RecordItem.vue'
 import AddRecordModalCashier from '../../components/cashier/AddRecordModalCashier.vue'
 import RecordService from '../../services/RecordService'
+import EditRecordModalCashier from '../../components/cashier/EditRecordModalCashier.vue'
 
 export default {
     components: {
         RecordItem,
-        AddRecordModalCashier
+        AddRecordModalCashier,
+        EditRecordModalCashier
     },
     inject: {
         cashierExpenses: {
@@ -14,8 +16,13 @@ export default {
         }
     },
 
-    computed: {
+    data() {
+        return {
+            selectedExpense: {}
+        }
+    },
 
+    computed: {
         sortedExpenses: function () {
             let expenses = this.cashierExpenses;
             return expenses.sort((a, b) => {
@@ -48,11 +55,37 @@ export default {
         },
     },
 
+    methods: {
+        selectRecord(record) {
+            this.selectedExpense = record;
+        },
+
+        editExpense(data) {
+            RecordService.editCashierExpense(data)
+                .then(response => {
+                    console.log(response.data);
+                })
+                .catch(e => {
+                    console.log(e.response.data);
+                })
+        }
+    },
+
+    mounted() {
+        const editModalEl = document.getElementById('editModal');
+
+        // Reset all fields and component data when modal is hidden
+        editModalEl.addEventListener('hidden.bs.modal', event => {
+            this.selectedExpense = {};
+        });
+    }
+
 }
 </script>
 
 <template>
     <AddRecordModalCashier record-type="expense" />
+    <EditRecordModalCashier record-type="expense" :selected-record="selectedExpense" @edit-expense="editExpense" />
     <div id="expenses-container" class="container">
         <div class="row justify-content-center bg-bgdefault p-2 sticky-top">
             <div class="col my-auto">
@@ -68,10 +101,9 @@ export default {
             </div>
         </div>
 
-
         <div class="row-cols-1 m-1 justify-content-center">
             <template v-for="(expense, index) in sortedExpenses">
-                <RecordItem record-type="expenses" :record="expense">
+                <RecordItem record-type="expenses" :record="expense" @select-record="selectRecord">
                     <template #runningTotal>
                         (₱{{ runningTotal[index].toFixed(2) }})
                     </template>
