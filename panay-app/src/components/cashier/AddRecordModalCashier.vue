@@ -80,8 +80,6 @@ export default {
                 console.log(datetime);
 
                 let data = {
-                    branchID: 101,
-                    branchName: 'Panay Avenue Paligsahan QC',
                     amount: this.salesInput.amount,
                     customerCount: this.salesInput.customerCount,
                     datetime: datetime
@@ -102,8 +100,6 @@ export default {
 
                 const datetime = new Date();
                 let data = {
-                    branchID: 101,
-                    branchName: 'Panay Avenue Paligsahan QC',
                     item: this.expenseInput.item,
                     category: this.expenseInput.category,
                     amount: this.expenseInput.amount,

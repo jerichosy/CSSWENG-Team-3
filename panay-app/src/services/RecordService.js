@@ -21,9 +21,9 @@ class RecordService {
 
     deleteAdminCheque(data) { return http.post("/deletecheque", data); }
 
-    getCashierSales(params) { return http.get("/viewsales", { params }); }
+    getCashierSales() { return http.get("/viewsales"); }
 
-    getCashierExpenses(params) { return http.get("/viewexpense", { params }); }
+    getCashierExpenses() { return http.get("/viewexpense"); }
 
     addCashierSales(data) { return http.post("/addsales", data); }
 

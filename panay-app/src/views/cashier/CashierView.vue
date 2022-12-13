@@ -29,7 +29,7 @@ export default {
     methods: {
         retrieveSales() {
             // set URLSearchParams to get branchID from session cookie
-            RecordService.getCashierSales(new URLSearchParams([['branchID', 101]]))
+            RecordService.getCashierSales()
                 .then((response) => {
                     this.cashierSales = response.data;
                 })
@@ -40,7 +40,7 @@ export default {
 
         retrieveExpenses() {
             // set URLSearchParams to get branchID from session cookie
-            RecordService.getCashierExpenses(new URLSearchParams([['branchID', 101]]))
+            RecordService.getCashierExpenses()
                 .then((response) => {
                     this.cashierExpenses = response.data;
                 })

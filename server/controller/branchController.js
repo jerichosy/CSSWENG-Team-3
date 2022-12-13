@@ -59,7 +59,7 @@ const branchController = {
     },
 
     viewSales: (req, res) => {
-        const branchID = req.query.branchID;  // TODO: Change to req.session.branchID when session is implemented
+        const branchID = req.session.branchID;  // TODO: Change to req.session.branchID when session is implemented
         // console.log(branchID)
         // console.log(req.session)
         // console.log(JSON.stringify(req.headers));
@@ -75,7 +75,7 @@ const branchController = {
     },
 
     viewExpense: (req, res) => {
-        const branchID = req.query.branchID;  // TODO: Change to req.session.branchID when session is implemented
+        const branchID = req.session.branchID;  // TODO: Change to req.session.branchID when session is implemented
         // console.log(branchID)
         // console.log(req.session)
         // console.log(JSON.stringify(req.headers));
