@@ -89,8 +89,7 @@ export default {
 
     <div class="row">
         <form @click="resetAlertMessages" @submit.prevent="editAdminPassword" class="col-md-8 col-sm-12">
-            <!-- FIXME: put this message in an alert box -->
-            {{ alertMessages.generic }}
+            <span class="text-success">{{ alertMessages.generic }}</span>
             <fieldset>
                 <legend>Change Admin Password</legend>
                 <div class="form-floating mb-2">
@@ -107,7 +106,8 @@ export default {
                 <div class="form-floating mb-2">
                     <input type="password"
                         :class="{ 'form-control': true, 'is-invalid': this.alertMessages.newPassword }" id="
-                        new-password" placeholder="New Password" v-model="newPassword" required autocomplete="false" />
+                        new-password" placeholder="New Password" minlength="6" v-model="newPassword" required
+                        autocomplete="false" />
                     <label for="new-password">New Password</label>
                     <div class="invalid-feedback">
                         {{ alertMessages.newPassword }}
@@ -117,8 +117,8 @@ export default {
                 <div class="form-floating mb-2">
                     <input type="password"
                         :class="{ 'form-control': true, 'is-invalid': this.alertMessages.newPasswordRetyped }" id="
-                        retype-password" placeholder="Retype New Password" v-model="newPasswordRetyped" required
-                        autocomplete="false" />
+                        retype-password" placeholder="Retype New Password" minlength="6" v-model="newPasswordRetyped"
+                        required autocomplete="false" />
                     <label for="retype-password">Retype New Password</label>
                     <div class="invalid-feedback">
                         {{ alertMessages.newPasswordRetyped }}
