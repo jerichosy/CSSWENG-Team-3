@@ -1,5 +1,8 @@
 const db = require('../models/db.js');
 const User = require('../models/userSchema.js');
+const Sales = require('../models/branch/salesSchema.js');
+const Expense = require('../models/branch/expenseSchema.js');
+const Cheque = require('../models/admin/adminChequeSchema.js')
 
 const bcrypt = require('bcrypt');
 
@@ -140,11 +143,30 @@ const authController = {
         var { _id, newBranchName } = req.body;
         console.log(newBranchName)
 
-        db.findOne(User, { _id: _id, isDeleted: false }, '', (result) => {
+        db.findOne(User, { _id: _id, isDeleted: false }, 'branchID', (result) => {
             if (result) {
+                var branchID = result.branchID;
                 db.updateOne(User, { _id: _id }, { branchName: newBranchName }, (result) => {
                     if (result) {
                         res.status(200).json({ msg: 'Branch name successfully changed!' });
+
+                        // update the branch name in the collections
+                        db.updateMany(Sales.Admin, { branchID: branchID }, { branchName: newBranchName }, (result) => {
+                            if (result) { console.log('Branch name successfully changed in the collection!'); }
+                        })
+                        db.updateMany(Expense.Admin, { branchID: branchID }, { branchName: newBranchName }, (result) => {
+                            if (result) { console.log('Branch name successfully changed in the collection!'); }
+                        })
+                        db.updateMany(Sales.Branch, { branchID: branchID }, { branchName: newBranchName }, (result) => {
+                            if (result) { console.log('Branch name successfully changed in the collection!'); }
+                        })
+                        db.updateMany(Expense.Branch, { branchID: branchID }, { branchName: newBranchName }, (result) => {
+                            if (result) { console.log('Branch name successfully changed in the collection!'); }
+                        })
+                        db.updateMany(Cheque, { branchID: branchID }, { branchName: newBranchName }, (result) => {
+                            if (result) { console.log('Branch name successfully changed in the collection!'); }
+                        })
+
                     } else {
                         res.status(400).json({ msg: 'An error occured.' });
                     }
