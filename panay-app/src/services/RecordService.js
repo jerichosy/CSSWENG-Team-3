@@ -25,6 +25,10 @@ class RecordService {
 
     getCashierExpenses(params) { return http.get("/viewexpense", { params }); }
 
+    addCashierSales(data) { return http.post("/addsales", data); }
+
+    addCashierExpense(data) { return http.post("/addexpense", data) }
+
     editCashierSales(data) { return http.post("/editsales", data); }
 
     editCashierExpense(data) { return http.post("/editexpense", data); }
@@ -32,6 +36,10 @@ class RecordService {
     deleteCashierSales(data) { return http.post("/deletesales", data); }
 
     deleteCashierExpense(data) { return http.post("/deleteexpense", data); }
+
+    generateMonthlyReport(data) { return http.post("/genreport", data, { responseType: 'blob' }); }
+
+    generateQuarterlyReport(data) { return http.post("/genqrtr", data, { responseType: 'blob' }); }
 }
 
 export default new RecordService();
