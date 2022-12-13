@@ -160,7 +160,7 @@ const branchController = {
     },
 
     submitSalesAndExpenses: (req, res) => {
-        const branchID = req.query.branchID;
+        const branchID = req.session.branchID;
         function transfer(x, y) {
             db.findMany(x.Branch, { branchID: branchID }, '', (result) => {
                 console.log(y);
