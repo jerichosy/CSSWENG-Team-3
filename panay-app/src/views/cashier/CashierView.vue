@@ -26,6 +26,7 @@ export default {
 
 <template>
     <RouterView />
+    <!-- FIXME: Last record in cashier view sales/expense is blocked by navbar when list is filled  -->
     <MobileNav />
 </template>
 
