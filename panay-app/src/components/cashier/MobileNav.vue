@@ -39,7 +39,11 @@
 
 <style scoped>
 #mobile-nav {
-    height: 4rem
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 5;
 }
 
 .nav-link {

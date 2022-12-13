@@ -13,17 +13,24 @@ const branchController = {
         //     customercount: customercount,
         //     time: time
         // }
-
-        db.insertOne(Sales.Branch, req.body, function (flag) {
+        db.findOne(Sales.Branch, { datetime: req.body.datetime }, '', function (flag) {
             if (flag) {
-                console.log('Sales added');
-                res.status(201).json({ msg: 'Sales Added. 201 Created' });  //201 Created
-            } else {
-                // Will trigger if req.body format does not match schema
-                console.log('Sales not added');
-                res.status(400).json({ msg: 'Something went wrong. Please try again.' })
+                res.status(400).json({ reason: 'datetime', msg: 'Duplicate time record found!' });
+            }
+            else {
+                db.insertOne(Sales.Branch, req.body, function (flag) {
+                    if (flag) {
+                        console.log('Sales added');
+                        res.status(201).json({ msg: 'Sales Added. 201 Created' });  //201 Created
+                    } else {
+                        // Will trigger if req.body format does not match schema
+                        console.log('Sales not added');
+                        res.status(400).json({ msg: 'Something went wrong. Please try again.' })
+                    }
+                })
             }
         })
+
         // res.redirect('/');
     },
 

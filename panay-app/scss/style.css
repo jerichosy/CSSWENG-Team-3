@@ -2,9 +2,14 @@
 html,
 body,
 #app {
-  height: 100%;
-  min-height: --webkit-fill-available;
-  margin: 0;
+  min-height: calc(100vh - 70px);
+  margin: 0px;
+}
+
+body {
+  position: relative;
+  /* Sum of heights for footer and nav */
+  padding-bottom: 70px;
 }
 
 /*!

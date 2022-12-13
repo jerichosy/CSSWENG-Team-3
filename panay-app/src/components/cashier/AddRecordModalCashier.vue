@@ -1,16 +1,21 @@
 <script>
+import { Modal } from 'bootstrap';
 import RecordService from '../../services/RecordService';
 export default {
 
     inject: {
         categoryOptions: {
             from: 'categoryOptions'
+        },
+
+        cashierSales: {
+            from: 'cashierSales'
         }
     },
     props: {
         recordType: String
     },
-    emits: ['retrieveSales'],
+    emits: ['retrieveSales', 'retrieveExpenses'],
 
     data() {
         return {
@@ -25,7 +30,8 @@ export default {
                 item: '',
                 amount: null,
                 notes: ''
-            }
+            },
+            alertMessage: ''
         }
     },
 
@@ -70,7 +76,7 @@ export default {
 
                 let currentDate = `${year}-${month}-${day}`;
                 console.log(currentDate);
-                const datetime = new Date(currentDate + 'T' + this.salesInput.time + 'Z');
+                const datetime = new Date(currentDate + 'T' + this.salesInput.time + 'Z').toISOString();
                 console.log(datetime);
 
                 let data = {
@@ -80,18 +86,43 @@ export default {
                     customerCount: this.salesInput.customerCount,
                     datetime: datetime
                 }
-
                 RecordService.addCashierSales(data)
                     .then(response => {
                         this.$emit('retrieveSales');
+                        this.closeAddModal();
                         console.log(response.data);
                     })
                     .catch(e => {
-                        console.log(e.response);
+                        console.log(e.response.data.msg);
+                        this.alertMessage = e.response.data.msg;
                     })
             }
-            //TODO: if expense record
+            else if (this.isExpenseRecord) {
+
+
+                const datetime = new Date();
+                let data = {
+                    branchID: 101,
+                    branchName: 'Panay Avenue Paligsahan QC',
+                    item: this.expenseInput.item,
+                    category: this.expenseInput.category,
+                    amount: this.expenseInput.amount,
+                    notes: this.expenseInput.notes,
+                    datetime: datetime
+                }
+
+                RecordService.addCashierExpense(data)
+                    .then(response => {
+                        this.$emit('retrieveExpenses');
+                        this.closeAddModal();
+                        console.log(response.data);
+                    })
+                    .catch(e => {
+                        console.log(e);
+                    })
+            }
         },
+
 
         closeAddModal() {
             let addModalEl = document.getElementById('addModal');
@@ -105,6 +136,7 @@ export default {
         // Reset all fields and component data when modal is hidden
         addModalEl.addEventListener('hidden.bs.modal', event => {
             this.resetInputs();
+            this.alertMessage = '';
         });
     }
 }
@@ -127,16 +159,17 @@ export default {
                             <div class="row-cols-1">
                                 <!-- Sales -->
                                 <template v-if="isSalesRecord">
+                                    <span class="text-danger">{{ alertMessage }}</span>
                                     <div class="form-floating col mb-2">
-                                        <input type="time" class="form-control" id="add-time"
-                                            v-model="salesInput.time" />
+                                        <input type="time" class="form-control" id="add-time" v-model="salesInput.time"
+                                            required />
                                         <label for="add-time">Time</label>
                                     </div>
                                     <div class="input-group col mb-2">
                                         <span class="input-group-text">₱</span>
                                         <div class="form-floating">
                                             <input type="number" class="form-control" id="add-amount"
-                                                placeholder="Amount" v-model="salesInput.amount" />
+                                                placeholder="Amount" step=0.01 v-model="salesInput.amount" required />
                                             <label for="add-amount">Amount</label>
                                         </div>
                                     </div>
@@ -150,7 +183,8 @@ export default {
                                 <!-- Expenses -->
                                 <template v-if="isExpenseRecord">
                                     <div class="form-floating col mb-2">
-                                        <select class="form-select" id="edit-category" v-model="expenseInput.category">
+                                        <select class="form-select" id="edit-category" v-model="expenseInput.category"
+                                            required>
                                             <template v-for="category in categoryOptions">
                                                 <option :value="category.name">{{ category.name }}</option>
                                             </template>
@@ -160,7 +194,7 @@ export default {
 
                                     <div class="form-floating col mb-2">
                                         <input type="text" class="form-control" id="add-item" placeholder="Item"
-                                            v-model="expenseInput.item" />
+                                            v-model="expenseInput.item" required />
                                         <label for="add-item">Item Name</label>
                                     </div>
 
@@ -168,15 +202,15 @@ export default {
                                         <span class="input-group-text">₱</span>
                                         <div class="form-floating">
                                             <input type="number" class="form-control" id="add-amount"
-                                                placeholder="Amount" v-model="expenseInput.amount" />
+                                                placeholder="Amount" step=0.01 v-model="expenseInput.amount" required />
                                             <label for="add-amount">Amount</label>
                                         </div>
                                     </div>
 
                                     <div class="form-floating col">
                                         <textarea class="form-control" placeholder="Notes" id="add-notes"
-                                            maxlength="140" style="height:10rem" v-model="expenseInput.notes"
-                                            required></textarea>
+                                            maxlength="140" style="height:10rem"
+                                            v-model="expenseInput.notes"></textarea>
                                         <label for="add-notes">Notes</label>
                                     </div>
                                 </template>
