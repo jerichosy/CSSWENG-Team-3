@@ -25,9 +25,13 @@ class RecordService {
 
     getCashierExpenses(params) { return http.get("/viewexpense", { params }); }
 
-    editCashierSales(data) { return http.post("/editsales", data) }
+    editCashierSales(data) { return http.post("/editsales", data); }
 
-    editCashierExpense(data) { return http.post("/editexpense", data) }
+    editCashierExpense(data) { return http.post("/editexpense", data); }
+
+    deleteCashierSales(data) { return http.post("/deletesales", data); }
+
+    deleteCashierExpense(data) { return http.post("/deleteexpense", data); }
 }
 
 export default new RecordService();
