@@ -8,7 +8,7 @@ import { RouterLink, RouterView } from 'vue-router'
         <hr>
         <ul class="nav flex-column fs-5 fw-bold">
             <li class="nav-item">
-                <RouterLink class="nav-link d-flex" to="/admin/dashboard">
+                <RouterLink class="nav-link d-flex" to="/admin/home">
                     <i class="material-icons-outlined">home</i>
                     <span class="ps-2">Home</span>
                 </RouterLink>
