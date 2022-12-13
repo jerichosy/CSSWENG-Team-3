@@ -101,7 +101,7 @@ export default {
 </script>
 
 <template>
-    <AddRecordModalCashier record-type="sales" />
+    <AddRecordModalCashier record-type="sales" @retrieve-sales="this.$emit('retrieveSales')" />
     <EditRecordModalCashier record-type="sales" :selected-record="selectedSales" @edit-sales="editSales" />
     <DeleteRecordModalCashier :selected-record="selectedSales" @delete-record="deleteSales" />
     <div id="sales-container" class="container">

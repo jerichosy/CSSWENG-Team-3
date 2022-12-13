@@ -1,4 +1,5 @@
 <script>
+import RecordService from '../../services/RecordService';
 export default {
 
     inject: {
@@ -6,10 +7,10 @@ export default {
             from: 'categoryOptions'
         }
     },
-
     props: {
         recordType: String
     },
+    emits: ['retrieveSales'],
 
     data() {
         return {
@@ -56,6 +57,46 @@ export default {
                 amount: null,
                 notes: ''
             }
+        },
+
+        submitRecord() {
+            // Brute-force for demo
+            if (this.isSalesRecord) {
+                const date = new Date();
+
+                let day = date.getDate();
+                let month = date.getMonth() + 1;
+                let year = date.getFullYear();
+
+                let currentDate = `${year}-${month}-${day}`;
+                console.log(currentDate);
+                const datetime = new Date(currentDate + 'T' + this.salesInput.time + 'Z');
+                console.log(datetime);
+
+                let data = {
+                    branchID: 101,
+                    branchName: 'Panay Avenue Paligsahan QC',
+                    amount: this.salesInput.amount,
+                    customerCount: this.salesInput.customerCount,
+                    datetime: datetime
+                }
+
+                RecordService.addCashierSales(data)
+                    .then(response => {
+                        this.$emit('retrieveSales');
+                        console.log(response.data);
+                    })
+                    .catch(e => {
+                        console.log(e.response);
+                    })
+            }
+            //TODO: if expense record
+        },
+
+        closeAddModal() {
+            let addModalEl = document.getElementById('addModal');
+            let modal = Modal.getInstance(addModalEl);
+            modal.hide();
         }
     },
 
@@ -73,7 +114,7 @@ export default {
     <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <form @submit.prevent>
+                <form @submit.prevent="submitRecord">
                     <div class="modal-header">
                         <h1 class="modal-title fs-5" id="addModalLabel">
                             <template v-if="isSalesRecord">Add Sales</template>
