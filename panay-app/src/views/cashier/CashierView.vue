@@ -7,19 +7,11 @@ export default {
 
     provide() {
         return {
-            categoryOptions: this.retrieveCategories()
+            categoryOptions: [{ name: "Salary" }, { name: "Grocery" }, { name: "Utilities" },
+            { name: "Food" }, { name: "Gasul" }, { name: "Bakery Items" },
+            { name: "Rent" }, { name: "Misc." }, { name: "Taxes" }]
         }
     },
-
-    methods: {
-        retrieveCategories() {
-            // TODO: Retrieve data from database
-            let categoryOptions = [{ name: "Salary" }, { name: "Grocery" }, { name: "Utilities" },
-            { name: "Food" }, { name: "Gasul" }, { name: "Bakery Items" },
-            { name: "Rent" }, { name: "Misc." }, { name: "Taxes" }];
-            return categoryOptions;
-        }
-    }
 }
 
 </script>
