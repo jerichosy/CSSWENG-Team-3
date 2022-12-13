@@ -20,6 +20,8 @@ class RecordService {
     deleteAdminExpense(data) { return http.post("/admindeleteexpense", data); }
 
     deleteAdminCheque(data) { return http.post("/deletecheque", data); }
+
+    getCashierSales(params) { return http.get("/viewsales", { params }); }
 }
 
 export default new RecordService();

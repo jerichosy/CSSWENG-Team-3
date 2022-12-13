@@ -1,6 +1,7 @@
 <script>
 import RecordItem from '../../components/cashier/RecordItem.vue'
 import AddRecordModalCashier from '../../components/cashier/AddRecordModalCashier.vue'
+import RecordService from '../../services/RecordService'
 
 export default {
     components: {
@@ -10,22 +11,7 @@ export default {
 
     data() {
         return {
-            cashierSales: [
-                {
-                    branchID: '101',
-                    branchName: 'Panay Avenue Paligsahan QC',
-                    amount: 1400.50,
-                    customerCount: 27,
-                    datetime: "2022-10-01T07:00:42.389+00:00"
-                },
-                {
-                    branchID: '101',
-                    branchName: 'Panay Avenue Paligsahan QC',
-                    amount: 400.00,
-                    customerCount: null,
-                    datetime: "2022-10-01T08:00:42.389+00:00"
-                }
-            ]
+            cashierSales: []
         }
     },
 
@@ -61,6 +47,24 @@ export default {
                 accumulator + currentValue.amount, 0
             );
         },
+    },
+
+    methods: {
+        retrieveSales() {
+            // set URLSearchParams to get branchID from session cookie
+            RecordService.getCashierSales(new URLSearchParams([['branchID', 101]]))
+                .then((response) => {
+                    this.cashierSales = response.data;
+                    console.log(response);
+                })
+                .catch(e => {
+                    console.log(e.response.data.msg);
+                })
+        }
+    },
+
+    mounted() {
+        this.retrieveSales();
     }
 }
 </script>
