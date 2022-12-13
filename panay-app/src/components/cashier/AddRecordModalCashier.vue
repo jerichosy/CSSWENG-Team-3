@@ -153,15 +153,15 @@ export default {
                                 <!-- Sales -->
                                 <template v-if="isSalesRecord">
                                     <div class="form-floating col mb-2">
-                                        <input type="time" class="form-control" id="add-time"
-                                            v-model="salesInput.time" />
+                                        <input type="time" class="form-control" id="add-time" v-model="salesInput.time"
+                                            required />
                                         <label for="add-time">Time</label>
                                     </div>
                                     <div class="input-group col mb-2">
                                         <span class="input-group-text">₱</span>
                                         <div class="form-floating">
                                             <input type="number" class="form-control" id="add-amount"
-                                                placeholder="Amount" step=0.01 v-model="salesInput.amount" />
+                                                placeholder="Amount" step=0.01 v-model="salesInput.amount" required />
                                             <label for="add-amount">Amount</label>
                                         </div>
                                     </div>
@@ -175,7 +175,8 @@ export default {
                                 <!-- Expenses -->
                                 <template v-if="isExpenseRecord">
                                     <div class="form-floating col mb-2">
-                                        <select class="form-select" id="edit-category" v-model="expenseInput.category">
+                                        <select class="form-select" id="edit-category" v-model="expenseInput.category"
+                                            required>
                                             <template v-for="category in categoryOptions">
                                                 <option :value="category.name">{{ category.name }}</option>
                                             </template>
@@ -185,7 +186,7 @@ export default {
 
                                     <div class="form-floating col mb-2">
                                         <input type="text" class="form-control" id="add-item" placeholder="Item"
-                                            v-model="expenseInput.item" />
+                                            v-model="expenseInput.item" required />
                                         <label for="add-item">Item Name</label>
                                     </div>
 
@@ -193,15 +194,15 @@ export default {
                                         <span class="input-group-text">₱</span>
                                         <div class="form-floating">
                                             <input type="number" class="form-control" id="add-amount"
-                                                placeholder="Amount" step=0.01 v-model="expenseInput.amount" />
+                                                placeholder="Amount" step=0.01 v-model="expenseInput.amount" required />
                                             <label for="add-amount">Amount</label>
                                         </div>
                                     </div>
 
                                     <div class="form-floating col">
                                         <textarea class="form-control" placeholder="Notes" id="add-notes"
-                                            maxlength="140" style="height:10rem" v-model="expenseInput.notes"
-                                            required></textarea>
+                                            maxlength="140" style="height:10rem"
+                                            v-model="expenseInput.notes"></textarea>
                                         <label for="add-notes">Notes</label>
                                     </div>
                                 </template>
