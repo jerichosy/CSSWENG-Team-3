@@ -1,5 +1,6 @@
 <script>
 import RecordItem from '../../components/cashier/RecordItem.vue'
+import RecordService from '../../services/RecordService';
 
 export default {
     components: {
@@ -78,6 +79,18 @@ export default {
             );
         },
     },
+
+    methods: {
+        submitRecords() {
+            RecordService.submitRecords()
+                .then((response) => {
+                    console.log(response.data);
+                })
+                .catch(e => {
+                    console.log(e.response.data);
+                })
+        }
+    }
 }
 </script>
 
@@ -94,7 +107,7 @@ export default {
 
             </div>
             <div class="col my-auto text-end">
-                <button class="btn btn-primary">Submit</button>
+                <button class="btn btn-primary" @click="submitRecords">Submit</button>
             </div>
         </div>
 
