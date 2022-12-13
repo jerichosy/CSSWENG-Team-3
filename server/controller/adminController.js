@@ -725,6 +725,7 @@ const adminController = {
         worksheet.mergeCells(`B${callimit + 7}:D${callimit + 7}`);
         worksheet.mergeCells(`B${callimit + 8}:D${callimit + 8}`);
         worksheet.mergeCells(`B${callimit + 9}:D${callimit + 9}`);
+        worksheet.mergeCells(`B${callimit + 10}:D${callimit + 10}`);
 
         res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
         res.setHeader('Content-Disposition', 'attachment; filename=' + 'MonthReport.xlsx');
@@ -1163,6 +1164,7 @@ const adminController = {
                 worksheet.mergeCells(`B${callimit + 7}:D${callimit + 7}`);
                 worksheet.mergeCells(`B${callimit + 8}:D${callimit + 8}`);
                 worksheet.mergeCells(`B${callimit + 9}:D${callimit + 9}`);
+                worksheet.mergeCells(`B${callimit + 10}:D${callimit + 10}`);
             }
 
             //FS Worksheet
