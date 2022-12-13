@@ -78,16 +78,17 @@ const branchController = {
     },
 
     editSales: (req, res) => {
-        const { id, branchID, sales, customercount, time } = req.body;
+        const { id, branchID, branchName, amount, customerCount, datetime } = req.body;
         console.log(req.body)
-        var salesobj = {
+        var sales = {
             branchID: branchID,
-            sales: sales,
-            customercount: customercount,
-            time: time
+            branchName: branchName,
+            amount: amount,
+            customerCount: customerCount,
+            datetime: datetime
         }
 
-        db.updateOne(Sales.Branch, { branchID: branchID, _id: new Object(id) }, salesobj, function (flag) {
+        db.updateOne(Sales.Branch, { _id: new Object(id) }, sales, function (flag) {
             if (flag) {
                 console.log('Edit success: ' + flag);
                 res.status(201).json({ msg: 'Edit success' })
@@ -99,15 +100,18 @@ const branchController = {
     },
 
     editExpense: (req, res) => {
-        const { id, branchID, item, category, amount, notes } = req.body;
+        const { id, branchID, branchName, amount, item, category, notes, datetime } = req.body;
         var expense = {
             branchID: branchID,
+            branchName: branchName,
+            amount: amount,
             item: item,
             category: category,
-            amount: amount,
-            notes: notes
+            notes: notes,
+            datetime: datetime
         }
-        db.updateOne(Expense.Branch, { branchID: branchID, _id: new Object(id) }, expense, function (flag) {
+
+        db.updateOne(Expense.Branch, { _id: new Object(id) }, expense, function (flag) {
             if (flag) {
                 console.log('Edit success: ' + flag);
                 res.status(201).json({ msg: 'Edit success' })
