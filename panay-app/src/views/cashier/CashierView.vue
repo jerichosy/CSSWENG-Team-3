@@ -2,6 +2,8 @@
 import { computed } from '@vue/reactivity';
 import MobileNav from '../../components/cashier/MobileNav.vue';
 import RecordService from '../../services/RecordService';
+import { Modal } from 'bootstrap';
+
 export default {
     components: {
         MobileNav
@@ -45,6 +47,12 @@ export default {
                 .catch(e => {
                     console.log(e.response.data.msg);
                 })
+        },
+
+        closeDeleteModal() {
+            let deleteModalEl = document.getElementById('deleteModal');
+            let modal = Modal.getInstance(deleteModalEl);
+            modal.hide();
         }
     },
 
@@ -57,7 +65,8 @@ export default {
 </script>
 
 <template>
-    <RouterView @retrieve-sales="retrieveSales" @retrieve-expenses="retrieveExpenses" />
+    <RouterView @retrieve-sales="retrieveSales" @retrieve-expenses="retrieveExpenses"
+        @close-delete-modal="closeDeleteModal" />
     <!-- FIXME: Last record in cashier view sales/expense is blocked by navbar when list is filled  -->
     <MobileNav />
 </template>
