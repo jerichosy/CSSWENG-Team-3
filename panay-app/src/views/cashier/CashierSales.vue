@@ -3,20 +3,22 @@ import RecordItem from '../../components/cashier/RecordItem.vue';
 import AddRecordModalCashier from '../../components/cashier/AddRecordModalCashier.vue';
 import EditRecordModalCashier from '../../components/cashier/EditRecordModalCashier.vue';
 import RecordService from '../../services/RecordService';
+import DeleteRecordModalCashier from '../../components/cashier/DeleteRecordModalCashier.vue'
 
 export default {
     inheritAttrs: false,
     components: {
         RecordItem,
         AddRecordModalCashier,
-        EditRecordModalCashier
+        EditRecordModalCashier,
+        DeleteRecordModalCashier
     },
     inject: {
         cashierSales: {
             from: 'cashierSales'
         }
     },
-    emits: ['retrieveSales'],
+    emits: ['retrieveSales', 'closeDeleteModal'],
 
     data() {
         return {
@@ -72,6 +74,18 @@ export default {
                 .catch(e => {
                     console.log(e.response.data);
                 })
+        },
+
+        deleteSales(data) {
+            RecordService.deleteCashierSales(data)
+                .then(response => {
+                    this.$emit('retrieveSales');
+                    this.$emit('closeDeleteModal');
+                    console.log(response.data);
+                })
+                .catch(e => {
+                    console.log(e.response.data);
+                })
         }
     },
 
@@ -80,7 +94,7 @@ export default {
 
         // Reset all fields and component data when modal is hidden
         editModalEl.addEventListener('hidden.bs.modal', event => {
-            this.selectedSales = {};
+            // this.selectedSales = {};
         });
     }
 }
@@ -89,6 +103,7 @@ export default {
 <template>
     <AddRecordModalCashier record-type="sales" />
     <EditRecordModalCashier record-type="sales" :selected-record="selectedSales" @edit-sales="editSales" />
+    <DeleteRecordModalCashier :selected-record="selectedSales" @delete-record="deleteSales" />
     <div id="sales-container" class="container">
         <div class="row justify-content-center bg-bgdefault p-2 sticky-top">
             <div class="col my-auto">

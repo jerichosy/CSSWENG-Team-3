@@ -193,6 +193,8 @@ export default {
                         </div>
                     </div>
                     <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-target="#deleteModal"
+                            data-bs-toggle="modal">Delete</button>
                         <button type="reset" class="btn btn-cancel" data-bs-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-primary">Save Changes</button>
                     </div>

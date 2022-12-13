@@ -3,20 +3,22 @@ import RecordItem from '../../components/cashier/RecordItem.vue'
 import AddRecordModalCashier from '../../components/cashier/AddRecordModalCashier.vue'
 import RecordService from '../../services/RecordService'
 import EditRecordModalCashier from '../../components/cashier/EditRecordModalCashier.vue'
+import DeleteRecordModalCashier from '../../components/cashier/DeleteRecordModalCashier.vue';
 
 export default {
     inheritAttrs: false,
     components: {
         RecordItem,
         AddRecordModalCashier,
-        EditRecordModalCashier
+        EditRecordModalCashier,
+        DeleteRecordModalCashier
     },
     inject: {
         cashierExpenses: {
             from: 'cashierExpenses'
         }
     },
-    emits: ['retrieveExpenses'],
+    emits: ['retrieveExpenses', 'closeDeleteModal'],
 
     data() {
         return {
@@ -71,6 +73,18 @@ export default {
                 .catch(e => {
                     console.log(e.response.data);
                 })
+        },
+
+        deleteExpense(data) {
+            RecordService.deleteCashierExpense(data)
+                .then(response => {
+                    this.$emit('retrieveExpenses');
+                    this.$emit('closeDeleteModal');
+                    console.log(response.data);
+                })
+                .catch(e => {
+                    console.log(e.response.data);
+                })
         }
     },
 
@@ -79,16 +93,16 @@ export default {
 
         // Reset all fields and component data when modal is hidden
         editModalEl.addEventListener('hidden.bs.modal', event => {
-            this.selectedExpense = {};
+            // this.selectedExpense = {};
         });
     }
-
 }
 </script>
 
 <template>
     <AddRecordModalCashier record-type="expense" />
     <EditRecordModalCashier record-type="expense" :selected-record="selectedExpense" @edit-expense="editExpense" />
+    <DeleteRecordModalCashier :selected-record="selectedExpense" @delete-record="deleteExpense" />
     <div id="expenses-container" class="container">
         <div class="row justify-content-center bg-bgdefault p-2 sticky-top">
             <div class="col my-auto">
