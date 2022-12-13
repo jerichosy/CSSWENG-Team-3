@@ -37,7 +37,7 @@ class RecordService {
 
     deleteCashierExpense(data) { return http.post("/deleteexpense", data); }
 
-    submitRecords(data) { return http.get("/submit", data); }
+    submitRecords(params) { return http.get("/submit", { params }); }
 
     generateMonthlyReport(data) { return http.post("/genreport", data, { responseType: 'blob' }); }
 

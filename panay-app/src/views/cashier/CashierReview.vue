@@ -86,7 +86,7 @@ export default {
 
     methods: {
         submitRecords() {
-            RecordService.submitRecords()
+            RecordService.submitRecords(new URLSearchParams([['branchID', 101]]))
                 .then((response) => {
                     this.closeSubmitModal();
                     this.$emit('retrieveSales');
