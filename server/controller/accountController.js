@@ -38,7 +38,7 @@ const authController = {
 
                             req.session.save(function (err) {
                                 if (err) next(err);
-                                res.status(200).json({ msg: 'Logged in successfully!' });
+                                res.status(200).json({ msg: 'Logged in successfully!', isAdmin: user.isAdmin });
                             });
                         });
                     }
