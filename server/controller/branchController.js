@@ -5,20 +5,21 @@ const Expense = require('../models/branch/expenseSchema.js');
 
 const branchController = {
     addSales: (req, res) => {
-        // const { branchID, sales, customercount, time } = req.body;
+        const { amount, customerCount, datetime } = req.body;
         console.log(req.body)
-        // var salesobj = {
-        //     branchID: branchID,
-        //     sales: sales,
-        //     customercount: customercount,
-        //     time: time
-        // }
-        db.findOne(Sales.Branch, { datetime: req.body.datetime }, '', function (flag) {
+        var salesobj = {
+            branchID: req.session.branchID,
+            branchName: req.session.branchName,
+            amount: amount,
+            customerCount: customerCount,
+            datetime: datetime
+        }
+        db.findOne(Sales.Branch, { datetime: datetime }, '', function (flag) {
             if (flag) {
                 res.status(400).json({ reason: 'datetime', msg: 'Duplicate time record found!' });
             }
             else {
-                db.insertOne(Sales.Branch, req.body, function (flag) {
+                db.insertOne(Sales.Branch, salesobj, function (flag) {
                     if (flag) {
                         console.log('Sales added');
                         res.status(201).json({ msg: 'Sales Added. 201 Created' });  //201 Created
@@ -35,17 +36,19 @@ const branchController = {
     },
 
     addExpense: (req, res) => {
-        // const { branchID, item, category, amount, notes } = req.body;
+        const { item, category, amount, notes, datetime } = req.body;
         console.log(req.body)
-        // var expense = {
-        //     branchID: branchID,
-        //     item: item,
-        //     category: category,
-        //     amount: amount,
-        //     notes: notes
-        // }
+        var expense = {
+            branchID: req.session.branchID,
+            branchName: req.session.branchName,
+            item: item,
+            category: category,
+            amount: amount,
+            notes: notes,
+            datetime: datetime
+        }
 
-        db.insertOne(Expense.Branch, req.body, function (flag) {
+        db.insertOne(Expense.Branch, expense, function (flag) {
             if (flag) {
                 console.log('Expense added');
                 res.status(201).json({ msg: 'Expense added. 201 Created' });  //201 Created
