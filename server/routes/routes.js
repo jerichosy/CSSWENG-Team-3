@@ -9,6 +9,7 @@ const accountController = require('../controller/accountController.js');
 
 router.post('/login', accountController.login);
 router.get('/logout', accountController.logout);
+router.get('/viewloggedin', accountController.viewLoggedIn);
 router.post('/editadminpassword', accountController.editAdminPassword);
 router.post('/createbranch', accountController.createBranch);
 router.get('/viewbranch', accountController.viewBranch);

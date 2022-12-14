@@ -62,6 +62,20 @@ const authController = {
         });
     },
 
+    viewLoggedIn: (req, res) => {
+        const branchID = req.session.branchID;
+        db.findOne(User, { branchID: branchID }, 'branchID branchName', (user) => {
+            if (user) {
+                console.log('Found user!');
+                console.log(user);
+                res.status(200).json({ msg: 'Found user!', user: user });
+            }
+            else {
+                res.status(400).json({ reason: 'login', msg: 'You are not logged in.' });
+            }
+        })
+    },
+
     editAdminPassword: (req, res) => {
         const { oldPassword, newPassword } = req.body;
         console.log(req.body)
