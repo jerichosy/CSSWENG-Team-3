@@ -17,7 +17,6 @@ export default {
     methods: {
         login() {
             const data = {
-                // TODO: change 'name' to 'id'
                 'name': this.loginID,
                 'password': this.loginPassword
             }
@@ -28,7 +27,13 @@ export default {
             console.log(data);
             UserService.login(data)
                 .then(response => {
-                    this.alertMsg = response.data.msg;
+                    console.log(response.data.msg);
+                    if (response.data.isAdmin) {
+                        this.$router.push('/admin');
+                    }
+                    else {
+                        this.$router.push('/cashier');
+                    }
                 })
                 .catch(e => {
                     console.log(e.response.data);
