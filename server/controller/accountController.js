@@ -59,13 +59,14 @@ const authController = {
     logout: (req, res) => {
         req.session.destroy(function (err) {
             if (err) next(err);
+            console.log('Logged out successfully');
             res.status(200).json({ msg: 'Logged out successfully!' });
         });
     },
 
     viewLoggedIn: (req, res) => {
         const branchID = req.session.branchID;
-        db.findOne(User, { branchID: branchID }, 'branchID branchName', (user) => {
+        db.findOne(User, { branchID: branchID }, 'branchID branchName isAdmin', (user) => {
             if (user) {
                 console.log('Found user!');
                 console.log(user);
