@@ -27,7 +27,6 @@ export default {
                 .then(response => {
                     console.log(response.data.msg);
                     if (response.data.isAdmin) {
-                        this.isAdmin = response.data.user.isAdmin;
                         this.$router.push('/admin');
                     }
                     else {
@@ -35,8 +34,7 @@ export default {
                     }
                 })
                 .catch(e => {
-                    console.log(e.response.data);
-
+                    console.log(e);
                     if (e.response.data.error === 'id')
                         this.idError = true;
                     else if (e.response.data.error === 'password')
