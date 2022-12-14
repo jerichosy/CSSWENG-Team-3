@@ -1,5 +1,21 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
+<script>
+import { RouterLink } from 'vue-router';
+import UserService from '../../services/UserService';
+
+export default {
+    methods: {
+        logout() {
+            UserService.logout()
+                .then(response => {
+                    this.$router.push('/login');
+                    console.log(response.data);
+                })
+                .catch(e => {
+                    console.log(e);
+                })
+        }
+    }
+}
 </script>
 
 <template>
@@ -41,10 +57,10 @@ import { RouterLink, RouterView } from 'vue-router'
 
 
         <div class="nav flex-column fs-5 fw-bold position-absolute bottom-0 w-100">
-            <RouterLink class="nav-link nav-item d-flex" to="/login">
+            <div class="nav-link nav-item d-flex" @click="logout">
                 <i class="material-icons-outlined">logout</i>
                 <span class="ps-2">Logout</span>
-            </RouterLink>
+            </div>
         </div>
     </nav>
 
