@@ -43,7 +43,7 @@ export default {
                     // create "a" HTML element with href to file & click
                     const link = document.createElement('a');
                     link.href = href;
-                    link.setAttribute('download', 'file.xlsx'); //or any other extension
+                    link.setAttribute('download', 'Monthly Report.xlsx'); //or any other extension
                     document.body.appendChild(link);
                     link.click();
 
@@ -76,7 +76,7 @@ export default {
                     // create "a" HTML element with href to file & click
                     const link = document.createElement('a');
                     link.href = href;
-                    link.setAttribute('download', 'file.xlsx'); //or any other extension
+                    link.setAttribute('download', 'Quarterly Report.xlsx'); //or any other extension
                     document.body.appendChild(link);
                     link.click();
 
