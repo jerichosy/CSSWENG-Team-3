@@ -6,12 +6,10 @@ export default {
         return {
             loginID: '',
             loginPassword: '',
-            signupUsername: '',
-            signupPassword: '',
-            signupIsAdmin: 0,
             idError: false,
             passwordError: false,
-            alertMsg: ''
+            alertMsg: '',
+            isAdmin: false
         }
     },
     methods: {
@@ -29,6 +27,7 @@ export default {
                 .then(response => {
                     console.log(response.data.msg);
                     if (response.data.isAdmin) {
+                        this.isAdmin = response.data.user.isAdmin;
                         this.$router.push('/admin');
                     }
                     else {
@@ -46,7 +45,7 @@ export default {
                     this.alertMsg = e.response.data.msg;
                 });
         }
-    }
+    },
 }
 </script>
 
