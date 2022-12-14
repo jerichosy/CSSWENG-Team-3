@@ -169,7 +169,7 @@ const branchController = {
                         if (flag) {
                             console.log(`${y} added: ${result.length}`);
                             // If the transfer is successful, delete all documents from the branch collection
-                            db.deleteMany(x.Branch, {}, function (flag) {
+                            db.deleteMany(x.Branch, { branchID: branchID }, function (flag) {
                                 if (flag) {
                                     console.log(`${y} deleted`);
                                     //res.status(201).json({ msg: '201 Created' });  //201 Created
