@@ -35,6 +35,7 @@ const authController = {
                             if (err) next(err);
 
                             req.session.branchID = user.branchID;
+                            req.session.branchName = user.branchName;
 
                             req.session.save(function (err) {
                                 if (err) next(err);
