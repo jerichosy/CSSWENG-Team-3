@@ -45,6 +45,10 @@ class UserService {
         return http.post("/login", data);
     }
 
+    logout() {
+        return http.get("/logout");
+    }
+
     viewLoggedIn() {
         return http.get("/viewloggedin");
     }

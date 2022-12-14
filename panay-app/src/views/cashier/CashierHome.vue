@@ -1,5 +1,4 @@
 <script>
-import { onMounted } from 'vue';
 import UserService from '../../services/UserService.js';
 export default {
     inheritAttrs: false,
@@ -26,6 +25,17 @@ export default {
                 .catch(e => {
                     console.log(e);
                 })
+        },
+
+        logout() {
+            UserService.logout()
+                .then(response => {
+                    this.$router.push('/login');
+                    console.log(response.data);
+                })
+                .catch(e => {
+                    console.log(e);
+                })
         }
     },
 
@@ -47,10 +57,7 @@ export default {
                 {{ currentTime }}
             </div>
             <div class="card-footer">
-                <RouterLink to="/login">
-                    <button class="btn btn-danger">Logout</button>
-                </RouterLink>
-
+                <button class="btn btn-danger" @click="logout">Logout</button>
             </div>
 
         </div>
