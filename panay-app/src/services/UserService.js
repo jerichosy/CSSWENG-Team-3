@@ -44,6 +44,10 @@ class UserService {
     login(data) {
         return http.post("/login", data);
     }
+
+    viewLoggedIn() {
+        return http.get("/viewloggedin");
+    }
 }
 
 export default new UserService();
